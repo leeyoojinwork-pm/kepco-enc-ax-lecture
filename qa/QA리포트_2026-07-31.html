@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>QA 리포트 — 한국전력기술 AX 교육 (게이트2)</title>
+<style>
+:root{--ink:#17191f;--muted:#626977;--line:#e4e7ec;--soft:#f6f7f9;--brand:#ff5b1a;--brand-soft:#fff1ea;--nav:#111318;--green:#14855f;--red:#e5484d;--amber:#b45309;
+--font:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:var(--soft);line-height:1.7;font-size:16px;word-break:keep-all}
+.wrap{max-width:920px;margin:0 auto;padding:48px 24px 120px}
+.hd{background:var(--nav);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px}
+.hd .k{color:var(--brand);font-weight:800;font-size:14px;letter-spacing:.05em;margin-bottom:10px}
+.hd h1{font-size:26px;font-weight:800;line-height:1.4}
+.hd .meta{margin-top:10px;color:#9aa0a8;font-size:14px}
+.badge{display:inline-block;margin-top:18px;padding:10px 22px;border-radius:999px;font-weight:800;font-size:18px;background:var(--red);color:#fff}
+.badge small{display:block;font-weight:400;font-size:13px;opacity:.9}
+.counts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.counts span{background:#23262e;border-radius:8px;padding:6px 14px;font-size:14px;font-weight:700}
+.counts b{color:var(--brand)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+.card .n{font-size:34px;font-weight:800;color:var(--ink)}
+.card.low .n{color:var(--red)}
+.card h4{font-size:13px;color:var(--muted);font-weight:700;margin-top:4px}
+h2{font-size:20px;font-weight:800;margin:40px 0 14px}
+.f{background:#fff;border:1px solid var(--line);border-left:6px solid var(--muted);border-radius:12px;padding:20px 24px;margin:12px 0}
+.f.p0{border-left-color:var(--red)}
+.f.p1{border-left-color:var(--brand)}
+.f.p2{border-left-color:var(--amber)}
+.f .t{font-weight:800;font-size:16px}
+.f .t .sv{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12px;color:#fff;margin-right:8px;vertical-align:2px}
+.f.p0 .sv{background:var(--red)} .f.p1 .sv{background:var(--brand)} .f.p2 .sv{background:var(--amber)} .f.p3 .sv{background:var(--muted)}
+.f p{font-size:14.5px;margin-top:8px;color:var(--ink)}
+.f .fix{background:var(--brand-soft);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:14px}
+.f .m{color:var(--muted);font-size:13px;margin-top:8px}
+ol.road{margin:14px 0 0 22px}
+ol.road li{margin:8px 0;font-size:15px}
+.min{background:#fff;border:1.5px dashed var(--brand);border-radius:12px;padding:20px 24px;margin-top:14px}
+.min .tag{color:var(--brand);font-weight:800;font-size:14px;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin-top:12px;background:#fff;border-radius:10px;overflow:hidden;font-size:14px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}
+th{background:var(--brand-soft);color:var(--brand);font-weight:800}
+@media print{.wrap{padding:0} .f{page-break-inside:avoid}}
+</style>
+</head>
+<body><div class="wrap">
+
+<div class="hd">
+  <div class="k">QA 리포트 · 게이트2 (산출물 검수)</div>
+  <h1>한국전력기술 AX 리터러시 교육 — 덱 2종 + 교재 2종</h1>
+  <div class="meta">검수일 2026-07-31 · 검수관 8명 병렬 + 자동 기술검사 + 판정관 종합 · 대상: 1일차 덱(115장) / 2일차 덱(101장) / 교재 1·2일차</div>
+  <div class="badge">No-Go<small>P0 1건 + 핵심 프레임워크 이중 정의 — 수정 후 재판정 필요 (예상 총 10시간, 최소 세트 2시간)</small></div>
+  <div class="counts"><span>P0 <b>1</b></span><span>P1 <b>9</b></span><span>P2 <b>10</b></span><span>P3 <b>3</b></span></div>
+</div>
+
+<div class="cards">
+  <div class="card low"><div class="n">2</div><h4>정확성</h4></div>
+  <div class="card low"><div class="n">2</div><h4>실습 설계</h4></div>
+  <div class="card low"><div class="n">2</div><h4>강의성 (B8)</h4></div>
+  <div class="card low"><div class="n">2</div><h4>배포·산출물</h4></div>
+  <div class="card"><div class="n">3</div><h4>스토리 (B1)</h4></div>
+  <div class="card"><div class="n">3</div><h4>몰입 (B2)</h4></div>
+  <div class="card"><div class="n">3</div><h4>운영 (B7)</h4></div>
+  <div class="card"><div class="n">4</div><h4>디자인·기술 (B6)</h4></div>
+</div>
+
+<h2>P0 — 발행 차단</h2>
+<div class="f p0">
+  <div class="t"><span class="sv">P0</span>[확인됨] 두 덱 표지에 "표지 이미지 영역" 자리표시 잔존</div>
+  <p>양 덱 첫 화면에 <code>&lt;div class="imgbox"&gt;표지 이미지 영역&lt;/div&gt;</code> 미완성 박스가 그대로 노출. 임원이 처음 보는 화면이 "덜 만든 자료"로 읽힌다.</p>
+  <div class="fix">수정: 실제 이미지 삽입 또는 imgbox 제거 후 타이포 단독 표지로. <b>10분</b></div>
+  <div class="m">발견: B5 + 자동검사 교차 확인</div>
+</div>
+
+<h2>P1 — 필수 수정 (만족도·신뢰 직결)</h2>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] "업무 지시서 7요소" 이중 정의 — 검수관 6명 독립 발견</div>
+  <p>1일차 덱: 목표·맥락·입력자료·작업방식·출력형식·검토기준·개선요청. 교재 2종·2일차 덱 퀴즈: 역할·하는일·작업방식·출력형식·말투·금지사항·예외처리. 2일차 덱은 슬라이드03(퀴즈)과 05(복습)가 서로 다른 버전을 "어제 배운 것"으로 제시 — 자기모순. 수강생이 복습 퀴즈에서 전날 덱과 다른 정답을 요구받는다.</p>
+  <div class="fix">수정: 정본 확정(역할 계열 권장) 후 덱 2종·교재 2종·퀴즈·치트시트 전면 일괄 치환. 다른 수정의 선행 조건. <b>60분</b></div>
+  <div class="m">발견: B1·B2·B3·B4·B7·B8 — 이번 검수의 최대 이슈</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] 퀴즈 장표가 문제와 정답을 같은 장에 노출</div>
+  <p>1일차 08(보안 O/X)·46, 2일차 03·04(복습 퀴즈), 'Q 빈칸' 발문에 정답 명시. 1일차 08은 "다음 장에서 정답"이라 하나 다음 장은 파트 표지.</p>
+  <div class="fix">수정: 문제/정답 장 분리. 7요소 정본 확정 후 진행. <b>30분</b></div>
+  <div class="m">발견: B8</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] 1일차 STEP4가 2일차 서사를 선점</div>
+  <p>장표 72~73 "7칸 설계시트로 처음부터 직접" — 2일차의 핵심 차별("어제=복붙, 오늘=직접")을 1일차가 먼저 소모하고, STEP2(딱 3곳 수정)와도 단절.</p>
+  <div class="fix">수정: 1일차 STEP4를 검증·공유 중심으로 교체, 7칸 시트는 2일차로 이동. <b>40분</b></div>
+  <div class="m">발견: B1·B3</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[추정] 2일차 장표59 무출처 수치</div>
+  <p>"AI 도입 기업 70~85% 실패", "3주" — 조사 리포트에 근거 없음.</p>
+  <div class="fix">수정: 출처 확보 또는 정성 표현으로 완곡화 / "3주"는 B팀 스토리 예시로 명시. <b>15분</b></div>
+  <div class="m">발견: B4</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] 강사 교안(data-note) 전무 + 스피드 라운드 재료 부재</div>
+  <p>두 덱 노트 0건. 스피드 라운드는 "강사가 답변 3개를 보여준다"는데 그 답변이 어디에도 없어 준비물 없이는 진행 불가.</p>
+  <div class="fix">수정: 스피드 라운드 재료 3종 우선 제작, 발문·실습 장표부터 노트 보강. <b>45분</b></div>
+  <div class="m">발견: B8 + 자동검사</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] [정보] 비율 초과 + 무행동 구간</div>
+  <p>정보형 장표 1일차 69.6% / 2일차 62.4% (기준 50%), 정보 연속 7~9장 런 각 4곳+. 1일차 2부 40분은 수강생 손이 완전히 논다(강의+관전만).</p>
+  <div class="fix">수정: 정보 런 중간에 발문·거수·페어토크 삽입, 2부 시연을 관전 포인트 체크시트로 전환, 부록 치트시트는 교재로 이관. <b>120분</b></div>
+  <div class="m">발견: B8·B7·B2</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] 발화 전문이 장표에 — 교재와 역할 중복</div>
+  <p>FAQ 답변 전문, A/B팀 스토리 서사 전체 등 강사가 읽어주기만 하면 되는 장표 다수. 교재가 "읽히는 역할"을 이미 맡았으니 덱은 앵커(키워드·구조)만.</p>
+  <div class="fix">수정: 해당 장표 텍스트를 키워드로 압축, 전문은 교안 노트·교재로. <b>45분</b></div>
+  <div class="m">발견: B8</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1</span>[확인됨] 문장·절 전체 orange 강조</div>
+  <p>헤드라인의 절반 이상을 덮는 색 강조 다수 — 키워드 단위 강조 원칙 위반.</p>
+  <div class="fix">수정: 강조 범위를 핵심어 2~4어절로 축소. <b>25분</b></div>
+  <div class="m">발견: B5</div>
+</div>
+<div class="f p1">
+  <div class="t"><span class="sv">P1→P2 완화</span>[확인됨] 덱 PDF 내보내기 파손</div>
+  <p>display:none 구조 + @media print 부재로 인쇄 시 1장만 출력. 교재 2종이 배포물 역할을 해 완화됨.</p>
+  <div class="fix">수정: "배포물은 교재" 정책 명문화 또는 @media print 추가. <b>40분</b></div>
+  <div class="m">발견: B7</div>
+</div>
+
+<h2>P2 — 권장 수정</h2>
+<div class="f p2"><div class="t"><span class="sv">P2</span>2일차 장표36 매트릭스 "오른쪽 위" 오지시 — 정답은 왼쪽 위. <b>5분 퀵픽스</b> (B3)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>2일차 덱 복사 버튼 4개 미작동 — data-copy 속성 누락 (L780·1039·1292·1302). 15분 (B4)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>GPTs 3요소 정의 불일치 — 덱(지시문·지식·공유) vs 교재(지침·지식·버튼). 7요소 통일 작업과 묶음 처리. 15분 (B1)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>2일차 실습 안내 장표 중복 4쌍 (16↔17, 19↔20, 50↔51, 53↔55) — 각 쌍 1장으로 병합. 20분 (B1·B8)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>예시 A~D 가상 수치(30분→5분)에 '예시' 라벨 없음 + "출처 있는 숫자" 장표에 출처 미표기. 20분 (B4·B2)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>운영 리스크: 오리엔테이션 9장 0분 배정(+10~15분 압력), 시연 플랜B(스크린샷) 부재, 사내망 차단·인증코드 시나리오 무답. 30분 (B7)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>얼리어답터 대응: 1일차 1부 50분 상급자 무장치 — 병행 미션 카드 제공 권장. 30분 (B2)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>DESIGN.md 미등재 hex 11종(토큰 등재로 해소 권장) + 이모지 소수(🙋 ☕ 👍 :)). 20분 (B6·B5)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>원전 설계 엔지니어의 "내 핵심 업무는 제외" 반박 답변(형식 자동화 논리)이 86번 장표에 — 보안 원칙 직후로 전진 배치. 15분 (B2)</div></div>
+<div class="f p2"><div class="t"><span class="sv">P2</span>교재 1일차 3장 신규 개념 8개 집중 — 스펙·공유는 6~7장으로 지연 배치. 15분 (B3)</div></div>
+
+<h2>P3 — 다음 차수 메모</h2>
+<div class="f p3"><div class="t"><span class="sv">P3</span>카운터 하드코딩(1/115·1/101) 실제 장수와 불일치 · 교재↔덱 실습 시간 수치 불일치 · 클로징 "세 가지" 2연속 · 교재 부서별 표에 Before/After 열 추가</div></div>
+
+<h2>요구사항 추적</h2>
+<table>
+  <tr><th>요구</th><th>상태</th><th>비고</th></tr>
+  <tr><td>1일차 4h / 2일차 4h 분리</td><td>반영</td><td>덱·교재·노션 모두 분리 완료</td></tr>
+  <tr><td>각 100장 이상 + 깊이</td><td>반영</td><td>115장 / 101장, 프레임워크 다수 추가</td></tr>
+  <tr><td>장표가 아닌 강의자료</td><td>부분</td><td>교재 2종 신설로 크게 개선, 단 덱 [정보] 비율 초과·교안 부재 (P1)</td></tr>
+  <tr><td>재밌고 즐겁게</td><td>부분</td><td>게임·아이스브레이커 반영, 1일차 2부 무행동 40분 잔존</td></tr>
+  <tr><td>루프·MCP 등 확장 개념</td><td>반영</td><td>2일차 5장 + 노션 세션3 (인지 수준)</td></tr>
+  <tr><td>보안(국정원 가이드) 준수</td><td>반영</td><td>유출 grep 0건, 예시 전부 일반화 확인</td></tr>
+</table>
+
+<h2>수정 로드맵</h2>
+<ol class="road">
+  <li><b>P0 표지</b> (10분) → 즉시</li>
+  <li><b>7요소 정본 확정·전면 통일</b> (60분) — 이후 모든 수정의 원점</li>
+  <li>퀴즈 정답 분리 (30분) · STEP4 재구성 (40분) — 2에 의존</li>
+  <li>무출처 수치·라벨·출처 (35분)</li>
+  <li>교안 노트·스피드라운드 재료 (45분)</li>
+  <li>정보 런 해소·무행동 구간·발화 전문 압축 (2.5~3h)</li>
+  <li>P2 퀵픽스 묶음 (매트릭스 방향·복사 버튼·중복 병합 등, 1.5h)</li>
+</ol>
+<div class="min">
+  <div class="tag">시간 없을 때 이것만 (약 2시간)</div>
+  <p>① 표지 자리표시 제거 ② 7요소 통일 ③ 퀴즈 정답 분리 ④ 장표59 무출처 수치 ⑤ 매트릭스 "왼쪽 위" 오지시 수정</p>
+</div>
+
+</div></body>
+</html>
