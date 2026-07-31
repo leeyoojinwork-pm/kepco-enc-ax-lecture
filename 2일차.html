@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>한국전력기술 AX 리터러시 교육 — 2일차</title>
+<style>
+:root{
+  --ink:#17191f; --muted:#626977; --line:#e4e7ec; --soft:#f6f7f9; --panel:#fff;
+  --nav:#111318; --green:#14855f; --red:#e5484d;
+  --shadow:0 12px 32px rgba(17,19,24,.08);
+  --font:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+}
+.deck, .deck[data-theme="a"]{
+  --brand:#ff5b1a; --brand-soft:#fff1ea;
+  --cover-grad:linear-gradient(120deg,#15171d 0%,#1d2128 55%,#2a1c14 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#0c0e13;font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased}
+body{display:flex;align-items:center;justify-content:center}
+.deck{position:relative;width:100vw;height:56.25vw;max-width:177.78vh;max-height:100vh;background:var(--soft);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.4)}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:3.2vw 4vw;background:var(--soft)}
+.slide.active{display:flex}
+.slide-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.6vw}
+.kicker{font-size:1.05vw;font-weight:800;letter-spacing:.04em;color:var(--brand);text-transform:uppercase}
+.slide-no{font-size:1vw;font-weight:800;color:var(--muted)}
+.slide-body{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-.01em;word-break:keep-all}
+.lead{font-size:1.2vw;line-height:1.6;color:var(--muted);margin-top:1vw;max-width:68vw;word-break:keep-all}
+.orange{color:var(--brand)}
+.cover{background:var(--cover-grad);color:#fff;flex-direction:row;align-items:center;gap:3vw;padding:0 5vw}
+.cover .left{flex:1.05}
+.cover .eyebrow{color:var(--brand);font-weight:800;font-size:1.1vw;letter-spacing:.02em;margin-bottom:1.4vw}
+.cover h1{font-size:3.9vw;line-height:1.15;font-weight:800;letter-spacing:-.02em;word-break:keep-all}
+.cover .sub{margin-top:1.8vw;font-size:1.3vw;line-height:1.6;color:#c9ccd3;word-break:keep-all}
+.cover .bar{width:5vw;height:.35vw;background:var(--brand);margin-top:2vw;border-radius:2px}
+.cover .right{flex:1;display:flex;align-items:center;justify-content:center;color:#3a3d45}
+.cover .imgbox{width:100%;aspect-ratio:16/10;border-radius:1vw;background:#23262e;border:1px solid #33373f;display:flex;align-items:center;justify-content:center;font-size:1vw;color:#6b7079;text-align:center}
+.divider{background:var(--cover-grad);color:#fff;justify-content:center}
+.divider h2{font-size:3vw;font-weight:800;color:#fff;line-height:1.3;word-break:keep-all}
+.divider .lead{color:#c9ccd3;max-width:56vw}
+.divider .num{font-size:1.1vw;font-weight:800;color:var(--brand);margin-bottom:1vw}
+.break{background:var(--cover-grad);color:#fff;justify-content:center;align-items:center;text-align:center}
+.break h2{font-size:3.4vw;font-weight:800;color:#fff}
+.break p{margin-top:1.2vw;font-size:1.3vw;color:#c9ccd3}
+.grid2,.grid3,.grid4{display:grid;gap:1.3vw;margin-top:1.8vw}
+.grid2{grid-template-columns:repeat(2,1fr)}
+.grid3{grid-template-columns:repeat(3,1fr)}
+.grid4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.5vw;box-shadow:var(--shadow)}
+.card .badge{width:2vw;height:2vw;border-radius:.5vw;background:var(--brand-soft);color:var(--brand);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1.05vw;margin-bottom:.9vw}
+.card h3{font-size:1.15vw;font-weight:800;margin-bottom:.5vw;word-break:keep-all}
+.card p{font-size:.98vw;line-height:1.5;color:var(--muted);word-break:keep-all}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3vw;margin-top:2vw}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.6vw;text-align:center;box-shadow:var(--shadow)}
+.stat strong{display:block;font-size:2.8vw;color:var(--brand);font-weight:800;line-height:1}
+.stat span{display:block;margin-top:.7vw;font-size:.98vw;color:var(--muted)}
+.timeline{display:flex;gap:0;margin-top:2vw}
+.tl{flex:1;position:relative;padding:0 1vw;text-align:center}
+.tl:not(:last-child):after{content:"";position:absolute;top:1vw;right:-1vw;width:2vw;height:2px;background:var(--line)}
+.tl .dot{width:2vw;height:2vw;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:1vw;display:flex;align-items:center;justify-content:center;margin:0 auto .8vw}
+.tl h4{font-size:1.05vw;font-weight:800;margin-bottom:.3vw}
+.tl p{font-size:.85vw;color:var(--muted);line-height:1.4}
+.flow{display:flex;align-items:stretch;gap:.6vw;margin-top:2vw;flex-wrap:wrap}
+.step{flex:1;min-width:9vw;background:var(--panel);border:1px solid var(--line);border-left:.35vw solid var(--brand);border-radius:.6vw;padding:1vw 1.1vw}
+.step .n{font-size:.85vw;font-weight:800;color:var(--brand)}
+.step h4{font-size:1.05vw;font-weight:800;margin:.3vw 0}
+.step p{font-size:.85vw;color:var(--muted);line-height:1.4}
+.arrow{display:flex;align-items:center;color:var(--brand);font-size:1.2vw;font-weight:800}
+.prompt{position:relative;background:var(--nav);color:#e8eaed;border-radius:.8vw;padding:1.5vw 1.7vw;margin-top:1.4vw;font-size:.98vw;line-height:1.6;white-space:pre-wrap;word-break:keep-all}
+.prompt.bad{background:#fbeae6;color:#7a2c17;border:1px dashed #e0a594}
+.copy-btn{position:absolute;top:1vw;right:1vw;background:var(--brand);color:#fff;border:none;border-radius:.5vw;padding:.5vw 1vw;font-size:.9vw;font-weight:800;cursor:pointer;font-family:var(--font)}
+.copy-btn:active{transform:scale(.96)}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1vw;margin-top:1.6vw}
+.checks.one{grid-template-columns:1fr}
+.check{display:flex;gap:.9vw;background:var(--panel);border:1px solid var(--line);border-radius:.7vw;padding:1.1vw}
+.check .mk{color:var(--green);font-weight:800;font-size:1.1vw}
+.check .mk.bad{color:var(--red)}
+.check p{font-size:.98vw;line-height:1.5;word-break:keep-all}
+table.tbl{width:100%;border-collapse:collapse;margin-top:1.6vw;background:var(--panel);border-radius:.7vw;overflow:hidden;box-shadow:var(--shadow)}
+table.tbl th,table.tbl td{padding:.9vw 1.1vw;border-bottom:1px solid var(--line);font-size:.95vw;text-align:left;word-break:keep-all}
+table.tbl th{background:var(--brand-soft);color:var(--brand);font-weight:800}
+table.tbl tr:last-child td{border-bottom:none}
+.takeaways{counter-reset:t;margin-top:1.6vw}
+.ta{display:flex;gap:1.2vw;align-items:baseline;padding:1vw 0;border-bottom:1px solid var(--line)}
+.ta:before{counter-increment:t;content:counter(t);color:var(--brand);font-weight:800;font-size:1.7vw;line-height:1}
+.ta p{font-size:1.4vw;font-weight:700;word-break:keep-all}
+.goal{background:var(--brand-soft);border:1px solid var(--brand);border-radius:.9vw;padding:1.3vw 1.6vw;margin-top:1.6vw;font-size:1.15vw;font-weight:700;color:var(--ink);word-break:keep-all}
+.goal b{color:var(--brand)}
+.game{background:linear-gradient(120deg,#fff1ea,#fff);border:1.5px dashed var(--brand);border-radius:.9vw;padding:1.4vw 1.6vw;margin-top:1.6vw}
+.game h4{color:var(--brand);font-weight:800;font-size:1.1vw;margin-bottom:.4vw}
+.game p{font-size:1vw;color:var(--ink);line-height:1.6;word-break:keep-all}
+.nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
+.nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
+.nav-ui button:disabled{opacity:.3;cursor:default}
+.counter{position:absolute;bottom:1.9vw;left:2vw;font-size:.95vw;color:var(--muted);z-index:50}
+</style>
+</head>
+<body>
+<div class="deck" id="deck" data-theme="a">
+
+<section class="slide cover active" data-title="표지">
+  <div class="left">
+    <div class="eyebrow">AX 리터러시 교육 · 2일차 · 한국전력기술</div>
+    <h1>내 챗봇,<br>진짜 쓸모 있게 만들기</h1>
+    <div class="sub">1일차에서 만든 챗봇을 업그레이드하고<br>두 번째 챗봇까지 완성해서 팀에 배포합니다.</div>
+    <div class="bar"></div>
+  </div>
+  <div class="right"><div class="imgbox">표지 이미지 영역</div></div>
+</section>
+
+<section class="slide" data-title="다시 만나서">
+  <div class="slide-header"><div class="kicker">Welcome Back</div><div class="slide-no">01</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">다시 만나서 반갑습니다 <span class="orange">:)</span></h2>
+    <p class="lead">1일차 이후 실제로 챗봇을 써보셨나요? 잘 됐던 것, 어색했던 것 — 오늘 다 재료로 씁니다. 오늘은 어제보다 훨씬 여유롭게 갑니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="아이스브레이커">
+  <div class="slide-header"><div class="kicker">Icebreaker</div><div class="slide-no">02</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">시작 전에 — <span class="orange">옆자리랑 3분</span></h2>
+    <div class="game">
+      <h4>내 챗봇 자랑 배틀</h4>
+      <p>옆자리 분과 서로 챗봇 이름을 말해주고, "이게 젤 웃겼던 답변이었어요" 하나씩 공유해보세요. 정답 없습니다, 그냥 풀어놓는 시간이에요.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="1일차 복습">
+  <div class="slide-header"><div class="kicker">Recap</div><div class="slide-no">03</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">1일차 3줄 복습</h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>좋은 프롬프트</h3><p>= 업무 지시서 (목표·맥락·입력자료·작업방식·출력형식·검토기준·개선요청)</p></div>
+      <div class="card"><div class="badge">2</div><h3>챗봇 4단계</h3><p>문제정의 → 업무 지시서 → 폴더정의서 → 첫 시스템</p></div>
+      <div class="card"><div class="badge">3</div><h3>결과물</h3><p>내 반복 업무 하나를 대신하는 챗봇 1개, 이미 완성했습니다</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="오늘의 산출물">
+  <div class="slide-header"><div class="kicker">Today's Outcome</div><div class="slide-no">04</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">오늘 4시간 뒤엔, <span class="orange">챗봇 2개 + 팀 배포 계획</span>이 손에 있습니다.</h2>
+    <div class="stats">
+      <div class="stat"><strong>1</strong><span>어제 챗봇을 업그레이드</span></div>
+      <div class="stat"><strong>+1</strong><span>다른 업무의 두 번째 챗봇</span></div>
+      <div class="stat"><strong>1</strong><span>팀에 실제로 퍼뜨릴 계획</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="오늘 흐름">
+  <div class="slide-header"><div class="kicker">Curriculum</div><div class="slide-no">05</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">오늘 흐름 — <span class="orange">어제보다 여유 있게</span></h2>
+    <div class="timeline">
+      <div class="tl"><div class="dot">5</div><h4>챗봇 고도화 이해</h4><p>60분 · 지식파일 심화, 대화 시작 버튼</p></div>
+      <div class="tl"><div class="dot">6</div><h4>두 번째 챗봇 만들기</h4><p>90분 · 이번엔 훨씬 빠르게</p></div>
+      <div class="tl"><div class="dot">7</div><h4>배포와 마무리</h4><p>55분 · 팀에 퍼뜨리기, 발표, 수료</p></div>
+    </div>
+    <p class="lead">휴식 2회(각 10분) 포함 240분. 오늘은 뭘 배우는 시간보다 <span class="orange">직접 만지는 시간</span>이 더 깁니다.</p>
+  </div>
+</section>
+
+<!-- ===== 5부 ===== -->
+<section class="slide divider" data-title="5부 divider">
+  <div class="slide-body" style="text-align:center">
+    <div class="num">5부 · 60분</div>
+    <h2>챗봇 고도화 이해</h2>
+    <p class="lead" style="margin:1.2vw auto 0">어제 챗봇을 한 단계 업그레이드합니다</p>
+  </div>
+</section>
+
+<section class="slide" data-title="5부 목표">
+  <div class="slide-header"><div class="kicker">5부 · 챗봇 고도화 이해</div><div class="slide-no">06</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">5부 — 챗봇 고도화 이해 <span class="orange">(60분)</span></h2>
+    <div class="goal">이 부가 끝나면: 어제 만든 챗봇에 <b>지식파일을 여러 개 추가</b>하고, <b>대화 시작 버튼</b>까지 달아서 팀원이 바로 쓰기 편한 챗봇으로 만듭니다.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="어제 챗봇 다시 열기">
+  <div class="slide-header"><div class="kicker">5부 · 워밍업</div><div class="slide-no">07</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">어제 챗봇, 다시 열어서 <span class="orange">질문 하나</span> 던져보세요</h2>
+    <div class="checks">
+      <div class="check"><span class="mk">1</span><p>GPT 탐색 → 내가 만든 GPTs에서 어제 챗봇 찾기</p></div>
+      <div class="check"><span class="mk">2</span><p>테스트 질문 다시 하나 — 여전히 잘 작동하나요?</p></div>
+      <div class="check"><span class="mk">3</span><p>못 찾겠으면 옆자리·보조강사 찬스</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="지식파일 여러 개">
+  <div class="slide-header"><div class="kicker">5부 · 지식파일 심화</div><div class="slide-no">08</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">지식파일, <span class="orange">여러 개 넣으면</span> 이렇게 됩니다</h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>서로 다른 역할</h3><p>FAQ.txt (질문 대응) + 서식.txt (문서 형식) — 성격이 다른 파일을 나눠서 넣기</p></div>
+      <div class="card"><div class="badge">2</div><h3>챗봇이 알아서 선택</h3><p>질문 성격에 맞는 파일을 스스로 찾아 참고합니다 — 순서를 정해줄 필요는 없음</p></div>
+      <div class="card"><div class="badge">3</div><h3>많다고 무조건 좋진 않음</h3><p>비슷한 내용이 중복되면 오히려 헷갈려합니다 — 파일당 역할을 분명히</p></div>
+    </div>
+    <p class="lead">어제 폴더정의서 3칸 중 아직 안 채운 칸이 있다면, 오늘 그 자료를 마저 넣습니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="지식파일 추가 실습">
+  <div class="slide-header"><div class="kicker">5부 · 실습 15분</div><div class="slide-no">09</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">지식파일 <span class="orange">2번째</span> 추가하기</h2>
+    <div class="flow">
+      <div class="step"><div class="n">01</div><h4>폴더정의서 확인</h4><p>어제 3칸 중 안 채운 칸</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">02</div><h4>자료 txt화</h4><p>새 자료 하나 골라 변환</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">03</div><h4>업로드</h4><p>구성 탭 → 지식 → 추가</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">04</div><h4>테스트</h4><p>새 자료 관련 질문으로 확인</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="대화 시작 버튼">
+  <div class="slide-header"><div class="kicker">5부 · 대화 시작 버튼</div><div class="slide-no">10</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">팀원이 헤매지 않게, <span class="orange">버튼 4개</span> 달아주기</h2>
+    <div class="grid2">
+      <div class="card"><div class="badge">전</div><h3>버튼 없을 때</h3><p>팀원이 뭘 물어봐야 할지 몰라 그냥 안 씁니다</p></div>
+      <div class="card"><div class="badge">후</div><h3>버튼 있을 때</h3><p>"회의 메모 정리해줘" 버튼 클릭 한 번 — 바로 시작</p></div>
+    </div>
+    <p class="lead">구성 탭의 <span class="orange">Conversation starters</span>에 자주 쓸 요청 3~4개를 문장으로 등록하세요. 팀 배포 성공률이 확 올라갑니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="버튼 실습">
+  <div class="slide-header"><div class="kicker">5부 · 실습 10분</div><div class="slide-no">11</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">대화 시작 버튼 4개 채우기</h2>
+    <div class="prompt" id="p1"><button class="copy-btn" data-copy="p1">복사</button>예시 (회의록 정리봇 기준)
+1. 오늘 회의 메모 정리해줘
+2. 지난주 회의 결정사항만 다시 정리해줘
+3. 이 메모에서 할 일 목록만 뽑아줘
+4. 애매한 내용 확인 필요 표시해서 정리해줘</div>
+    <p class="lead">내 챗봇에 맞게 4개 문장을 만들어 구성 탭에 붙여넣으세요.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="멀티턴 개념">
+  <div class="slide-header"><div class="kicker">5부 · 한 번에 안 되면</div><div class="slide-no">12</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">한 번에 완벽한 답, <span class="orange">기대하지 마세요</span></h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>1턴</h3><p>"이 메모 정리해줘" → 첫 결과</p></div>
+      <div class="card"><div class="badge">2</div><h3>2턴</h3><p>"할 일 부분만 더 구체적으로" → 다듬기</p></div>
+      <div class="card"><div class="badge">3</div><h3>3턴</h3><p>"이 형식 기억해서 다음부터 이렇게 답해줘" → 대화 안에서 학습</p></div>
+    </div>
+    <p class="lead">대화(turn)를 여러 번 주고받는 건 실패가 아니라 <span class="orange">정상적인 사용법</span>입니다. 한 번에 끝내려는 부담을 내려놓으세요.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="액션 맛보기">
+  <div class="slide-header"><div class="kicker">5부 · 살짝 더 나아가면</div><div class="slide-no">13</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">궁금해하실 분들을 위해 — <span class="orange">Actions</span>란 것도 있습니다</h2>
+    <div class="grid2">
+      <div class="card"><div class="badge">?</div><h3>뭔가요</h3><p>챗봇이 외부 시스템(날씨, 사내 API 등)과 직접 연결되게 하는 기능. 개발 지식이 필요합니다</p></div>
+      <div class="card"><div class="badge">△</div><h3>오늘은 안 씁니다</h3><p>오늘 만드는 챗봇으로 충분히 업무가 자동화됩니다 — 이건 "더 궁금하면 찾아볼 것" 정도로만</p></div>
+    </div>
+    <p class="lead">이름만 알아두세요. 궁금하신 분은 쉬는 시간에 질문 주시면 따로 답변드릴게요.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="가벼운 미니 게임">
+  <div class="slide-header"><div class="kicker">5부 · 잠깐 게임</div><div class="slide-no">14</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">스피드 라운드 — <span class="orange">이 답, 몇 턴 만에 나왔을까?</span></h2>
+    <div class="game">
+      <h4>규칙</h4>
+      <p>강사가 화면에 챗봇 답변 3개를 보여줍니다. 몇 번의 대화 끝에 나온 결과인지 손가락으로 맞춰보세요 (1턴/2턴/3턴 이상). 정답 맞추면 훈훈한 박수 한 번!</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide break" data-title="휴식3">
+  <div class="slide-body">
+    <h2>쉬는 시간 10분</h2>
+    <p>커피 한 잔 하고 오세요. 다음 시간엔 완전히 새로운 챗봇을 하나 더 만듭니다.</p>
+  </div>
+</section>
+
+<!-- ===== 6부 ===== -->
+<section class="slide divider" data-title="6부 divider">
+  <div class="slide-body" style="text-align:center">
+    <div class="num">6부 · 90분</div>
+    <h2>두 번째 챗봇 만들기</h2>
+    <p class="lead" style="margin:1.2vw auto 0">같은 4단계, 이번엔 훨씬 빠르게</p>
+  </div>
+</section>
+
+<section class="slide" data-title="6부 목표">
+  <div class="slide-header"><div class="kicker">6부 · 두 번째 챗봇 만들기</div><div class="slide-no">15</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">6부 — 두 번째 챗봇 만들기 <span class="orange">(90분)</span></h2>
+    <div class="goal">이 부가 끝나면: 어제와 <b>다른 업무</b>를 골라, 4단계를 처음부터 끝까지 <b>혼자 힘으로</b> 완주해 두 번째 챗봇을 완성합니다.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="왜 두 번째인가">
+  <div class="slide-header"><div class="kicker">6부 · 왜 두 개째인가</div><div class="slide-no">16</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">하나는 <span class="orange">우연</span>일 수 있어도, 둘은 <span class="orange">능력</span>입니다</h2>
+    <p class="lead">어제는 예시를 보고 따라 만들었다면, 오늘은 도움 없이 처음부터 만들어봅니다. 이게 되면 "나는 이제 어떤 업무든 챗봇으로 만들 수 있다"는 감각이 생깁니다. 그게 오늘의 진짜 목표입니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="4단계 다시 한 번">
+  <div class="slide-header"><div class="kicker">6부 · 4단계 리마인드</div><div class="slide-no">17</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">기억나시죠? <span class="orange">같은 4단계</span>입니다</h2>
+    <div class="flow">
+      <div class="step"><div class="n">STEP 1</div><h4>문제정의</h4><p>15분 (어제보다 빠름)</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 2</div><h4>업무 지시서</h4><p>25분</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 3</div><h4>폴더정의서</h4><p>15분</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 4</div><h4>첫 시스템</h4><p>25분</p></div>
+    </div>
+    <p class="lead">이번엔 예시 지시문 복붙 단계 없이, <span class="orange">처음부터 7요소를 직접</span> 씁니다. 막히면 어제 만든 챗봇 지시문을 참고해도 됩니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP1 두번째 문제정의">
+  <div class="slide-header"><div class="kicker">STEP 1 · 두 번째 문제정의</div><div class="slide-no">18</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">이번엔 <span class="orange">다른 종류</span>의 업무를 골라보세요</h2>
+    <table class="tbl">
+      <tr><th>어제 골랐다면</th><th>오늘은 이쪽으로</th></tr>
+      <tr><td>문서 작성 계열 (보고서·회의록)</td><td>정보 검색·응대 계열 (문의 응대, 요약)</td></tr>
+      <tr><td>정보 검색·응대 계열</td><td>문서 작성 계열</td></tr>
+      <tr><td>내 업무만</td><td>같은 팀 동료가 자주 시키는 업무</td></tr>
+    </table>
+    <p class="lead">다르게 골라야 4단계가 진짜 몸에 익습니다. 반복성×규칙성 매트릭스, 기억나시죠? 같은 방법으로 5분 안에 고르세요.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP1 실습">
+  <div class="slide-header"><div class="kicker">STEP 1 · 실습 15분</div><div class="slide-no">19</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">문제정의 4줄 채우기</h2>
+    <div class="checks">
+      <div class="check"><span class="mk">1</span><p>업무 선택 (5분) — 매트릭스 오른쪽 위</p></div>
+      <div class="check"><span class="mk">2</span><p>챗봇 이름 짓기 (3분)</p></div>
+      <div class="check"><span class="mk">3</span><p>입력→출력 정하기 (4분)</p></div>
+      <div class="check"><span class="mk">4</span><p>GPT 탐색 → 만들기 → 이름 등록 (3분)</p></div>
+    </div>
+    <p class="lead">막히면 옆자리와 상의해도 좋습니다. 오늘은 협업 OK.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP2 직접 쓰기">
+  <div class="slide-header"><div class="kicker">STEP 2 · 이번엔 직접 쓰기</div><div class="slide-no">20</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">7요소, <span class="orange">빈칸에서 시작</span>합니다</h2>
+    <div class="prompt" id="p2"><button class="copy-btn" data-copy="p2">복사</button>너는 (          )다.
+
+[하는 일] (                              )
+[작업방식] ①(        ) ②(        ) ③(        )
+[출력형식] (                              )
+[금지사항] 지어내지 않는다. (                  )</div>
+    <p class="lead">막막하면 어제 만든 챗봇 지시문을 옆에 띄워놓고 문장 구조만 따라 쓰세요 — 베끼는 게 아니라 참고입니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP2 실습">
+  <div class="slide-header"><div class="kicker">STEP 2 · 실습 25분</div><div class="slide-no">21</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">업무 지시서 완성하고 테스트까지</h2>
+    <div class="checks">
+      <div class="check"><span class="mk">1</span><p>7요소 빈칸 채우기 (12분)</p></div>
+      <div class="check"><span class="mk">2</span><p>구성 탭에 붙여넣기 (3분)</p></div>
+      <div class="check"><span class="mk">3</span><p>테스트 질문 2개 (5분)</p></div>
+      <div class="check"><span class="mk">4</span><p>개선요청 한 번 (5분)</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP3 폴더정의서 리마인드">
+  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서</div><div class="slide-no">22</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">이번엔 <span class="orange">3칸을 빠르게</span></h2>
+    <table class="tbl">
+      <tr><th>칸</th><th>어제 배운 것 그대로</th></tr>
+      <tr><td>자주 찾는 자료</td><td>이 업무할 때 매번 열어보는 문서</td></tr>
+      <tr><td>답의 기준</td><td>챗봇이 근거로 삼을 자료</td></tr>
+      <tr><td>공개 가능 여부</td><td>공개 자료만, 애매하면 일반화</td></tr>
+    </table>
+    <p class="lead">어제 15분 걸렸다면 오늘은 10분 목표. 익숙해진 걸 스스로 느껴보세요.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP3 실습">
+  <div class="slide-header"><div class="kicker">STEP 3 · 실습 15분</div><div class="slide-no">23</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">지식파일까지 붙여서 완성 직전</h2>
+    <div class="checks">
+      <div class="check"><span class="mk">1</span><p>3칸 채우기 (5분)</p></div>
+      <div class="check"><span class="mk">2</span><p>자료 1개 txt화 (5분)</p></div>
+      <div class="check"><span class="mk">3</span><p>업로드 + 재테스트 (5분)</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP4 완성">
+  <div class="slide-header"><div class="kicker">STEP 4 · 완성</div><div class="slide-no">24</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">대화 시작 버튼까지 달면 <span class="orange">진짜 완성</span></h2>
+    <div class="checks">
+      <div class="check"><span class="mk">✓</span><p>테스트 질문 3개 통과</p></div>
+      <div class="check"><span class="mk">✓</span><p>대화 시작 버튼 3~4개 등록 (5부에서 배운 것)</p></div>
+      <div class="check"><span class="mk">✓</span><p>공유 설정 완료</p></div>
+      <div class="check"><span class="mk">✓</span><p>오픈채팅방에 링크 공유</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="STEP4 실습">
+  <div class="slide-header"><div class="kicker">STEP 4 · 실습 25분</div><div class="slide-no">25</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">두 번째 챗봇, 마무리</h2>
+    <div class="checks">
+      <div class="check"><span class="mk">1</span><p>대화 시작 버튼 등록 (7분)</p></div>
+      <div class="check"><span class="mk">2</span><p>테스트 질문 3개 최종 확인 (8분)</p></div>
+      <div class="check"><span class="mk">3</span><p>공유 설정 + 링크 공유 (5분)</p></div>
+      <div class="check"><span class="mk">4</span><p>여유 있으면 이름·설명 문구 다듬기 (5분)</p></div>
+    </div>
+    <p class="lead">완료하신 분은 옆자리 챗봇 한 번 써보며 서로 피드백 나눠주세요.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="챗봇 배틀">
+  <div class="slide-header"><div class="kicker">6부 · 잠깐 놀이</div><div class="slide-no">26</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">빨리 끝난 분들 — <span class="orange">챗봇 배틀</span></h2>
+    <div class="game">
+      <h4>규칙</h4>
+      <p>옆자리와 서로의 챗봇에 일부러 어려운 질문(모르는 걸 물어보기)을 던져보세요. "모른다"고 솔직하게 답하면 승리, 아무거나 지어내면 패배 — 안전한 챗봇을 가려내는 게임입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide break" data-title="휴식4">
+  <div class="slide-body">
+    <h2>쉬는 시간 10분</h2>
+    <p>오늘 벌써 챗봇 2개째 완성입니다. 마지막 시간은 이걸 세상 밖으로 내보내는 시간이에요.</p>
+  </div>
+</section>
+
+<!-- ===== 7부 ===== -->
+<section class="slide divider" data-title="7부 divider">
+  <div class="slide-body" style="text-align:center">
+    <div class="num">7부 · 55분</div>
+    <h2>배포와 마무리</h2>
+    <p class="lead" style="margin:1.2vw auto 0">팀에 퍼뜨리고, 발표하고, 마칩니다</p>
+  </div>
+</section>
+
+<section class="slide" data-title="7부 목표">
+  <div class="slide-header"><div class="kicker">7부 · 배포와 마무리</div><div class="slide-no">27</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">7부 — 배포와 마무리 <span class="orange">(55분)</span></h2>
+    <div class="goal">이 부가 끝나면: 챗봇 2개를 <b>팀에 배포할 구체적 계획</b>이 서고, <b>2일 최종 발표</b>와 함께 8시간 교육을 마무리합니다.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="팀 배포 실전">
+  <div class="slide-header"><div class="kicker">7부 · 팀 배포</div><div class="slide-no">28</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">링크만 던지면 아무도 안 씁니다. <span class="orange">이렇게 하세요</span></h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>사용법 한 줄</h3><p>"회의 메모 붙여넣으면 정리해줌" — 채팅방 공지에 이름+한줄설명+링크</p></div>
+      <div class="card"><div class="badge">2</div><h3>먼저 써보게 하기</h3><p>테스트 질문 예시 하나 같이 올려서 바로 따라 해보게</p></div>
+      <div class="card"><div class="badge">3</div><h3>피드백 창구</h3><p>"이상하면 캡처해서 알려줘" 한 줄 — 개선 재료가 쌓입니다</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="배포 계획 실습">
+  <div class="slide-header"><div class="kicker">7부 · 실습 10분</div><div class="slide-no">29</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">배포 계획, 3줄로 적어보세요</h2>
+    <div class="checks one">
+      <div class="check"><span class="mk">1</span><p>누구에게 먼저 공유할지 (예: 우리 파트 4명)</p></div>
+      <div class="check"><span class="mk">2</span><p>언제 공유할지 (예: 오늘 퇴근 전)</p></div>
+      <div class="check"><span class="mk">3</span><p>어디에 올릴지 (사내 메신저, 팀 채널 등)</p></div>
+    </div>
+    <p class="lead">오늘 안에 실행하시는 게 제일 좋습니다. "다음에 해야지"는 대부분 안 됩니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="개선 루프">
+  <div class="slide-header"><div class="kicker">7부 · 개선 루프</div><div class="slide-no">30</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">배포 후엔 <span class="orange">주 1회, 10분</span>이면 됩니다</h2>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><h4>피드백 모으기</h4><p>이상했던 답변 캡처</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">2</div><h4>원인 찾기</h4><p>지시문 문제? 지식파일 부족?</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">3</div><h4>한 줄 수정</h4><p>지시문 또는 지식파일 업데이트</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">4</div><h4>재공지</h4><p>"이제 이것도 됩니다" 한 줄</p></div>
+    </div>
+    <p class="lead">3주만 이렇게 돌리면 "○○봇 없으면 불편하다"는 말이 나옵니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="최종 발표 준비">
+  <div class="slide-header"><div class="kicker">7부 · 발표 준비</div><div class="slide-no">31</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">최종 발표 — <span class="orange">이번엔 1분</span></h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>챗봇 2개 이름</h3><p>어제·오늘 만든 것</p></div>
+      <div class="card"><div class="badge">2</div><h3>제일 마음에 든 순간</h3><p>어느 챗봇이 왜 더 마음에 드는지</p></div>
+      <div class="card"><div class="badge">3</div><h3>배포 계획 한 줄</h3><p>누구에게 언제 공유할지</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="최종 발표">
+  <div class="slide-header"><div class="kicker">7부 · 최종 발표</div><div class="slide-no">32</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">1분 발표 — <span class="orange">본부별로 편하게</span></h2>
+    <div class="checks one">
+      <div class="check"><span class="mk">1</span><p>부담되면 패스, 링크 공유로 대체 가능</p></div>
+      <div class="check"><span class="mk">2</span><p>다른 분 발표에서 아이디어 하나씩 메모</p></div>
+      <div class="check"><span class="mk">3</span><p>박수는 아끼지 않기 — 8시간 동안 챗봇 2개 만든 여러분입니다</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="8시간 되돌아보기">
+  <div class="slide-header"><div class="kicker">7부 · 되돌아보기</div><div class="slide-no">33</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">8시간 전과 지금, <span class="orange">뭐가 달라졌나요?</span></h2>
+    <div class="grid2">
+      <div class="card"><div class="badge">전</div><h3>1일차 시작 전</h3><p>ChatGPT 계정도 없던 분, "보고서 써줘"가 프롬프트의 전부였던 분</p></div>
+      <div class="card"><div class="badge">후</div><h3>지금</h3><p>업무 지시서를 쓸 줄 알고, 챗봇 2개를 직접 설계·완성해서 팀에 배포하는 사람</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="앞으로">
+  <div class="slide-header"><div class="kicker">7부 · 앞으로</div><div class="slide-no">34</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">교육 끝나고 <span class="orange">이 순서</span>로 넓혀가세요</h2>
+    <div class="flow">
+      <div class="step"><div class="n">오늘</div><h4>챗봇 2개</h4><p>완성 + 배포</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">1개월</div><h4>챗봇 3~4개</h4><p>4단계 프레임워크 재사용</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">3개월</div><h4>팀 표준</h4><p>팀 공용 지시문·지식파일 정리</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">그 후</div><h4>회사 AX와 연결</h4><p>SK AX 협약으로 이미 길은 열려있음</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="만족도 조사">
+  <div class="slide-header"><div class="kicker">만족도 조사</div><div class="slide-no">35</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">1분만 — <span class="orange">만족도 조사</span></h2>
+    <p class="lead">오픈채팅방 공지의 링크로 접속해주세요. "다음에 더 배우고 싶은 것"은 꼭 적어주시면 다음 심화 과정에 반영됩니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="클로징">
+  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">36</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">8시간, 기억할 <span class="orange">세 가지</span></h2>
+    <div class="takeaways">
+      <div class="ta"><p>좋은 프롬프트는 업무 지시서다.</p></div>
+      <div class="ta"><p>4단계(문제정의 → 지시서 → 폴더정의서 → 시스템)면 어떤 업무든 챗봇이 된다.</p></div>
+      <div class="ta"><p>혼자 쓰는 도구에서, 팀이 함께 쓰는 시스템으로 — 그게 오늘부터입니다.</p></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="counter" id="counter">1 / 42</div>
+<div class="nav-ui">
+  <button id="prevBtn">‹</button>
+  <button id="nextBtn">›</button>
+</div>
+
+<script>
+const deck=document.getElementById('deck');
+const slides=[...document.querySelectorAll('.slide')];
+let current=0;
+const counter=document.getElementById('counter');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+function show(i){
+  current=Math.max(0,Math.min(i,slides.length-1));
+  slides.forEach((s,idx)=>s.classList.toggle('active',idx===current));
+  counter.textContent=`${current+1} / ${slides.length}`;
+  prevBtn.disabled=current===0;
+  nextBtn.disabled=current===slides.length-1;
+}
+prevBtn.addEventListener('click',e=>{e.stopPropagation();show(current-1);});
+nextBtn.addEventListener('click',e=>{e.stopPropagation();show(current+1);});
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' '].includes(e.key)){show(current+1);}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){show(current-1);}
+  else if(e.key==='Home'){show(0);}
+  else if(e.key==='End'){show(slides.length-1);}
+});
+deck.addEventListener('click',e=>{
+  if(e.target.closest('button')||e.target.closest('a'))return;
+  show(current+1);
+});
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    const box=document.getElementById(btn.dataset.copy);
+    const text=box.innerText.replace('복사','').trim();
+    navigator.clipboard?.writeText(text);
+    const o=btn.textContent;btn.textContent='복사됨';setTimeout(()=>btn.textContent=o,1200);
+  });
+});
+show(0);
+</script>
+</body>
+</html>
