@@ -87,6 +87,9 @@ table.tbl tr:last-child td{border-bottom:none}
 .ta p{font-size:1.4vw;font-weight:700;word-break:keep-all}
 .goal{background:var(--brand-soft);border:1px solid var(--brand);border-radius:.9vw;padding:1.3vw 1.6vw;margin-top:1.6vw;font-size:1.15vw;font-weight:700;color:var(--ink);word-break:keep-all}
 .goal b{color:var(--brand)}
+.game{background:linear-gradient(120deg,#fff1ea,#fff);border:1.5px dashed var(--brand);border-radius:.9vw;padding:1.4vw 1.6vw;margin-top:1.6vw}
+.game h4{color:var(--brand);font-weight:800;font-size:1.1vw;margin-bottom:.4vw}
+.game p{font-size:1vw;color:var(--ink);line-height:1.6;word-break:keep-all}
 .nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
 .nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
 .nav-ui button:disabled{opacity:.3;cursor:default}
@@ -149,6 +152,10 @@ table.tbl tr:last-child td{border-bottom:none}
       <div class="card"><div class="badge">2</div><h3>도구</h3><p>ChatGPT 유료계정 하나로 전부. 별도 설치 없음. 계정은 당일 배부.</p></div>
       <div class="card"><div class="badge">3</div><h3>속도 걱정 금지</h3><p>막히면 보조강사가 바로 갑니다. 복붙 단계까지만 와도 목표 달성.</p></div>
     </div>
+    <div class="game">
+      <h4>시작 전 30초 아이스브레이커</h4>
+      <p>옆자리 두 분과 인사하고, "요즘 반복해서 하는 귀찮은 업무 한 가지"를 서로 말해보세요. 오늘 그게 오늘 만들 챗봇의 재료가 됩니다.</p>
+    </div>
   </div>
 </section>
 
@@ -196,12 +203,16 @@ table.tbl tr:last-child td{border-bottom:none}
 <section class="slide" data-title="보안 미니 퀴즈">
   <div class="slide-header"><div class="kicker">Security · 미니 퀴즈</div><div class="slide-no">08</div></div>
   <div class="slide-body">
-    <h2 class="big-message">이건 넣어도 될까요?</h2>
+    <h2 class="big-message">🙋 다 같이 O/X! — 이건 넣어도 될까요?</h2>
     <div class="checks">
       <div class="check"><span class="mk bad">X</span><p>"OO프로젝트 설계검토 의견서 원문 요약해줘" — 기술 원문 업로드 금지</p></div>
       <div class="check"><span class="mk bad">X</span><p>"김OO 부장(010-xxxx) 참석 회의록 정리" — 개인정보 금지, 이름은 A·B로</p></div>
       <div class="check"><span class="mk">O</span><p>"발전소 설계 회사의 주간보고 형식 만들어줘" — 일반화한 업무 상황 OK</p></div>
       <div class="check"><span class="mk">O</span><p>"이 보도자료 3줄로 요약해줘" — 공개 자료 OK</p></div>
+    </div>
+    <div class="game">
+      <h4>진행 팁</h4>
+      <p>손으로 O·X 표시하면서 다 같이 맞혀봐요. 정답은 바로 다음 장에서 이유와 함께 확인합니다.</p>
     </div>
   </div>
 </section>
@@ -534,8 +545,8 @@ table.tbl tr:last-child td{border-bottom:none}
 
 <section class="slide break" data-title="휴식1">
   <div class="slide-body">
-    <h2>쉬는 시간 10분</h2>
-    <p>계정 로그인이 안 풀렸는지만 한 번 더 확인해주세요.<br>다음 시간: 잘 쓴 프롬프트를 저장하면 챗봇이 됩니다.</p>
+    <h2>잠깐, 커피 한 잔 ☕ — 10분</h2>
+    <p>계정 로그인만 한 번 더 확인해주세요. 자리 옮겨서 옆 부서 사람과 인사해도 좋아요.<br>다음 시간: 잘 쓴 프롬프트를 저장하면 챗봇이 됩니다.</p>
   </div>
 </section>
 
@@ -988,8 +999,8 @@ table.tbl tr:last-child td{border-bottom:none}
 
 <section class="slide break" data-title="휴식2">
   <div class="slide-body">
-    <h2>쉬는 시간 10분</h2>
-    <p>여기까지 왔으면 이미 챗봇 하나가 작동 중입니다.<br>다음 시간: 챗봇에게 내 자료를 줘서 시스템으로 만듭니다.</p>
+    <h2>스트레칭 한 번 하고 — 10분</h2>
+    <p>여기까지 왔으면 이미 챗봇 하나가 작동 중입니다. 잘 하고 계세요.<br>다음 시간: 챗봇에게 내 자료를 줘서 시스템으로 만듭니다.</p>
   </div>
 </section>
 
