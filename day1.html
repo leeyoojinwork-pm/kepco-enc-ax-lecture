@@ -90,6 +90,11 @@ table.tbl tr:last-child td{border-bottom:none}
 .game{background:linear-gradient(120deg,#fff1ea,#fff);border:1.5px dashed var(--brand);border-radius:.9vw;padding:1.4vw 1.6vw;margin-top:1.6vw}
 .game h4{color:var(--brand);font-weight:800;font-size:1.1vw;margin-bottom:.4vw}
 .game p{font-size:1vw;color:var(--ink);line-height:1.6;word-break:keep-all}
+.q{background:var(--cover-grad);color:#fff;justify-content:center}
+.q .qmark{color:var(--brand);font-weight:800;font-size:1.15vw;letter-spacing:.08em;margin-bottom:1.4vw}
+.q h2{font-size:3vw;font-weight:800;color:#fff;line-height:1.4;word-break:keep-all;max-width:74vw}
+.q p{margin-top:1.6vw;font-size:1.25vw;color:#c9ccd3;word-break:keep-all}
+
 .nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
 .nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
 .nav-ui button:disabled{opacity:.3;cursor:default}
@@ -236,6 +241,14 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
+<section class="slide q" data-title="Q 회사">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>AI로 일하는 방식이 바뀐다는데,<br>우리 회사엔 아직 먼 얘기일까요?</h2>
+    <p>힌트: 이미 사내에서 벌어지고 있습니다. 다음 장에서 확인하세요.</p>
+  </div>
+</section>
+
 <section class="slide" data-title="왜 지금인가 — 회사">
   <div class="slide-header"><div class="kicker">Session 1 · 왜 지금인가</div><div class="slide-no">10</div></div>
   <div class="slide-body">
@@ -245,6 +258,14 @@ table.tbl tr:last-child td{border-bottom:none}
       <div class="card"><div class="badge">★</div><h3>SK AX와 AX 협약</h3><p>2026.07 · 1단계: 프로젝트 관리·기술문서 검토·이슈 점검 업무 효율화</p></div>
     </div>
     <p class="lead">설계와 사업은 이미 바뀌는 중입니다. 오늘은 <span class="orange">내 책상 위 반복 업무</span> 차례입니다.</p>
+  </div>
+</section>
+
+<section class="slide q" data-title="Q 통계">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>옆자리 동료 4명 중 몇 명이<br>이미 AI를 쓰고 있을까요?</h2>
+    <p>마음속으로 숫자 하나 정해보세요. 정답은 바로 다음 장.</p>
   </div>
 </section>
 
@@ -341,6 +362,14 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
+<section class="slide q" data-title="Q 잘하는일">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>GPT에게 시키면 안 되는 일은<br>뭘까요?</h2>
+    <p>옆 사람과 10초 — 하나씩만 말해보세요.</p>
+  </div>
+</section>
+
 <section class="slide" data-title="잘하는 일 못하는 일">
   <div class="slide-header"><div class="kicker">Session 1 · 잘하는 일, 못하는 일</div><div class="slide-no">18</div></div>
   <div class="slide-body">
@@ -353,6 +382,14 @@ table.tbl tr:last-child td{border-bottom:none}
       <tr><td>아이디어 벌리기 (제목 10개, 반론 5개)</td><td>정확한 계산 (복잡한 수치는 검산 필수)</td></tr>
     </table>
     <p class="lead">오늘 만드는 챗봇은 전부 왼쪽 열입니다. 오른쪽을 시키면 그럴듯한 거짓말이 돌아옵니다.</p>
+  </div>
+</section>
+
+<section class="slide q" data-title="Q 환각">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>GPT가 아주 그럴듯한 거짓말을 하면,<br>우리는 어떻게 알아챌 수 있을까요?</h2>
+    <p>실제로 한 번 속아보면 평생 안 잊습니다. 사례로 보시죠.</p>
   </div>
 </section>
 
@@ -419,6 +456,14 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
+<section class="slide q" data-title="Q 프롬프트">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>같은 GPT인데 왜 내 결과만<br>별로일까요?</h2>
+    <p>도구 차이가 아닙니다. 다음 두 장을 비교해보세요.</p>
+  </div>
+</section>
+
 <section class="slide" data-title="나쁜 프롬프트">
   <div class="slide-header"><div class="kicker">Session 2 · 나쁜 프롬프트</div><div class="slide-no">24</div></div>
   <div class="slide-body">
@@ -431,6 +476,14 @@ table.tbl tr:last-child td{border-bottom:none}
       <div class="card"><p>빠진 것: <span class="orange">판단 기준</span></p></div>
     </div>
     <p class="lead">신입사원에게 "보고서 써줘"라고만 하면 어떻게 되나요? 똑같은 일이 벌어집니다.</p>
+  </div>
+</section>
+
+<section class="slide q" data-title="Q 7요소">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>일 잘하는 신입에게 일을 시킬 때,<br>여러분은 뭐부터 알려주나요?</h2>
+    <p>그 순서 그대로가 오늘의 프레임워크입니다.</p>
   </div>
 </section>
 
@@ -565,6 +618,14 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">세션 3 — 챗봇은 저장된 업무 지시서다 <span class="orange">(40분)</span></h2>
     <div class="goal">이 세션이 끝나면: GPTs가 <b>지시문·지식·공유 3가지</b>로 만들어진다는 걸 알고, 강사의 <b>라이브 시연으로 제작 과정 전체</b>를 눈으로 확인한 상태가 됩니다.</div>
+  </div>
+</section>
+
+<section class="slide q" data-title="Q 챗봇">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>잘 쓴 프롬프트, 내일도 모레도<br>매번 다시 쓰실 건가요?</h2>
+    <p>저장할 방법이 있다면? — 그게 오늘 2부입니다.</p>
   </div>
 </section>
 
@@ -769,6 +830,14 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">STEP 1 — 문제정의 <span class="orange">(25분)</span></h2>
     <div class="goal">이 단계가 끝나면: 챗봇에 맡길 <b>내 반복 업무 하나</b>가 정해지고, 예시 지시문 복붙으로 <b>첫 챗봇이 작동</b>합니다.</div>
+  </div>
+</section>
+
+<section class="slide q" data-title="Q 문제정의">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>내 업무 중에 챗봇에 맡길 첫 번째 일,<br>뭐가 좋을까요?</h2>
+    <p>아무거나 고르면 실패합니다. 고르는 기준이 있습니다.</p>
   </div>
 </section>
 
@@ -1009,6 +1078,14 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">STEP 3 — 폴더정의서 <span class="orange">(15분)</span></h2>
     <div class="goal">이 단계가 끝나면: 내 챗봇이 참고할 <b>지식파일 계획(폴더정의서 3칸)</b>이 서고, 실제 파일 <b>1개가 업로드</b>되어 있습니다.</div>
+  </div>
+</section>
+
+<section class="slide q" data-title="Q 폴더정의서">
+  <div class="slide-body">
+    <div class="qmark">생각해보세요</div>
+    <h2>챗봇이 우리 팀 규정과 양식을<br>어떻게 알 수 있을까요?</h2>
+    <p>GPT는 우리 회사 내부 사정을 모릅니다. 알려주는 방법이 있습니다.</p>
   </div>
 </section>
 
@@ -1449,7 +1526,7 @@ table.tbl tr:last-child td{border-bottom:none}
 
 </div>
 
-<div class="counter" id="counter">1 / 106</div>
+<div class="counter" id="counter">1 / 115</div>
 <div class="nav-ui">
   <button id="prevBtn">‹</button>
   <button id="nextBtn">›</button>
