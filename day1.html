@@ -161,6 +161,12 @@ table.tbl tr:last-child td{border-bottom:none}
 
 /* KEPCO E&C intro bridge */
 .ax-perspective{display:grid;grid-template-columns:repeat(3,1fr);margin-top:1.75vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.perspective-visual{margin-top:1.25vw;background:#fff;border:1px solid var(--line);border-radius:1vw;padding:.9vw 1.05vw;box-shadow:0 10px 24px rgba(19,24,33,.045)}
+.perspective-visual svg{display:block;width:100%;height:5.8vw}
+.pv-label{font-family:var(--font);font-size:13px;font-weight:900;fill:var(--ink)}
+.pv-small{font-family:var(--font);font-size:10px;font-weight:800;fill:#6e7684}
+.pv-inverse{fill:#fff!important}
+.pv-inverse-small{fill:#ffb08a!important}
 .ax-stage{min-height:17.4vw;padding:1.45vw 1.55vw 1.35vw;border-top:.38vw solid #cfd4dc}
 .ax-stage:not(:last-child){border-right:1px solid var(--line)}
 .ax-stage .stage-kicker{font-size:.78vw;font-weight:900;letter-spacing:.08em;color:var(--muted)}
@@ -596,6 +602,33 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">AI를 바라보는 관점은 <span class="orange">세 단계</span>로 바뀝니다</h2>
     <p class="lead">정확성과 책임이 중요한 조직일수록 “쓸까, 말까”보다 <b>어디까지 맡길지</b>를 먼저 정해야 합니다.</p>
+    <div class="perspective-visual" aria-label="AI 관점 변화 도식">
+      <svg viewBox="0 0 1120 128" role="img">
+        <defs>
+          <marker id="pv-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#e95b1f"></path>
+          </marker>
+        </defs>
+        <line x1="245" y1="64" x2="430" y2="64" stroke="#e95b1f" stroke-width="3" marker-end="url(#pv-arrow)"></line>
+        <line x1="690" y1="64" x2="875" y2="64" stroke="#e95b1f" stroke-width="3" marker-end="url(#pv-arrow)"></line>
+        <rect x="36" y="24" width="210" height="80" rx="16" fill="#f4f6f9" stroke="#d9dee7"></rect>
+        <rect x="455" y="24" width="235" height="80" rx="16" fill="#fff4ee" stroke="#f2b18d"></rect>
+        <rect x="875" y="24" width="210" height="80" rx="16" fill="#172033" stroke="#172033"></rect>
+        <path d="M104 47 L141 34 L178 47 V68 C178 89 161 102 141 108 C121 102 104 89 104 68 Z" fill="none" stroke="#697386" stroke-width="5"></path>
+        <path d="M505 43 H552 L570 61 V92 H505 Z" fill="none" stroke="#e95b1f" stroke-width="5"></path>
+        <path d="M552 43 V62 H570" fill="none" stroke="#e95b1f" stroke-width="5"></path>
+        <circle cx="922" cy="64" r="13" fill="none" stroke="#fff" stroke-width="5"></circle>
+        <circle cx="979" cy="45" r="13" fill="none" stroke="#fff" stroke-width="5"></circle>
+        <circle cx="1028" cy="78" r="13" fill="none" stroke="#fff" stroke-width="5"></circle>
+        <path d="M934 59 L967 49 M990 52 L1017 72" stroke="#fff" stroke-width="5" stroke-linecap="round"></path>
+        <text x="141" y="55" text-anchor="middle" class="pv-small">1단계</text>
+        <text x="141" y="84" text-anchor="middle" class="pv-label">경계 설정</text>
+        <text x="595" y="55" text-anchor="middle" class="pv-small">2단계</text>
+        <text x="595" y="84" text-anchor="middle" class="pv-label">개인 활용</text>
+        <text x="980" y="55" text-anchor="middle" class="pv-small pv-inverse-small">3단계</text>
+        <text x="980" y="84" text-anchor="middle" class="pv-label pv-inverse">업무 설계</text>
+      </svg>
+    </div>
     <div class="ax-perspective">
       <div class="ax-stage">
         <div class="stage-kicker">01 · 경계</div>
