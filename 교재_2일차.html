@@ -54,61 +54,73 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 .practice ol{margin-left:20px}
 .footer{margin-top:100px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 .page{display:flex;align-items:flex-start;min-height:100vh}
-.side{width:280px;flex:0 0 280px;position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--soft);border-right:1px solid var(--line);padding:28px 22px 40px;-ms-overflow-style:none;scrollbar-width:thin}
-.side::-webkit-scrollbar{width:6px}
-.side::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.side .side-brand{font-size:12px;font-weight:800;color:var(--brand);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
-.side .side-title{font-size:16px;font-weight:800;line-height:1.4;margin-bottom:22px;color:var(--ink)}
-.side nav{display:flex;flex-direction:column;gap:2px}
-.side nav a{display:block;padding:9px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:700;line-height:1.4;border-left:3px solid transparent;transition:background .15s,color .15s}
-.side nav a:hover{background:var(--brand-soft);color:var(--brand)}
-.side nav a.active{background:var(--brand-soft);color:var(--brand);border-left-color:var(--brand)}
-.side .side-back{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:var(--muted);text-decoration:none;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
-.side .side-back:hover{color:var(--brand)}
-.content{flex:1;min-width:0}
-@media (max-width:1000px){
-  .side{display:none}
-}
-@media print{
-  .side{display:none}
-}
 @media print{ .cover{padding:60px 24px} body{font-size:13px} h3{page-break-after:avoid} .box,.prompt,.practice,table{page-break-inside:avoid} }
+
+
+/* ---- Pagination layout ---- */
+.topbar{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:14px 24px;flex-wrap:wrap}
+.topbar .back{font-size:12.5px;font-weight:800;color:var(--muted);text-decoration:none;white-space:nowrap}
+.topbar .back:hover{color:var(--brand)}
+.topbar .dtitle{font-size:13.5px;font-weight:800;color:var(--ink);white-space:nowrap}
+.topbar select{margin-left:auto;font-family:var(--font);font-size:13px;font-weight:700;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:var(--soft);max-width:46vw}
+.topbar .dpage{font-size:12.5px;font-weight:800;color:var(--muted);white-space:nowrap}
+.stage{position:relative}
+.pg{display:none;min-height:calc(100vh - 60px)}
+.pg.active{display:block}
+.pgwrap{max-width:820px;margin:0 auto;padding:52px 24px 140px}
+.pgwrap-cover{max-width:820px;padding:0 0 60px}
+.cover-embed{border-radius:0;margin-bottom:40px}
+.cover-embed .cover-inner{padding:70px 24px 54px}
+.pgwrap-cover .toc{max-width:772px;margin:0 auto;padding:28px 32px}
+.navbtn{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:0 8px 24px rgba(17,19,24,.1);font-size:20px;color:var(--ink);cursor:pointer;z-index:55;display:flex;align-items:center;justify-content:center}
+.navbtn:disabled{opacity:.25;cursor:default}
+.navbtn:hover:not(:disabled){border-color:var(--brand);color:var(--brand)}
+.navbtn-prev{left:18px}
+.navbtn-next{right:18px}
+@media (max-width:900px){
+  .navbtn{width:40px;height:40px;font-size:17px}
+  .navbtn-prev{left:6px}
+  .navbtn-next{right:6px}
+  .topbar select{max-width:100%;order:3;margin-left:0;width:100%}
+}
+
 </style>
 </head>
 <body>
-<div class="page">
-<aside class="side">
-  <a class="side-back" href="index.html">← 전체 자료로</a>
-  <div class="side-brand">AX 리터러시 교육 · 2일차</div>
-  <div class="side-title">교재 목차</div>
-  <nav id="side-nav">
-    <a href="#ch1">1장. 복습 — 어제 배운 것을 30초로 압축하기</a>
-    <a href="#ch2">2장. 답변 진단 프레임워크 — 챗봇이 이상할 때 보는 3갈래</a>
-    <a href="#ch3">3장. 지식파일 설계 — 역할별 3종 세트</a>
-    <a href="#ch4">4장. 대화 시작 버튼 — 팀원의 백지 공포 없애기</a>
-    <a href="#ch5">5장. 멀티턴, 그리고 그 다음 — Actions·자동화 루프·MCP</a>
-    <a href="#ch6">6장. 두 번째 챗봇 — 예시 없이 4단계 완주</a>
-    <a href="#ch7">7장. 팀 배포와 정착 루프 — 만들기보다 중요한 것</a>
-    <a href="#ch8">8장. 마무리 — 8시간의 변화와 다음 단계</a>
-    <a href="#apx">부록. 2일차 치트시트</a>
-  </nav>
-</aside>
-<div class="content">
 
-<div class="cover">
+<div class="topbar">
+  <a class="back" href="index.html">← 전체 자료로</a>
+  <div class="dtitle">한국전력기술 AX 리터러시 교육 교재 — 2일차</div>
+  <select id="pgSelect">
+      <option value="0">시작 — 목차</option>
+      <option value="1">1장. 복습 — 어제 배운 것을 30초로 압축하기</option>
+      <option value="2">2장. 답변 진단 프레임워크 — 챗봇이 이상할 때 보는 3갈래</option>
+      <option value="3">3장. 지식파일 설계 — 역할별 3종 세트</option>
+      <option value="4">4장. 대화 시작 버튼 — 팀원의 백지 공포 없애기</option>
+      <option value="5">5장. 멀티턴, 그리고 그 다음 — Actions·자동화 루프·MCP</option>
+      <option value="6">6장. 두 번째 챗봇 — 예시 없이 4단계 완주</option>
+      <option value="7">7장. 팀 배포와 정착 루프 — 만들기보다 중요한 것</option>
+      <option value="8">8장. 마무리 — 8시간의 변화와 다음 단계</option>
+      <option value="9">부록. 2일차 치트시트</option>
+  </select>
+  <div class="dpage"><span id="pgnum">1</span> / <span id="pgtotal">10</span></div>
+</div>
+
+<div class="stage" id="stage">
+<button id="prevBtn" class="navbtn navbtn-prev">‹</button>
+<section class="pg active" data-idx="0" id="pg-cover">
+  <div class="pgwrap pgwrap-cover">
+    <div class="cover cover-embed">
   <div class="cover-inner">
     <div class="eyebrow">한국전력기술 AX 리터러시 교육 · 교재 2일차</div>
     <h1>챗봇 고도화<br>— 혼자 만들고, 팀에 정착시키기</h1>
     <p class="sub">1일차에 첫 챗봇을 만들었습니다. 2일차는 세 가지를 남깁니다. 어제 챗봇을 팀원이 바로 쓸 수 있는 수준으로 올리는 것, 예시 없이 두 번째 챗봇을 혼자 힘으로 완성하는 것, 그리고 만든 챗봇이 한 달 뒤에도 살아있게 만드는 정착 절차.</p>
     <div class="bar"></div>
   </div>
-</div>
-
-<div class="wrap">
-
-<div class="toc mobile-toc">
-  <h4>차례</h4>
-  <ol>
+    </div>
+    <div class="toc">
+      <h4>차례</h4>
+      <ol>
     <li><a href="#ch1">1장. 복습 — 어제 배운 것을 30초로 압축하기</a></li>
     <li><a href="#ch2">2장. 답변 진단 프레임워크 — 챗봇이 이상할 때 보는 3갈래</a></li>
     <li><a href="#ch3">3장. 지식파일 설계 — 역할별 3종 세트</a></li>
@@ -119,8 +131,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
     <li><a href="#ch8">8장. 마무리 — 8시간의 변화와 다음 단계</a></li>
     <li><a href="#apx">부록. 2일차 치트시트</a></li>
   </ol>
-</div>
-
+    </div>
+  </div>
+</section>
+<section class="pg" data-idx="1" id="ch1">
+  <div class="pgwrap">
 <h2 class="part" id="ch1">복습·연결</h2>
 <h3>1장. 복습 — 어제 배운 것을 30초로 압축하기</h3>
 
@@ -139,6 +154,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   </ol>
 </div>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="2" id="ch2">
+  <div class="pgwrap">
 <h2 class="part" id="ch2">5부 · 챗봇 고도화 이해</h2>
 <h3>2장. 답변 진단 프레임워크 — 챗봇이 이상할 때 보는 3갈래</h3>
 
@@ -160,6 +180,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   <p>6장의 챗봇 배틀에서 뚫린 챗봇을 고칠 때, 7장의 개선 루프에서 팀원 피드백을 처리할 때, 부록의 진단 플로우에서. 오늘 딱 하나만 가져간다면 이 3갈래입니다.</p>
 </div>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="3" id="ch3">
+  <div class="pgwrap">
 <h2 class="part" id="ch3">5부 · 챗봇 고도화 이해</h2>
 <h3>3장. 지식파일 설계 — 역할별 3종 세트</h3>
 
@@ -190,6 +215,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   </ol>
 </div>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="4" id="ch4">
+  <div class="pgwrap">
 <h2 class="part" id="ch4">5부 · 챗봇 고도화 이해</h2>
 <h3>4장. 대화 시작 버튼 — 팀원의 백지 공포 없애기</h3>
 
@@ -217,6 +247,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   <p>빨리 끝났다면 옆자리 챗봇의 버튼을 눌러보고 문구 피드백을 한 개씩 교환하세요.</p>
 </div>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="5" id="ch5">
+  <div class="pgwrap">
 <h2 class="part" id="ch5">5부 · 챗봇 고도화 이해</h2>
 <h3>5장. 멀티턴, 그리고 그 다음 — Actions·자동화 루프·MCP</h3>
 
@@ -240,6 +275,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 </ul>
 <p>실제 기업 사례의 숫자를 보면 이 방향의 크기가 보입니다. 보고서·회의록 자동 생성을 도입한 기업은 작성 시간을 80% 줄였고, 한 통신사는 사내 지식 검색을 2시간에서 10초로, 한 이커머스는 반복 문의의 60%를 자동 처리로 바꿨습니다. 전부 오늘 우리가 만드는 것과 같은 원리 — 반복 업무를 정의하고, 지시서를 쓰고, 자료를 연결한 것 — 의 확장판입니다.</p>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="6" id="ch6">
+  <div class="pgwrap">
 <h2 class="part" id="ch6">6부 · 두 번째 챗봇 만들기</h2>
 <h3>6장. 두 번째 챗봇 — 예시 없이 4단계 완주</h3>
 
@@ -271,6 +311,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   <p>옆자리와 서로의 챗봇에 일부러 어려운 질문을 던집니다. 자료에 없는 것을 물었을 때 "모른다"고 솔직히 답하는 챗봇이 이깁니다. 뚫렸다면(지어냈다면) 그 자리에서 고치세요: 뚫린 질문 복사 → 3갈래 진단(2장) → 금지사항 보강 또는 자료 추가 → 같은 질문으로 재시험. <b>뚫린 챗봇이 진 게 아닙니다. 뚫린 걸 아는 챗봇이 제일 안전한 챗봇입니다.</b></p>
 </div>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="7" id="ch7">
+  <div class="pgwrap">
 <h2 class="part" id="ch7">7부 · 배포와 마무리</h2>
 <h3>7장. 팀 배포와 정착 루프 — 만들기보다 중요한 것</h3>
 
@@ -313,12 +358,22 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   <p>위 템플릿에 세 줄을 채워 넣으면 공지문이 완성됩니다.</p>
 </div>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="8" id="ch8">
+  <div class="pgwrap">
 <h2 class="part" id="ch8">7부 · 배포와 마무리</h2>
 <h3>8장. 마무리 — 8시간의 변화와 다음 단계</h3>
 
 <p>이틀 전과 지금을 비교해보세요. "보고서 써줘"가 전부였던 사람이, 지금은 업무 지시서를 쓰고, 지식파일을 설계하고, 챗봇 2개를 만들어 배포 계획까지 세웠습니다. 최종 발표는 1분, 세 문장이면 됩니다 — 챗봇 2개의 이름 / 제일 좋았던 순간 / 배포 계획 한 줄. 부담스러우면 오픈채팅방 링크 공유로 대체 가능합니다.</p>
 <p>다음 단계의 로드맵은 이렇습니다. 오늘: 챗봇 2개. 1개월: 4단계를 재사용해 챗봇 3~4개, 팀 동료 한 명에게 만드는 법 전수. 3개월: 팀에서 제일 잘 쓰이는 챗봇을 팀 표준으로 문서화. 그 후: 자동화 루프·Actions 같은 다음 단계 도구, 그리고 회사의 AX 과제와 연결. 동료에게 전수할 때는 여러분이 밟은 길 그대로 안내하면 됩니다 — 시연 30초 → 업무 하나 고르게 → 예시 지시문 전달 → 첫 결과만 봐주기.</p>
 
+
+  </div>
+</section>
+<section class="pg" data-idx="9" id="apx">
+  <div class="pgwrap">
 <h2 class="part" id="apx">부록</h2>
 <h3>2일차 치트시트</h3>
 
@@ -359,30 +414,45 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 <div class="footer">
   한국전력기술 AX 리터러시 교육 · 2일차 교재 — 강사 이유진 · 본 교재의 실습 예시는 모두 공개 정보와 일반화된 업무 상황 기준으로 작성되었습니다.
 </div>
-
-</div>
-</div>
+  </div>
+</section>
+<button id="nextBtn" class="navbtn navbtn-next">›</button>
 </div>
 
 <script>
-(function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('#side-nav a'));
-  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-  if(!targets.length) return;
-  function onScroll(){
-    var pos = window.scrollY + 120;
-    var current = targets[0];
-    for(var i=0;i<targets.length;i++){
-      if(targets[i].offsetTop <= pos) current = targets[i];
-    }
-    links.forEach(function(a){
-      var id = a.getAttribute('href');
-      a.classList.toggle('active', current && ('#'+current.id) === id);
-    });
-  }
-  document.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
+const pages=[...document.querySelectorAll('.pg')];
+let current=0;
+const pgnum=document.getElementById('pgnum');
+const pgSelect=document.getElementById('pgSelect');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+function show(i){
+  current=Math.max(0,Math.min(i,pages.length-1));
+  pages.forEach((s,idx)=>s.classList.toggle('active',idx===current));
+  pgnum.textContent=current+1;
+  pgSelect.value=String(current);
+  prevBtn.disabled=current===0;
+  nextBtn.disabled=current===pages.length-1;
+  window.scrollTo(0,0);
+}
+prevBtn.addEventListener('click',()=>show(current-1));
+nextBtn.addEventListener('click',()=>show(current+1));
+pgSelect.addEventListener('change',()=>show(parseInt(pgSelect.value,10)));
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown'].includes(e.key)){show(current+1);}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){show(current-1);}
+  else if(e.key==='Home'){show(0);}
+  else if(e.key==='End'){show(pages.length-1);}
+});
+document.querySelectorAll('.toc a, .pgwrap-cover .toc a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const id=a.getAttribute('href').replace('#','');
+    const idx=pages.findIndex(p=>p.id===id);
+    if(idx>=0) show(idx);
+  });
+});
+show(0);
 </script>
 </body>
 </html>
