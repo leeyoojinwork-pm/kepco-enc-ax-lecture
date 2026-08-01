@@ -62,7 +62,9 @@ body{font-family:var(--font);color:var(--ink);background:#fff;-webkit-font-smoot
 .day{display:none}
 .day.active{display:block}
 
-footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px}
+footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+footer a{color:var(--brand);font-weight:800;text-decoration:none}
+footer a:hover{text-decoration:underline}
 
 @media (max-width:640px){
   .row{flex-direction:column;gap:6px}
@@ -232,7 +234,10 @@ footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font
 
 </div>
 
-<footer>한국전력기술 AX 리터러시 교육 · 강사 이유진 · 노션 원본 기획을 그대로 반영했습니다</footer>
+<footer>
+  <span>한국전력기술 AX 리터러시 교육 · 강사 이유진 · 노션 원본 기획을 그대로 반영했습니다</span>
+  <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문·자료 공유 오픈채팅방 입장 →</a>
+</footer>
 
 <script>
 document.querySelectorAll('.daytab').forEach(function(btn){
