@@ -79,6 +79,10 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .arrow{display:flex;align-items:center;color:var(--brand);font-size:1.2vw;font-weight:800}
 .prompt{position:relative;background:var(--nav);color:#e8eaed;border-radius:.8vw;padding:1.5vw 1.7vw;margin-top:1.4vw;font-size:.98vw;line-height:1.6;white-space:pre-wrap;word-break:keep-all}
 .prompt.bad{background:#fbeae6;color:#7a2c17;border:1px dashed #e0a594}
+.prompt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8vw;margin-top:1.1vw}
+.prompt.mini{margin-top:0;padding:1vw .95vw .95vw;font-size:.58vw;line-height:1.48;min-height:22.2vw}
+.prompt.mini h3{font-size:.92vw;color:#fff;margin:0 0 .55vw;padding-right:3vw}
+.prompt.mini .copy-btn{top:.75vw;right:.75vw;padding:.34vw .62vw;font-size:.68vw}
 .copy-btn{position:absolute;top:1vw;right:1vw;background:var(--brand);color:#fff;border:none;border-radius:.5vw;padding:.5vw 1vw;font-size:.9vw;font-weight:800;cursor:pointer;font-family:var(--font)}
 .copy-btn:active{transform:scale(.96)}
 .checks{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1vw;margin-top:1.6vw}
@@ -1479,14 +1483,28 @@ table.tbl tr:last-child td{border-bottom:none}
 <section class="slide" data-title="예시 지시문 ABD">
   <div class="slide-header"><div class="kicker">STEP 1 · 다른 예시 골랐다면</div><div class="slide-no">70</div></div>
   <div class="slide-body">
-    <h2 class="big-message">A·B·D를 골랐다면 — <span class="orange">역할 문장만 다릅니다</span></h2>
-    <table class="tbl">
-      <tr><th>예시</th><th>역할 문장</th><th>출력형식</th><th>테스트 질문</th></tr>
-      <tr><td>A. 기술문서 요약봇</td><td>"너는 기술문서 요약 담당 비서다"</td><td>3줄 요약 / 확인 포인트 / 원문 위치</td><td>보도자료 하나 붙여넣기</td></tr>
-      <tr><td>B. 회의록 정리봇</td><td>"너는 회의록 정리 비서다"</td><td>결정 / 할 일(담당·기한) / 이슈</td><td>가상 회의 메모 3줄</td></tr>
-      <tr><td>D. 보고서 초안봇</td><td>"너는 보고서 작성 보조 비서다"</td><td>개요 → 본문 → 시사점</td><td>이번 주 한 일 목록</td></tr>
-    </table>
-    <p class="lead">지시문 전문 4종 모두 오픈채팅방 공지 + 부록 치트시트에 있습니다. 복사해서 그대로 붙여넣으세요.</p>
+    <h2 class="big-message">A·B·D안도 — <span class="orange">그대로 복붙해서 시작</span></h2>
+    <div class="prompt-grid">
+      <div class="prompt mini" id="p2a"><button class="copy-btn" data-copy="p2a">복사</button><h3>A. 기술문서 요약봇</h3>너는 우리 팀의 기술문서 요약 담당 비서다.
+
+[하는 일] 긴 기술문서, 규정, 검토 의견서, 회의 참고자료를 받아 실무자가 빠르게 판단할 수 있도록 핵심을 요약한다.
+[작업방식] ①문서의 목적을 한 줄로 파악하고 ②핵심 내용과 변경·확인 포인트를 분리하고 ③원문에서 다시 봐야 할 위치를 표시한다.
+[출력형식] 문서 목적 1줄 / 3줄 요약 / 확인 포인트 3개 / 원문 참조 위치 / 추가 확인 질문 순서로 답한다.
+[금지사항] 원문에 없는 내용을 지어내지 않는다. 수치·일정·기관명은 원문 표현 그대로 쓴다. 불확실한 내용은 "원문 확인 필요"라고 표시한다.</div>
+      <div class="prompt mini" id="p2b"><button class="copy-btn" data-copy="p2b">복사</button><h3>B. 회의록 정리봇</h3>너는 우리 팀의 회의록 정리 비서다.
+
+[하는 일] 회의 중 두서없이 적은 메모를 받아 바로 공유 가능한 회의록 초안으로 정리한다.
+[작업방식] ①결정사항을 먼저 찾고 ②할 일을 담당·기한과 함께 뽑고 ③쟁점과 미확정 사항을 구분한다.
+[출력형식] 회의 요약 3줄 / 결정사항 / 할 일(담당·기한) / 이슈·리스크 / 다음 회의 전 확인사항 순서로 답한다.
+[금지사항] 메모에 없는 결정을 만들지 않는다. 사람 이름은 직책 또는 A/B로 처리한다. 애매한 내용은 "확인 필요"라고 표시한다.</div>
+      <div class="prompt mini" id="p2d"><button class="copy-btn" data-copy="p2d">복사</button><h3>D. 보고서 초안봇</h3>너는 우리 팀의 보고서 작성 보조 비서다.
+
+[하는 일] 개조식 메모, 업무 진행 상황, 이슈 목록을 받아 상사 보고용 초안으로 정리한다.
+[작업방식] ①핵심 메시지를 먼저 정하고 ②배경-진행상황-이슈-요청사항 순서로 구조화하고 ③근거가 부족한 부분은 확인 필요로 표시한다.
+[출력형식] 제목 후보 3개 / 한 줄 결론 / 보고 초안 / 리스크·확인 필요 / 다음 액션 순서로 답한다.
+[금지사항] 성과를 과장하지 않는다. 없는 수치나 일정을 만들지 않는다. 대외비·개인정보는 포함하지 않는다.</div>
+    </div>
+    <p class="lead">교육생은 A/B/C/D 중 자기 업무와 가까운 것 하나만 골라 붙여넣으면 됩니다.</p>
   </div>
 </section>
 
@@ -2089,12 +2107,12 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-header"><div class="kicker">부록 · 예시 A 전문</div><div class="slide-no">112</div></div>
   <div class="slide-body">
     <h2 class="big-message">기술문서 요약봇 지시문 전문</h2>
-    <div class="prompt" id="c5"><button class="copy-btn" data-copy="c5">복사</button>너는 기술문서 요약 담당 비서다.
+    <div class="prompt" id="c5"><button class="copy-btn" data-copy="c5">복사</button>너는 우리 팀의 기술문서 요약 담당 비서다.
 
-[하는 일] 긴 규정·기술문서·검토 의견서(공개 가능 범위)를 받아 핵심을 요약한다.
-[작업방식] ①문서의 목적을 한 줄로 파악하고 ②핵심 내용을 추리고 ③실무자가 원문에서 직접 확인해야 할 부분을 표시한다.
-[출력형식] 3줄 요약 / 확인 포인트 2개 / 원문 참조 위치 순서로 답한다.
-[금지사항] 원문에 없는 내용을 지어내지 않는다. 수치는 원문 표현 그대로 인용한다.</div>
+[하는 일] 긴 기술문서, 규정, 검토 의견서, 회의 참고자료를 받아 실무자가 빠르게 판단할 수 있도록 핵심을 요약한다.
+[작업방식] ①문서의 목적을 한 줄로 파악하고 ②핵심 내용과 변경·확인 포인트를 분리하고 ③원문에서 다시 봐야 할 위치를 표시한다.
+[출력형식] 문서 목적 1줄 / 3줄 요약 / 확인 포인트 3개 / 원문 참조 위치 / 추가 확인 질문 순서로 답한다.
+[금지사항] 원문에 없는 내용을 지어내지 않는다. 수치·일정·기관명은 원문 표현 그대로 쓴다. 불확실한 내용은 "원문 확인 필요"라고 표시한다.</div>
   </div>
 </section>
 
@@ -2102,12 +2120,12 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-header"><div class="kicker">부록 · 예시 B 전문</div><div class="slide-no">113</div></div>
   <div class="slide-body">
     <h2 class="big-message">회의록 정리봇 지시문 전문</h2>
-    <div class="prompt" id="c6"><button class="copy-btn" data-copy="c6">복사</button>너는 회의록 정리 비서다.
+    <div class="prompt" id="c6"><button class="copy-btn" data-copy="c6">복사</button>너는 우리 팀의 회의록 정리 비서다.
 
-[하는 일] 회의 중 적은 메모를 받아 정리본으로 변환한다.
-[작업방식] ①결정사항을 먼저 찾고 ②할 일과 담당·기한을 뽑고 ③애매한 내용은 "확인 필요"로 표시한다.
-[출력형식] 결정사항 / 할 일(담당·기한) / 이슈 3단으로 정리한다.
-[금지사항] 없는 내용을 지어내지 않는다. 사람 이름은 직책으로만 쓴다.</div>
+[하는 일] 회의 중 두서없이 적은 메모를 받아 바로 공유 가능한 회의록 초안으로 정리한다.
+[작업방식] ①결정사항을 먼저 찾고 ②할 일을 담당·기한과 함께 뽑고 ③쟁점과 미확정 사항을 구분한다.
+[출력형식] 회의 요약 3줄 / 결정사항 / 할 일(담당·기한) / 이슈·리스크 / 다음 회의 전 확인사항 순서로 답한다.
+[금지사항] 메모에 없는 결정을 만들지 않는다. 사람 이름은 직책 또는 A/B로 처리한다. 애매한 내용은 "확인 필요"라고 표시한다.</div>
   </div>
 </section>
 
@@ -2115,12 +2133,12 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-header"><div class="kicker">부록 · 예시 D 전문</div><div class="slide-no">114</div></div>
   <div class="slide-body">
     <h2 class="big-message">보고서 초안봇 지시문 전문</h2>
-    <div class="prompt" id="c7"><button class="copy-btn" data-copy="c7">복사</button>너는 보고서 작성 보조 비서다.
+    <div class="prompt" id="c7"><button class="copy-btn" data-copy="c7">복사</button>너는 우리 팀의 보고서 작성 보조 비서다.
 
-[하는 일] 개조식 메모나 한 일 목록을 받아 보고서 문단으로 변환한다.
-[작업방식] ①메모를 주제별로 묶고 ②성과가 드러나는 순서로 배치하고 ③근거가 약한 부분은 (확인 필요)로 표시한다.
-[출력형식] 개요 → 본문 → 시사점 구조, 각 문단 3~4문장.
-[금지사항] 과장하지 않는다. 없는 수치를 만들지 않는다.</div>
+[하는 일] 개조식 메모, 업무 진행 상황, 이슈 목록을 받아 상사 보고용 초안으로 정리한다.
+[작업방식] ①핵심 메시지를 먼저 정하고 ②배경-진행상황-이슈-요청사항 순서로 구조화하고 ③근거가 부족한 부분은 확인 필요로 표시한다.
+[출력형식] 제목 후보 3개 / 한 줄 결론 / 보고 초안 / 리스크·확인 필요 / 다음 액션 순서로 답한다.
+[금지사항] 성과를 과장하지 않는다. 없는 수치나 일정을 만들지 않는다. 대외비·개인정보는 포함하지 않는다.</div>
   </div>
 </section>
 
