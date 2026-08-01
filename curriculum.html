@@ -53,6 +53,15 @@ body{font-family:var(--font);color:var(--ink);background:#fff;-webkit-font-smoot
 
 .brk{font-size:13px;color:#9a9ea8;font-weight:600;text-align:center;padding:14px 0;margin:2px 0}
 
+.daytabs{display:flex;gap:32px;border-bottom:2px solid var(--line);margin-bottom:48px}
+.daytab{background:none;border:none;font-family:var(--font);font-size:16px;font-weight:800;color:var(--muted);padding:0 0 16px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .15s}
+.daytab span{display:block;font-size:12.5px;font-weight:700;color:#9a9ea8;margin-top:3px}
+.daytab:hover{color:var(--ink)}
+.daytab.active{color:var(--ink);border-bottom-color:var(--ink)}
+.daytab.active span{color:var(--brand)}
+.day{display:none}
+.day.active{display:block}
+
 footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px}
 
 @media (max-width:640px){
@@ -86,7 +95,12 @@ footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font
     </ul>
   </div>
 
-  <div class="day">
+  <div class="daytabs">
+    <button class="daytab active" data-day="day1-panel">1일차 — GPT 챗봇 구축<span>4시간 · 9세션</span></button>
+    <button class="daytab" data-day="day2-panel">2일차 — 챗봇 고도화<span>4시간 · 13세션</span></button>
+  </div>
+
+  <div class="day active" id="day1-panel">
     <div class="day-head"><h2>1일차 — GPT 챗봇 구축</h2><span>4시간 · 9세션 + 휴식 2회</span></div>
     <div class="goals">
 <div class="goal"><b>①</b>업무 지시서 프롬프트로 보고서 초안을 10분 안에 만든다</div>
@@ -153,7 +167,7 @@ footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font
 </div></div>
   </div>
 
-  <div class="day">
+  <div class="day" id="day2-panel">
     <div class="day-head"><h2>2일차 — 챗봇 고도화</h2><span>4시간 · 13세션 + 휴식 2회</span></div>
     <div class="goals">
 <div class="goal"><b>①</b>지식파일·버튼·멀티턴으로 1일차 챗봇을 고도화한다</div>
@@ -220,5 +234,15 @@ footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font
 
 <footer>한국전력기술 AX 리터러시 교육 · 강사 이유진 · 노션 원본 기획을 그대로 반영했습니다</footer>
 
+<script>
+document.querySelectorAll('.daytab').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.daytab').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.day').forEach(function(d){ d.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.day).classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
