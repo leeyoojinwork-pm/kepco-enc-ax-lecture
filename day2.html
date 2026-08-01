@@ -95,6 +95,39 @@ table.tbl tr:last-child td{border-bottom:none}
 .q h2{font-size:3vw;font-weight:800;color:#fff;line-height:1.4;word-break:keep-all;max-width:74vw}
 .q p{margin-top:1.6vw;font-size:1.25vw;color:#c9ccd3;word-break:keep-all}
 
+
+/* napkin components */
+.mx{position:relative;width:38vw;height:22vw;margin:2.4vw auto 0}
+.mx .grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.9vw}
+.mx .quad{border-radius:1.2vw;padding:1.2vw 1.4vw;display:flex;flex-direction:column;justify-content:center}
+.mx .quad strong{font-size:1.25vw;margin-bottom:.3vw;font-weight:800}
+.mx .quad p{font-size:.9vw;line-height:1.45;word-break:keep-all}
+.mx .q1{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff}
+.mx .q2{background:var(--brand-soft);color:#a33c10}
+.mx .q3{background:#eef3f0;color:#1d6a4e}
+.mx .q4{background:#f1f3f6;color:var(--muted)}
+.mx .ay{position:absolute;left:-4.4vw;top:44%;transform:rotate(-90deg);font-weight:800;color:var(--muted);font-size:.9vw;letter-spacing:.04em}
+.mx .ax{position:absolute;bottom:-2vw;left:38%;font-weight:800;color:var(--muted);font-size:.9vw;letter-spacing:.04em}
+.cyc{position:relative;width:22vw;height:22vw;margin:1.2vw auto 0}
+.cyc svg{position:absolute;inset:0;width:100%;height:100%}
+.cyc .cn{position:absolute;width:7.6vw;height:7.6vw;border-radius:50%;background:var(--panel);border:2px solid var(--brand);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.95vw;box-shadow:var(--shadow);transform:translate(-50%,-50%);padding:.5vw}
+.cyc .cn small{font-weight:700;font-size:.7vw;color:var(--muted);margin-top:.2vw}
+.cyc .cc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6vw;height:6vw;border-radius:50%;background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1vw;text-align:center;line-height:1.3}
+.hubv{position:relative;width:40vw;height:22vw;margin:1vw auto 0}
+.hubv svg{position:absolute;inset:0;width:100%;height:100%}
+.hubv .hc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:11vw;height:6.4vw;border-radius:1.4vw;background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:1.2vw;z-index:2;box-shadow:0 1vw 2.4vw rgba(224,74,14,.3)}
+.hubv .hc small{font-weight:700;font-size:.8vw;opacity:.85}
+.hubv .hn{position:absolute;width:8.4vw;height:8.4vw;border-radius:50%;background:var(--panel);border:2px solid var(--brand);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.9vw;box-shadow:var(--shadow);z-index:2;transform:translate(-50%,-50%);padding:.6vw}
+.hubv .hn small{font-weight:700;font-size:.7vw;color:var(--muted);margin-top:.2vw;line-height:1.3}
+.tree{display:flex;flex-direction:column;align-items:center;margin-top:1.8vw}
+.tree .pill{display:inline-flex;align-items:center;justify-content:center;padding:.8vw 1.6vw;border-radius:999px;background:var(--panel);border:2px solid var(--brand);font-weight:800;font-size:1.05vw;box-shadow:var(--shadow);text-align:center;word-break:keep-all}
+.tree .pill.root{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff;border-color:var(--brand-soft);font-size:1.15vw;padding:.9vw 2vw}
+.tree .pill.leaf{font-size:.85vw;font-weight:700;border-color:var(--line);color:var(--muted)}
+.tree .v{width:.16vw;height:1.4vw;background:var(--brand);border-radius:2px}
+.tree .children{display:flex;gap:3vw;position:relative;padding-top:1.4vw}
+.tree .children::before{content:"";position:absolute;top:0;left:12%;right:12%;height:.16vw;background:var(--brand);border-radius:2px}
+.tree .col{display:flex;flex-direction:column;align-items:center;gap:0}
+
 .nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
 .nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
 .nav-ui button:disabled{opacity:.3;cursor:default}
@@ -284,16 +317,20 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="답변 진단 프레임워크">
+<section class="slide" data-title="답변 진단 프레임워크" data-note="트리를 위에서 아래로. 각 갈래의 '확인법→처방'을 사례 하나씩 들어 설명(4분). 오늘 종일 재사용할 틀임을 예고">
   <div class="slide-header"><div class="kicker">5부 · 진단 프레임워크</div><div class="slide-no">13</div></div>
   <div class="slide-body">
     <h2 class="big-message">답이 이상할 땐 — <span class="orange">3갈래 진단</span></h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">1</div><h3>질문이 모호했나?</h3><p>같은 질문을 더 구체적으로 다시 → 좋아지면 질문 문제. 버튼으로 해결</p></div>
-      <div class="card"><div class="badge">2</div><h3>지시문이 부족했나?</h3><p>매번 같은 방향으로 이상함 → 지시문 문제. 작업방식·금지사항 보강</p></div>
-      <div class="card"><div class="badge">3</div><h3>자료가 없었나?</h3><p>내용 자체를 모르거나 지어냄 → 지식파일 문제. 오늘 배울 부분</p></div>
+    <div class="tree">
+      <span class="pill root">챗봇 답변이 이상하다</span>
+      <div class="v"></div>
+      <div class="children">
+        <div class="col"><span class="pill">질문이 모호했나</span><div class="v"></div><span class="pill leaf">구체적으로 다시 → 좋아지면<br>버튼으로 등록</span></div>
+        <div class="col"><span class="pill">지시문이 부족했나</span><div class="v"></div><span class="pill leaf">매번 같은 방향으로 이상함<br>→ 해당 요소 한 줄 보강</span></div>
+        <div class="col"><span class="pill">자료가 없었나</span><div class="v"></div><span class="pill leaf">모르거나 지어냄<br>→ 지식파일 추가·교체</span></div>
+      </div>
     </div>
-    <p class="lead">이 3갈래만 기억하면 챗봇은 언제든 스스로 고칠 수 있습니다. 오늘 하루 종일 이 틀을 씁니다.</p>
+    <p class="lead" style="margin-top:1.6vw">이 트리 하나로 챗봇은 언제든 스스로 고칠 수 있습니다 — 오늘 하루 종일 이 틀을 씁니다.</p>
   </div>
 </section>
 
@@ -1107,17 +1144,24 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="개선 루프">
+<section class="slide" data-title="개선 루프" data-note="원을 시계방향으로 한 바퀴. '3주만 돌리면 없으면 불편하다는 말이 나온다' 멘트, 캘린더 등록 권유(3분)">
   <div class="slide-header"><div class="kicker">7부 · 정착 루프 2단계</div><div class="slide-no">71</div></div>
   <div class="slide-body">
     <h2 class="big-message">배포 후엔 <span class="orange">주 1회, 10분</span>이면 됩니다</h2>
-    <div class="flow">
-      <div class="step"><div class="n">1</div><h4>피드백 모으기</h4><p>이상했던 답변 캡처</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">2</div><h4>원인 찾기</h4><p>지시문 문제? 지식파일 부족?</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">3</div><h4>한 줄 수정</h4><p>지시문 또는 지식파일 업데이트</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">4</div><h4>재공지</h4><p>"이제 이것도 됩니다" 한 줄</p></div>
+    <div class="cyc">
+      <svg viewBox="0 0 420 420">
+        <defs><marker id="ca2" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff5b1a"/></marker></defs>
+        <path d="M285,80 A150,150 0 0 1 340,210" fill="none" stroke="#f2c6b2" stroke-width="5" marker-end="url(#ca2)"/>
+        <path d="M340,285 A150,150 0 0 1 210,340" fill="none" stroke="#f2c6b2" stroke-width="5" marker-end="url(#ca2)"/>
+        <path d="M135,340 A150,150 0 0 1 80,210" fill="none" stroke="#f2c6b2" stroke-width="5" marker-end="url(#ca2)"/>
+        <path d="M80,135 A150,150 0 0 1 210,80" fill="none" stroke="#f2c6b2" stroke-width="5" marker-end="url(#ca2)"/>
+      </svg>
+      <div class="cn" style="left:50%;top:9%"><span>피드백 모으기</span><small>캡처 확인 · 2분</small></div>
+      <div class="cn" style="left:91%;top:50%"><span>원인 찾기</span><small>3갈래 진단 · 3분</small></div>
+      <div class="cn" style="left:50%;top:91%"><span>한 줄 수정</span><small>지시문·파일 · 3분</small></div>
+      <div class="cn" style="left:9%;top:50%"><span>재공지</span><small>"이제 됩니다" · 2분</small></div>
+      <div class="cc">매주<br>10분</div>
     </div>
-    <p class="lead">3주만 이렇게 돌리면 "○○봇 없으면 불편하다"는 말이 나옵니다.</p>
   </div>
 </section>
 
