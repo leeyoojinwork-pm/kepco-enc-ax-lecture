@@ -10,54 +10,55 @@
   --brand:#ff5b1a; --brand-soft:#fff1ea;
   --shadow:0 12px 32px rgba(17,19,24,.07);
   --font:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
-  --c-gray:#8a8f9a; --c-orange:#ff5b1a; --c-blue:#2f6fed; --c-green:#1d8a5f; --c-purple:#7c5cd6; --c-brown:#9b7653;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font);color:var(--ink);background:var(--soft);-webkit-font-smoothing:antialiased;word-break:keep-all}
+body{font-family:var(--font);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;word-break:keep-all}
 
 .hero{background:linear-gradient(120deg,#15171d 0%,#1d2128 55%,#2a1c14 100%);color:#fff;padding:80px 24px 56px}
-.hero-inner{max-width:960px;margin:0 auto}
+.hero-inner{max-width:840px;margin:0 auto}
 .hero a.back{display:inline-flex;align-items:center;gap:6px;color:#9a9ea8;text-decoration:none;font-size:13px;font-weight:800;margin-bottom:22px}
 .hero a.back:hover{color:#fff}
 .hero .eyebrow{color:var(--brand);font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
 .hero h1{font-size:clamp(26px,3.6vw,38px);line-height:1.3;font-weight:800;letter-spacing:-.02em}
-.hero .sub{margin-top:16px;font-size:16px;color:#c9ccd3;line-height:1.7;max-width:680px}
+.hero .sub{margin-top:16px;font-size:16px;color:#c9ccd3;line-height:1.75;max-width:640px}
 
-.main{max-width:960px;margin:0 auto;padding:48px 24px 100px}
+.main{max-width:840px;margin:0 auto;padding:52px 24px 110px}
 
-.infobox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:48px}
-.infobox h3{font-size:13px;font-weight:800;color:var(--brand);letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
-.infobox ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.infobox li{font-size:14.5px;line-height:1.6;color:var(--ink)}
-.infobox li b{color:var(--muted);font-weight:800;margin-right:6px}
+.infobox{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:28px 30px;margin-bottom:60px}
+.infobox h3{font-size:13px;font-weight:800;color:var(--brand);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+.infobox ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.infobox li{font-size:15px;line-height:1.7;color:var(--ink)}
+.infobox li b{display:inline-block;min-width:52px;color:var(--muted);font-weight:800;margin-right:8px}
 
-.section-label{font-size:13px;font-weight:800;color:var(--brand);letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
-.day{margin-bottom:56px}
-.day-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
-.day-head h2{font-size:22px;font-weight:800}
-.day-head span{font-size:13px;color:var(--muted);font-weight:700}
+.day{margin-bottom:72px}
+.day-head{margin-bottom:22px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+.day-head h2{font-size:24px;font-weight:800;letter-spacing:-.01em}
+.day-head span{display:block;margin-top:4px;font-size:13.5px;color:var(--muted);font-weight:700}
 
-.goals{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
-.goal{display:flex;gap:10px;align-items:flex-start;background:var(--brand-soft);border-radius:10px;padding:12px 16px;font-size:14px;line-height:1.55}
-.goal b{color:var(--brand);font-weight:800;flex:none}
+.goals{display:flex;flex-direction:column;gap:10px;margin-bottom:36px}
+.goal{display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.65;color:var(--ink)}
+.goal b{color:var(--brand);font-weight:800;flex:none;font-size:14px}
 
-.tl-list{display:flex;flex-direction:column}
-.tl-row{display:flex;gap:16px;padding:14px 4px;border-bottom:1px solid var(--line);align-items:flex-start}
-.tl-row:last-child{border-bottom:none}
-.tl-part{width:118px;flex:none;padding-top:2px}
-.tl-part .chip{display:inline-block;font-size:11px;font-weight:800;color:#fff;padding:3px 9px;border-radius:999px;letter-spacing:.02em}
-.tl-mid{flex:1;min-width:0}
-.tl-mid h4{font-size:15px;font-weight:800;margin-bottom:4px}
-.tl-mid p{font-size:13px;color:var(--muted);line-height:1.55}
-.tl-time{width:64px;flex:none;text-align:right;font-size:12.5px;font-weight:800;color:var(--muted);padding-top:2px}
-.tl-row.break .tl-mid h4{color:var(--muted);font-weight:700}
-.tl-row.break{opacity:.7}
-.tl-row.break .tl-part .chip{background:var(--c-gray)!important}
+.part-block{margin-bottom:8px}
+.part-head{font-size:13.5px;font-weight:800;letter-spacing:.04em;padding:0 0 10px;margin:34px 0 6px;border-bottom:2px solid}
+.part-block:first-of-type .part-head{margin-top:0}
+.rows{display:flex;flex-direction:column}
+.row{display:flex;justify-content:space-between;gap:24px;padding:20px 2px;border-bottom:1px solid var(--line)}
+.rows .row:last-child{border-bottom:none}
+.row-main{flex:1;min-width:0}
+.row-main h4{font-size:16.5px;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.row-main p{font-size:14.5px;color:var(--muted);line-height:1.7}
+.tools{margin-top:8px;font-size:12.5px;color:#9a9ea8;font-weight:700;letter-spacing:.01em}
+.row-time{flex:none;font-size:13.5px;font-weight:800;color:var(--muted);padding-top:2px;white-space:nowrap}
 
-.tools{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
-.tools span{font-size:10.5px;font-weight:700;color:var(--muted);background:var(--soft);border:1px solid var(--line);padding:2px 7px;border-radius:999px}
+.brk{font-size:13px;color:#9a9ea8;font-weight:600;text-align:center;padding:14px 0;margin:2px 0}
 
-footer{max-width:960px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px}
+footer{max-width:840px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px}
+
+@media (max-width:640px){
+  .row{flex-direction:column;gap:6px}
+  .row-time{order:-1;color:var(--brand)}
+}
 </style>
 </head>
 <body>
@@ -88,49 +89,131 @@ footer{max-width:960px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font
   <div class="day">
     <div class="day-head"><h2>1일차 — GPT 챗봇 구축</h2><span>4시간 · 9세션 + 휴식 2회</span></div>
     <div class="goals">
-      <div class="goal"><b>①</b>업무 지시서 프롬프트로 보고서 초안을 10분 안에 만든다</div>
-      <div class="goal"><b>②</b>내 반복 업무를 대신하는 챗봇(GPTs) 1개를 완성해 팀과 공유한다</div>
-      <div class="goal"><b>③</b>보안 수칙 안에서 결과물을 검증하며 쓰는 기준을 갖는다</div>
+<div class="goal"><b>①</b>업무 지시서 프롬프트로 보고서 초안을 10분 안에 만든다</div>
+<div class="goal"><b>②</b>내 반복 업무를 대신하는 챗봇(GPTs) 1개를 완성해 팀과 공유한다</div>
+<div class="goal"><b>③</b>보안 수칙 안에서 결과물을 검증하며 쓰는 기준을 갖는다</div>
     </div>
-    <div class="tl-list">
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-gray)">오리엔테이션</span></div><div class="tl-mid"><h4>교안 개요</h4><p>교육 대상·전체 학습 흐름·오픈채팅방 진행 방식·보안 수칙을 한눈에 안내합니다.</p><div class="tools"><span>오픈채팅방</span></div></div><div class="tl-time">-</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">1부 생성형 AI 기초</span></div><div class="tl-mid"><h4>세션 1. GPT와 첫 대화</h4><p>배부받은 유료계정으로 전원이 로그인하고, 첫 질문을 던져 GPT 화면에 익숙해집니다. 회사가 이미 AI로 일하고 있다는 맥락을 이해합니다.</p><div class="tools"><span>ChatGPT</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">1부 생성형 AI 기초</span></div><div class="tl-mid"><h4>세션 2. 프롬프트는 업무 지시서다</h4><p>"보고서 써줘"가 왜 실패하는지 이해하고, 업무 지시서 7요소로 내 주간보고 초안을 직접 만들어봅니다. 오늘의 첫 산출물이 나옵니다.</p><div class="tools"><span>ChatGPT</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">1부 생성형 AI 기초</span></div><div class="tl-mid"><h4>세션 3. 챗봇은 저장된 업무 지시서다</h4><p>잘 쓴 프롬프트를 GPTs에 저장하면 항상 같은 품질로 작동하는 챗봇이 된다는 것을 이해하고, 강사의 라이브 시연으로 제작 과정 전체를 눈으로 확인합니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">40분</div></div>
-      <div class="tl-row break"><div class="tl-part"><span class="chip">쉬는 시간</span></div><div class="tl-mid"><h4>쉬는 시간</h4><p>1부를 마치고 2부 전에 10분간 휴식합니다.</p></div><div class="tl-time">10분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-green)">3부 내 업무 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 4. STEP 1 문제정의</h4><p>내가 매주 반복하는 업무 중 챗봇에 맡길 하나를 고르고, 준비된 예시 지시문을 그대로 복붙해 첫 챗봇을 작동시킵니다.</p><div class="tools"><span>GPTs</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-green)">3부 내 업무 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 5. STEP 2 업무 지시서</h4><p>복붙한 지시문에서 역할·하는 일·출력형식 3곳을 STEP 1에서 정한 내 업무로 바꿔, 내 업무 지시서로 완성합니다.</p><div class="tools"><span>GPTs</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row break"><div class="tl-part"><span class="chip">쉬는 시간</span></div><div class="tl-mid"><h4>쉬는 시간</h4><p>복붙 실습을 마치고 자유 설계 전에 10분간 휴식합니다.</p></div><div class="tl-time">10분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-green)">3부 내 업무 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 6. STEP 3 폴더정의서</h4><p>내 챗봇이 참고할 지식파일을 폴더정의서 3칸으로 설계하고, 실제로 1개를 txt로 만들어 올립니다.</p><div class="tools"><span>GPTs</span></div></div><div class="tl-time">15분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-green)">3부 내 업무 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 7. STEP 4 첫 시스템</h4><p>7칸 설계시트로 지시문을 다듬고, STEP 3에서 만든 지식파일을 얹어 내 첫 업무 시스템을 완성하고 체크리스트로 검증합니다.</p><div class="tools"><span>GPTs</span></div></div><div class="tl-time">30분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-purple)">4부 공유와 클로징</span></div><div class="tl-mid"><h4>세션 8. 30초 발표로 마무리</h4><p>완성한 챗봇을 30초 형식(이름 → Before/After → 라이브 질문 1개)으로 공유하고, 내 숫자로 오늘의 성과를 계산합니다. 내일부터 할 3가지를 정하고 마칩니다.</p><div class="tools"><span>GPTs</span><span>오픈채팅방</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-purple)">4부 공유와 클로징</span></div><div class="tl-mid"><h4>자유 질문 시간</h4><p>발표를 몰아서 몰린 까다로운 질문을 현장에서 바로 해결합니다.</p><div class="tools"><span>ChatGPT</span><span>오픈채팅방</span></div></div><div class="tl-time">10분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-brown)">부록</span></div><div class="tl-mid"><h4>부록. 프롬프트 치트시트</h4><p>교육 중 사용한 핵심 프롬프트·지시문을 한 페이지에 모아, 교육이 끝난 뒤에도 바로 찾아 복사해 쓸 수 있게 합니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">-</div></div>
-    </div>
+<div class="part-block"><h3 class="part-head" style="color:#8a8f9a;border-color:#8a8f9a">오리엔테이션</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>교안 개요</h4><p>교육 대상·전체 학습 흐름·오픈채팅방 진행 방식·보안 수칙을 한눈에 안내합니다.</p><div class="tools">오픈채팅방</div></div>
+  <div class="row-time">-</div>
+</div>
+</div></div>
+<div class="part-block"><h3 class="part-head" style="color:#ff5b1a;border-color:#ff5b1a">1부 · 생성형 AI 기초</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 1. GPT와 첫 대화</h4><p>배부받은 유료계정으로 전원이 로그인하고, 첫 질문을 던져 GPT 화면에 익숙해집니다. 회사가 이미 AI로 일하고 있다는 맥락을 이해합니다.</p><div class="tools">ChatGPT</div></div>
+  <div class="row-time">25분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 2. 프롬프트는 업무 지시서다</h4><p>"보고서 써줘"가 왜 실패하는지 이해하고, 업무 지시서 7요소로 내 주간보고 초안을 직접 만들어봅니다. 오늘의 첫 산출물이 나옵니다.</p><div class="tools">ChatGPT</div></div>
+  <div class="row-time">25분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 3. 챗봇은 저장된 업무 지시서다</h4><p>잘 쓴 프롬프트를 GPTs에 저장하면 항상 같은 품질로 작동하는 챗봇이 된다는 것을 이해하고, 강사의 라이브 시연으로 제작 과정 전체를 눈으로 확인합니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">40분</div>
+</div>
+</div></div>
+<div class="brk">쉬는 시간 · 10분 — 1부를 마치고 2부 전에 10분간 휴식합니다.</div>
+<div class="part-block"><h3 class="part-head" style="color:#1d8a5f;border-color:#1d8a5f">3부 · 내 업무 챗봇 만들기</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 4. STEP 1 문제정의</h4><p>내가 매주 반복하는 업무 중 챗봇에 맡길 하나를 고르고, 준비된 예시 지시문을 그대로 복붙해 첫 챗봇을 작동시킵니다.</p><div class="tools">GPTs</div></div>
+  <div class="row-time">25분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 5. STEP 2 업무 지시서</h4><p>복붙한 지시문에서 역할·하는 일·출력형식 3곳을 STEP 1에서 정한 내 업무로 바꿔, 내 업무 지시서로 완성합니다.</p><div class="tools">GPTs</div></div>
+  <div class="row-time">25분</div>
+</div>
+</div></div>
+<div class="brk">쉬는 시간 · 10분 — 복붙 실습을 마치고 자유 설계 전에 10분간 휴식합니다.</div>
+<div class="part-block"><h3 class="part-head" style="color:#1d8a5f;border-color:#1d8a5f">3부 · 내 업무 챗봇 만들기</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 6. STEP 3 폴더정의서</h4><p>내 챗봇이 참고할 지식파일을 폴더정의서 3칸으로 설계하고, 실제로 1개를 txt로 만들어 올립니다.</p><div class="tools">GPTs</div></div>
+  <div class="row-time">15분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 7. STEP 4 첫 시스템</h4><p>7칸 설계시트로 지시문을 다듬고, STEP 3에서 만든 지식파일을 얹어 내 첫 업무 시스템을 완성하고 체크리스트로 검증합니다.</p><div class="tools">GPTs</div></div>
+  <div class="row-time">30분</div>
+</div>
+</div></div>
+<div class="part-block"><h3 class="part-head" style="color:#7c5cd6;border-color:#7c5cd6">4부 · 공유와 클로징</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 8. 30초 발표로 마무리</h4><p>완성한 챗봇을 30초 형식(이름 → Before/After → 라이브 질문 1개)으로 공유하고, 내 숫자로 오늘의 성과를 계산합니다. 내일부터 할 3가지를 정하고 마칩니다.</p><div class="tools">GPTs · 오픈채팅방</div></div>
+  <div class="row-time">25분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>자유 질문 시간</h4><p>발표를 몰아서 몰린 까다로운 질문을 현장에서 바로 해결합니다.</p><div class="tools">ChatGPT · 오픈채팅방</div></div>
+  <div class="row-time">10분</div>
+</div>
+</div></div>
+<div class="part-block"><h3 class="part-head" style="color:#9b7653;border-color:#9b7653">부록</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>부록. 프롬프트 치트시트</h4><p>교육 중 사용한 핵심 프롬프트·지시문을 한 페이지에 모아, 교육이 끝난 뒤에도 바로 찾아 복사해 쓸 수 있게 합니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">-</div>
+</div>
+</div></div>
   </div>
 
   <div class="day">
     <div class="day-head"><h2>2일차 — 챗봇 고도화</h2><span>4시간 · 13세션 + 휴식 2회</span></div>
     <div class="goals">
-      <div class="goal"><b>①</b>지식파일·버튼·멀티턴으로 1일차 챗봇을 고도화한다</div>
-      <div class="goal"><b>②</b>STEP 1~4를 다시 적용해 두 번째 챗봇(다른 업무용)을 완성한다</div>
-      <div class="goal"><b>③</b>팀에 배포하고 개선 루프를 만들어 발표까지 마친다</div>
+<div class="goal"><b>①</b>지식파일·버튼·멀티턴으로 1일차 챗봇을 고도화한다</div>
+<div class="goal"><b>②</b>STEP 1~4를 다시 적용해 두 번째 챗봇(다른 업무용)을 완성한다</div>
+<div class="goal"><b>③</b>팀에 배포하고 개선 루프를 만들어 발표까지 마친다</div>
     </div>
-    <div class="tl-list">
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-gray)">복습·연결</span></div><div class="tl-mid"><h4>복습 &amp; 아이스브레이커</h4><p>1일차 내용을 3줄로 복습하고, 오늘의 산출물(챗봇 2개 + 배포 계획)을 확인합니다.</p><div class="tools"><span>ChatGPT</span></div></div><div class="tl-time">15분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">5부 챗봇 고도화 이해</span></div><div class="tl-mid"><h4>세션 1. 지식파일 여러 개</h4><p>지식파일을 역할별로 나눠 추가해, 질문 성격에 맞는 자료를 챗봇이 스스로 찾아 쓰게 만듭니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">20분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">5부 챗봇 고도화 이해</span></div><div class="tl-mid"><h4>세션 2. 대화 시작 버튼</h4><p>자주 쓰는 요청 3~4개를 버튼으로 등록해 팀원이 헤매지 않고 바로 쓰게 만듭니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">15분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">5부 챗봇 고도화 이해</span></div><div class="tl-mid"><h4>세션 3. 멀티턴과 확장 감각 — Actions·자동화 루프·MCP</h4><p>멀티턴이 정상이라는 감각을 갖고, 오늘 배운 것 다음에 뭐가 있는지를 이름으로만 익혀둡니다.</p><div class="tools"><span>ChatGPT</span></div></div><div class="tl-time">15분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-orange)">5부 챗봇 고도화 이해</span></div><div class="tl-mid"><h4>미니게임. 스피드 라운드</h4><p>오늘 배운 개념을 가볍게 복습하며 분위기를 환기합니다.</p><div class="tools"><span>ChatGPT</span></div></div><div class="tl-time">10분</div></div>
-      <div class="tl-row break"><div class="tl-part"><span class="chip">쉬는 시간</span></div><div class="tl-mid"><h4>쉬는 시간</h4><p>5부를 마치고 6부 전에 10분간 휴식합니다.</p></div><div class="tl-time">10분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-blue)">6부 두 번째 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 4. STEP 1 문제정의</h4><p>어제와 다른 종류의 반복 업무를 반복성×규칙성 매트릭스로 5분 안에 고릅니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">20분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-blue)">6부 두 번째 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 5. STEP 2 업무 지시서 — 이번엔 빈칸에서</h4><p>예시 없이 빈칸에서 7요소 업무 지시서를 직접 작성해 구성 탭에 적용합니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-blue)">6부 두 번째 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 6. STEP 3 폴더정의서 — 10분 속전</h4><p>폴더정의서 3칸을 빠르게 채우고 자료 1개를 txt화해 업로드합니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span></div></div><div class="tl-time">15분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-blue)">6부 두 번째 챗봇 만들기</span></div><div class="tl-mid"><h4>세션 7. STEP 4 두 번째 시스템 완성 + 챗봇 배틀</h4><p>대화 시작 버튼까지 달아 두 번째 챗봇을 완성하고 공유합니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span><span>오픈채팅방</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row break"><div class="tl-part"><span class="chip">쉬는 시간</span></div><div class="tl-mid"><h4>쉬는 시간</h4><p>6부를 마치고 7부 전에 10분간 휴식합니다.</p></div><div class="tl-time">10분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-green)">7부 배포와 마무리</span></div><div class="tl-mid"><h4>세션 8. 정착 루프 — 만드는 것보다 정착이 어렵다</h4><p>배포 3종 세트와 주 1회 10분 개선 루프로 챗봇을 팀에 정착시키는 계획을 세웁니다.</p><div class="tools"><span>ChatGPT</span><span>GPTs</span><span>오픈채팅방</span></div></div><div class="tl-time">25분</div></div>
-      <div class="tl-row"><div class="tl-part"><span class="chip" style="background:var(--c-green)">7부 배포와 마무리</span></div><div class="tl-mid"><h4>세션 9. 최종 발표와 다음 단계</h4><p>1분 발표로 8시간을 마무리하고, 앞으로의 로드맵(멀티턴→자동화 루프→MCP)을 확인합니다.</p><div class="tools"><span>오픈채팅방</span></div></div><div class="tl-time">30분</div></div>
-    </div>
+<div class="part-block"><h3 class="part-head" style="color:#8a8f9a;border-color:#8a8f9a">복습·연결</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>복습 & 아이스브레이커</h4><p>1일차 내용을 3줄로 복습하고, 오늘의 산출물(챗봇 2개 + 배포 계획)을 확인합니다.</p><div class="tools">ChatGPT</div></div>
+  <div class="row-time">15분</div>
+</div>
+</div></div>
+<div class="part-block"><h3 class="part-head" style="color:#ff5b1a;border-color:#ff5b1a">5부 · 챗봇 고도화 이해</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 1. 지식파일 여러 개</h4><p>지식파일을 역할별로 나눠 추가해, 질문 성격에 맞는 자료를 챗봇이 스스로 찾아 쓰게 만듭니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">20분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 2. 대화 시작 버튼</h4><p>자주 쓰는 요청 3~4개를 버튼으로 등록해 팀원이 헤매지 않고 바로 쓰게 만듭니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">15분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 3. 멀티턴과 확장 감각 — Actions·자동화 루프·MCP</h4><p>멀티턴이 정상이라는 감각을 갖고, 오늘 배운 것 다음에 뭐가 있는지를 이름으로만 익혀둡니다.</p><div class="tools">ChatGPT</div></div>
+  <div class="row-time">15분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>미니게임. 스피드 라운드</h4><p>오늘 배운 개념을 가볍게 복습하며 분위기를 환기합니다.</p><div class="tools">ChatGPT</div></div>
+  <div class="row-time">10분</div>
+</div>
+</div></div>
+<div class="brk">쉬는 시간 · 10분 — 5부를 마치고 6부 전에 10분간 휴식합니다.</div>
+<div class="part-block"><h3 class="part-head" style="color:#2f6fed;border-color:#2f6fed">6부 · 두 번째 챗봇 만들기</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 4. STEP 1 문제정의</h4><p>어제와 다른 종류의 반복 업무를 반복성×규칙성 매트릭스로 5분 안에 고릅니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">20분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 5. STEP 2 업무 지시서 — 이번엔 빈칸에서</h4><p>예시 없이 빈칸에서 7요소 업무 지시서를 직접 작성해 구성 탭에 적용합니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">25분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 6. STEP 3 폴더정의서 — 10분 속전</h4><p>폴더정의서 3칸을 빠르게 채우고 자료 1개를 txt화해 업로드합니다.</p><div class="tools">ChatGPT · GPTs</div></div>
+  <div class="row-time">15분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 7. STEP 4 두 번째 시스템 완성 + 챗봇 배틀</h4><p>대화 시작 버튼까지 달아 두 번째 챗봇을 완성하고 공유합니다.</p><div class="tools">ChatGPT · GPTs · 오픈채팅방</div></div>
+  <div class="row-time">25분</div>
+</div>
+</div></div>
+<div class="brk">쉬는 시간 · 10분 — 6부를 마치고 7부 전에 10분간 휴식합니다.</div>
+<div class="part-block"><h3 class="part-head" style="color:#1d8a5f;border-color:#1d8a5f">7부 · 배포와 마무리</h3><div class="rows">
+<div class="row">
+  <div class="row-main"><h4>세션 8. 정착 루프 — 만드는 것보다 정착이 어렵다</h4><p>배포 3종 세트와 주 1회 10분 개선 루프로 챗봇을 팀에 정착시키는 계획을 세웁니다.</p><div class="tools">ChatGPT · GPTs · 오픈채팅방</div></div>
+  <div class="row-time">25분</div>
+</div>
+<div class="row">
+  <div class="row-main"><h4>세션 9. 최종 발표와 다음 단계</h4><p>1분 발표로 8시간을 마무리하고, 앞으로의 로드맵(멀티턴→자동화 루프→MCP)을 확인합니다.</p><div class="tools">오픈채팅방</div></div>
+  <div class="row-time">30분</div>
+</div>
+</div></div>
   </div>
 
 </div>
