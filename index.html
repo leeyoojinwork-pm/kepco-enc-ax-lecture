@@ -1,18 +1,133 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"/>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>한국전력기술 AX 리터러시 교육</title>
 <style>
-body{font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;background:#f6f7f9;color:#17191f;display:flex;align-items:center;justify-content:center;height:100vh;margin:0}
-.wrap{text-align:center}
-h1{font-size:1.8rem;margin-bottom:1.5rem}
-a{display:inline-block;margin:.5rem;padding:.9rem 1.6rem;background:#ff5b1a;color:#fff;text-decoration:none;border-radius:.6rem;font-weight:700}
-a.sub{background:#fff;color:#17191f;border:1px solid #e4e7ec}
-</style></head>
-<body><div class="wrap">
-<h1>한국전력기술 AX 리터러시 교육</h1>
-<a href="day1.html">1일차 강의 덱</a>
-<a href="day2.html">2일차 강의 덱</a>
-<br/>
-<a class="sub" href="교재_1일차.html">1일차 교재</a>
-<a class="sub" href="교재_2일차.html">2일차 교재</a>
-</div></body></html>
+:root{
+  --ink:#17191f; --muted:#626977; --line:#e4e7ec; --soft:#f6f7f9; --panel:#fff;
+  --brand:#ff5b1a; --brand-soft:#fff1ea;
+  --shadow:0 12px 32px rgba(17,19,24,.07);
+  --font:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:var(--soft);-webkit-font-smoothing:antialiased;word-break:keep-all}
+
+.hero{background:linear-gradient(120deg,#15171d 0%,#1d2128 55%,#2a1c14 100%);color:#fff;padding:96px 24px 84px}
+.hero-inner{max-width:960px;margin:0 auto}
+.hero .eyebrow{color:var(--brand);font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,4.2vw,46px);line-height:1.25;font-weight:800;letter-spacing:-.02em}
+.hero .sub{margin-top:18px;font-size:17px;color:#c9ccd3;line-height:1.7;max-width:640px}
+.hero .bar{width:60px;height:5px;background:var(--brand);margin-top:28px;border-radius:3px}
+.hero .meta{margin-top:32px;display:flex;gap:28px;flex-wrap:wrap}
+.hero .meta div{font-size:13px;color:#9a9ea8}
+.hero .meta b{display:block;font-size:19px;color:#fff;font-weight:800;margin-bottom:2px}
+
+.main{max-width:960px;margin:0 auto;padding:56px 24px 100px}
+
+.section-label{font-size:13px;font-weight:800;color:var(--brand);letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
+.section{margin-bottom:56px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:10px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--brand);box-shadow:0 18px 40px rgba(255,91,26,.14)}
+.card .tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--brand);letter-spacing:.03em}
+.card h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.card p{font-size:14.5px;color:var(--muted);line-height:1.6}
+.card .go{margin-top:auto;font-size:13.5px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:6px}
+.card:hover .go{color:var(--brand)}
+.card .go svg{transition:transform .18s ease}
+.card:hover .go svg{transform:translateX(3px)}
+
+.card.day1{border-top:4px solid var(--brand)}
+.card.day2{border-top:4px solid #1d2128}
+.card.book{background:var(--brand-soft);border-color:#ffd9c2}
+.card.book:hover{border-color:var(--brand)}
+
+.res-list{display:flex;flex-direction:column;gap:10px}
+.res{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;text-decoration:none;color:var(--ink);transition:border-color .15s,background .15s}
+.res:hover{border-color:var(--brand);background:var(--brand-soft)}
+.res .l{display:flex;flex-direction:column;gap:3px}
+.res .l b{font-size:14.5px;font-weight:800}
+.res .l span{font-size:12.5px;color:var(--muted)}
+.res .arrow{font-size:14px;color:var(--muted)}
+.res:hover .arrow{color:var(--brand)}
+
+footer{max-width:960px;margin:0 auto;padding:0 24px 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px}
+
+@media (max-width:680px){
+  .grid{grid-template-columns:1fr}
+  .hero{padding:64px 20px 56px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">AX 리터러시 교육 · 한국전력기술</div>
+    <h1>챗봇 구축으로 내 업무를 자동화한다</h1>
+    <p class="sub">ChatGPT/GPTs만으로 반복 업무를 대신하는 챗봇을 직접 만드는 8시간(2일) 실습형 교육의 전체 자료입니다. 강의 덱과 교재를 함께 제공합니다.</p>
+    <div class="bar"></div>
+    <div class="meta">
+      <div><b>8시간</b>1일차 4h + 2일차 4h</div>
+      <div><b>4개</b>강의 덱 · 교재 세트</div>
+      <div><b>강사</b>이유진</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="section">
+    <div class="section-label">강의 덱 — 강의장 진행용</div>
+    <div class="grid">
+      <a class="card day1" href="day1.html">
+        <span class="tag">1일차 · 4시간</span>
+        <h3>GPT 챗봇 구축</h3>
+        <p>생성형 AI 기초부터 업무 지시서 7요소, 첫 챗봇 완성까지. 발문→리빌 구조로 진행하는 스크린 투사용 슬라이드.</p>
+        <span class="go">덱 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="card day2" href="day2.html">
+        <span class="tag">2일차 · 4시간</span>
+        <h3>챗봇 고도화 &amp; 정착</h3>
+        <p>지식파일·버튼·멀티턴으로 고도화하고, 예시 없이 두 번째 챗봇 완주, 팀 배포와 정착 루프까지.</p>
+        <span class="go">덱 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">교재 — 혼자 복습하는 배포용</div>
+    <div class="grid">
+      <a class="card book" href="교재_1일차.html">
+        <span class="tag">1일차 교재</span>
+        <h3>GPT 챗봇 구축 안내서</h3>
+        <p>"왜 필요한가 → 개념 → 직접 해보기 → 자주 막히는 곳" 순서의 10개 장. 왼쪽 목차로 원하는 장으로 바로 이동.</p>
+        <span class="go">교재 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="card book" href="교재_2일차.html">
+        <span class="tag">2일차 교재</span>
+        <h3>챗봇 고도화 안내서</h3>
+        <p>답변 진단 3갈래, 두 번째 챗봇 4단계 완주, 정착 루프까지 9개 장 + 치트시트.</p>
+        <span class="go">교재 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">제작 배경 자료</div>
+    <div class="res-list">
+      <a class="res" href="README.md"><span class="l"><b>README</b><span>자료 구성·커리큘럼 설계·핵심 프레임워크 요약</span></span><span class="arrow">→</span></a>
+      <a class="res" href="자료조사_리포트.md"><span class="l"><b>자료조사 리포트</b><span>청중·후킹팩트·통계·보안 가이드라인·벤치마킹</span></span><span class="arrow">→</span></a>
+      <a class="res" href="qa/QA리포트_2026-07-31.html"><span class="l"><b>QA 리포트</b><span>강의자료 품질 검수 결과 (게이트2 · 2026-07-31)</span></span><span class="arrow">→</span></a>
+    </div>
+  </div>
+
+</div>
+
+<footer>한국전력기술 AX 리터러시 교육 · 강사 이유진</footer>
+
+</body>
+</html>

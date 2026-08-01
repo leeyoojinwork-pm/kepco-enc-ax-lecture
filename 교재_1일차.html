@@ -43,6 +43,7 @@ table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15.5px}
 th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 .toc{border:1px solid var(--line);border-radius:12px;padding:28px 32px;margin:0 0 20px;background:var(--soft)}
+@media (min-width:1001px){ .mobile-toc{display:none} }
 .toc h4{margin:0 0 12px;font-size:16px;color:var(--muted);letter-spacing:.04em}
 .toc ol{margin-left:20px}
 .toc li{margin:6px 0}
@@ -52,10 +53,48 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 .practice .tag{font-size:14px;font-weight:800;color:var(--brand);margin-bottom:10px}
 .practice ol{margin-left:20px}
 .footer{margin-top:100px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.page{display:flex;align-items:flex-start;min-height:100vh}
+.side{width:280px;flex:0 0 280px;position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--soft);border-right:1px solid var(--line);padding:28px 22px 40px;-ms-overflow-style:none;scrollbar-width:thin}
+.side::-webkit-scrollbar{width:6px}
+.side::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.side .side-brand{font-size:12px;font-weight:800;color:var(--brand);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.side .side-title{font-size:16px;font-weight:800;line-height:1.4;margin-bottom:22px;color:var(--ink)}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav a{display:block;padding:9px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:700;line-height:1.4;border-left:3px solid transparent;transition:background .15s,color .15s}
+.side nav a:hover{background:var(--brand-soft);color:var(--brand)}
+.side nav a.active{background:var(--brand-soft);color:var(--brand);border-left-color:var(--brand)}
+.side .side-back{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:var(--muted);text-decoration:none;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.side .side-back:hover{color:var(--brand)}
+.content{flex:1;min-width:0}
+@media (max-width:1000px){
+  .side{display:none}
+}
+@media print{
+  .side{display:none}
+}
 @media print{ .cover{padding:60px 24px} body{font-size:13px} h3{page-break-after:avoid} .box,.prompt,.practice,table{page-break-inside:avoid} }
 </style>
 </head>
 <body>
+<div class="page">
+<aside class="side">
+  <a class="side-back" href="index.html">← 전체 자료로</a>
+  <div class="side-brand">AX 리터러시 교육 · 1일차</div>
+  <div class="side-title">교재 목차</div>
+  <nav id="side-nav">
+    <a href="#ch0">시작하기 전에 — 오늘 무엇을 만들고, 무엇을 지키는가</a>
+    <a href="#ch1">1장. GPT와 첫 대화 — 도구를 손에 익히기</a>
+    <a href="#ch2">2장. 프롬프트는 업무 지시서다 — 7요소 프레임워크</a>
+    <a href="#ch3">3장. 챗봇은 저장된 업무 지시서다 — GPTs의 구조</a>
+    <a href="#ch4">4장. STEP 1 문제정의 — 챗봇에 맡길 업무 고르기</a>
+    <a href="#ch5">5장. STEP 2 업무 지시서 — 예시를 내 것으로</a>
+    <a href="#ch6">6장. STEP 3 폴더정의서 — 챗봇에게 줄 자료 정하기</a>
+    <a href="#ch7">7장. STEP 4 첫 시스템 — 합쳐서 완성하고 공유하기</a>
+    <a href="#ch8">8장. 마무리 — 발표, 그리고 내일부터</a>
+    <a href="#apx">부록. 치트시트 모음</a>
+  </nav>
+</aside>
+<div class="content">
 
 <div class="cover">
   <div class="cover-inner">
@@ -68,7 +107,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 
 <div class="wrap">
 
-<div class="toc">
+<div class="toc mobile-toc">
   <h4>차례</h4>
   <ol>
     <li><a href="#ch0">시작하기 전에 — 오늘 무엇을 만들고, 무엇을 지키는가</a></li>
@@ -427,5 +466,28 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 </div>
 
 </div>
+</div>
+</div>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('#side-nav a'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if(!targets.length) return;
+  function onScroll(){
+    var pos = window.scrollY + 120;
+    var current = targets[0];
+    for(var i=0;i<targets.length;i++){
+      if(targets[i].offsetTop <= pos) current = targets[i];
+    }
+    links.forEach(function(a){
+      var id = a.getAttribute('href');
+      a.classList.toggle('active', current && ('#'+current.id) === id);
+    });
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
 </body>
 </html>
