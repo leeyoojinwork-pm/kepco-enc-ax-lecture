@@ -79,7 +79,7 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .step p{font-size:.84vw;color:var(--muted);line-height:1.45}
 .arrow{display:none}
 .stage4-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1vw;margin-top:2vw}
-.stage4-card{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.25vw;box-shadow:var(--shadow);position:relative;min-height:10.5vw}
+.stage4-card{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.25vw;box-shadow:var(--shadow);position:relative;min-height:10.5vw;overflow:hidden}
 .stage4-card:not(:last-child):after{content:"→";position:absolute;right:-.78vw;top:50%;transform:translateY(-50%);width:1.55vw;height:1.55vw;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9vw;z-index:2}
 .stage4-card .n{font-size:.78vw;font-weight:900;color:var(--brand);letter-spacing:.04em}
 .stage4-card h4{font-size:1.22vw;font-weight:900;margin:.38vw 0 .5vw;color:var(--ink);word-break:keep-all}
@@ -501,7 +501,7 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">진행 안내</h2>
     <div class="grid3">
-      <div class="card"><div class="badge">1</div><h3>대상 · 방식</h3><p>전 부서 직위자 대상. AI 경험 차이가 커서 첫 1시간은 계정이 없는 분도 따라오는 공통 기초로 갑니다.</p></div>
+      <div class="card"><div class="badge">1</div><h3>대상 · 방식</h3><p>전 부서 직위자 대상. AI 경험 차이가 커서 초반 70분은 계정이 없는 분도 따라오는 공통 기초로 갑니다.</p></div>
       <div class="card"><div class="badge">2</div><h3>도구</h3><p>실습은 ChatGPT 유료계정 중심. 다른 AI 도구는 개념 비교만 하고, 산출물은 ChatGPT 안에서 완성합니다.</p></div>
       <div class="card"><div class="badge">3</div><h3>운영 기준</h3><p>막히는 분은 보조강사가 기본 팔로업합니다. 빠른 분은 예시를 바꿔 실제로 쓸 수 있는 결과물까지 만듭니다.</p></div>
     </div>
@@ -523,22 +523,24 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">입장 링크는 지금 화면에 띄워드립니다. 교육이 끝난 뒤에도 유지됩니다.</p>
   </div>
 </section>
-<section class="slide" data-title="전체 학습 흐름">
+<section class="slide" data-title="오늘의 여정">
   <div class="slide-header"><div class="kicker">Curriculum</div><div class="slide-no">5</div></div>
   <div class="slide-body">
-    <h2 class="big-message">4시간 흐름</h2>
+    <h2 class="big-message">오늘의 여정 — <span class="orange">하나의 업무를 끝까지</span></h2>
+    <p class="lead">처음 고른 반복 업무 하나가 문제정의, 업무 지시서, knowledge.md, GPT Agent, 발표까지 이어집니다.</p>
     <div class="timeline">
-      <div class="tl"><div class="dot c1">1</div><h4>오프닝·AI 기초</h4><p>60분 · 왜 필요한지부터 안전한 첫 체험까지</p></div>
-      <div class="tl"><div class="dot c2">2</div><h4>업무 지시서 작성</h4><p>40분 · 프롬프트를 2부에서 체계화</p></div>
-      <div class="tl"><div class="dot c3">3</div><h4>내 업무 Agent 만들기</h4><p>95분 · 잘 따라오는 분은 고도화까지</p></div>
-      <div class="tl"><div class="dot c4">4</div><h4>공유 &amp; 클로징</h4><p>35분 · 30초 발표와 자유 질문</p></div>
+      <div class="tl"><div class="dot c1">1</div><h4>공통 기준 잡기</h4><p>70분 · AI 당위성, 사내 AX 흐름, 보안 기준, 첫 체험</p></div>
+      <div class="tl"><div class="dot c2">2</div><h4>업무 지시서 만들기</h4><p>35분 · 프롬프트를 업무 지시서 7요소로 정리</p></div>
+      <div class="tl"><div class="dot c3">3</div><h4>내 Agent 만들기</h4><p>95분 · 문제정의 → 지시서 → knowledge.md → GPTs 구성</p></div>
+      <div class="tl"><div class="dot c4">4</div><h4>검증하고 공유하기</h4><p>20분 · 테스트 질문, 30초 발표, 다음 활용 방식 정리</p></div>
     </div>
-    <p class="lead">중간 휴식 2회(각 10분) 포함 240분입니다.</p>
+    <div class="goal" style="margin-top:1.2vw">운영 기준: 처음 70분은 모두 같은 출발선에 서는 시간입니다. 이후에는 보조강사가 기본 팔로업을 맡고, 빠른 참가자는 실제 부서 업무에 더 가까운 산출물까지 고도화합니다.</div>
+    <p class="lead">오늘의 한 줄 흐름: <b>업무 후보</b>가 → <b>문제정의</b>가 되고 → <b>지시서와 knowledge.md</b>가 되어 → <b>내 Agent</b>로 남습니다.</p>
   </div>
 </section>
 <section class="slide divider" data-title="1부 divider">
   <div class="slide-body" style="text-align:center">
-    <div class="num dc1">1부 · 50분</div>
+    <div class="num dc1">1부 · 70분</div>
     <h2>왜 지금 AI인가</h2>
     <p class="lead" style="margin:1.2vw auto 0">흥미를 만들고, 보안 기준을 잡고, 전원이 같은 출발선에 섭니다</p>
   </div>
@@ -548,7 +550,7 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">세션 1 — 왜 지금 AI를 배워야 하나 <span class="orange">(오프닝)</span></h2>
     <div class="goal">이 세션이 끝나면: 한국전력기술 안에서 이미 진행 중인 AX 흐름을 이해하고, 오늘 내가 만들 결과물이 왜 필요한지 연결됩니다.</div>
-    <p class="lead">처음 1시간은 속도보다 공통 기준이 중요합니다. 이미 익숙한 분은 “내 업무에 어떻게 붙일까”를 먼저 생각해 주세요.</p>
+    <p class="lead">처음 70분은 속도보다 공통 기준이 중요합니다. 이미 익숙한 분은 “내 업무에 어떻게 붙일까”를 먼저 생각해 주세요.</p>
   </div>
 </section>
 <section class="slide q" data-title="Q 회사" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
@@ -570,23 +572,23 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">회사 차원의 AX를 오늘은 개인 업무 단위로 내려옵니다. <span class="orange">회의 → 할 일 → 보고 초안</span>처럼 매번 반복되는 흐름부터 작게 자동화합니다.</p>
   </div>
 </section>
-<section class="slide q" data-title="Q 통계" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
+<section class="slide q" data-title="Q 변화 속도" data-note="오프닝 리듬 전환용. 기능 암기 교육이 아니라 변화에 적응하는 업무 방식 교육이라는 메시지로 연결합니다.">
   <div class="slide-body">
-    <div class="qmark">우리 회사 퀴즈</div>
-    <h2>NEXA 2.5 고도화 뒤,<br>하루 평균 사용자는 몇 명까지 늘었을까요?</h2>
-    <p>① 약 260명 &nbsp;&nbsp; ② 약 460명 &nbsp;&nbsp; ③ 약 660명</p>
+    <div class="qmark">생각해보세요</div>
+    <h2>AI 교육의 목적은<br>새 기능을 외우는 걸까요,<br><span class="orange">일하는 방식을 바꾸는 걸까요?</span></h2>
+    <p>오늘은 “아무거나 물어보기”가 아니라 반복 업무 하나를 실제 Agent로 만드는 시간입니다.</p>
   </div>
 </section>
-<section class="slide" data-title="왜 지금인가 — 통계" data-note="[Sources] 한국전력기술, 제2회 대한민국 인공지능 혁신대상 보도자료(2026-05-15) https://www.kepco-enc.com/board.es?act=view&amp;bid=0038&amp;list_no=44731&amp;mid=a10603000000">
+<section class="slide" data-title="왜 지금인가 — 변화 속도" data-note="사용자가 제공한 '지난 10년의 변화가 이제는 단 1주 만에' 참고자료를 오프닝 맥락에 맞춰 재구성한 장표. 기술명 나열보다 직위자의 과제로 연결합니다.">
   <div class="slide-header"><div class="kicker">Session 1 · 왜 지금인가</div><div class="slide-no">8</div></div>
   <div class="slide-body">
-    <h2 class="big-message">정답은 <span class="orange">660명</span> — 이미 회사 안에서 쓰는 도구입니다</h2>
-    <div class="stats">
-      <div class="stat"><strong>7종</strong><span>NEXA 2.5 신규 기능</span></div>
-      <div class="stat"><strong>400→660명</strong><span>일평균 사용자</span></div>
-      <div class="stat"><strong>4,000→5,500건</strong><span>일평균 질의</span></div>
+    <h2 class="big-message">기술이 빨라질수록, 필요한 건 <span class="orange">따라잡기</span>가 아니라 기준입니다</h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>변화 주기가 짧아졌습니다</h3><p>모델명과 기능은 계속 바뀝니다. 그래서 기능 암기보다 업무에 적용하는 판단 기준이 중요합니다.</p></div>
+      <div class="card"><div class="badge">2</div><h3>회사는 이미 쓰기 시작했습니다</h3><p>NEXA 2.5처럼 사내 AI가 고도화되는 상황에서는 개인 업무도 AI 친화적으로 정리되어야 합니다.</p></div>
+      <div class="card"><div class="badge">3</div><h3>직위자는 기준을 세우는 사람입니다</h3><p>어떤 자료를 넣고, 어디까지 맡기고, 최종 검토를 어떻게 할지 팀의 사용 방식을 정해야 합니다.</p></div>
     </div>
-    <p class="lead">오늘은 이 흐름을 개인의 반복 업무 하나로 내려옵니다. 수치는 회사 공식 보도자료 기준입니다.</p>
+    <p class="lead">그래서 오늘의 목표는 최신 기능 소개가 아니라 <span class="orange">내 반복 업무를 안전하게 맡길 수 있는 구조</span>를 하나 만드는 것입니다.</p>
   </div>
 </section>
 <section class="slide" data-title="AI 관점의 변화" data-note="세 단계를 차례로 읽되, 3단계가 거창한 전사 자동화가 아니라 반복 업무 한 줄을 같은 기준으로 돌리는 것이라고 설명합니다.">
@@ -1104,7 +1106,7 @@ table.tbl tr:last-child td{border-bottom:none}
 <section class="slide" data-title="세션2 목표">
   <div class="slide-header"><div class="kicker">Session 2 · 프롬프트는 업무 지시서다</div><div class="slide-no">39</div></div>
   <div class="slide-body">
-    <h2 class="big-message">세션 2 — 프롬프트는 업무 지시서다 <span class="orange">(25분)</span></h2>
+    <h2 class="big-message">세션 2 — 프롬프트는 업무 지시서다 <span class="orange">(35분)</span></h2>
     <div class="goal">이 세션이 끝나면: "보고서 써줘"가 왜 실패하는지 알고, <b>내 주간보고 초안</b>이 손에 있습니다. 오늘의 첫 산출물입니다.</div>
   </div>
 </section>
@@ -2150,7 +2152,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 <section class="slide divider" data-title="4부 divider">
   <div class="slide-body" style="text-align:center">
-    <div class="num dc4">4부 · 35분</div>
+    <div class="num dc4">4부 · 20분</div>
     <h2>공유 &amp; 클로징</h2>
     <p class="lead" style="margin:1.2vw auto 0">30초 발표와 내 숫자로 마무리</p>
   </div>
@@ -2233,10 +2235,10 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">오늘 이후, <span class="orange">이 순서로 넓혀가세요</span></h2>
     <div class="roadmap">
-      <div class="rc"><div class="pdot">지금</div><h3>챗봇 1개</h3><p>오늘 완성</p></div>
-      <div class="rc"><div class="pdot">1개월</div><h3>챗봇 2~3개</h3><p>설계시트 재사용 — 업무별로 하나씩</p></div>
-      <div class="rc"><div class="pdot">3개월</div><h3>팀 표준</h3><p>팀 공용 지시문·지식파일 정리</p></div>
-      <div class="rc"><div class="pdot">그 후</div><h3>자동 연결</h3><p>회사 AX 과제와 연결 — SK AX 협약으로 길이 열려 있습니다</p></div>
+      <div class="rc"><div class="pdot">STEP 1</div><h3>챗봇 1개</h3><p>오늘 완성 — 내 반복 업무 하나부터</p></div>
+      <div class="rc"><div class="pdot">STEP 2</div><h3>챗봇 2개</h3><p>2일차에 다른 업무로 한 번 더 제작</p></div>
+      <div class="rc"><div class="pdot">STEP 3</div><h3>팀 표준</h3><p>팀 공용 지시문·knowledge.md 정리</p></div>
+      <div class="rc"><div class="pdot">STEP 4</div><h3>자동 연결</h3><p>회사 AX 과제와 연결 — 문서 검토·이슈 점검으로 확장</p></div>
     </div>
   </div>
 </section>
