@@ -34,6 +34,10 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .cover h1{font-size:3.9vw;line-height:1.15;font-weight:800;letter-spacing:-.02em;word-break:keep-all}
 .cover .sub{margin-top:1.8vw;font-size:1.3vw;line-height:1.6;color:#c9ccd3;word-break:keep-all}
 .cover .bar{width:5vw;height:.35vw;background:var(--brand);margin-top:2vw;border-radius:2px}
+.cover .instr{margin-top:2.2vw;display:flex;align-items:center;gap:.7vw}
+.cover .instr .iname{font-size:1.15vw;font-weight:800;color:#fff}
+.cover .instr .idiv{width:.25vw;height:.25vw;border-radius:50%;background:#5a5e68}
+.cover .instr .irole{font-size:.92vw;color:#9a9ea8;font-weight:600;word-break:keep-all}
 .cover .right{flex:1;display:flex;align-items:center;justify-content:center;color:#3a3d45}
 .cover .imgbox{width:100%;aspect-ratio:16/10;border-radius:1vw;background:#23262e;border:1px solid #33373f;display:flex;align-items:center;justify-content:center;font-size:1vw;color:#6b7079;text-align:center}
 .divider{background:var(--cover-grad);color:#fff;justify-content:center}
@@ -147,6 +151,31 @@ table.tbl tr:last-child td{border-bottom:none}
 .ba2 .bafter{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff}
 .ba2 .bafter p{color:#ffe3d3}
 .ba2 .barrow{width:3.6vw;height:3.6vw;border-radius:50%;background:var(--panel);border:2px solid var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.5vw;color:var(--brand);margin:0 auto;box-shadow:var(--shadow)}
+.frm{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.75vw;margin-top:2vw;row-gap:1.6vw}
+.frm .fhex{width:6.8vw;height:7.6vw;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--panel);border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.95vw;box-shadow:var(--shadow);position:relative}
+.frm .fhex small{display:block;font-size:.62vw;font-weight:700;opacity:.65;margin-top:.25vw;color:var(--muted)}
+.frm .fhex.solid{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff;font-size:.9vw}
+.frm .fhex.solid small{color:#ffe3d3;opacity:.85}
+.frm .op{font-size:1.5vw;font-weight:800;color:var(--brand)}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:1.1vw;margin-top:1.3vw}
+.dodont .ddc{border-radius:1.4vw;padding:1.4vw}
+.dodont .dd-o{background:#eef3f0}
+.dodont .dd-x{background:#fdeeec}
+.dodont h3{font-size:1.2vw;margin-bottom:.9vw;display:flex;align-items:center;gap:.5vw;font-weight:800}
+.dodont .ic{width:1.7vw;height:1.7vw;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.9vw}
+.dodont .dd-o .ic{background:#1d6a4e}
+.dodont .dd-x .ic{background:#c2392c}
+.dodont ul{margin:0;padding:0}
+.dodont li{list-style:none;font-size:.88vw;line-height:1.5;margin-bottom:.7vw;font-weight:700;color:#344054;word-break:keep-all}
+.ctb{width:100%;border-collapse:separate;border-spacing:0 .4vw;margin-top:1vw;font-size:.9vw}
+.ctb th,.ctb td{padding:.7vw 1vw;text-align:left;word-break:keep-all}
+.ctb tr:first-child th{color:#fff;font-weight:800}
+.ctb tr:first-child th:first-child{background:#8a8f9a;border-radius:.7vw 0 0 .7vw}
+.ctb tr:first-child th:not(:first-child){background:var(--brand)}
+.ctb tr:not(:first-child){background:var(--panel)}
+.ctb tr:not(:first-child) td,.ctb tr:not(:first-child) th{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ctb tr:not(:first-child) th{font-weight:800;background:#f8fafc;border-radius:.7vw 0 0 .7vw;border-left:1px solid var(--line)}
+.ctb tr:not(:first-child) td:last-child{border-radius:0 .7vw .7vw 0;border-right:1px solid var(--line)}
 
 .nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
 .nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
@@ -163,8 +192,9 @@ table.tbl tr:last-child td{border-bottom:none}
     <h1>내 챗봇,<br>진짜 쓸모 있게 만들기</h1>
     <div class="sub">1일차에서 만든 챗봇을 업그레이드하고<br>두 번째 챗봇까지 완성해서 팀에 배포합니다.</div>
     <div class="bar"></div>
+    <div class="instr"><span class="iname">강사 이유진</span><span class="idiv"></span><span class="irole">AI 업무 자동화 · 서비스 기획 강사</span></div>
   </div>
-  
+
 </section>
 
 <section class="slide" data-title="다시 만나서">
@@ -697,16 +727,16 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="어제와 오늘의 차이">
+<section class="slide" data-title="어제와 오늘의 차이" data-note="Comparison Table 도식 — 브랜드 컬러 헤더로 &#39;오늘&#39; 열 강조">
   <div class="slide-header"><div class="kicker">6부 · 난이도 업</div><div class="slide-no">38</div></div>
   <div class="slide-body">
     <h2 class="big-message">어제와 오늘, <span class="orange">뭐가 다른가</span></h2>
-    <table class="tbl">
+    <table class="ctb">
       <tr><th></th><th>어제 (1일차)</th><th>오늘 (2일차)</th></tr>
-      <tr><td>예시</td><td>복붙용 예시 지시문 제공</td><td>빈칸에서 직접 (구조만 참고)</td></tr>
-      <tr><td>업무 종류</td><td>강사가 제시한 4가지 중 선택</td><td>내가 발굴 — 어제와 다른 계열로</td></tr>
-      <tr><td>시간</td><td>단계마다 넉넉히</td><td>타이트하게 — 실전 감각</td></tr>
-      <tr><td>목표</td><td>"만들 수 있다"는 경험</td><td>"혼자서도 만든다"는 능력</td></tr>
+      <tr><th>예시</th><td>복붙용 예시 지시문 제공</td><td>빈칸에서 직접 (구조만 참고)</td></tr>
+      <tr><th>업무 종류</th><td>강사가 제시한 4가지 중 선택</td><td>내가 발굴 — 어제와 다른 계열로</td></tr>
+      <tr><th>시간</th><td>단계마다 넉넉히</td><td>타이트하게 — 실전 감각</td></tr>
+      <tr><th>목표</th><td>"만들 수 있다"는 경험</td><td>"혼자서도 만든다"는 능력</td></tr>
     </table>
   </div>
 </section>
@@ -869,14 +899,21 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="자주 하는 실수">
+<section class="slide" data-title="자주 하는 실수" data-note="Do &amp; Don&#39;t 도식 — 실수와 고친 버전을 좌우로 대비">
   <div class="slide-header"><div class="kicker">6부 · 실수 3가지</div><div class="slide-no">50</div></div>
   <div class="slide-body">
     <h2 class="big-message">직접 쓸 때 <span class="orange">자주 하는 실수 3가지</span></h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">1</div><h3>역할이 모호</h3><p>"너는 도우미다" (X) → "너는 발전소 설계회사의 주간보고 작성 담당자다" (O)</p></div>
-      <div class="card"><div class="badge">2</div><h3>작업방식 생략</h3><p>순서 없이 "잘 정리해줘"만 → 매번 결과가 다르게 나옵니다</p></div>
-      <div class="card"><div class="badge">3</div><h3>금지사항 없음</h3><p>없는 내용을 지어내기 시작 — "모르면 모른다고 답해" 한 줄이 방어선</p></div>
+    <div class="dodont">
+      <div class="ddc dd-x"><h3><span class="ic">✕</span>이렇게 쓰면 실패</h3><ul>
+        <li>역할이 모호 — "너는 도우미다"</li>
+        <li>작업방식 생략 — 순서 없이 "잘 정리해줘"만</li>
+        <li>금지사항 없음 — 없는 내용을 지어내기 시작</li>
+      </ul></div>
+      <div class="ddc dd-o"><h3><span class="ic">✓</span>이렇게 고치면 성공</h3><ul>
+        <li>역할 구체화 — "너는 발전소 설계회사의 주간보고 작성 담당자다"</li>
+        <li>작업방식 명시 — 순서 ①②③으로 지정, 매번 같은 결과</li>
+        <li>금지사항 추가 — "모르면 모른다고 답해" 한 줄이 방어선</li>
+      </ul></div>
     </div>
   </div>
 </section>

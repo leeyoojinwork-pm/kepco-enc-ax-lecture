@@ -34,6 +34,10 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .cover h1{font-size:3.9vw;line-height:1.15;font-weight:800;letter-spacing:-.02em;word-break:keep-all}
 .cover .sub{margin-top:1.8vw;font-size:1.3vw;line-height:1.6;color:#c9ccd3;word-break:keep-all}
 .cover .bar{width:5vw;height:.35vw;background:var(--brand);margin-top:2vw;border-radius:2px}
+.cover .instr{margin-top:2.2vw;display:flex;align-items:center;gap:.7vw}
+.cover .instr .iname{font-size:1.15vw;font-weight:800;color:#fff}
+.cover .instr .idiv{width:.25vw;height:.25vw;border-radius:50%;background:#5a5e68}
+.cover .instr .irole{font-size:.92vw;color:#9a9ea8;font-weight:600;word-break:keep-all}
 .cover .right{flex:1;display:flex;align-items:center;justify-content:center;color:#3a3d45}
 .cover .imgbox{width:100%;aspect-ratio:16/10;border-radius:1vw;background:#23262e;border:1px solid #33373f;display:flex;align-items:center;justify-content:center;font-size:1vw;color:#6b7079;text-align:center}
 .divider{background:var(--cover-grad);color:#fff;justify-content:center}
@@ -154,6 +158,31 @@ table.tbl tr:last-child td{border-bottom:none}
 .ba2 .bafter{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff}
 .ba2 .bafter p{color:#ffe3d3}
 .ba2 .barrow{width:3.6vw;height:3.6vw;border-radius:50%;background:var(--panel);border:2px solid var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.5vw;color:var(--brand);margin:0 auto;box-shadow:var(--shadow)}
+.frm{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.75vw;margin-top:2vw;row-gap:1.6vw}
+.frm .fhex{width:6.8vw;height:7.6vw;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--panel);border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.95vw;box-shadow:var(--shadow);position:relative}
+.frm .fhex small{display:block;font-size:.62vw;font-weight:700;opacity:.65;margin-top:.25vw;color:var(--muted)}
+.frm .fhex.solid{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff;font-size:.9vw}
+.frm .fhex.solid small{color:#ffe3d3;opacity:.85}
+.frm .op{font-size:1.5vw;font-weight:800;color:var(--brand)}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:1.1vw;margin-top:1.3vw}
+.dodont .ddc{border-radius:1.4vw;padding:1.4vw}
+.dodont .dd-o{background:#eef3f0}
+.dodont .dd-x{background:#fdeeec}
+.dodont h3{font-size:1.2vw;margin-bottom:.9vw;display:flex;align-items:center;gap:.5vw;font-weight:800}
+.dodont .ic{width:1.7vw;height:1.7vw;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.9vw}
+.dodont .dd-o .ic{background:#1d6a4e}
+.dodont .dd-x .ic{background:#c2392c}
+.dodont ul{margin:0;padding:0}
+.dodont li{list-style:none;font-size:.88vw;line-height:1.5;margin-bottom:.7vw;font-weight:700;color:#344054;word-break:keep-all}
+.ctb{width:100%;border-collapse:separate;border-spacing:0 .4vw;margin-top:1vw;font-size:.9vw}
+.ctb th,.ctb td{padding:.7vw 1vw;text-align:left;word-break:keep-all}
+.ctb tr:first-child th{color:#fff;font-weight:800}
+.ctb tr:first-child th:first-child{background:#8a8f9a;border-radius:.7vw 0 0 .7vw}
+.ctb tr:first-child th:not(:first-child){background:var(--brand)}
+.ctb tr:not(:first-child){background:var(--panel)}
+.ctb tr:not(:first-child) td,.ctb tr:not(:first-child) th{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ctb tr:not(:first-child) th{font-weight:800;background:#f8fafc;border-radius:.7vw 0 0 .7vw;border-left:1px solid var(--line)}
+.ctb tr:not(:first-child) td:last-child{border-radius:0 .7vw .7vw 0;border-right:1px solid var(--line)}
 
 .nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
 .nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
@@ -172,8 +201,9 @@ table.tbl tr:last-child td{border-bottom:none}
     <h1>챗봇 구축으로<br>내 업무를 자동화한다</h1>
     <div class="sub">ChatGPT 유료계정 하나로, 4시간 만에<br>내 반복 업무를 대신하는 챗봇 1개를 완성합니다.</div>
     <div class="bar"></div>
+    <div class="instr"><span class="iname">강사 이유진</span><span class="idiv"></span><span class="irole">AI 업무 자동화 · 서비스 기획 강사</span></div>
   </div>
-  
+
 </section>
 
 <section class="slide" data-title="인트로">
@@ -189,7 +219,7 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">오늘 함께할 강사</h2>
     <div class="grid3">
-      <div class="card"><div class="badge">AX</div><h3>AI 업무 자동화 · 서비스 기획 강사</h3><p>공공기관·기업 대상 챗봇 구축 실습형 교육 다수 진행</p></div>
+      <div class="card"><div class="badge">AX</div><h3>이유진 — AI 업무 자동화·서비스 기획 강사</h3><p>공공기관·기업 대상 챗봇 구축 실습형 교육 다수 진행</p></div>
       <div class="card"><div class="badge">▶</div><h3>오늘의 역할</h3><p>기초 강의 + 라이브 시연 + 실습 현장 코칭</p></div>
       <div class="card"><div class="badge">◆</div><h3>보조강사</h3><p>실습 중 막히는 분을 현장과 오픈채팅방에서 바로 팔로업</p></div>
     </div>
@@ -490,18 +520,25 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="잘하는 일 못하는 일">
+<section class="slide" data-title="잘하는 일 못하는 일" data-note="Do &amp; Don&#39;t 도식 — 초록/빨강 대비로 &#39;오늘 쓸 것&#39;을 즉각 구분">
   <div class="slide-header"><div class="kicker">Session 1 · 잘하는 일, 못하는 일</div><div class="slide-no">22</div></div>
   <div class="slide-body">
     <h2 class="big-message">GPT가 <span class="orange">잘하는 일</span>과 <span class="orange">못 하는 일</span></h2>
-    <table class="tbl">
-      <tr><th>잘한다 — 오늘 쓸 것</th><th>못 한다 — 맡기면 안 되는 것</th></tr>
-      <tr><td>초안 작성 (보고서·메일·회의록)</td><td>사실 확인 (최신 규정·수치·날짜)</td></tr>
-      <tr><td>요약·형식 변환 (긴 글 → 3줄, 메모 → 표)</td><td>사내 규정 판단 (학습한 적이 없음)</td></tr>
-      <tr><td>톤 조정 (개조식↔서술식, 공문 톤)</td><td>책임지는 결정 (승인·평가·인사)</td></tr>
-      <tr><td>아이디어 벌리기 (제목 10개, 반론 5개)</td><td>정확한 계산 (복잡한 수치는 검산 필수)</td></tr>
-    </table>
-    <p class="lead">오늘 만드는 챗봇은 전부 왼쪽 열입니다. 오른쪽을 시키면 그럴듯한 거짓말이 돌아옵니다.</p>
+    <div class="dodont">
+      <div class="ddc dd-o"><h3><span class="ic">✓</span>잘한다 — 오늘 쓸 것</h3><ul>
+        <li>초안 작성 (보고서·메일·회의록)</li>
+        <li>요약·형식 변환 (긴 글 → 3줄, 메모 → 표)</li>
+        <li>톤 조정 (개조식↔서술식, 공문 톤)</li>
+        <li>아이디어 벌리기 (제목 10개, 반론 5개)</li>
+      </ul></div>
+      <div class="ddc dd-x"><h3><span class="ic">✕</span>못 한다 — 맡기면 안 되는 것</h3><ul>
+        <li>사실 확인 (최신 규정·수치·날짜)</li>
+        <li>사내 규정 판단 (학습한 적이 없음)</li>
+        <li>책임지는 결정 (승인·평가·인사)</li>
+        <li>정확한 계산 (복잡한 수치는 검산 필수)</li>
+      </ul></div>
+    </div>
+    <p class="lead">오늘 만드는 챗봇은 전부 왼쪽입니다. 오른쪽을 시키면 그럴듯한 거짓말이 돌아옵니다.</p>
   </div>
 </section>
 
@@ -607,18 +644,19 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="7요소 Framework">
+<section class="slide" data-title="7요소 Framework" data-note="Formula 도식 — 7개를 더하면 업무 지시서가 완성된다는 공식 형태로 각인">
   <div class="slide-header"><div class="kicker">Session 2 · Framework</div><div class="slide-no">29</div></div>
   <div class="slide-body">
     <h2 class="big-message">좋은 프롬프트 = <span class="orange">업무 지시서 7요소</span></h2>
-    <div class="flow">
-      <div class="step"><div class="n">01</div><h4>역할</h4><p>너는 누구인가</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">02</div><h4>하는 일</h4><p>한 문장 요약</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">03</div><h4>작업방식</h4><p>순서 ①②③</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">04</div><h4>출력형식</h4><p>결과의 틀</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">05</div><h4>말투</h4><p>어떤 톤으로</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">06</div><h4>금지사항</h4><p>하면 안 되는 것</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">07</div><h4>예외처리</h4><p>모를 때의 행동</p></div>
+    <div class="frm">
+      <div class="fhex">역할<small>누구인가</small></div><div class="op">+</div>
+      <div class="fhex">하는 일<small>한 문장</small></div><div class="op">+</div>
+      <div class="fhex">작업방식<small>①②③</small></div><div class="op">+</div>
+      <div class="fhex">출력형식<small>결과의 틀</small></div><div class="op">+</div>
+      <div class="fhex">말투<small>어떤 톤</small></div><div class="op">+</div>
+      <div class="fhex">금지사항<small>안 되는 것</small></div><div class="op">+</div>
+      <div class="fhex">예외처리<small>모를 때</small></div><div class="op">=</div>
+      <div class="fhex solid">업무<br>지시서</div>
     </div>
     <p class="lead">외울 필요 없습니다. 치트시트에 있고, 오늘 하루 종일 이 틀만 씁니다.</p>
   </div>
@@ -667,13 +705,14 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 
-<section class="slide" data-title="결과 비교">
+<section class="slide" data-title="결과 비교" data-note="Before&amp;After 도식 — 같은 도구·같은 시간, 지시서 차이만 강조">
   <div class="slide-header"><div class="kicker">Session 2 · 결과 비교</div><div class="slide-no">33</div></div>
   <div class="slide-body">
     <h2 class="big-message">실제로 결과가 <span class="orange">이렇게 다릅니다</span></h2>
-    <div class="grid2">
-      <div class="card"><div class="badge">✕</div><h3>"보고서 써줘"의 답</h3><p>"어떤 보고서를 원하시나요? 일반적으로 보고서는 서론, 본론, 결론으로 구성되며…" — 되묻거나 일반론</p></div>
-      <div class="card"><div class="badge">○</div><h3>7요소 지시서의 답</h3><p>"①금주 실적: 협력사 회의 2회 진행, 일정 리스크 2건 조율 완료… ②특이사항: …" — 바로 붙일 수 있는 초안</p></div>
+    <div class="ba2">
+      <div class="bc bbefore"><h3>Before</h3><p>"보고서 써줘"의 답 — "어떤 보고서를 원하시나요? 일반적으로 보고서는 서론, 본론, 결론으로 구성되며…" 되묻거나 일반론</p></div>
+      <div class="barrow">→</div>
+      <div class="bc bafter"><h3>After</h3><p>7요소 지시서의 답 — "①금주 실적: 협력사 회의 2회 진행, 일정 리스크 2건 조율 완료… ②특이사항: …" 바로 붙일 수 있는 초안</p></div>
     </div>
     <p class="lead">같은 도구, 같은 시간. 차이는 지시서뿐입니다.</p>
   </div>
