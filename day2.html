@@ -58,6 +58,7 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .grid4{grid-template-columns:repeat(4,1fr)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.5vw;box-shadow:var(--shadow)}
 .card .badge{width:2vw;height:2vw;border-radius:.5vw;background:var(--brand-soft);color:var(--brand);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1.05vw;margin-bottom:.9vw}
+.card .badge.step-label{width:auto;min-width:3.9vw;padding:0 .55vw;font-size:.78vw;letter-spacing:.04em}
 .card h3{font-size:1.15vw;font-weight:800;margin-bottom:.5vw;word-break:keep-all}
 .card p{font-size:.98vw;line-height:1.5;color:var(--muted);word-break:keep-all}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3vw;margin-top:2vw}
@@ -71,12 +72,24 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .tl .dot.c1,.tl .dot.c2,.tl .dot.c3,.tl .dot.c4{background:var(--nav)}
 .tl h4{font-size:1.05vw;font-weight:800;margin-bottom:.3vw}
 .tl p{font-size:.85vw;color:var(--muted);line-height:1.4}
-.flow{display:flex;align-items:stretch;gap:.6vw;margin-top:2vw;flex-wrap:wrap}
-.step{flex:1;min-width:9vw;background:var(--panel);border:1px solid var(--line);border-left:.35vw solid var(--brand);border-radius:.6vw;padding:1vw 1.1vw}
-.step .n{font-size:.85vw;font-weight:800;color:var(--brand)}
-.step h4{font-size:1.05vw;font-weight:800;margin:.3vw 0}
-.step p{font-size:.85vw;color:var(--muted);line-height:1.4}
-.arrow{display:flex;align-items:center;color:var(--brand);font-size:1.2vw;font-weight:800}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(9vw,1fr));gap:0;margin-top:2vw;border-top:.18vw solid var(--nav);border-bottom:1px solid var(--line)}
+.step{min-width:0;background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;padding:1.1vw 1.2vw 1.2vw}
+.step:last-of-type{border-right:0}
+.step .n{font-size:.78vw;font-weight:850;color:var(--muted);letter-spacing:.04em}
+.step h4{font-size:1.08vw;font-weight:850;margin:.32vw 0}
+.step p{font-size:.84vw;color:var(--muted);line-height:1.45}
+.arrow{display:none}
+.stage-track{display:grid;grid-template-columns:repeat(4,1fr);margin-top:2vw;border-top:.22vw solid var(--nav);border-bottom:1px solid var(--line)}
+.stage-item{padding:1.25vw 1.25vw 1.35vw;border-right:1px solid var(--line);min-height:8.6vw}
+.stage-item:last-child{border-right:0}
+.stage-item .stage-no{font-size:.78vw;font-weight:900;color:var(--brand);letter-spacing:.06em}
+.stage-item h3{font-size:1.18vw;margin:.42vw 0 .32vw;font-weight:900}
+.stage-item p{font-size:.86vw;color:var(--muted);line-height:1.48;word-break:keep-all}
+.tool-list{margin-top:1.7vw;border-top:.22vw solid var(--nav)}
+.tool-row{display:grid;grid-template-columns:4vw 13vw 1fr;align-items:start;padding:1.05vw .35vw;border-bottom:1px solid var(--line)}
+.tool-row .tool-no{font-size:.78vw;font-weight:900;color:var(--brand)}
+.tool-row h3{font-size:1.08vw;font-weight:900}
+.tool-row p{font-size:.88vw;line-height:1.48;color:var(--muted);word-break:keep-all}
 .prompt{position:relative;background:var(--nav);color:#e8eaed;border-radius:.8vw;padding:1.5vw 1.7vw;margin-top:1.4vw;font-size:.98vw;line-height:1.6;white-space:pre-wrap;word-break:keep-all}
 .prompt.bad{background:#fbeae6;color:#7a2c17;border:1px dashed #e0a594}
 .copy-btn{position:absolute;top:1vw;right:1vw;background:var(--brand);color:#fff;border:none;border-radius:.5vw;padding:.5vw 1vw;font-size:.9vw;font-weight:800;cursor:pointer;font-family:var(--font)}
@@ -541,7 +554,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="지식파일 추가 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
+<section class="slide" data-title="지식파일 추가 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
   <div class="slide-header"><div class="kicker">5부 · 실습 15분</div><div class="slide-no">19</div></div>
   <div class="slide-body">
     <h2 class="big-message">지식파일 <span class="orange">2번째</span> 추가하기</h2>
@@ -889,13 +902,13 @@ table.tbl tr:last-child td{border-bottom:none}
 <section class="slide" data-title="자동화 사례 스토리">
   <div class="slide-header"><div class="kicker">5부 · 실제 사례</div><div class="slide-no">40</div></div>
   <div class="slide-body">
-    <h2 class="big-message">실제 기업들은 <span class="orange">이렇게 쓰고 있습니다</span></h2>
+    <h2 class="big-message">두 번째 Agent는 <span class="orange">전후를 직접 재며</span> 만듭니다</h2>
     <div class="stats">
-      <div class="stat"><strong>80%</strong><span>보고서·회의록 자동 생성 도입 기업의 작성 시간 단축</span></div>
-      <div class="stat"><strong>2h→10초</strong><span>사내 지식 검색 시간 (통신사 사례)</span></div>
-      <div class="stat"><strong>60%</strong><span>반복 문의 자동 처리 (이커머스 CS)</span></div>
+      <div class="stat"><strong>시간</strong><span>초안까지 걸린 시간은 줄었는가</span></div>
+      <div class="stat"><strong>품질</strong><span>누락·오류·재작성은 줄었는가</span></div>
+      <div class="stat"><strong>재사용</strong><span>다른 팀원도 같은 방식으로 쓸 수 있는가</span></div>
     </div>
-    <p class="lead">전부 오늘 우리가 만드는 것과 같은 원리입니다 — 반복 업무를 정의하고, 지시서를 쓰고, 자료를 연결한 것.</p>
+    <p class="lead">완성 뒤 이 세 항목을 한 줄씩 기록합니다. 효과를 설명할 때도 그 기록을 근거로 씁니다.</p>
   </div>
 </section>
 
@@ -1030,7 +1043,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="STEP1 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
+<section class="slide" data-title="STEP1 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
   <div class="slide-header"><div class="kicker">STEP 1 · 실습 15분</div><div class="slide-no">50</div></div>
   <div class="slide-body">
     <h2 class="big-message">문제정의 4줄 채우기</h2>
@@ -1168,7 +1181,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="STEP2 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
+<section class="slide" data-title="STEP2 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
   <div class="slide-header"><div class="kicker">STEP 2 · 실습 25분</div><div class="slide-no">59</div></div>
   <div class="slide-body">
     <h2 class="big-message">업무 지시서 완성하고 테스트까지</h2>
@@ -1268,7 +1281,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="STEP3 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
+<section class="slide" data-title="STEP3 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
   <div class="slide-header"><div class="kicker">STEP 3 · 실습 15분</div><div class="slide-no">66</div></div>
   <div class="slide-body">
     <h2 class="big-message">지식파일까지 붙여서 완성 직전</h2>
@@ -1293,7 +1306,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="STEP4 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
+<section class="slide" data-title="STEP4 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
   <div class="slide-header"><div class="kicker">STEP 4 · 실습 25분</div><div class="slide-no">68</div></div>
   <div class="slide-body">
     <h2 class="big-message">두 번째 챗봇, 마무리</h2>
@@ -1487,7 +1500,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="배포 계획 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
+<section class="slide" data-title="배포 계획 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
   <div class="slide-header"><div class="kicker">7부 · 실습 10분</div><div class="slide-no">81</div></div>
   <div class="slide-body">
     <h2 class="big-message">배포 계획, 3줄로 적어보세요</h2>
@@ -1602,26 +1615,27 @@ table.tbl tr:last-child td{border-bottom:none}
 <section class="slide" data-title="앞으로">
   <div class="slide-header"><div class="kicker">7부 · 앞으로</div><div class="slide-no">89</div></div>
   <div class="slide-body">
-    <h2 class="big-message">교육 끝나고 <span class="orange">이 순서</span>로 넓혀가세요</h2>
-    <div class="flow">
-      <div class="step"><div class="n">오늘</div><h4>챗봇 2개</h4><p>완성 + 배포</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">1개월</div><h4>챗봇 3~4개</h4><p>4단계 프레임워크 재사용</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">3개월</div><h4>팀 표준</h4><p>팀 공용 지시문·지식파일 + 개선 루프 정착</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">그 후</div><h4>연결 단계</h4><p>자동화 루프·MCP, 회사 AX 과제(SK AX 협약)와 연결</p></div>
+    <h2 class="big-message">다음 업무도 <span class="orange">STEP 1부터 다시</span> 시작합니다</h2>
+    <div class="stage-track">
+      <div class="stage-item"><div class="stage-no">STEP 1</div><h3>문제정의</h3><p>반복성×규칙성으로 맡길 업무 하나를 고릅니다.</p></div>
+      <div class="stage-item"><div class="stage-no">STEP 2</div><h3>업무 지시서</h3><p>역할·작업방식·출력·금지사항을 업무 기준으로 씁니다.</p></div>
+      <div class="stage-item"><div class="stage-no">STEP 3</div><h3>지식파일</h3><p>공개 가능한 근거·양식·예시를 골라 정리합니다.</p></div>
+      <div class="stage-item"><div class="stage-no">STEP 4</div><h3>검증·공유</h3><p>정상·누락·충돌·금지 테스트를 통과한 뒤 팀에 공유합니다.</p></div>
     </div>
+    <p class="lead">새 도구보다 이 네 단계를 반복하는 것이 먼저입니다. 업무가 달라져도 만드는 순서는 같습니다.</p>
   </div>
 </section>
 
 <section class="slide" data-title="자동화 도구 이름들">
   <div class="slide-header"><div class="kicker">7부 · 다음 단계 도구</div><div class="slide-no">90</div></div>
   <div class="slide-body">
-    <h2 class="big-message">더 가고 싶은 분을 위한 <span class="orange">도구 이름 3개</span></h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">1</div><h3>Zapier / Make</h3><p>코딩 없이 "메일 오면 → 요약 → 공유" 같은 자동화 루프를 만드는 대표 도구</p></div>
-      <div class="card"><div class="badge">2</div><h3>GPT Actions</h3><p>내 챗봇을 외부 시스템과 연결 — 개발 지식 필요, IT 부서와 함께</p></div>
-      <div class="card"><div class="badge">3</div><h3>MCP</h3><p>AI가 사내 시스템에 직접 연결되는 표준 — 회사 AX 과제 레벨의 이야기</p></div>
+    <h2 class="big-message">다음 단계에서 만날 <span class="orange">세 가지 연결 방식</span></h2>
+    <div class="tool-list">
+      <div class="tool-row"><div class="tool-no">01</div><h3>Zapier / Make</h3><p>메일 수신·요약·공유처럼 여러 서비스를 순서대로 연결하는 노코드 자동화 도구</p></div>
+      <div class="tool-row"><div class="tool-no">02</div><h3>GPT Actions</h3><p>맞춤 GPT가 외부 API를 호출하도록 연결하는 방식. 개발·보안 검토가 필요합니다.</p></div>
+      <div class="tool-row"><div class="tool-no">03</div><h3>MCP</h3><p>AI가 승인된 도구와 데이터에 연결되도록 공통 규격을 제공하는 방식. 조직 차원의 설계 영역입니다.</p></div>
     </div>
-    <p class="lead">지금 당장 필요 없습니다. 다만 이 이름들이 들리기 시작하면 "아, 그 다음 단계구나" 하고 알아들으면 됩니다.</p>
+    <p class="lead">오늘 실습 범위는 아닙니다. 지금은 이름과 역할만 구분하면 충분합니다.</p>
   </div>
 </section>
 
@@ -1630,10 +1644,10 @@ table.tbl tr:last-child td{border-bottom:none}
   <div class="slide-body">
     <h2 class="big-message">동료에게 알려줄 땐 — <span class="orange">이 순서로</span></h2>
     <div class="grid4">
-      <div class="card"><div class="badge">1</div><h3>내 챗봇 시연</h3><p>말로 설명 말고 30초 시연 — "봐봐, 이렇게 돼"</p></div>
-      <div class="card"><div class="badge">2</div><h3>업무 하나 고르게</h3><p>반복성×규칙성 매트릭스 종이에 그려주기</p></div>
-      <div class="card"><div class="badge">3</div><h3>예시 지시문 전달</h3><p>부록 치트시트 공유 — 복붙에서 시작하게</p></div>
-      <div class="card"><div class="badge">4</div><h3>첫 결과 봐주기</h3><p>처음 한 번만 옆에서 — 그 다음은 혼자 갑니다</p></div>
+      <div class="card"><div class="badge step-label">STEP 1</div><h3>내 챗봇 시연</h3><p>말로 설명 말고 30초 시연 — "봐봐, 이렇게 돼"</p></div>
+      <div class="card"><div class="badge step-label">STEP 2</div><h3>업무 하나 고르게</h3><p>반복성×규칙성 매트릭스 종이에 그려주기</p></div>
+      <div class="card"><div class="badge step-label">STEP 3</div><h3>예시 지시문 전달</h3><p>부록 치트시트 공유 — 복붙에서 시작하게</p></div>
+      <div class="card"><div class="badge step-label">STEP 4</div><h3>첫 결과 봐주기</h3><p>처음 한 번만 옆에서 — 그 다음은 혼자 갑니다</p></div>
     </div>
     <p class="lead">여러분이 오늘 배운 길 그대로입니다. 가르치는 게 아니라 같은 길을 안내하는 것.</p>
   </div>
