@@ -607,11 +607,11 @@ table.tbl tr:last-child td{border-bottom:none}
           <div class="uiapp-topbar" style="justify-content:flex-end">
             <div class="uiapp-modelsel uispot" style="border-radius:.6vw">
               <span class="uiapp-badge" style="position:absolute;left:-1.6vw;top:0">1</span>
-              <span class="uiapp-modelbtn">ChatGPT 5.1 <span style="font-size:.6vw">▾</span></span>
+              <span class="uiapp-modelbtn">GPT-5.5 Instant <span style="font-size:.6vw">▾</span></span>
               <div class="uiapp-dropdown">
-                <div class="di sel">Auto<small>가장 빠르고 균형 잡힌 기본값</small></div>
-                <div class="di">Thinking<small>복잡한 질문, 더 깊게 생각</small></div>
-                <div class="di">Instant<small>즉답, 가벼운 질문용</small></div>
+                <div class="di sel">GPT-5.5 Instant<small>기본값. 빠른 초안·요약·일상 업무</small></div>
+                <div class="di">GPT-5.5 Thinking<small>복잡한 검토·비교·추론이 필요할 때</small></div>
+                <div class="di">GPT-5.6 Sol<small>유료 플랜 순차 제공. 고난도 장기 작업용</small></div>
               </div>
             </div>
           </div>
@@ -626,10 +626,51 @@ table.tbl tr:last-child td{border-bottom:none}
       </div>
     </div>
     <div class="grid3" style="margin-top:1vw">
-      <div class="card"><div class="badge">1</div><h3>모델 선택</h3><p>기본값(Auto)이면 충분합니다. 복잡한 질문엔 Thinking으로 바꿔보세요</p></div>
+      <div class="card"><div class="badge">1</div><h3>모델 선택</h3><p>기본값은 GPT-5.5 Instant로 충분합니다. 복잡한 검토는 Thinking을 고릅니다</p></div>
       <div class="card"><div class="badge">2</div><h3>+ 버튼</h3><p>파일 업로드·사진 촬영·화면 공유 — 오늘은 지식파일 올릴 때 이 자리를 씁니다</p></div>
       <div class="card"><div class="badge">3</div><h3>새 채팅</h3><p>주제가 바뀔 때마다 눌러주세요 — 대화가 섞이면 답변 품질이 떨어집니다</p></div>
     </div>
+  </div>
+</section>
+
+<section class="slide" data-title="ChatGPT 기능 지도">
+  <div class="slide-header"><div class="kicker">Session 1 · 기능명 정확히 보기</div><div class="slide-no">22-A</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">ChatGPT 안에도 <span class="orange">일하는 층위</span>가 다릅니다</h2>
+    <table class="tbl">
+      <tr><th>기능</th><th>한 줄 설명</th><th>오늘의 비유</th><th>이번 교육</th></tr>
+      <tr><td><b>Chat</b></td><td>그때그때 묻고 답 받는 기본 대화</td><td>옆자리 동료에게 물어보기</td><td>기초 실습</td></tr>
+      <tr><td><b>Projects</b></td><td>파일·대화·지시사항을 한 업무 공간에 모아두기</td><td>프로젝트 서류함</td><td>개념만 소개</td></tr>
+      <tr><td><b>GPTs</b></td><td>반복 업무용 맞춤 챗봇 만들기</td><td>업무 담당자 하나 만들어두기</td><td><b>핵심 실습</b></td></tr>
+      <tr><td><b>Work</b></td><td>긴 업무를 맡기고 진행 과정을 보며 결과물 받기</td><td>일을 맡기는 에이전트</td><td>확장 개념</td></tr>
+      <tr><td><b>Codex</b></td><td>코드·저장소·터미널 작업 전용</td><td>개발 담당자</td><td>제외</td></tr>
+    </table>
+    <p class="lead">오늘은 기능을 전부 외우는 시간이 아닙니다. <span class="orange">내 반복 업무를 GPTs에 저장하는 법</span> 하나만 확실히 가져갑니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="모델 선택 기준">
+  <div class="slide-header"><div class="kicker">Session 1 · 모델명 정확히 보기</div><div class="slide-no">22-B</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">모델은 많이 보여도, <span class="orange">선택 기준은 단순합니다</span></h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">기본</div><h3>GPT-5.5 Instant</h3><p>빠른 답변, 요약, 초안 작성, 문장 다듬기. 오늘 대부분의 실습은 이걸로 충분합니다.</p></div>
+      <div class="card"><div class="badge">검토</div><h3>GPT-5.5 Thinking</h3><p>보고서 논리 점검, 리스크 비교, 복잡한 조건 정리처럼 생각이 더 필요한 작업에 씁니다.</p></div>
+      <div class="card"><div class="badge">심화</div><h3>GPT-5.6 Sol</h3><p>유료 플랜에 순차 제공되는 고난도 작업용 모델입니다. 계정 설정에 따라 안 보일 수 있습니다.</p></div>
+    </div>
+    <p class="lead">강의 중 모델명이 조금 달라도 당황하지 마세요. 화면에 보이는 기본 모델로 시작하고, 답이 얕으면 Thinking으로 바꾸면 됩니다.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="오늘 Work가 아닌 이유">
+  <div class="slide-header"><div class="kicker">Session 1 · 오늘의 범위</div><div class="slide-no">22-C</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">Work는 멋있지만, 오늘 목표는 <span class="orange">GPTs</span>입니다</h2>
+    <div class="grid2">
+      <div class="card"><div class="badge">Work</div><h3>긴 일을 끝까지 맡기는 모드</h3><p>자료 조사, 문서·스프레드시트·보고서 작성처럼 여러 단계를 이어서 수행합니다. 진행 중 확인과 승인도 필요합니다.</p></div>
+      <div class="card"><div class="badge">GPTs</div><h3>반복 업무 방식을 저장하는 도구</h3><p>회의록 정리, 보고 초안, 문서 요약처럼 매번 같은 방식으로 처리할 업무를 하나의 챗봇으로 만듭니다.</p></div>
+    </div>
+    <p class="lead">한전기술 교육 4시간 안에서 가져갈 수 있는 가장 현실적인 결과물은 <span class="orange">내 업무 방식이 들어간 작은 Agent 하나</span>입니다.</p>
   </div>
 </section>
 
@@ -997,15 +1038,15 @@ table.tbl tr:last-child td{border-bottom:none}
 <section class="slide" data-title="Projects vs GPTs">
   <div class="slide-header"><div class="kicker">Session 3 · 헷갈리는 것 정리</div><div class="slide-no">44</div></div>
   <div class="slide-body">
-    <h2 class="big-message">Projects도 있던데요? — <span class="orange">오늘은 GPTs</span>입니다</h2>
+    <h2 class="big-message">Projects도 있던데요? — <span class="orange">역할과 공간이 다릅니다</span></h2>
     <table class="tbl">
       <tr><th></th><th>GPTs (오늘)</th><th>Projects</th></tr>
-      <tr><td>정체</td><td><b>특정 역할을 수행하는 AI</b> — 지시서를 기억하는 담당자 하나</td><td><b>특정 작업을 관리하는 공간</b> — 파일과 대화를 모아두는 서랍</td></tr>
-      <tr><td>재사용</td><td>한 번 만들면 어떤 대화에서도 같은 역할로 재사용</td><td>그 프로젝트 안에서만 유효 — 다른 일에는 안 씀</td></tr>
-      <tr><td>용도</td><td>팀에 배포할 도구</td><td>나 혼자 반복 작업 정리</td></tr>
-      <tr><td>공유</td><td>링크 하나로 팀 전체</td><td>기본적으로 나만</td></tr>
+      <tr><td>정체</td><td><b>특정 역할을 수행하는 맞춤 ChatGPT</b> — 지시서와 참고자료가 저장된 담당자</td><td><b>업무별 작업 공간</b> — 파일, 대화, 지시사항을 한곳에 모아두는 방</td></tr>
+      <tr><td>재사용</td><td>여러 업무·여러 프로젝트에서 같은 역할로 다시 사용</td><td>해당 프로젝트의 맥락 안에서 계속 이어감</td></tr>
+      <tr><td>좋은 예</td><td>회의록 정리 GPT, 현안 보고 GPT, 문서 요약 GPT</td><td>○○ 설계검토 대응, 감사 준비, 교육자료 제작</td></tr>
+      <tr><td>공유</td><td>링크 또는 워크스페이스 설정으로 공유</td><td>Business·Enterprise·Edu 등에서는 팀 공유 가능</td></tr>
     </table>
-    <p class="lead">비유하면 GPTs는 "일 잘하는 직원 한 명", Projects는 "그 프로젝트 서류함". 오늘은 "팀과 나눌 결과물"이 목표라 GPTs로 갑니다.</p>
+    <p class="lead">비유하면 GPTs는 "일 잘하는 담당자", Projects는 "그 일의 서류함". 오늘은 담당자부터 만듭니다.</p>
   </div>
 </section>
 
