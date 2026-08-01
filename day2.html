@@ -127,6 +127,26 @@ table.tbl tr:last-child td{border-bottom:none}
 .tree .children{display:flex;gap:3vw;position:relative;padding-top:1.4vw}
 .tree .children::before{content:"";position:absolute;top:0;left:12%;right:12%;height:.16vw;background:var(--brand);border-radius:2px}
 .tree .col{display:flex;flex-direction:column;align-items:center;gap:0}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:1vw;margin-top:2.6vw;align-items:end}
+.roadmap .rc{background:var(--panel);border:1px solid var(--line);border-radius:1.3vw;padding:1.2vw;box-shadow:var(--shadow);position:relative}
+.roadmap .rc:nth-child(1){margin-top:3.4vw}.roadmap .rc:nth-child(2){margin-top:2.2vw}.roadmap .rc:nth-child(3){margin-top:1vw}
+.roadmap .rc .pdot{width:2.2vw;height:2.2vw;border-radius:50%;background:var(--brand-soft);color:#a33c10;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85vw;margin-bottom:.7vw}
+.roadmap .rc h3{font-size:1.15vw;margin-bottom:.5vw;font-weight:800}
+.roadmap .rc p{font-size:.82vw;line-height:1.45;color:var(--muted);word-break:keep-all}
+.tl2{position:relative;width:44vw;height:11vw;margin:3vw auto 0}
+.tl2 svg{position:absolute;inset:0;width:100%;height:100%}
+.tl2 .tn{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.tl2 .td{width:1.5vw;height:1.5vw;border-radius:50%;background:var(--brand);border:.3vw solid #fff;box-shadow:0 0 0 .25vw var(--brand-soft)}
+.tl2 .tn b{margin-top:.8vw;font-size:.95vw;font-weight:800}
+.tl2 .tn span{color:var(--muted);font-size:.78vw;font-weight:700;margin-top:.1vw;word-break:keep-all}
+.ba2{display:grid;grid-template-columns:1fr 4.4vw 1fr;gap:1.1vw;margin-top:2vw;align-items:center}
+.ba2 .bc{min-height:13vw;border-radius:1.6vw;padding:1.6vw}
+.ba2 .bc h3{font-size:1.4vw;margin-bottom:.8vw;font-weight:800}
+.ba2 .bc p{font-size:.95vw;line-height:1.55;word-break:keep-all}
+.ba2 .bbefore{background:#f1f3f6;color:var(--muted)}
+.ba2 .bafter{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff}
+.ba2 .bafter p{color:#ffe3d3}
+.ba2 .barrow{width:3.6vw;height:3.6vw;border-radius:50%;background:var(--panel);border:2px solid var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.5vw;color:var(--brand);margin:0 auto;box-shadow:var(--shadow)}
 
 .nav-ui{position:absolute;bottom:1.4vw;right:2vw;display:flex;gap:.6vw;z-index:50}
 .nav-ui button{background:var(--nav);color:#fff;border:none;width:2.4vw;height:2.4vw;border-radius:50%;font-size:1.1vw;cursor:pointer;opacity:.85}
@@ -1231,13 +1251,14 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="8시간 되돌아보기">
+<section class="slide" data-title="8시간 되돌아보기" data-note="Before&After 도식 — 대비를 시각적으로 강조, 참가자 자기 회고 유도">
   <div class="slide-header"><div class="kicker">7부 · 되돌아보기</div><div class="slide-no">77</div></div>
   <div class="slide-body">
     <h2 class="big-message">8시간 전과 지금, <span class="orange">뭐가 달라졌나요?</span></h2>
-    <div class="grid2">
-      <div class="card"><div class="badge">전</div><h3>1일차 시작 전</h3><p>ChatGPT 계정도 없던 분, "보고서 써줘"가 프롬프트의 전부였던 분</p></div>
-      <div class="card"><div class="badge">후</div><h3>지금</h3><p>업무 지시서를 쓸 줄 알고, 챗봇 2개를 직접 설계·완성해서 팀에 배포하는 사람</p></div>
+    <div class="ba2">
+      <div class="bc bbefore"><h3>Before</h3><p>ChatGPT 계정도 없던 분, "보고서 써줘"가 프롬프트의 전부였던 분</p></div>
+      <div class="barrow">→</div>
+      <div class="bc bafter"><h3>After</h3><p>업무 지시서를 쓸 줄 알고, 챗봇 2개를 직접 설계·완성해서 팀에 배포하는 사람</p></div>
     </div>
   </div>
 </section>
