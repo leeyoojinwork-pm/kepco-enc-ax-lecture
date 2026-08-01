@@ -243,6 +243,7 @@ table.tbl tr:last-child td{border-bottom:none}
 .prompt-compare{display:grid;grid-template-columns:.82fr 1.55fr;gap:1.2vw;margin-top:1.45vw;align-items:stretch}
 .prompt-compare .prompt{margin-top:0;min-height:18.2vw;font-size:.86vw;line-height:1.52}
 .prompt-compare .prompt.bad{display:flex;flex-direction:column;justify-content:center;font-size:1.25vw;font-weight:850}
+.prompt.readable{font-size:.98vw;line-height:1.55}
 .advanced-layout{display:grid;grid-template-columns:.72fr 1.45fr;gap:1.4vw;margin-top:1.55vw;align-items:stretch}
 .advanced-rule{padding:1.4vw 1.45vw;border-top:.4vw solid var(--brand);background:#fff}
 .advanced-rule h3{font-size:1.35vw;line-height:1.35;font-weight:950}.advanced-rule p{margin-top:.9vw;font-size:.95vw;line-height:1.55;color:var(--muted);word-break:keep-all}
@@ -969,45 +970,60 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">검색이 아니라 <span class="orange">확률 생성</span>입니다. 유창한 이유도, 틀릴 수 있는 이유도 전부 여기서 나옵니다.</p>
   </div>
 </section>
-<section class="slide" data-title="GPT가 모르는 것 도식" data-note="세 영역을 왼쪽부터. '그래서 오늘 오후에 Knowledge로 세 번째 영역을 보강한다' 예고로 전환(2분)">
-  <div class="slide-header"><div class="kicker">Theory · 지식의 경계</div><div class="slide-no">29</div></div>
+<section class="slide" data-title="좋은 프롬프트가 필요한 이유" data-note="좋은 프롬프트는 AI가 모르는 업무 조건을 채워주는 일이라고 설명합니다. 다음 장에서 일부러 나쁜 프롬프트를 넣어보고 결과가 왜 애매한지 체감시킵니다.">
+  <div class="slide-header"><div class="kicker">Session 1 · 프롬프트가 필요한 이유</div><div class="slide-no">29</div></div>
   <div class="slide-body">
-    <h2 class="big-message">GPT가 아는 것과 <span class="orange">모르는 것</span></h2>
+    <h2 class="big-message">좋은 프롬프트는 AI에게 <span class="orange">빠진 업무 조건</span>을 채워주는 일입니다</h2>
     <div class="grid3">
-      <div class="card"><div class="badge">O</div><h3>학습된 지식</h3><p>학습 시점까지의 공개 문서·책·웹 — 일반 지식과 글쓰기 패턴</p></div>
-      <div class="card"><div class="badge">△</div><h3>학습 이후의 세상</h3><p>학습 컷오프 뒤의 뉴스·변경사항 — 웹 검색 기능을 켜야 보완됨</p></div>
-      <div class="card"><div class="badge">X</div><h3>우리 회사 내부</h3><p>사내 규정·양식·프로젝트 — 학습된 적이 없어 물어보면 지어낼 위험</p></div>
+      <div class="card"><div class="badge">O</div><h3>이미 아는 것</h3><p>일반 글쓰기 패턴, 공개 지식, 흔한 문서 형식은 어느 정도 알고 있습니다.</p></div>
+      <div class="card"><div class="badge">△</div><h3>알려줘야 하는 것</h3><p>대상, 목적, 부서 상황, 결과물 형식은 사용자가 넣어줘야 합니다.</p></div>
+      <div class="card"><div class="badge">X</div><h3>넣으면 안 되는 것</h3><p>비공개 설계자료, 개인정보, 사내 원문은 실습에 넣지 않습니다.</p></div>
     </div>
-    <p class="lead">세 번째 칸이 오늘의 핵심입니다. 모르는 걸 알려주는 장치가 <span class="orange">지식파일</span>(오후 실습)입니다.</p>
+    <p class="lead">그래서 오늘은 먼저 <span class="orange">일부러 부족한 질문</span>을 넣어보고, 무엇이 빠졌는지 확인한 뒤 좋은 프롬프트로 바꿔봅니다.</p>
   </div>
 </section>
-<section class="slide" data-title="환각 구조 도식" data-note="위 경로와 아래 경로를 비교하며 설명. '자신 있게 말한다고 아는 게 아니다' 한 문장 강조(2분)">
-  <div class="slide-header"><div class="kicker">Theory · 환각의 구조</div><div class="slide-no">30</div></div>
+<section class="slide" data-title="나쁜 프롬프트 먼저 실험" data-note="수강생에게 바로 ChatGPT에 나쁜 프롬프트를 입력하게 합니다. 결과가 아주 틀리지는 않아도, 목적·대상·형식이 없어 바로 쓰기 어렵다는 점을 체감시키는 장입니다.">
+  <div class="slide-header"><div class="kicker">Practice · 먼저 실패해보기</div><div class="slide-no">30</div></div>
   <div class="slide-body">
-    <h2 class="big-message">환각은 버그가 아니라 <span class="orange">작동 방식의 그림자</span></h2>
-    <p class="lead"><b>환각(Hallucination)</b>이란 — GPT가 모르는 것도 그럴듯한 문장으로 지어내 답하는 현상입니다.</p>
-    <div class="flow">
-      <div class="step"><div class="n">아는 질문</div><h4>패턴 풍부</h4><p>학습 데이터에 근거 많음 → 정확할 확률 높음</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">출력</div><h4>유창 + 대체로 정확</h4><p>그래도 초안으로 취급</p></div>
+    <h2 class="big-message">먼저 이렇게만 물어보겠습니다</h2>
+    <div class="prompt bad">회의록 정리해줘.</div>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>그대로 입력</h3><p>새 채팅을 열고 위 문장만 입력합니다.</p></div>
+      <div class="card"><div class="badge">2</div><h3>30초 확인</h3><p>답이 나쁘지는 않은데, 바로 붙여넣기 애매한 지점을 봅니다.</p></div>
+      <div class="card"><div class="badge">3</div><h3>한 줄 메모</h3><p>“무엇이 빠져서 애매했는지” 하나만 적어둡니다.</p></div>
     </div>
-    <div class="flow">
-      <div class="step"><div class="n">모르는 질문</div><h4>패턴 빈약</h4><p>근거 없음 — 그래도 확률상 그럴듯한 말은 만들 수 있음</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">출력</div><h4>유창 + 지어냄</h4><p>없는 규정 조항·논문을 자신 있게 인용</p></div>
-    </div>
-    <p class="lead">방어선 2개 — 수치·조항은 원본 재확인, 지시문에 <span class="orange">"모르면 모른다고"</span> 명시.</p>
+    <p class="lead">실패를 보려는 게 아니라, <span class="orange">AI가 알아서 채워 넣은 부분</span>을 확인하는 실습입니다.</p>
   </div>
 </section>
-<section class="slide" data-title="질문 잘하는 팁">
-  <div class="slide-header"><div class="kicker">Session 1 · 질문 팁</div><div class="slide-no">31</div></div>
+<section class="slide" data-title="나쁜 프롬프트 분석">
+  <div class="slide-header"><div class="kicker">Practice · 무엇이 빠졌나</div><div class="slide-no">31</div></div>
   <div class="slide-body">
-    <h2 class="big-message">같은 질문도 <span class="orange">이렇게 바꾸면</span> 답이 달라집니다</h2>
+    <h2 class="big-message">결과가 애매한 이유는 <span class="orange">질문이 짧아서가 아니라 조건이 없어서</span>입니다</h2>
     <table class="tbl">
-      <tr><th>그냥 질문</th><th>조건 붙인 질문</th></tr>
-      <tr><td>"회의록 정리해줘"</td><td>"이 메모를 결정사항/할 일/이슈 3단으로 정리해줘"</td></tr>
-      <tr><td>"요약해줘"</td><td>"3줄로 요약하고, 실무자가 확인할 포인트 2개를 붙여줘"</td></tr>
-      <tr><td>"이메일 써줘"</td><td>"협력사에 일정 연기를 정중히 요청하는 메일, 5문장 이내로"</td></tr>
+      <tr><th>빠진 조건</th><th>AI가 임의로 채우는 것</th><th>업무에서 생기는 문제</th></tr>
+      <tr><td>누구에게 보여줄지</td><td>일반적인 말투로 작성</td><td>팀장 보고용인지 공유용인지 애매함</td></tr>
+      <tr><td>무엇을 뽑을지</td><td>요약 중심으로 정리</td><td>결정사항·담당·기한이 빠질 수 있음</td></tr>
+      <tr><td>어떤 형식인지</td><td>문단 또는 임의의 표</td><td>실제 업무 양식에 바로 붙이기 어려움</td></tr>
+      <tr><td>모르면 어떻게 할지</td><td>그럴듯하게 추정</td><td>없는 담당자·기한·이슈가 생길 수 있음</td></tr>
     </table>
-    <p class="lead">패턴이 보이시죠 — <span class="orange">형식과 분량을 정해주는 것</span>. 이걸 체계화한 게 다음 세션의 업무 지시서 7요소입니다.</p>
+    <p class="lead">좋은 프롬프트는 “더 길게 쓰기”가 아니라, <span class="orange">AI가 마음대로 정하지 않게 업무 기준을 먼저 주는 것</span>입니다.</p>
+  </div>
+</section>
+<section class="slide" data-title="좋은 프롬프트 구조">
+  <div class="slide-header"><div class="kicker">Practice · 좋은 프롬프트 구조</div><div class="slide-no">32</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">같은 요청을 <span class="orange">업무 지시서</span>로 바꾸면 결과가 달라집니다</h2>
+    <div class="prompt-compare">
+      <div class="prompt bad">나쁜 요청<br><br>“회의록 정리해줘.”</div>
+      <div class="prompt readable" id="good-prompt-early"><button class="copy-btn" data-copy="good-prompt-early">복사</button>[역할] 발전·에너지 프로젝트 회의록 정리 담당자처럼 정리해줘.
+
+[할 일] 아래 회의 메모에서 ① 3줄 요약 ② 결정사항 ③ 할 일 ④ 이슈·확인 필요 사항을 분리해줘.
+
+[맥락] 교육용 가상 메모이며 실제 내부자료는 아니다. 담당자나 기한이 없으면 추정하지 말고 “확인 필요”라고 표시해줘.
+
+[출력] 표로 작성하고, 할 일은 담당/기한/다음 조치 칸으로 나눠줘.</div>
+    </div>
+    <p class="lead">핵심은 <span class="orange">역할 · 할 일 · 맥락 · 출력형식 · 추정 금지</span>입니다. 오후에는 이 구조를 맞춤 GPT 지시문으로 저장합니다.</p>
   </div>
 </section>
 <section class="slide q" data-title="Q 잘하는일" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
