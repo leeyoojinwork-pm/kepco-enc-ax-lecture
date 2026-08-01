@@ -115,6 +115,35 @@ table.tbl tr:last-child td{border-bottom:none}
 .bar .fill{height:100%;background:var(--brand);border-radius:.4vw;display:flex;align-items:center;justify-content:flex-end;padding-right:.6vw;color:#fff;font-size:.85vw;font-weight:800}
 .bar.dim .fill{background:#c8cdd6;color:var(--muted)}
 
+/* instructor profile */
+.profile-slide{padding:0;background:#fff;border-top:.5vw solid #243650}
+.profile-layout{height:100%;display:grid;grid-template-columns:1.55fr 1fr;gap:2.6vw;padding:3.15vw 3.35vw 4.7vw}
+.profile-left{min-width:0;display:flex;flex-direction:column}
+.profile-hero{display:flex;align-items:flex-start;gap:1.8vw;min-height:18.1vw}
+.profile-portrait{width:15vw;height:17.8vw;flex:none;border-radius:1.15vw;background-image:url('assets/instructor-profile-source.png');background-repeat:no-repeat;background-size:100vw 56.25vw;background-position:-3.3vw -3.72vw;box-shadow:inset 0 0 0 1px rgba(21,35,58,.08)}
+.profile-name{font-size:3.65vw;line-height:1;font-weight:900;letter-spacing:-.055em;color:#132039;margin:.75vw 0 2.1vw}
+.profile-role{display:flex;align-items:center;width:28vw;min-height:2.55vw;padding:.4vw 1vw;border-radius:.55vw;background:#1d2a40;color:#fff;font-size:1.12vw;font-weight:750;letter-spacing:.01em}
+.profile-intro{max-width:29vw;margin-top:1.3vw;color:#687283;font-size:1.03vw;line-height:1.58;word-break:keep-all}
+.career-panel{position:relative;min-height:19.9vw;margin-top:1.25vw;padding:2vw 2.1vw 1.65vw;border-radius:.75vw;background:#13213a;color:#fff}
+.career-panel:before{content:"";position:absolute;left:0;top:0;bottom:0;width:.5vw;border-radius:.75vw 0 0 .75vw;background:#3b7df7}
+.profile-box-head{display:flex;align-items:baseline;justify-content:space-between;gap:1vw}
+.profile-box-head h3{font-size:1.75vw;font-weight:900;letter-spacing:-.03em}
+.profile-box-head span{font-size:.93vw;font-weight:800;color:#9dbefb;white-space:nowrap}
+.profile-list{list-style:none;margin-top:1.3vw;display:flex;flex-direction:column;gap:.9vw}
+.profile-list li{position:relative;padding-left:1.85vw;font-size:1.12vw;line-height:1.38;font-weight:650;word-break:keep-all}
+.profile-list li:before{content:"";position:absolute;left:.22vw;top:.57em;width:.48vw;height:.48vw;border-radius:50%;background:#64a0ff}
+.profile-email{margin:.92vw .25vw 0;color:#3c4658;font-size:.9vw;font-weight:700}
+.profile-right{min-width:0;display:grid;grid-template-rows:1.5fr .9fr;gap:2vw}
+.profile-box{border:1px solid #d9e3f0;border-radius:1vw;padding:1.85vw 2vw;background:#fff}
+.profile-box .profile-box-head h3{color:#132039;font-size:1.65vw}
+.profile-box .profile-box-head span{color:#3274f6}
+.profile-box .profile-list{margin-top:1.25vw;gap:.82vw}
+.profile-box .profile-list li{color:#26344b;font-size:1.02vw;line-height:1.4;font-weight:700}
+.profile-box .profile-list li:before{background:#3274f6}
+.profile-tag{display:inline-flex;align-items:center;justify-content:center;min-width:6.8vw;padding:.36vw .9vw;border-radius:999px;background:#e9f1ff;color:#3274f6;font-size:.78vw!important;font-weight:900!important}
+.profile-box.expertise .profile-list{gap:.86vw}
+.profile-box.expertise .profile-list li{font-size:1.04vw}
+
 
 
 /* napkin components */
@@ -299,14 +328,52 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="강사 소개">
-  <div class="slide-header"><div class="kicker">Instructor</div><div class="slide-no">2</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">오늘 함께할 강사</h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">AX</div><h3>이유진 — AI 업무 자동화·서비스 기획 강사</h3><p>공공기관·기업 대상 챗봇 구축 실습형 교육 다수 진행</p></div>
-      <div class="card"><div class="badge">▶</div><h3>오늘의 역할</h3><p>기초 강의 + 라이브 시연 + 실습 현장 코칭</p></div>
-      <div class="card"><div class="badge">◆</div><h3>보조강사</h3><p>실습 중 막히는 분을 현장과 오픈채팅방에서 바로 팔로업</p></div>
+<section class="slide profile-slide" data-title="강사 소개" data-note="강사 이력은 길게 읽지 않고, 현업 문제를 실제 산출물로 연결해 온 사람이라는 점만 30초 안에 소개합니다.">
+  <div class="profile-layout">
+    <div class="profile-left">
+      <div class="profile-hero">
+        <div class="profile-portrait" role="img" aria-label="강사 이유진 프로필 사진"></div>
+        <div>
+          <div class="profile-name">이유진</div>
+          <div class="profile-role">AX Consultant / Product Manager</div>
+          <p class="profile-intro">기업 현업 과제를 AX·AI 실습 산출물로 전환하는 교육을 설계하고, Product Management 관점으로 업무 적용까지 연결합니다.</p>
+        </div>
+      </div>
+
+      <div class="career-panel">
+        <div class="profile-box-head"><h3>주요 경력</h3><span>PM · AX · Enterprise Education</span></div>
+        <ul class="profile-list">
+          <li>現 AI 에듀테크 스타트업 PM</li>
+          <li>前 공공기관·페이먼츠 플랫폼 도메인 PM</li>
+          <li>현대자동차, KT&amp;G, 다이소 등 주요 기업 대상 BX·UX 개선 프로젝트 수행</li>
+          <li>現 카카오뱅크, 기아 등 주요 기업 임직원 대상 AX·AI 실무 적용 강의 및 멘토링</li>
+        </ul>
+      </div>
+      <div class="profile-email">Email&nbsp; leeyoojin.work@gmail.com</div>
+    </div>
+
+    <div class="profile-right">
+      <div class="profile-box projects">
+        <div class="profile-box-head"><h3>대표 AI·AX 프로젝트</h3><span>AI · AX 중심</span></div>
+        <ul class="profile-list">
+          <li>카카오뱅크 FIN:NECT AI 서비스 기획·BM 강의</li>
+          <li>기아 등 주요 기업 임직원 AX·AI 업무 적용 교육</li>
+          <li>공공기관 AI센터 결제·운영·정산 플랫폼 설계</li>
+          <li>AI 에듀테크 서비스 기획 및 교육 커리큘럼 운영</li>
+          <li>빅데이터 기반 AI 추천 서비스 기획·MVP 설계</li>
+          <li>AI 아이디어톤·해커톤 문제정의·발표 멘토링</li>
+        </ul>
+      </div>
+
+      <div class="profile-box expertise">
+        <div class="profile-box-head"><h3>이번 교육 전문 분야</h3><span class="profile-tag">실습 중심</span></div>
+        <ul class="profile-list">
+          <li>AX·AI 업무 적용 교육 설계</li>
+          <li>업무 지시서(.md) 작성</li>
+          <li>맞춤 GPT 설계·제작</li>
+          <li>실무 적용 테스트·개선</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -2222,7 +2289,8 @@ document.querySelectorAll('.copy-btn').forEach(btn=>{
     const o=btn.textContent;btn.textContent='복사됨';setTimeout(()=>btn.textContent=o,1200);
   });
 });
-show(0);
+const initialSlide=Math.max(0,Number(new URLSearchParams(location.search).get('slide')||1)-1);
+show(initialSlide);
 </script>
 </body>
 </html>
