@@ -78,6 +78,20 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .step h4{font-size:1.08vw;font-weight:850;margin:.32vw 0}
 .step p{font-size:.84vw;color:var(--muted);line-height:1.45}
 .arrow{display:none}
+.stage4-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1vw;margin-top:2vw}
+.stage4-card{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.25vw;box-shadow:var(--shadow);position:relative;min-height:10.5vw}
+.stage4-card:not(:last-child):after{content:"→";position:absolute;right:-.78vw;top:50%;transform:translateY(-50%);width:1.55vw;height:1.55vw;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9vw;z-index:2}
+.stage4-card .n{font-size:.78vw;font-weight:900;color:var(--brand);letter-spacing:.04em}
+.stage4-card h4{font-size:1.22vw;font-weight:900;margin:.38vw 0 .5vw;color:var(--ink);word-break:keep-all}
+.stage4-card p{font-size:.88vw;line-height:1.48;color:var(--muted);word-break:keep-all}
+.roi-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1vw;margin-top:2vw}
+.roi-card{background:var(--panel);border:1px solid var(--line);border-radius:.9vw;padding:1.45vw;text-align:left;box-shadow:var(--shadow)}
+.roi-card b{display:block;font-size:1.35vw;color:var(--brand);font-weight:900;line-height:1.25;word-break:keep-all}
+.roi-card span{display:block;margin-top:.65vw;font-size:.96vw;color:var(--muted);line-height:1.45;word-break:keep-all}
+.folder-md-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1vw;margin-top:1.8vw}
+.folder-md-flow .step{border:1px solid var(--line);border-radius:.9vw;background:var(--panel);box-shadow:var(--shadow);padding:1.15vw;min-height:9.8vw}
+.folder-md-flow .step h4{font-size:1.02vw}
+.folder-md-flow .step p{font-size:.8vw}
 .prompt{position:relative;background:var(--nav);color:#e8eaed;border-radius:.8vw;padding:1.5vw 1.7vw;margin-top:1.4vw;font-size:.98vw;line-height:1.6;white-space:pre-wrap;word-break:keep-all}
 .prompt.bad{background:#fbeae6;color:#7a2c17;border:1px dashed #e0a594}
 .prompt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8vw;margin-top:1.1vw}
@@ -414,7 +428,6 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 
 </section>
-
 <section class="slide" data-title="인트로">
   <div class="slide-header"><div class="kicker">Intro</div><div class="slide-no">1</div></div>
   <div class="slide-body">
@@ -422,7 +435,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">주간보고, 회의록 정리, 반복 문의 답변, 긴 문서 요약. 오늘 그중 하나가 4시간 뒤에 자동으로 돌아갑니다.</p>
   </div>
 </section>
-
 <section class="slide profile-slide" data-title="강사 소개" data-note="강사 이력은 길게 읽지 않고, 현업 문제를 실제 산출물로 연결해 온 사람이라는 점만 30초 안에 소개합니다.">
   <div class="profile-layout">
     <div class="profile-left">
@@ -472,9 +484,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="오늘의 산출물">
-  <div class="slide-header"><div class="kicker">Outcome</div><div class="slide-no">3</div></div>
+  <div class="slide-header"><div class="kicker">Outcome</div><div class="slide-no">2</div></div>
   <div class="slide-body">
     <h2 class="big-message">4시간 뒤, <span class="orange">내 반복 업무를 대신하는<br>맞춤 GPT 1개</span>를 만들어서 가져갑니다.</h2>
     <p class="lead"><b>맞춤 GPT</b>란 — ChatGPT 안에서 내 지시문과 참고자료를 저장해두는 "나만의 업무 챗봇"입니다. GPTs 영역에서 코딩 없이 만듭니다.</p>
@@ -485,25 +496,23 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="진행 안내">
-  <div class="slide-header"><div class="kicker">Guide</div><div class="slide-no">4</div></div>
+  <div class="slide-header"><div class="kicker">Guide</div><div class="slide-no">3</div></div>
   <div class="slide-body">
     <h2 class="big-message">진행 안내</h2>
     <div class="grid3">
-      <div class="card"><div class="badge">1</div><h3>대상 · 방식</h3><p>전 부서 임직원, 노트북 개인 실습. 기초 50분 + 나머지는 직접 만듭니다.</p></div>
-      <div class="card"><div class="badge">2</div><h3>도구</h3><p>ChatGPT 유료계정 하나로 전부. 별도 설치 없음. 계정은 당일 배부.</p></div>
-      <div class="card"><div class="badge">3</div><h3>속도 걱정 금지</h3><p>막히면 보조강사가 바로 갑니다. 복붙 단계까지만 와도 목표 달성.</p></div>
+      <div class="card"><div class="badge">1</div><h3>대상 · 방식</h3><p>전 부서 직위자 대상. AI 경험 차이가 커서 첫 1시간은 계정이 없는 분도 따라오는 공통 기초로 갑니다.</p></div>
+      <div class="card"><div class="badge">2</div><h3>도구</h3><p>실습은 ChatGPT 유료계정 중심. 다른 AI 도구는 개념 비교만 하고, 산출물은 ChatGPT 안에서 완성합니다.</p></div>
+      <div class="card"><div class="badge">3</div><h3>운영 기준</h3><p>막히는 분은 보조강사가 기본 팔로업합니다. 빠른 분은 예시를 바꿔 실제로 쓸 수 있는 결과물까지 만듭니다.</p></div>
     </div>
     <div class="game">
-      <h4>시작 전 30초 아이스브레이커</h4>
-      <p>옆자리 두 분과 인사하고, "요즘 반복해서 하는 귀찮은 업무 한 가지"를 서로 말해보세요. 오늘 그게 오늘 만들 챗봇의 재료가 됩니다.</p>
+      <h4>오늘의 원칙</h4>
+      <p>처음부터 무작위 질문으로 시작하지 않습니다. 먼저 회사 맥락과 보안 기준을 잡고, 강사가 제공한 가상 예시로 첫 결과를 본 뒤, 각자 업무로 확장합니다.</p>
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="오픈채팅방">
-  <div class="slide-header"><div class="kicker">Guide · 오픈채팅방</div><div class="slide-no">5</div></div>
+  <div class="slide-header"><div class="kicker">Guide · 오픈채팅방</div><div class="slide-no">4</div></div>
   <div class="slide-body">
     <h2 class="big-message">질문과 공유는 <span class="orange">오픈채팅방 하나</span>로 합니다</h2>
     <div class="grid3">
@@ -514,84 +523,34 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">입장 링크는 지금 화면에 띄워드립니다. 교육이 끝난 뒤에도 유지됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="전체 학습 흐름">
-  <div class="slide-header"><div class="kicker">Curriculum</div><div class="slide-no">6</div></div>
+  <div class="slide-header"><div class="kicker">Curriculum</div><div class="slide-no">5</div></div>
   <div class="slide-body">
     <h2 class="big-message">4시간 흐름</h2>
     <div class="timeline">
-      <div class="tl"><div class="dot c1">1</div><h4>생성형 AI 기초</h4><p>50분 · 로그인부터 첫 성공까지</p></div>
-      <div class="tl"><div class="dot c2">2</div><h4>챗봇 구축 이해</h4><p>40분 · 라이브 시연으로 확인</p></div>
-      <div class="tl"><div class="dot c3">3</div><h4>내 업무 챗봇 만들기</h4><p>95분 · 나만의 챗봇 4단계</p></div>
+      <div class="tl"><div class="dot c1">1</div><h4>오프닝·AI 기초</h4><p>60분 · 왜 필요한지부터 안전한 첫 체험까지</p></div>
+      <div class="tl"><div class="dot c2">2</div><h4>업무 지시서 작성</h4><p>40분 · 프롬프트를 2부에서 체계화</p></div>
+      <div class="tl"><div class="dot c3">3</div><h4>내 업무 Agent 만들기</h4><p>95분 · 잘 따라오는 분은 고도화까지</p></div>
       <div class="tl"><div class="dot c4">4</div><h4>공유 &amp; 클로징</h4><p>35분 · 30초 발표와 자유 질문</p></div>
     </div>
     <p class="lead">중간 휴식 2회(각 10분) 포함 240분입니다.</p>
   </div>
 </section>
-
-<section class="slide" data-title="보안 원칙">
-  <div class="slide-header"><div class="kicker">Security</div><div class="slide-no">7</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">보안 원칙 — 실습 전 과정에 적용합니다</h2>
-    <table class="tbl">
-      <tr><th>구분</th><th>내용</th></tr>
-      <tr><td>금지</td><td>도면·설계정보·기술 원문, 개인정보(이름·연락처), 비공개 내부문서 원문 업로드</td></tr>
-      <tr><td>주의</td><td>프로젝트명·사내 고유 용어는 가명 처리, 수치는 예시값으로, 결과물은 검토 후 사용</td></tr>
-      <tr><td>가능</td><td>공개 자료(보도자료, ALIO 공시), 문서의 형식·틀·목차, 일반화한 업무 상황</td></tr>
-    </table>
-    <p class="lead">국가정보원 생성형 AI 활용 보안 가이드라인 기준. 오늘 모든 실습은 가능 영역 안에서만 진행합니다.</p>
-  </div>
-</section>
-
-<section class="slide" data-title="보안 미니 퀴즈">
-  <div class="slide-header"><div class="kicker">Security · 미니 퀴즈</div><div class="slide-no">8</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">다 같이 O/X — <span class="orange">이건 넣어도 될까요?</span></h2>
-    <div class="checks">
-      <div class="check"><span class="mk">?</span><p>"OO프로젝트 설계검토 의견서 원문 요약해줘"</p></div>
-      <div class="check"><span class="mk">?</span><p>"김OO 부장(010-xxxx) 참석 회의록 정리해줘"</p></div>
-      <div class="check"><span class="mk">?</span><p>"발전소 설계 회사의 주간보고 형식 만들어줘"</p></div>
-      <div class="check"><span class="mk">?</span><p>"이 보도자료 3줄로 요약해줘"</p></div>
-    </div>
-    <div class="game">
-      <h4>진행</h4>
-      <p>손으로 O·X를 표시해주세요. 정답은 다음 장에서 이유와 함께 확인합니다.</p>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-title="보안 미니 퀴즈 정답" data-note="거수 결과 언급하며 하나씩 공개(2분). 헷갈린 문항은 '애매하면 제외' 원칙으로 연결 → 1부로 전환">
-  <div class="slide-header"><div class="kicker">Security · 정답 확인</div><div class="slide-no">9</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">정답 — 기준은 <span class="orange">공개 가능 여부</span></h2>
-    <div class="checks">
-      <div class="check"><span class="mk bad">X</span><p>설계검토 의견서 원문 — 기술 원문 업로드 금지</p></div>
-      <div class="check"><span class="mk bad">X</span><p>김OO 부장(010-xxxx) — 개인정보 금지, 이름은 A·B로</p></div>
-      <div class="check"><span class="mk">O</span><p>주간보고 형식 만들기 — 일반화한 업무 상황</p></div>
-      <div class="check"><span class="mk">O</span><p>보도자료 요약 — 공개 자료</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 1부 ============ -->
-
 <section class="slide divider" data-title="1부 divider">
   <div class="slide-body" style="text-align:center">
     <div class="num dc1">1부 · 50분</div>
-    <h2>생성형 AI 기초</h2>
-    <p class="lead" style="margin:1.2vw auto 0">전원이 같은 출발선에 섭니다</p>
+    <h2>왜 지금 AI인가</h2>
+    <p class="lead" style="margin:1.2vw auto 0">흥미를 만들고, 보안 기준을 잡고, 전원이 같은 출발선에 섭니다</p>
   </div>
 </section>
-
 <section class="slide" data-title="세션1 목표">
-  <div class="slide-header"><div class="kicker">Session 1 · GPT와 첫 대화</div><div class="slide-no">10</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 안전한 첫 체험</div><div class="slide-no">6</div></div>
   <div class="slide-body">
-    <h2 class="big-message">세션 1 — GPT와 첫 대화 <span class="orange">(25분)</span></h2>
-    <div class="goal">이 세션이 끝나면: 배부받은 계정으로 <b>전원 로그인 완료</b>, 첫 질문을 던져 <b>답을 받아본 상태</b>가 됩니다.</div>
-    <p class="lead">이미 써보신 분은 옆자리를 도와주세요. 여기서 전원이 같은 출발선에 섭니다.</p>
+    <h2 class="big-message">세션 1 — 왜 지금 AI를 배워야 하나 <span class="orange">(오프닝)</span></h2>
+    <div class="goal">이 세션이 끝나면: 한국전력기술 안에서 이미 진행 중인 AX 흐름을 이해하고, 오늘 내가 만들 결과물이 왜 필요한지 연결됩니다.</div>
+    <p class="lead">처음 1시간은 속도보다 공통 기준이 중요합니다. 이미 익숙한 분은 “내 업무에 어떻게 붙일까”를 먼저 생각해 주세요.</p>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 회사" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -599,9 +558,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>힌트: 이미 사내에서 벌어지고 있습니다. 다음 장에서 확인하세요.</p>
   </div>
 </section>
-
 <section class="slide" data-title="왜 지금인가 — 회사">
-  <div class="slide-header"><div class="kicker">Session 1 · 왜 지금인가</div><div class="slide-no">11</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 왜 지금인가</div><div class="slide-no">7</div></div>
   <div class="slide-body">
     <h2 class="big-message">한국전력기술은 이미 <span class="orange">AX를 시작한 회사</span>입니다.</h2>
     <div class="grid3">
@@ -612,7 +570,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">회사 차원의 AX를 오늘은 개인 업무 단위로 내려옵니다. <span class="orange">회의 → 할 일 → 보고 초안</span>처럼 매번 반복되는 흐름부터 작게 자동화합니다.</p>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 통계" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">우리 회사 퀴즈</div>
@@ -620,9 +577,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>① 약 260명 &nbsp;&nbsp; ② 약 460명 &nbsp;&nbsp; ③ 약 660명</p>
   </div>
 </section>
-
 <section class="slide" data-title="왜 지금인가 — 통계" data-note="[Sources] 한국전력기술, 제2회 대한민국 인공지능 혁신대상 보도자료(2026-05-15) https://www.kepco-enc.com/board.es?act=view&amp;bid=0038&amp;list_no=44731&amp;mid=a10603000000">
-  <div class="slide-header"><div class="kicker">Session 1 · 왜 지금인가</div><div class="slide-no">12</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 왜 지금인가</div><div class="slide-no">8</div></div>
   <div class="slide-body">
     <h2 class="big-message">정답은 <span class="orange">660명</span> — 이미 회사 안에서 쓰는 도구입니다</h2>
     <div class="stats">
@@ -633,110 +589,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오늘은 이 흐름을 개인의 반복 업무 하나로 내려옵니다. 수치는 회사 공식 보도자료 기준입니다.</p>
   </div>
 </section>
-
-<section class="slide" data-title="AI 도구 지도">
-  <div class="slide-header"><div class="kicker">Session 1 · 도구보다 먼저 볼 것</div><div class="slide-no">13</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">도구 이름보다 먼저, <span class="orange">자료의 경계</span>를 정합니다</h2>
-    <table class="tool-table">
-      <thead><tr><th>도구</th><th>한국전력기술에서 맡길 일</th><th>오늘 기억할 경계</th></tr></thead>
-      <tbody>
-        <tr><td>NEXA / 승인된 사내 AI</td><td>사내·전문 지식 검색, 엔지니어링 문서 활용처럼 회사 환경 안에서 처리해야 하는 일</td><td>내부 기준과 승인 범위에 따라 사용</td></tr>
-        <tr><td>ChatGPT</td><td>공개·일반화한 자료의 초안, 요약, 구조화, 맞춤 GPT 실습</td><td>오늘 제공되는 유료계정. 비공개 자료는 입력하지 않음</td></tr>
-        <tr><td>Claude · Gemini 등</td><td>장문 읽기, 탐색, 멀티모달 등 범용 AI의 다른 선택지</td><td>개념만 비교. 오늘 유료계정과 실습 지원은 ChatGPT만 제공</td></tr>
-      </tbody>
-    </table>
-    <div class="boundary-callout">판단 순서: <b>① 자료가 공개 가능한가 → ② 어떤 결과물이 필요한가 → ③ 승인된 도구인가</b>. 기능 비교는 그 다음입니다.</div>
-  </div>
-</section>
-
-<section class="slide" data-title="상황별 AI 도구 선택">
-  <div class="slide-header"><div class="kicker">Session 1 · 상황별 선택</div><div class="slide-no">14</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">“어떤 AI가 최고인가?”보다 <span class="orange">“이 일을 어디서 해야 하나?”</span></h2>
-    <div class="decision-list">
-      <div class="decision-row"><b>사내 기술자료·전문 지식이 필요한 업무</b><div class="go">→</div><span class="pick">NEXA 또는 회사가 승인한 환경</span></div>
-      <div class="decision-row"><b>공개자료로 보고·회의 초안을 빠르게 만들기</b><div class="go">→</div><span class="pick">오늘 실습: ChatGPT</span></div>
-      <div class="decision-row"><b>긴 공개문서·이미지·검색 결과를 함께 살펴보기</b><div class="go">→</div><span class="pick">범용 AI 중 기능과 접근 환경에 맞춰 선택</span></div>
-      <div class="decision-row"><b>수치·규정·계약·기술 판단이 걸린 최종 문서</b><div class="go">→</div><span class="pick">AI 선택보다 원문·기준서·담당자 검증이 우선</span></div>
-    </div>
-    <p class="lead">같은 질문을 여러 AI에 던져 다수결하는 것은 검증이 아닙니다. 중요한 내용은 <span class="orange">원문과 기준 문서</span>로 확인합니다.</p>
-  </div>
-</section>
-
-<section class="slide" data-title="PTCO 프롬프트 기초">
-  <div class="slide-header"><div class="kicker">Session 1 · 프롬프트 기초</div><div class="slide-no">15</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">프롬프트는 질문이 아니라 <span class="orange">업무 지시서</span>입니다</h2>
-    <div class="ptco-strip">
-      <div class="ptco-cell"><div class="ptco-letter">P</div><h3>Persona · 역할</h3><p>누구의 관점과 전문성으로 일할지 정합니다.</p></div>
-      <div class="ptco-cell"><div class="ptco-letter">T</div><h3>Task · 할 일</h3><p>요약·분류·작성처럼 수행할 동작을 분명히 씁니다.</p></div>
-      <div class="ptco-cell"><div class="ptco-letter">C</div><h3>Context · 맥락</h3><p>대상, 목적, 기준일, 입력자료와 업무 상황을 줍니다.</p></div>
-      <div class="ptco-cell"><div class="ptco-letter">O</div><h3>Output · 결과 형식</h3><p>표, 순서, 분량과 반드시 포함할 항목을 지정합니다.</p></div>
-    </div>
-    <div class="ptco-note">PTCO는 시작용 4칸입니다. 뒤에서 <b>제약조건·검토기준·예외처리</b>까지 더해 7요소 업무 지시서로 확장합니다.</div>
-  </div>
-</section>
-
-<section class="slide" data-title="한국전력기술 프롬프트 전후 비교">
-  <div class="slide-header"><div class="kicker">Session 1 · 나쁜 요청 vs 좋은 지시</div><div class="slide-no">16</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">같은 회의 메모도 <span class="orange">지시 방법</span>에 따라 달라집니다</h2>
-    <div class="prompt-compare">
-      <div class="prompt bad">나쁜 요청<br><br>“협력사 회의록 정리해줘.”</div>
-      <div class="prompt" id="ptco-kepco"><button class="copy-btn" data-copy="ptco-kepco">복사</button>[역할] 발전·에너지 프로젝트 사업관리 담당자처럼 정리해줘.
-
-[할 일] 아래 회의 메모에서 결정사항, 할 일, 이슈·리스크를 분리해줘.
-
-[맥락] 공개·일반화한 실습 메모만 사용한다. 담당자나 기한이 없으면 추정하지 말고 ‘확인 필요’라고 표시한다.
-
-[출력] ① 3줄 요약 ② 결정사항 ③ 할 일(담당·기한) ④ 이슈·리스크 표 순서로 작성해줘.</div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-title="실습 0 안내">
-  <div class="slide-header"><div class="kicker">Session 1 · 실습 0</div><div class="slide-no">17</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">전원 체크포인트 — 로그인 &amp; 첫 질문</h2>
-    <div class="flow">
-      <div class="step"><div class="n">01</div><h4>접속</h4><p>chatgpt.com</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">02</div><h4>로그인</h4><p>배부받은 유료계정으로</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">03</div><h4>첫 질문</h4><p>업무 아니어도 OK — "점심 메뉴 추천해줘"</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">04</div><h4>확인</h4><p>답이 오면 성공</p></div>
-    </div>
-    <p class="lead">로그인이 안 되면 손 들거나 오픈채팅방에 올려주세요 — 보조강사가 바로 갑니다.</p>
-  </div>
-</section>
-
-<section class="slide" data-title="로그인 트러블슈팅">
-  <div class="slide-header"><div class="kicker">Session 1 · 안 될 때</div><div class="slide-no">18</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">로그인, 이 순서로 확인하세요</h2>
-    <div class="checks">
-      <div class="check"><span class="mk">1</span><p>주소가 chatgpt.com이 맞는지 (검색 결과의 광고 링크 주의)</p></div>
-      <div class="check"><span class="mk">2</span><p>배부받은 아이디·비밀번호 그대로인지 — 자동완성이 끼어들지 않았는지</p></div>
-      <div class="check"><span class="mk">3</span><p>유료계정 표시 확인 — 화면 좌측 하단 계정 메뉴</p></div>
-      <div class="check"><span class="mk">4</span><p>그래도 안 되면 그 자리에서 손 들기. 5분 이상 혼자 붙잡지 않기</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-title="첫 질문 예시">
-  <div class="slide-header"><div class="kicker">Session 1 · 첫 질문</div><div class="slide-no">19</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">뭘 물어볼지 모르겠다면, 이 중 하나로</h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">A</div><h3>가볍게</h3><p>"김천에서 점심 먹을 만한 메뉴 3개 추천해줘"</p></div>
-      <div class="card"><div class="badge">B</div><h3>업무 근처</h3><p>"개조식 보고서와 서술식 보고서 차이를 3줄로"</p></div>
-      <div class="card"><div class="badge">C</div><h3>재미로</h3><p>"발전소 설계 엔지니어를 한 문장으로 멋있게 소개해줘"</p></div>
-    </div>
-    <p class="lead">정답은 없습니다. 답이 온다는 것 자체가 오늘의 첫 성공입니다.</p>
-  </div>
-</section>
-
 <section class="slide" data-title="AI 관점의 변화" data-note="세 단계를 차례로 읽되, 3단계가 거창한 전사 자동화가 아니라 반복 업무 한 줄을 같은 기준으로 돌리는 것이라고 설명합니다.">
-  <div class="slide-header"><div class="kicker">Session 1 · 관점 바꾸기</div><div class="slide-no">20</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 관점 바꾸기</div><div class="slide-no">9</div></div>
   <div class="slide-body">
     <h2 class="big-message">AI를 바라보는 관점은 <span class="orange">세 단계</span>로 바뀝니다</h2>
     <p class="lead">정확성과 책임이 중요한 조직일수록 “쓸까, 말까”보다 <b>어디까지 맡길지</b>를 먼저 정해야 합니다.</p>
@@ -763,9 +617,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="ax-caption">오늘은 2단계에서 시작해, <b>내 반복 업무 하나</b>를 3단계로 옮기는 첫 버전을 만듭니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="한국전력기술 활용 지도" data-note="공식 조직 구성을 네 업무군으로 묶은 예시입니다. 교육생에게 자기 부서와 가까운 한 줄을 고르게 합니다. [Sources] 한국전력기술 공식 홈페이지 조직도·부서 안내(2026-07-31 확인).">
-  <div class="slide-header"><div class="kicker">Session 1 · 업무에 대입하기</div><div class="slide-no">21</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 업무에 대입하기</div><div class="slide-no">10</div></div>
   <div class="slide-body">
     <h2 class="big-message">한국전력기술에서 먼저 달라지는 건 <span class="orange">문서가 오가는 구간</span>입니다</h2>
     <p class="lead">설계 판단을 대신하는 것이 아니라, 판단 전후의 정리·초안·확인 업무를 줄이는 방식입니다.</p>
@@ -779,9 +632,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="ax-caption">오늘 실습에서는 내부 원문 대신 <b>공개자료와 일반화한 예시</b>만 사용합니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="AI와 사람의 역할" data-note="왼쪽은 AI가 잘하는 반복 작업, 오른쪽은 직위자가 끝까지 가져가야 하는 판단입니다. [Sources] 국가정보원 국가·공공기관 생성형 AI 활용 보안 가이드라인.">
-  <div class="slide-header"><div class="kicker">Session 1 · 역할 나누기</div><div class="slide-no">22</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 역할 나누기</div><div class="slide-no">11</div></div>
   <div class="slide-body">
     <h2 class="big-message">AI가 맡을 일과 <span class="orange">사람이 남길 일</span>을 먼저 나눕니다</h2>
     <div class="role-split">
@@ -807,37 +659,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <div class="role-rule">초안은 AI가 빠르게, 사실·기준·보안은 사람이 끝까지 확인합니다.</div>
   </div>
 </section>
-
-<section class="slide" data-title="생성형 AI 3줄">
-  <div class="slide-header"><div class="kicker">Session 1 · 개념은 딱 3줄</div><div class="slide-no">23</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">생성형 AI, 오늘 필요한 건 <span class="orange">이 3줄</span>뿐입니다</h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">1</div><h3>다음 말을 예측하는 기계</h3><p>정답 검색이 아니라 그럴듯한 답을 만들어냅니다. 그래서 틀릴 수 있습니다.</p></div>
-      <div class="card"><div class="badge">2</div><h3>지시가 구체적일수록 잘함</h3><p>신입사원에게 일 시키듯 조건을 붙여주세요. 1부의 핵심입니다.</p></div>
-      <div class="card"><div class="badge">3</div><h3>결과는 항상 초안</h3><p>최종 판단은 사람 몫. 검토 없이 공문에 붙이지 않습니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-title="LLM 작동 원리 도식" data-note="바를 하나씩 가리키며 설명(3분). '가장 그럴듯한 다음 말'이라는 표현 반복 → 다음 장(모르는 것) 전환">
-  <div class="slide-header"><div class="kicker">Theory · LLM 작동 원리</div><div class="slide-no">24</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">GPT의 실체 — <span class="orange">다음 단어 확률 예측기</span></h2>
-    <div class="flow">
-      <div class="step"><div class="n">1</div><h4>입력</h4><p>"이번 주 협력사 회의 결과를 ___"</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">2</div><h4>확률 계산</h4><p>수천억 개 문서에서 배운 패턴으로 다음 말 후보에 점수</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">3</div><h4>선택·생성</h4><p>가장 그럴듯한 말을 이어 붙임 — 문장이 될 때까지 반복</p></div>
-    </div>
-    <div class="bars">
-      <div class="bar"><div class="w">"정리하면"</div><div class="track"><div class="fill" style="width:78%">78%</div></div></div>
-      <div class="bar dim"><div class="w">"보고하면"</div><div class="track"><div class="fill" style="width:14%">14%</div></div></div>
-      <div class="bar dim"><div class="w">"요약하자면"</div><div class="track"><div class="fill" style="width:8%">8%</div></div></div>
-    </div>
-    <p class="lead">검색이 아니라 <span class="orange">확률 생성</span>입니다. 유창한 이유도, 틀릴 수 있는 이유도 전부 여기서 나옵니다.</p>
-  </div>
-</section>
-
 <section class="slide q" data-title="Q 생성형 AI 역사" data-note="객석에 ①②③ 손가락 투표를 받은 뒤 다음 장에서 정답을 공개합니다. 30초 리듬 전환용입니다.">
   <div class="slide-body">
     <div class="qmark">30초 퀴즈</div>
@@ -845,9 +666,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>① 2012년 &nbsp;&nbsp; ② 2017년 &nbsp;&nbsp; ③ 2022년</p>
   </div>
 </section>
-
 <section class="slide" data-title="생성형 AI 발전 연혁" data-note="정답은 2017년. 네 시점을 빠르게 짚고, 도구는 바뀌어도 업무를 잘 설명하는 능력은 남는다는 결론으로 연결합니다. [Sources] Vaswani et al., Attention Is All You Need (2017) https://arxiv.org/abs/1706.03762 ; OpenAI, Introducing ChatGPT (2022-11-30) https://openai.com/index/chatgpt/ ; OpenAI, GPT-4o (2024-05-13) https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/ ; OpenAI, ChatGPT agent (2025-07-17) https://openai.com/index/introducing-chatgpt-agent/">
-  <div class="slide-header"><div class="kicker">History · 8년의 변화</div><div class="slide-no">25</div></div>
+  <div class="slide-header"><div class="kicker">History · 8년의 변화</div><div class="slide-no">12</div></div>
   <div class="slide-body">
     <h2 class="big-message">2017년의 구조가, 2025년에는 <span class="orange">일을 수행하는 AI</span>가 됐습니다</h2>
     <div class="history-track">
@@ -859,39 +679,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <div class="history-takeaway">도구의 이름은 계속 바뀝니다. 그래도 <b>업무를 구조화하고 기준을 설명하는 능력</b>은 그대로 남습니다.</div>
   </div>
 </section>
-
-<section class="slide" data-title="GPT가 모르는 것 도식" data-note="세 영역을 왼쪽부터. '그래서 오늘 오후에 Knowledge로 세 번째 영역을 보강한다' 예고로 전환(2분)">
-  <div class="slide-header"><div class="kicker">Theory · 지식의 경계</div><div class="slide-no">26</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">GPT가 아는 것과 <span class="orange">모르는 것</span></h2>
-    <div class="grid3">
-      <div class="card"><div class="badge">O</div><h3>학습된 지식</h3><p>학습 시점까지의 공개 문서·책·웹 — 일반 지식과 글쓰기 패턴</p></div>
-      <div class="card"><div class="badge">△</div><h3>학습 이후의 세상</h3><p>학습 컷오프 뒤의 뉴스·변경사항 — 웹 검색 기능을 켜야 보완됨</p></div>
-      <div class="card"><div class="badge">X</div><h3>우리 회사 내부</h3><p>사내 규정·양식·프로젝트 — 학습된 적이 없어 물어보면 지어낼 위험</p></div>
-    </div>
-    <p class="lead">세 번째 칸이 오늘의 핵심입니다. 모르는 걸 알려주는 장치가 <span class="orange">지식파일</span>(오후 실습)입니다.</p>
-  </div>
-</section>
-
-<section class="slide" data-title="환각 구조 도식" data-note="위 경로와 아래 경로를 비교하며 설명. '자신 있게 말한다고 아는 게 아니다' 한 문장 강조(2분)">
-  <div class="slide-header"><div class="kicker">Theory · 환각의 구조</div><div class="slide-no">27</div></div>
-  <div class="slide-body">
-    <h2 class="big-message">환각은 버그가 아니라 <span class="orange">작동 방식의 그림자</span></h2>
-    <p class="lead"><b>환각(Hallucination)</b>이란 — GPT가 모르는 것도 그럴듯한 문장으로 지어내 답하는 현상입니다.</p>
-    <div class="flow">
-      <div class="step"><div class="n">아는 질문</div><h4>패턴 풍부</h4><p>학습 데이터에 근거 많음 → 정확할 확률 높음</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">출력</div><h4>유창 + 대체로 정확</h4><p>그래도 초안으로 취급</p></div>
-    </div>
-    <div class="flow">
-      <div class="step"><div class="n">모르는 질문</div><h4>패턴 빈약</h4><p>근거 없음 — 그래도 확률상 그럴듯한 말은 만들 수 있음</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">출력</div><h4>유창 + 지어냄</h4><p>없는 규정 조항·논문을 자신 있게 인용</p></div>
-    </div>
-    <p class="lead">방어선 2개 — 수치·조항은 원본 재확인, 지시문에 <span class="orange">"모르면 모른다고"</span> 명시.</p>
-  </div>
-</section>
-
 <section class="slide" data-title="한국전력기술 기술·AX 연혁" data-note="회사 역사를 단순 자랑으로 읽지 말고, 기술자립→수출→AI 증강이라는 한 줄로 정리합니다. [Sources] 한국전력기술 2024 IR 자료 https://www.kepco-enc.com/boardDownload.es?bid=0069&amp;list_no=43683&amp;seq=1 ; 한국전력기술 AI혁신대상 보도자료(2026-05-15) https://www.kepco-enc.com/board.es?act=view&amp;bid=0038&amp;list_no=44731&amp;mid=a10603000000 ; 한국전력기술-SK AX 보도자료(2026-07-02) https://www.kepco-enc.com/board.es?act=view&amp;bid=0038&amp;list_no=44888&amp;mid=a10603000000">
-  <div class="slide-header"><div class="kicker">KEPCO E&amp;C · 기술의 다음 장</div><div class="slide-no">28</div></div>
+  <div class="slide-header"><div class="kicker">KEPCO E&amp;C · 기술의 다음 장</div><div class="slide-no">13</div></div>
   <div class="slide-body">
     <h2 class="big-message">기술자립으로 시작한 50년, 다음 장은 <span class="orange">AI 증강</span>입니다</h2>
     <div class="history-track company-track">
@@ -903,7 +692,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <div class="history-takeaway"><b>설계 기술 축적 → 글로벌 수출 → AI 증강.</b> 오늘 교육은 이 흐름을 개인의 반복 업무까지 내려오는 시간입니다.</div>
   </div>
 </section>
-
 <section class="slide q" data-title="Q NEXA 사용량" data-note="선택지를 읽고 손가락으로 1·2·3 투표. 대부분 정답보다 낮게 예상하므로, 다음 장의 5,500건을 강조합니다.">
   <div class="slide-body">
     <div class="qmark">우리 회사 퀴즈</div>
@@ -911,9 +699,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>① 약 550건 &nbsp;&nbsp; ② 약 2,500건 &nbsp;&nbsp; ③ 약 5,500건</p>
   </div>
 </section>
-
 <section class="slide" data-title="NEXA 2.5 활용 수치" data-note="수치는 고도화 이후 공개된 일평균 기준입니다. '이미 회사 안에서는 시험 사용 단계가 아니다' 정도로만 말하고, 보안·정확성 기준은 별개라고 덧붙입니다. [Sources] 한국전력기술, 제2회 대한민국 인공지능 혁신대상 보도자료(2026-05-15) https://www.kepco-enc.com/board.es?act=view&amp;bid=0038&amp;list_no=44731&amp;mid=a10603000000">
-  <div class="slide-header"><div class="kicker">KEPCO E&amp;C · NEXA 2.5</div><div class="slide-no">29</div></div>
+  <div class="slide-header"><div class="kicker">KEPCO E&amp;C · NEXA 2.5</div><div class="slide-no">14</div></div>
   <div class="slide-body">
     <h2 class="big-message">정답은 하루 약 <span class="orange">5,500건</span> — 이미 현업에서 돌아가고 있습니다</h2>
     <div class="nexa-metrics">
@@ -924,10 +711,77 @@ table.tbl tr:last-child td{border-bottom:none}
     <div class="nexa-rule">오늘은 공개자료로 업무 지시 구조를 익힙니다. 사내 적용은 반드시 조직에서 승인한 환경과 보안 기준을 따릅니다.</div>
   </div>
 </section>
-
-
+<section class="slide" data-title="보안 원칙">
+  <div class="slide-header"><div class="kicker">Security</div><div class="slide-no">15</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">보안 원칙 — 실습 전 과정에 적용합니다</h2>
+    <table class="tbl">
+      <tr><th>구분</th><th>내용</th></tr>
+      <tr><td>금지</td><td>도면·설계정보·기술 원문, 개인정보(이름·연락처), 비공개 내부문서 원문 업로드</td></tr>
+      <tr><td>주의</td><td>프로젝트명·사내 고유 용어는 가명 처리, 수치는 예시값으로, 결과물은 검토 후 사용</td></tr>
+      <tr><td>가능</td><td>공개 자료(보도자료, ALIO 공시), 문서의 형식·틀·목차, 일반화한 업무 상황</td></tr>
+    </table>
+    <p class="lead">국가정보원 생성형 AI 활용 보안 가이드라인 기준. 오늘 모든 실습은 가능 영역 안에서만 진행합니다.</p>
+  </div>
+</section>
+<section class="slide" data-title="보안 미니 퀴즈">
+  <div class="slide-header"><div class="kicker">Security · 미니 퀴즈</div><div class="slide-no">16</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">다 같이 O/X — <span class="orange">이건 넣어도 될까요?</span></h2>
+    <div class="checks">
+      <div class="check"><span class="mk">?</span><p>"OO프로젝트 설계검토 의견서 원문 요약해줘"</p></div>
+      <div class="check"><span class="mk">?</span><p>"김OO 부장(010-xxxx) 참석 회의록 정리해줘"</p></div>
+      <div class="check"><span class="mk">?</span><p>"발전소 설계 회사의 주간보고 형식 만들어줘"</p></div>
+      <div class="check"><span class="mk">?</span><p>"이 보도자료 3줄로 요약해줘"</p></div>
+    </div>
+    <div class="game">
+      <h4>진행</h4>
+      <p>손으로 O·X를 표시해주세요. 정답은 다음 장에서 이유와 함께 확인합니다.</p>
+    </div>
+  </div>
+</section>
+<section class="slide" data-title="보안 미니 퀴즈 정답" data-note="거수 결과 언급하며 하나씩 공개(2분). 헷갈린 문항은 '애매하면 제외' 원칙으로 연결 → 1부로 전환">
+  <div class="slide-header"><div class="kicker">Security · 정답 확인</div><div class="slide-no">17</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">정답 — 기준은 <span class="orange">공개 가능 여부</span></h2>
+    <div class="checks">
+      <div class="check"><span class="mk bad">X</span><p>설계검토 의견서 원문 — 기술 원문 업로드 금지</p></div>
+      <div class="check"><span class="mk bad">X</span><p>김OO 부장(010-xxxx) — 개인정보 금지, 이름은 A·B로</p></div>
+      <div class="check"><span class="mk">O</span><p>주간보고 형식 만들기 — 일반화한 업무 상황</p></div>
+      <div class="check"><span class="mk">O</span><p>보도자료 요약 — 공개 자료</p></div>
+    </div>
+  </div>
+</section>
+<section class="slide" data-title="AI 도구 지도">
+  <div class="slide-header"><div class="kicker">Session 1 · 도구보다 먼저 볼 것</div><div class="slide-no">18</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">도구 이름보다 먼저, <span class="orange">자료의 경계</span>를 정합니다</h2>
+    <table class="tool-table">
+      <thead><tr><th>도구</th><th>한국전력기술에서 맡길 일</th><th>오늘 기억할 경계</th></tr></thead>
+      <tbody>
+        <tr><td>NEXA / 승인된 사내 AI</td><td>사내·전문 지식 검색, 엔지니어링 문서 활용처럼 회사 환경 안에서 처리해야 하는 일</td><td>내부 기준과 승인 범위에 따라 사용</td></tr>
+        <tr><td>ChatGPT</td><td>공개·일반화한 자료의 초안, 요약, 구조화, 맞춤 GPT 실습</td><td>오늘 제공되는 유료계정. 비공개 자료는 입력하지 않음</td></tr>
+        <tr><td>Claude · Gemini 등</td><td>장문 읽기, 탐색, 멀티모달 등 범용 AI의 다른 선택지</td><td>개념만 비교. 오늘 유료계정과 실습 지원은 ChatGPT만 제공</td></tr>
+      </tbody>
+    </table>
+    <div class="boundary-callout">판단 순서: <b>① 자료가 공개 가능한가 → ② 어떤 결과물이 필요한가 → ③ 승인된 도구인가</b>. 기능 비교는 그 다음입니다.</div>
+  </div>
+</section>
+<section class="slide" data-title="상황별 AI 도구 선택">
+  <div class="slide-header"><div class="kicker">Session 1 · 상황별 선택</div><div class="slide-no">19</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">“어떤 AI가 최고인가?”보다 <span class="orange">“이 일을 어디서 해야 하나?”</span></h2>
+    <div class="decision-list">
+      <div class="decision-row"><b>사내 기술자료·전문 지식이 필요한 업무</b><div class="go">→</div><span class="pick">NEXA 또는 회사가 승인한 환경</span></div>
+      <div class="decision-row"><b>공개자료로 보고·회의 초안을 빠르게 만들기</b><div class="go">→</div><span class="pick">오늘 실습: ChatGPT</span></div>
+      <div class="decision-row"><b>긴 공개문서·이미지·검색 결과를 함께 살펴보기</b><div class="go">→</div><span class="pick">범용 AI 중 기능과 접근 환경에 맞춰 선택</span></div>
+      <div class="decision-row"><b>수치·규정·계약·기술 판단이 걸린 최종 문서</b><div class="go">→</div><span class="pick">AI 선택보다 원문·기준서·담당자 검증이 우선</span></div>
+    </div>
+    <p class="lead">같은 질문을 여러 AI에 던져 다수결하는 것은 검증이 아닙니다. 중요한 내용은 <span class="orange">원문과 기준 문서</span>로 확인합니다.</p>
+  </div>
+</section>
 <section class="slide" data-title="GPT 화면 구성">
-  <div class="slide-header"><div class="kicker">Session 1 · 화면 구성</div><div class="slide-no">30</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 화면 구성</div><div class="slide-no">20</div></div>
   <div class="slide-body">
     <h2 class="big-message">화면에서 오늘 쓰는 건 <span class="orange">딱 3곳</span>입니다</h2>
     <div class="grid3">
@@ -938,9 +792,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">나머지 메뉴는 오늘 안 씁니다. 화면이 복잡해 보여도 쓰는 곳은 정해져 있습니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="화면 구성 미리보기" data-note="번호 배지를 손으로 짚으며 카드 3개와 1:1 대응시켜 설명(1분)">
-  <div class="slide-header"><div class="kicker">Session 1 · 실제로 이렇게 생겼습니다</div><div class="slide-no">31</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 실제로 이렇게 생겼습니다</div><div class="slide-no">21</div></div>
   <div class="slide-body">
     <h2 class="big-message">방금 그 3곳, <span class="orange">화면에서 찾아보면</span></h2>
     <div class="uiapp">
@@ -963,9 +816,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">배지 번호가 앞 장의 카드 번호와 같습니다 — 오늘은 이 셋만 기억하세요.</p>
   </div>
 </section>
-
 <section class="slide" data-title="채팅창 자세히 보기" data-note="세 지점이 자동으로 순서대로 반짝이며 강조됩니다. 1 모델 선택(펼쳐지는 드롭다운), 2 + 버튼(파일 첨부), 3 새 채팅 순으로 손가락으로 짚으며 설명(2분) [Source] OpenAI Help Center, GPT-5.5 in ChatGPT / GPT-5.6 in ChatGPT, 2026-08-02 확인">
-  <div class="slide-header"><div class="kicker">Session 1 · 자주 헷갈리는 3버튼</div><div class="slide-no">32</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 자주 헷갈리는 3버튼</div><div class="slide-no">22</div></div>
   <div class="slide-body">
     <h2 class="big-message">모델 선택 · <span class="orange">+ 버튼</span> · 새 채팅 — 실제 화면으로</h2>
     <div class="uiapp">
@@ -1006,9 +858,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="ChatGPT 기능 지도">
-  <div class="slide-header"><div class="kicker">Session 1 · 기능명 정확히 보기</div><div class="slide-no">32-A</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 기능명 정확히 보기</div><div class="slide-no">23</div></div>
   <div class="slide-body">
     <h2 class="big-message">ChatGPT 안에도 <span class="orange">일하는 층위</span>가 다릅니다</h2>
     <table class="tbl">
@@ -1022,9 +873,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오늘은 기능을 전부 외우는 시간이 아닙니다. <span class="orange">내 반복 업무를 맞춤 GPT로 저장하는 법</span> 하나만 확실히 가져갑니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="모델 선택 기준" data-note="[Sources] https://help.openai.com/en/articles/11909943-gpt-5-in-chatgpt · https://help.openai.com/en/articles/20001354-gpt-56-in-chatgpt (2026-08-02 확인)">
-  <div class="slide-header"><div class="kicker">Session 1 · 모델명 정확히 보기</div><div class="slide-no">32-B</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 모델명 정확히 보기</div><div class="slide-no">24</div></div>
   <div class="slide-body">
     <h2 class="big-message">모델은 많이 보여도, <span class="orange">선택 기준은 단순합니다</span></h2>
     <div class="grid3">
@@ -1035,9 +885,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">선택기 표시는 계정마다 다를 수 있습니다. <span class="orange">Instant로 시작 → 답이 얕으면 추론 수준을 한 단계 올리기</span>만 기억하세요.</p>
   </div>
 </section>
-
 <section class="slide" data-title="오늘 Work가 아닌 이유">
-  <div class="slide-header"><div class="kicker">Session 1 · 오늘의 범위</div><div class="slide-no">32-C</div></div>
+  <div class="slide-header"><div class="kicker">Session 1 · 오늘의 범위</div><div class="slide-no">25</div></div>
   <div class="slide-body">
     <h2 class="big-message">Work는 소개만, 오늘 실습은 <span class="orange">맞춤 GPT</span>입니다</h2>
     <div class="grid2">
@@ -1047,7 +896,111 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">한전기술 교육 4시간 안에서 가져갈 수 있는 가장 현실적인 결과물은 <span class="orange">내 업무 방식이 들어간 작은 Agent 하나</span>입니다. Work는 그 다음 단계입니다.</p>
   </div>
 </section>
+<section class="slide" data-title="실습 0 안내">
+  <div class="slide-header"><div class="kicker">Session 1 · 실습 0</div><div class="slide-no">26</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">전원 체크포인트 — 로그인 &amp; 정해진 예시 실습</h2>
+    <div class="flow">
+      <div class="step"><div class="n">01</div><h4>접속</h4><p>chatgpt.com</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">02</div><h4>로그인</h4><p>배부받은 유료계정으로</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">03</div><h4>예시 입력</h4><p>공개·가상 회의 메모만 붙여넣기</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">04</div><h4>확인</h4><p>요약 결과가 오면 성공</p></div>
+    </div>
+    <p class="lead">여기서는 창을 열고 결과를 받아보는 것까지만 합니다. 프롬프트 기법은 2부에서 차근차근 다룹니다.</p>
+  </div>
+</section>
+<section class="slide" data-title="로그인 트러블슈팅">
+  <div class="slide-header"><div class="kicker">Session 1 · 안 될 때</div><div class="slide-no">27</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">로그인, 이 순서로 확인하세요</h2>
+    <div class="checks">
+      <div class="check"><span class="mk">1</span><p>주소가 chatgpt.com이 맞는지 (검색 결과의 광고 링크 주의)</p></div>
+      <div class="check"><span class="mk">2</span><p>배부받은 아이디·비밀번호 그대로인지 — 자동완성이 끼어들지 않았는지</p></div>
+      <div class="check"><span class="mk">3</span><p>유료계정 표시 확인 — 화면 좌측 하단 계정 메뉴</p></div>
+      <div class="check"><span class="mk">4</span><p>그래도 안 되면 그 자리에서 손 들기. 5분 이상 혼자 붙잡지 않기</p></div>
+    </div>
+  </div>
+</section>
+<section class="slide" data-title="첫 체험 예시">
+  <div class="slide-header"><div class="kicker">Session 1 · 첫 체험</div><div class="slide-no">28</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">처음은 자유 질문이 아니라 <span class="orange">같은 예시</span>로 시작합니다</h2>
+    <div class="prompt" id="first-safe-demo"><button class="copy-btn" data-copy="first-safe-demo">복사</button>아래는 공개·가상 실습용 회의 메모입니다. 내부 자료나 실제 프로젝트 정보는 포함하지 않았습니다.
 
+회의 메모:
+- 협력사와 다음 주 일정 조율 필요
+- 검토 의견 초안은 금요일까지 정리 예정
+- 담당자와 기한이 확정되지 않은 항목이 있음
+- 회의 중 나온 리스크는 별도 확인 필요
+
+요청:
+1. 3줄로 요약해줘.
+2. 결정사항 / 할 일 / 이슈·리스크를 표로 나눠줘.
+3. 추정한 내용과 확인 필요한 내용을 분리해줘.</div>
+    <div class="grid3">
+      <div class="card"><div class="badge">A</div><h3>그대로 붙여넣기</h3><p>“아래 가상 회의 메모를 3줄로 요약해줘.”</p></div>
+      <div class="card"><div class="badge">B</div><h3>형식 바꾸기</h3><p>“결정사항 / 할 일 / 이슈를 표로 바꿔줘.”</p></div>
+      <div class="card"><div class="badge">C</div><h3>검증 요청</h3><p>“추정한 내용과 확인 필요한 내용을 분리해줘.”</p></div>
+    </div>
+    <p class="lead">먼저 같은 재료로 결과 차이를 봅니다. 그 다음에 내 업무 문장으로 확장합니다.</p>
+  </div>
+</section>
+<section class="slide" data-title="생성형 AI 3줄">
+  <div class="slide-header"><div class="kicker">Session 1 · 개념은 딱 3줄</div><div class="slide-no">29</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">생성형 AI, 오늘 필요한 건 <span class="orange">이 3줄</span>뿐입니다</h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">1</div><h3>다음 말을 예측하는 기계</h3><p>정답 검색이 아니라 그럴듯한 답을 만들어냅니다. 그래서 틀릴 수 있습니다.</p></div>
+      <div class="card"><div class="badge">2</div><h3>지시가 구체적일수록 잘함</h3><p>신입사원에게 일 시키듯 조건을 붙여주세요. 1부의 핵심입니다.</p></div>
+      <div class="card"><div class="badge">3</div><h3>결과는 항상 초안</h3><p>최종 판단은 사람 몫. 검토 없이 공문에 붙이지 않습니다.</p></div>
+    </div>
+  </div>
+</section>
+<section class="slide" data-title="LLM 작동 원리 도식" data-note="바를 하나씩 가리키며 설명(3분). '가장 그럴듯한 다음 말'이라는 표현 반복 → 다음 장(모르는 것) 전환">
+  <div class="slide-header"><div class="kicker">Theory · LLM 작동 원리</div><div class="slide-no">30</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">GPT의 실체 — <span class="orange">다음 단어 확률 예측기</span></h2>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><h4>입력</h4><p>"이번 주 협력사 회의 결과를 ___"</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">2</div><h4>확률 계산</h4><p>수천억 개 문서에서 배운 패턴으로 다음 말 후보에 점수</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">3</div><h4>선택·생성</h4><p>가장 그럴듯한 말을 이어 붙임 — 문장이 될 때까지 반복</p></div>
+    </div>
+    <div class="bars">
+      <div class="bar"><div class="w">"정리하면"</div><div class="track"><div class="fill" style="width:78%">78%</div></div></div>
+      <div class="bar dim"><div class="w">"보고하면"</div><div class="track"><div class="fill" style="width:14%">14%</div></div></div>
+      <div class="bar dim"><div class="w">"요약하자면"</div><div class="track"><div class="fill" style="width:8%">8%</div></div></div>
+    </div>
+    <p class="lead">검색이 아니라 <span class="orange">확률 생성</span>입니다. 유창한 이유도, 틀릴 수 있는 이유도 전부 여기서 나옵니다.</p>
+  </div>
+</section>
+<section class="slide" data-title="GPT가 모르는 것 도식" data-note="세 영역을 왼쪽부터. '그래서 오늘 오후에 Knowledge로 세 번째 영역을 보강한다' 예고로 전환(2분)">
+  <div class="slide-header"><div class="kicker">Theory · 지식의 경계</div><div class="slide-no">31</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">GPT가 아는 것과 <span class="orange">모르는 것</span></h2>
+    <div class="grid3">
+      <div class="card"><div class="badge">O</div><h3>학습된 지식</h3><p>학습 시점까지의 공개 문서·책·웹 — 일반 지식과 글쓰기 패턴</p></div>
+      <div class="card"><div class="badge">△</div><h3>학습 이후의 세상</h3><p>학습 컷오프 뒤의 뉴스·변경사항 — 웹 검색 기능을 켜야 보완됨</p></div>
+      <div class="card"><div class="badge">X</div><h3>우리 회사 내부</h3><p>사내 규정·양식·프로젝트 — 학습된 적이 없어 물어보면 지어낼 위험</p></div>
+    </div>
+    <p class="lead">세 번째 칸이 오늘의 핵심입니다. 모르는 걸 알려주는 장치가 <span class="orange">지식파일</span>(오후 실습)입니다.</p>
+  </div>
+</section>
+<section class="slide" data-title="환각 구조 도식" data-note="위 경로와 아래 경로를 비교하며 설명. '자신 있게 말한다고 아는 게 아니다' 한 문장 강조(2분)">
+  <div class="slide-header"><div class="kicker">Theory · 환각의 구조</div><div class="slide-no">32</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">환각은 버그가 아니라 <span class="orange">작동 방식의 그림자</span></h2>
+    <p class="lead"><b>환각(Hallucination)</b>이란 — GPT가 모르는 것도 그럴듯한 문장으로 지어내 답하는 현상입니다.</p>
+    <div class="flow">
+      <div class="step"><div class="n">아는 질문</div><h4>패턴 풍부</h4><p>학습 데이터에 근거 많음 → 정확할 확률 높음</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">출력</div><h4>유창 + 대체로 정확</h4><p>그래도 초안으로 취급</p></div>
+    </div>
+    <div class="flow">
+      <div class="step"><div class="n">모르는 질문</div><h4>패턴 빈약</h4><p>근거 없음 — 그래도 확률상 그럴듯한 말은 만들 수 있음</p></div><div class="arrow">→</div>
+      <div class="step"><div class="n">출력</div><h4>유창 + 지어냄</h4><p>없는 규정 조항·논문을 자신 있게 인용</p></div>
+    </div>
+    <p class="lead">방어선 2개 — 수치·조항은 원본 재확인, 지시문에 <span class="orange">"모르면 모른다고"</span> 명시.</p>
+  </div>
+</section>
 <section class="slide" data-title="질문 잘하는 팁">
   <div class="slide-header"><div class="kicker">Session 1 · 질문 팁</div><div class="slide-no">33</div></div>
   <div class="slide-body">
@@ -1061,7 +1014,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">패턴이 보이시죠 — <span class="orange">형식과 분량을 정해주는 것</span>. 이걸 체계화한 게 다음 세션의 업무 지시서 7요소입니다.</p>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 잘하는일" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -1069,7 +1021,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>옆 사람과 10초 — 하나씩만 말해보세요.</p>
   </div>
 </section>
-
 <section class="slide" data-title="잘하는 일 못하는 일" data-note="Do &amp; Don&#39;t 도식 — 초록/빨강 대비로 &#39;오늘 쓸 것&#39;을 즉각 구분">
   <div class="slide-header"><div class="kicker">Session 1 · 잘하는 일, 못하는 일</div><div class="slide-no">34</div></div>
   <div class="slide-body">
@@ -1091,7 +1042,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오늘 만드는 챗봇은 전부 왼쪽입니다. 오른쪽을 시키면 그럴듯한 거짓말이 돌아옵니다.</p>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 환각" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -1099,7 +1049,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>실제로 한 번 속아보면 평생 안 잊습니다. 사례로 보시죠.</p>
   </div>
 </section>
-
 <section class="slide" data-title="환각">
   <div class="slide-header"><div class="kicker">Session 1 · 그럴듯한 거짓말</div><div class="slide-no">35</div></div>
   <div class="slide-body">
@@ -1111,7 +1060,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오늘 지시문마다 [금지사항]에 "지어내지 않는다"가 들어가는 이유입니다. 이건 버릇처럼 넣으세요.</p>
   </div>
 </section>
-
 <section class="slide" data-title="활용 카탈로그 1">
   <div class="slide-header"><div class="kicker">Session 1 · 뭘 시킬 수 있나 ①</div><div class="slide-no">36</div></div>
   <div class="slide-body">
@@ -1130,7 +1078,6 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="활용 카탈로그 2">
   <div class="slide-header"><div class="kicker">Session 1 · 뭘 시킬 수 있나 ②</div><div class="slide-no">37</div></div>
   <div class="slide-body">
@@ -1143,7 +1090,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">공통점: 전부 <span class="orange">초안·연습 상대</span>로 쓰고, 판단은 내가 합니다. 이 감각이 오늘의 전부입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="데이터 학습 질문">
   <div class="slide-header"><div class="kicker">Session 1 · 꼭 나오는 질문</div><div class="slide-no">38</div></div>
   <div class="slide-body">
@@ -1162,7 +1108,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <div class="goal">이 세션이 끝나면: "보고서 써줘"가 왜 실패하는지 알고, <b>내 주간보고 초안</b>이 손에 있습니다. 오늘의 첫 산출물입니다.</div>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 프롬프트" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -1170,7 +1115,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>도구 차이가 아닙니다. 다음 두 장을 비교해보세요.</p>
   </div>
 </section>
-
 <section class="slide" data-title="나쁜 프롬프트">
   <div class="slide-header"><div class="kicker">Session 2 · 나쁜 프롬프트</div><div class="slide-no">40</div></div>
   <div class="slide-body">
@@ -1185,7 +1129,35 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">신입사원에게 "보고서 써줘"라고만 하면 어떻게 되나요? 똑같은 일이 벌어집니다.</p>
   </div>
 </section>
+<section class="slide" data-title="PTCO 프롬프트 기초">
+  <div class="slide-header"><div class="kicker">Session 2 · PTCO 기초</div><div class="slide-no">41</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">프롬프트는 질문이 아니라 <span class="orange">업무 지시서</span>입니다</h2>
+    <div class="ptco-strip">
+      <div class="ptco-cell"><div class="ptco-letter">P</div><h3>Persona · 역할</h3><p>누구의 관점과 전문성으로 일할지 정합니다.</p></div>
+      <div class="ptco-cell"><div class="ptco-letter">T</div><h3>Task · 할 일</h3><p>요약·분류·작성처럼 수행할 동작을 분명히 씁니다.</p></div>
+      <div class="ptco-cell"><div class="ptco-letter">C</div><h3>Context · 맥락</h3><p>대상, 목적, 기준일, 입력자료와 업무 상황을 줍니다.</p></div>
+      <div class="ptco-cell"><div class="ptco-letter">O</div><h3>Output · 결과 형식</h3><p>표, 순서, 분량과 반드시 포함할 항목을 지정합니다.</p></div>
+    </div>
+    <div class="ptco-note">PTCO는 방금 쓴 예시를 설명하는 4칸입니다. 뒤에서 <b>제약조건·검토기준·예외처리</b>까지 더해 7요소 업무 지시서로 확장합니다.</div>
+  </div>
+</section>
+<section class="slide" data-title="한국전력기술 프롬프트 전후 비교">
+  <div class="slide-header"><div class="kicker">Session 2 · 나쁜 요청 vs 좋은 지시</div><div class="slide-no">42</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">같은 회의 메모도 <span class="orange">지시 방법</span>에 따라 달라집니다</h2>
+    <div class="prompt-compare">
+      <div class="prompt bad">나쁜 요청<br><br>“협력사 회의록 정리해줘.”</div>
+      <div class="prompt" id="ptco-kepco"><button class="copy-btn" data-copy="ptco-kepco">복사</button>[역할] 발전·에너지 프로젝트 사업관리 담당자처럼 정리해줘.
 
+[할 일] 아래 회의 메모에서 결정사항, 할 일, 이슈·리스크를 분리해줘.
+
+[맥락] 공개·일반화한 실습 메모만 사용한다. 담당자나 기한이 없으면 추정하지 말고 ‘확인 필요’라고 표시한다.
+
+[출력] ① 3줄 요약 ② 결정사항 ③ 할 일(담당·기한) ④ 이슈·리스크 표 순서로 작성해줘.</div>
+    </div>
+  </div>
+</section>
 <section class="slide q" data-title="Q 7요소" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -1193,9 +1165,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>그 순서 그대로가 오늘의 프레임워크입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="7요소 Framework" data-note="Formula 도식 — 7개를 더하면 업무 지시서가 완성된다는 공식 형태로 각인">
-  <div class="slide-header"><div class="kicker">Session 2 · Framework</div><div class="slide-no">41</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · Framework</div><div class="slide-no">43</div></div>
   <div class="slide-body">
     <h2 class="big-message">좋은 프롬프트 = <span class="orange">업무 지시서 7요소</span></h2>
     <div class="frm">
@@ -1211,10 +1182,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">외울 필요 없습니다. 치트시트에 있고, 오늘 하루 종일 이 틀만 씁니다.</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="7요소 상세 앞">
-  <div class="slide-header"><div class="kicker">Session 2 · 7요소 뜯어보기 ①</div><div class="slide-no">42</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 7요소 뜯어보기 ①</div><div class="slide-no">44</div></div>
   <div class="slide-body">
     <h2 class="big-message">앞 4개 — <span class="orange">일을 정의하는 요소</span></h2>
     <div class="grid4">
@@ -1225,9 +1194,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="7요소 상세 뒤">
-  <div class="slide-header"><div class="kicker">Session 2 · 7요소 뜯어보기 ②</div><div class="slide-no">43</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 7요소 뜯어보기 ②</div><div class="slide-no">45</div></div>
   <div class="slide-body">
     <h2 class="big-message">뒤 3개 — <span class="orange">안전장치</span></h2>
     <div class="grid3">
@@ -1239,7 +1207,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="미니 실습 프롬프트">
-  <div class="slide-header"><div class="kicker">Session 2 · 미니 실습</div><div class="slide-no">44</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 미니 실습</div><div class="slide-no">46</div></div>
   <div class="slide-body">
     <h2 class="big-message">그대로 복붙하세요 — 주간보고 초안</h2>
     <div class="prompt" id="p1"><button class="copy-btn" data-copy="p1">복사</button>[목표] 팀장 보고용 주간 업무보고 초안을 작성해줘.
@@ -1253,10 +1221,8 @@ table.tbl tr:last-child td{border-bottom:none}
 (결과를 보고 "더 간결하게"처럼 개선요청을 한 번 더 — 요소가 아니라 습관입니다)</div>
   </div>
 </section>
-
-
 <section class="slide" data-title="결과 비교" data-note="Before&amp;After 도식 — 같은 도구·같은 시간, 지시서 차이만 강조">
-  <div class="slide-header"><div class="kicker">Session 2 · 결과 비교</div><div class="slide-no">45</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 결과 비교</div><div class="slide-no">47</div></div>
   <div class="slide-body">
     <h2 class="big-message">실제로 결과가 <span class="orange">이렇게 다릅니다</span></h2>
     <div class="ba2">
@@ -1268,7 +1234,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="개선요청 라운드">
-  <div class="slide-header"><div class="kicker">Session 2 · 개선요청 라운드</div><div class="slide-no">46</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 개선요청 라운드</div><div class="slide-no">48</div></div>
   <div class="slide-body">
     <h2 class="big-message">첫 답이 나왔다면, <span class="orange">거기서 끝내지 마세요</span></h2>
     <div class="grid3">
@@ -1279,9 +1245,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">한 번에 완성본이 나오지 않는 게 정상입니다. 개선요청 한 번이면 대부분 원하는 결과에 가까워집니다. 잘 되면 메모만 내 업무로 바꿔 <span class="orange">한 번 더</span> — 이 동작이 오늘 종일 반복됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="답하기 전에 질문하게 하기">
-  <div class="slide-header"><div class="kicker">Session 2 · 고급 기법 ①</div><div class="slide-no">47</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 고급 기법 ①</div><div class="slide-no">49</div></div>
   <div class="slide-body">
     <h2 class="big-message">정보가 부족하면, 답보다 <span class="orange">질문을 먼저</span> 받습니다</h2>
     <div class="advanced-layout">
@@ -1299,9 +1264,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="AI에게 프롬프트 설계시키기">
-  <div class="slide-header"><div class="kicker">Session 2 · 고급 기법 ②</div><div class="slide-no">48</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 고급 기법 ②</div><div class="slide-no">50</div></div>
   <div class="slide-body">
     <h2 class="big-message">프롬프트 초안도 <span class="orange">AI에게 설계</span>시킬 수 있습니다</h2>
     <div class="advanced-layout">
@@ -1316,9 +1280,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="생각과정보 대신 검증 가능한 출력 요구">
-  <div class="slide-header"><div class="kicker">Session 2 · 고급 기법 ③</div><div class="slide-no">49</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 고급 기법 ③</div><div class="slide-no">51</div></div>
   <div class="slide-body">
     <h2 class="big-message">“생각 과정을 보여줘”보다 <span class="orange">검증할 재료</span>를 요구합니다</h2>
     <div class="contract-list">
@@ -1331,10 +1294,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <div class="boundary-callout">복붙 문장: “내부 사고과정을 장황하게 설명하지 말고, <b>결론·근거·가정·미확인 항목·검증 체크리스트</b>만 보여주세요.”</div>
   </div>
 </section>
-
-
 <section class="slide" data-title="세션2 실습 미션">
-  <div class="slide-header"><div class="kicker">Session 2 · 실습 중 — 이 화면 유지</div><div class="slide-no">50</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 실습 중 — 이 화면 유지</div><div class="slide-no">52</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 10분 — <span class="orange">주간보고 초안 만들기</span></h2>
     <div class="checks">
@@ -1347,7 +1308,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="실제 효과">
-  <div class="slide-header"><div class="kicker">Session 2 · 실제 효과</div><div class="slide-no">51</div></div>
+  <div class="slide-header"><div class="kicker">Session 2 · 실제 효과</div><div class="slide-no">53</div></div>
   <div class="slide-body">
     <h2 class="big-message">효과는 거창한 통계보다 <span class="orange">내 업무 전후</span>로 잽니다</h2>
     <div class="stats">
@@ -1358,16 +1319,12 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오늘 만든 결과물로 Before와 After를 한 번씩 재면, 과장 없는 우리 팀의 효과가 됩니다.</p>
   </div>
 </section>
-
 <section class="slide break" data-title="휴식1">
   <div class="slide-body">
     <h2>잠깐, 커피 한 잔 ☕ — 10분</h2>
     <p>계정 로그인만 한 번 더 확인해주세요. 자리 옮겨서 옆 부서 사람과 인사해도 좋아요.<br>다음 시간: 잘 쓴 프롬프트를 저장하면 챗봇이 됩니다.</p>
   </div>
 </section>
-
-<!-- ============ 2부 ============ -->
-
 <section class="slide divider" data-title="2부 divider">
   <div class="slide-body" style="text-align:center">
     <div class="num dc2">2부 · 40분</div>
@@ -1375,15 +1332,13 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead" style="margin:1.2vw auto 0">잘 쓴 프롬프트를 저장하면 챗봇이 됩니다</p>
   </div>
 </section>
-
 <section class="slide" data-title="세션3 목표">
-  <div class="slide-header"><div class="kicker">Session 3 · 챗봇은 저장된 업무 지시서다</div><div class="slide-no">52</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 챗봇은 저장된 업무 지시서다</div><div class="slide-no">54</div></div>
   <div class="slide-body">
     <h2 class="big-message">세션 3 — 챗봇은 저장된 업무 지시서다 <span class="orange">(40분)</span></h2>
     <div class="goal">이 세션이 끝나면: 맞춤 GPT가 <b>Instructions·Knowledge·Conversation starters·Capabilities</b>로 구성된다는 걸 알고, 강사의 <b>라이브 시연으로 제작 과정 전체</b>를 눈으로 확인한 상태가 됩니다.</div>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 챗봇" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -1391,9 +1346,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>저장할 방법이 있다면? — 그게 오늘 2부입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="왜 챗봇인가">
-  <div class="slide-header"><div class="kicker">Session 3 · 왜 챗봇인가</div><div class="slide-no">53</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 왜 챗봇인가</div><div class="slide-no">55</div></div>
   <div class="slide-body">
     <h2 class="big-message">왜 챗봇인가</h2>
     <table class="tbl">
@@ -1405,9 +1359,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">업무 자동화의 시작은 거창한 시스템이 아니라 반복 업무 하나를 <span class="orange">챗봇에 맡기는 것</span>입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="GPT 구성 요소" data-note="중심(내 챗봇)에서 바깥으로 하나씩. '코딩 0줄' 강조 후 경로 슬라이드로 전환(3분)">
-  <div class="slide-header"><div class="kicker">Session 3 · GPT 구성 요소</div><div class="slide-no">54</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · GPT 구성 요소</div><div class="slide-no">56</div></div>
   <div class="slide-body">
     <h2 class="big-message">맞춤 GPT 하나에 <span class="orange">기본 구성은 넷</span> — 코딩은 0줄</h2>
     <div class="hubv">
@@ -1423,9 +1376,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="GPTs 경로">
-  <div class="slide-header"><div class="kicker">Session 3 · 화면 경로</div><div class="slide-no">55</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 화면 경로</div><div class="slide-no">57</div></div>
   <div class="slide-body">
     <h2 class="big-message">만드는 위치, 미리 봐두세요</h2>
     <div class="flow">
@@ -1436,9 +1388,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">대화형 빌더도 있지만, 오늘은 <span class="orange">구성 보기</span>에서 지시문을 직접 붙여넣는 방식으로 갑니다. 더 빠르고 결과가 예측 가능합니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="만들기 화면 미리보기" data-note="1→2→3 순서로 손가락 짚어가며 경로 설명, 실제 강사 화면과 대조(1분)">
-  <div class="slide-header"><div class="kicker">Session 3 · 실제로 이렇게 생겼습니다</div><div class="slide-no">56</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 실제로 이렇게 생겼습니다</div><div class="slide-no">58</div></div>
   <div class="slide-body">
     <h2 class="big-message">경로 3단계, <span class="orange">화면으로 다시</span></h2>
     <div class="uiapp">
@@ -1459,10 +1410,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">1 GPT 탐색 → 2 만들기 → 3 구성 보기. 이 순서만 기억하면 헤매지 않습니다.</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="Projects vs GPTs">
-  <div class="slide-header"><div class="kicker">Session 3 · 헷갈리는 것 정리</div><div class="slide-no">57</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 헷갈리는 것 정리</div><div class="slide-no">59</div></div>
   <div class="slide-body">
     <h2 class="big-message">Projects도 있던데요? — <span class="orange">역할과 공간이 다릅니다</span></h2>
     <table class="tbl">
@@ -1475,9 +1424,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">비유하면 맞춤 GPT는 "일 잘하는 담당자", Projects는 "그 일의 서류함". 오늘은 담당자부터 만듭니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="GPT vs Project 우리 상황">
-  <div class="slide-header"><div class="kicker">Session 3 · 우리 상황이라면</div><div class="slide-no">58</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 우리 상황이라면</div><div class="slide-no">60</div></div>
   <div class="slide-body">
     <h2 class="big-message">한국전력기술 업무라면 <span class="orange">이렇게 나눠 씁니다</span></h2>
     <div class="grid2">
@@ -1487,9 +1435,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">두 개는 함께 씁니다 — Project 안에서 대화할 때도 GPT를 "역할"로 불러와 쓸 수 있습니다. 오늘은 재사용되는 역할(GPT)부터 만듭니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="공유 옵션">
-  <div class="slide-header"><div class="kicker">Session 3 · 공유 옵션</div><div class="slide-no">59</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 공유 옵션</div><div class="slide-no">61</div></div>
   <div class="slide-body">
     <h2 class="big-message">공유는 <span class="orange">3단계</span> 중에 고릅니다</h2>
     <div class="grid3">
@@ -1500,9 +1447,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">주의: 지식파일에 넣은 내용은 챗봇 답변으로 흘러나올 수 있습니다. 공유할 챗봇의 지식파일은 <span class="orange">공개 가능 자료만</span>.</p>
   </div>
 </section>
-
 <section class="slide" data-title="공유 화면 미리보기" data-note="실제 저장 버튼 옆 공유 팝업과 대조, '팀 배포는 두 번째 옵션' 강조(1분)">
-  <div class="slide-header"><div class="kicker">Session 3 · 실제로 이렇게 생겼습니다</div><div class="slide-no">60</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 실제로 이렇게 생겼습니다</div><div class="slide-no">62</div></div>
   <div class="slide-body">
     <h2 class="big-message">저장 버튼 옆, <span class="orange">이 팝업이 뜹니다</span></h2>
     <div class="uishare">
@@ -1515,9 +1461,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">가운데 옵션을 선택하고 링크 복사 → 오픈채팅방에 붙여넣으면 배포 끝입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="지식파일 팁">
-  <div class="slide-header"><div class="kicker">Session 3 · 지식파일 팁</div><div class="slide-no">61</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 지식파일 팁</div><div class="slide-no">63</div></div>
   <div class="slide-body">
     <h2 class="big-message">지식파일, 이것만 알면 됩니다</h2>
     <div class="grid3">
@@ -1528,10 +1473,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">공기업 필수 팁: 사내 문서 대부분이 hwp죠. <span class="orange">내용 복사 → 메모장 → txt 저장</span>, 이 세 동작만 기억하세요.</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="이름 짓기">
-  <div class="slide-header"><div class="kicker">Session 3 · 이름 짓기</div><div class="slide-no">62</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 이름 짓기</div><div class="slide-no">64</div></div>
   <div class="slide-body">
     <h2 class="big-message">이름은 <span class="orange">"업무 + 봇"</span>이면 충분합니다</h2>
     <div class="grid3">
@@ -1542,7 +1485,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="라이브 시연">
-  <div class="slide-header"><div class="kicker">Session 3 · 라이브 시연 15분</div><div class="slide-no">63</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 라이브 시연 15분</div><div class="slide-no">65</div></div>
   <div class="slide-body">
     <h2 class="big-message">지금은 <span class="orange">보기만</span> 하세요</h2>
     <div class="flow">
@@ -1555,10 +1498,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">3부에서 이걸 그대로 따라 만듭니다. 5분이면 됩니다.</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="시연 시나리오">
-  <div class="slide-header"><div class="kicker">Session 3 · 시연 시나리오</div><div class="slide-no">64</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 시연 시나리오</div><div class="slide-no">66</div></div>
   <div class="slide-body">
     <h2 class="big-message">시연: <span class="orange">"사내 문의 응대봇"</span>을 그 자리에서</h2>
     <div class="flow">
@@ -1571,9 +1512,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">실패해도 그대로 보여드립니다 — 교정하는 과정까지가 시연입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="시연 화면 미리보기" data-note="실제 구성 보기 화면과 1:1로 대응시켜 설명. '왼쪽에 지시문을 넣으면 오른쪽 채팅에 바로 반영된다' 손으로 짚으며 강조(2분)">
-  <div class="slide-header"><div class="kicker">Session 3 · 화면이 실제로 이렇게 생겼습니다</div><div class="slide-no">65</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 화면이 실제로 이렇게 생겼습니다</div><div class="slide-no">67</div></div>
   <div class="slide-body">
     <h2 class="big-message">구성 보기 화면 — <span class="orange">왼쪽 입력이 오른쪽에 바로 반영</span>됩니다</h2>
     <div class="uimock">
@@ -1598,9 +1538,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">지시문 한 줄을 고치면 오른쪽 답변 형식이 바로 바뀝니다 — 이게 오늘 3부에서 여러분이 반복할 동작입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="지식파일 원리" data-note="검색→생성 2박자를 손으로 그리며 설명. 'AI가 파일을 통째로 외우는 게 아니라 필요한 조각을 찾아 읽는다' 강조(3분)">
-  <div class="slide-header"><div class="kicker">Theory · 지식파일 작동 원리 (RAG)</div><div class="slide-no">66</div></div>
+  <div class="slide-header"><div class="kicker">Theory · 지식파일 작동 원리 (RAG)</div><div class="slide-no">68</div></div>
   <div class="slide-body">
     <h2 class="big-message">지식파일의 작동 — <span class="orange">찾아서, 근거 삼아, 생성</span></h2>
     <div class="flow">
@@ -1612,9 +1551,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">그래서 파일이 <span class="orange">정리돼 있을수록</span> 잘 찾습니다 — 역할별로 나누고, 이름을 분명히 짓는 이유입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="챗봇의 한계">
-  <div class="slide-header"><div class="kicker">Session 3 · 기대치 조정</div><div class="slide-no">67</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 기대치 조정</div><div class="slide-no">69</div></div>
   <div class="slide-body">
     <h2 class="big-message">오늘 만드는 챗봇이 <span class="orange">해주지 않는 것</span></h2>
     <div class="checks">
@@ -1626,7 +1564,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="시연 관전 포인트">
-  <div class="slide-header"><div class="kicker">Session 3 · 관전 포인트</div><div class="slide-no">68</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 관전 포인트</div><div class="slide-no">70</div></div>
   <div class="slide-body">
     <h2 class="big-message">시연 체크 미션 — <span class="orange">3개 다 찾으면 성공</span></h2>
     <div class="grid3">
@@ -1640,9 +1578,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="중간 점검 퀴즈">
-  <div class="slide-header"><div class="kicker">Session 3 · 중간 점검</div><div class="slide-no">69</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 중간 점검</div><div class="slide-no">71</div></div>
   <div class="slide-body">
     <h2 class="big-message">O / X — <span class="orange">거수로</span></h2>
     <div class="checks one">
@@ -1652,9 +1589,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="중간 점검 퀴즈 정답" data-note="정답 공개 1분. 3번 O를 강조하며 '그게 지금부터 만드는 것' 멘트로 3부 전환">
-  <div class="slide-header"><div class="kicker">Session 3 · 정답</div><div class="slide-no">70</div></div>
+  <div class="slide-header"><div class="kicker">Session 3 · 정답</div><div class="slide-no">72</div></div>
   <div class="slide-body">
     <h2 class="big-message">정답</h2>
     <div class="checks one">
@@ -1664,9 +1600,6 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
-<!-- ============ 3부 ============ -->
-
 <section class="slide divider" data-title="3부 divider">
   <div class="slide-body" style="text-align:center">
     <div class="num dc3">3부 · 95분</div>
@@ -1674,39 +1607,35 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead" style="margin:1.2vw auto 0">문제정의 → 업무 지시서 → 폴더정의서 → 첫 시스템</p>
   </div>
 </section>
-
 <section class="slide" data-title="4단계 프레임워크">
-  <div class="slide-header"><div class="kicker">나만의 챗봇 만들기</div><div class="slide-no">71</div></div>
+  <div class="slide-header"><div class="kicker">나만의 챗봇 만들기</div><div class="slide-no">73</div></div>
   <div class="slide-body">
     <h2 class="big-message">3부는 이 <span class="orange">4단계</span>로 갑니다</h2>
-    <div class="flow">
-      <div class="step"><div class="n">STEP 1</div><h4>문제정의</h4><p>내 반복 업무 하나 고르기 (25분)</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">STEP 2</div><h4>업무 지시서</h4><p>딱 3곳 고쳐서 내 것으로 (25분)</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">STEP 3</div><h4>폴더정의서</h4><p>챗봇에게 줄 자료 정하기 (15분)</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">STEP 4</div><h4>첫 시스템</h4><p>지시서 + 지식파일 합쳐 완성 (30분)</p></div>
+    <div class="stage4-grid">
+      <div class="stage4-card"><div class="n">STEP 1</div><h4>문제정의</h4><p>내 반복 업무 하나를 고르고, Agent가 맡을 일을 한 문장으로 씁니다.</p></div>
+      <div class="stage4-card"><div class="n">STEP 2</div><h4>업무 지시서</h4><p>제공 템플릿에서 역할·출력·금지사항 3곳을 내 업무에 맞게 고칩니다.</p></div>
+      <div class="stage4-card"><div class="n">STEP 3</div><h4>폴더정의서</h4><p>지금까지 정리한 내용을 모아 <b>.md 지식파일</b> 1개로 저장합니다.</p></div>
+      <div class="stage4-card"><div class="n">STEP 4</div><h4>첫 시스템</h4><p>지시서와 .md 지식파일을 GPTs에 넣고, 테스트 질문으로 검증합니다.</p></div>
     </div>
-    <p class="lead">STEP 1까지만 와도 오늘 목표 달성입니다. 나머지는 계단처럼 올라갑니다.</p>
+    <p class="lead">기초가 느린 분은 STEP 1~2 완성, 빠른 분은 STEP 4까지 가서 실제 작동하는 Agent를 가져갑니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="STEP1 목표">
-  <div class="slide-header"><div class="kicker">STEP 1 · 문제정의</div><div class="slide-no">72</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 문제정의</div><div class="slide-no">74</div></div>
   <div class="slide-body">
     <h2 class="big-message">STEP 1 — 문제정의 <span class="orange">(25분)</span></h2>
     <div class="goal">이 단계가 끝나면: 챗봇에 맡길 <b>내 반복 업무 하나</b>가 정해지고, 예시 지시문 복붙으로 <b>첫 챗봇이 작동</b>합니다.</div>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 문제정의" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
     <h2>내 업무 중에 챗봇에 맡길 첫 번째 일,<br>뭐가 좋을까요?</h2>
-    <p>아무거나 고르면 실패합니다. 고르는 기준이 있습니다.</p>
+    <p>무작정 고르면 실패합니다. 고르는 기준이 있습니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="문제정의 매트릭스" data-note="X축은 규칙성, Y축은 반복성이라고 먼저 짚기. 오른쪽 위 제1분면이 오늘의 자동화 후보임을 강조(3분). '내 업무 3개를 마음속으로 놓아보세요' 지시 후 다음 장 전환">
-  <div class="slide-header"><div class="kicker">STEP 1 · 반복성 × 규칙성</div><div class="slide-no">73</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 반복성 × 규칙성</div><div class="slide-no">75</div></div>
   <div class="slide-body">
     <h2 class="big-message">자주 하고, 매번 <span class="orange">방식이 같은 일</span>부터</h2>
     <div class="xy-matrix" role="img" aria-label="X축 규칙성, Y축 반복성의 4분면 업무 선택 도표">
@@ -1729,9 +1658,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead" style="margin-top:.7vw">오른쪽 위 <span class="orange">제1분면</span>에서 시작합니다. 자주 반복되고, 입력과 출력이 정해진 일이 첫 Agent 후보입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="자동화 스펙트럼 도식" data-note="스펙트럼을 왼→오로 훑으며 'LLM 챗봇의 자리'를 짚기. 판단 업무를 고르면 왜 실패하는지 이론으로 설명(3분)">
-  <div class="slide-header"><div class="kicker">Theory · 왜 반복성×규칙성인가</div><div class="slide-no">74</div></div>
+  <div class="slide-header"><div class="kicker">Theory · 왜 반복성×규칙성인가</div><div class="slide-no">76</div></div>
   <div class="slide-body">
     <h2 class="big-message">자동화 스펙트럼 — <span class="orange">챗봇의 자리</span>는 정해져 있습니다</h2>
     <div class="flow">
@@ -1742,10 +1670,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">매트릭스의 1순위 칸은 이 스펙트럼의 가운데 — <span class="orange">언어로 된 반복 업무</span>가 LLM의 최적 지점이라는 이론적 근거입니다.</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="문제정의 기입 예시">
-  <div class="slide-header"><div class="kicker">STEP 1 · 기입 예시</div><div class="slide-no">75</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 기입 예시</div><div class="slide-no">77</div></div>
   <div class="slide-body">
     <h2 class="big-message">먼저 채워본 예시 — <span class="orange">사업관리 부서 직원</span></h2>
     <table class="tbl">
@@ -1759,7 +1685,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="부서별 예시 개요">
-  <div class="slide-header"><div class="kicker">STEP 1 · 부서별 예시 4종</div><div class="slide-no">76</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 부서별 예시 4종</div><div class="slide-no">78</div></div>
   <div class="slide-body">
     <h2 class="big-message">아직 못 골랐다면, <span class="orange">내 부서와 가까운 것</span>을 고르세요</h2>
     <table class="tbl">
@@ -1772,9 +1698,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">4개 모두 구조는 동일합니다. 하나를 만들 줄 알면 나머지는 지시문만 바꾸면 됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="예시 A 기술문서 요약봇">
-  <div class="slide-header"><div class="kicker">STEP 1 · 예시 A</div><div class="slide-no">77</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 예시 A</div><div class="slide-no">79</div></div>
   <div class="slide-body">
     <h2 class="big-message">A. 기술문서 요약봇 <span class="orange">— 설계·기술 부서</span></h2>
     <div class="grid3">
@@ -1785,9 +1710,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">역할 문장: "너는 기술문서 요약 담당 비서다."</p>
   </div>
 </section>
-
 <section class="slide" data-title="예시 B 회의록 정리봇">
-  <div class="slide-header"><div class="kicker">STEP 1 · 예시 B</div><div class="slide-no">78</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 예시 B</div><div class="slide-no">80</div></div>
   <div class="slide-body">
     <h2 class="big-message">B. 회의록 정리봇 <span class="orange">— 사업관리·PM</span></h2>
     <div class="grid3">
@@ -1798,9 +1722,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">역할 문장: "너는 회의록 정리 비서다."</p>
   </div>
 </section>
-
 <section class="slide" data-title="예시 C 문의 응대봇">
-  <div class="slide-header"><div class="kicker">STEP 1 · 예시 C</div><div class="slide-no">79</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 예시 C</div><div class="slide-no">81</div></div>
   <div class="slide-body">
     <h2 class="big-message">C. 사내 문의 응대봇 <span class="orange">— 경영관리 (인사·조달·재무)</span></h2>
     <div class="grid3">
@@ -1811,9 +1734,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오늘 복붙 실습의 기본형입니다. 역할 문장: "너는 사내 문의 응대 담당 비서다."</p>
   </div>
 </section>
-
 <section class="slide" data-title="예시 D 보고서 초안봇">
-  <div class="slide-header"><div class="kicker">STEP 1 · 예시 D</div><div class="slide-no">80</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 예시 D</div><div class="slide-no">82</div></div>
   <div class="slide-body">
     <h2 class="big-message">D. 보고서 초안봇 <span class="orange">— 전략기획 · 전 부서 공통</span></h2>
     <div class="grid3">
@@ -1824,9 +1746,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">어느 부서든 통하는 만능형. 역할 문장: "너는 보고서 작성 보조 비서다."</p>
   </div>
 </section>
-
 <section class="slide" data-title="복붙 지시문">
-  <div class="slide-header"><div class="kicker">STEP 1 · 그대로 복붙해 첫 작동</div><div class="slide-no">81</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 그대로 복붙해 첫 작동</div><div class="slide-no">83</div></div>
   <div class="slide-body">
     <h2 class="big-message">붙여넣고 작동 확인 — C안 기준</h2>
     <div class="prompt" id="p2"><button class="copy-btn" data-copy="p2">복사</button>너는 우리 팀의 사내 문의 응대 담당 비서다.
@@ -1838,9 +1759,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">다른 예시(A·B·D)의 지시문 전문은 오픈채팅방 공지에 있습니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="붙여넣기 화면 미리보기" data-note="복사한 지시문을 실제로 Instructions 칸에 붙여넣는 순간을 보여주고, 저장 즉시 오른쪽 미리보기가 응답 가능해지는 것을 강조(1분)">
-  <div class="slide-header"><div class="kicker">STEP 1 · 실제로 이렇게 붙여넣습니다</div><div class="slide-no">82</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 실제로 이렇게 붙여넣습니다</div><div class="slide-no">84</div></div>
   <div class="slide-body">
     <h2 class="big-message">복사한 지시문, <span class="orange">여기에 붙여넣습니다</span></h2>
     <div class="uimock">
@@ -1861,9 +1781,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">붙여넣고 나면 자동 저장됩니다 — 별도의 "적용" 버튼을 찾을 필요가 없습니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="예시 지시문 ABD">
-  <div class="slide-header"><div class="kicker">STEP 1 · 다른 예시 골랐다면</div><div class="slide-no">83</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 다른 예시 골랐다면</div><div class="slide-no">85</div></div>
   <div class="slide-body">
     <h2 class="big-message">A·B·D안도 — <span class="orange">그대로 복붙해서 시작</span></h2>
     <div class="prompt-grid">
@@ -1889,9 +1808,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">교육생은 A/B/C/D 중 자기 업무와 가까운 것 하나만 골라 붙여넣으면 됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="STEP1 실습 미션">
-  <div class="slide-header"><div class="kicker">STEP 1 · 실습 중 — 이 화면 유지</div><div class="slide-no">84</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 실습 중 — 이 화면 유지</div><div class="slide-no">86</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 15분 — <span class="orange">첫 챗봇 작동시키기</span></h2>
     <div class="checks">
@@ -1904,7 +1822,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="작동 확인">
-  <div class="slide-header"><div class="kicker">STEP 1 · 작동 확인</div><div class="slide-no">85</div></div>
+  <div class="slide-header"><div class="kicker">STEP 1 · 작동 확인</div><div class="slide-no">87</div></div>
   <div class="slide-body">
     <h2 class="big-message">테스트: <span class="orange">"연차 이월 어떻게 돼요?"</span></h2>
     <div class="checks">
@@ -1915,17 +1833,15 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="STEP2 목표">
-  <div class="slide-header"><div class="kicker">STEP 2 · 업무 지시서</div><div class="slide-no">86</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 업무 지시서</div><div class="slide-no">88</div></div>
   <div class="slide-body">
     <h2 class="big-message">STEP 2 — 업무 지시서 <span class="orange">(25분)</span></h2>
     <div class="goal">이 단계가 끝나면: 복붙한 지시문이 <b>딱 3곳 수정</b>으로 STEP 1에서 정한 <b>내 업무의 지시서</b>가 됩니다.</div>
   </div>
 </section>
-
 <section class="slide" data-title="시스템 프롬프트 도식" data-note="'지침 칸에 넣는 순간 매 대화 맨 앞에 자동으로 붙는다'를 그림으로. 그래서 한 번 잘 쓰면 계속 먹힌다 강조(3분)">
-  <div class="slide-header"><div class="kicker">Theory · 지시서가 작동하는 구조</div><div class="slide-no">87</div></div>
+  <div class="slide-header"><div class="kicker">Theory · 지시서가 작동하는 구조</div><div class="slide-no">89</div></div>
   <div class="slide-body">
     <h2 class="big-message">지침 칸의 정체 — <span class="orange">시스템 프롬프트</span></h2>
     <div class="flow">
@@ -1936,9 +1852,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">채팅창 프롬프트는 그 대화 한 번뿐이지만, 시스템 프롬프트는 <span class="orange">모든 대화에 상시 적용</span> — "저장된 업무 지시서"라는 말의 기술적 실체입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="딱 3곳 수정">
-  <div class="slide-header"><div class="kicker">STEP 2 · 바꿀 곳은 3곳</div><div class="slide-no">88</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 바꿀 곳은 3곳</div><div class="slide-no">90</div></div>
   <div class="slide-body">
     <h2 class="big-message">바꿀 곳은 딱 <span class="orange">3곳</span>입니다</h2>
     <div class="grid3">
@@ -1949,9 +1864,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">나머지([작업방식]의 3단계 구조, [금지사항])는 그대로 두세요 — <span class="orange">챗봇의 안전장치</span>입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="수정 예시">
-  <div class="slide-header"><div class="kicker">STEP 2 · 수정 예시</div><div class="slide-no">89</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 수정 예시</div><div class="slide-no">91</div></div>
   <div class="slide-body">
     <h2 class="big-message">이렇게 바뀝니다 — 회의록 정리봇으로</h2>
     <div class="prompt" id="p3"><button class="copy-btn" data-copy="p3">복사</button>너는 협력사 회의록 정리 비서다.                          ← ① 역할
@@ -1964,9 +1878,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">바꾼 뒤 <span class="orange">같은 테스트 질문을 다시</span> 던져보세요. 답변이 내 업무 톤으로 바뀌면 성공.</p>
   </div>
 </section>
-
 <section class="slide" data-title="3곳 수정 화면 미리보기" data-note="지침 칸 안에서 정확히 어느 줄을 고치는지 3곳을 색으로 짚어 보여줌. 나머지 줄은 그대로 둔다는 것을 대비시켜 강조(1분)">
-  <div class="slide-header"><div class="kicker">STEP 2 · 실제로 이 3줄만 고칩니다</div><div class="slide-no">90</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 실제로 이 3줄만 고칩니다</div><div class="slide-no">92</div></div>
   <div class="slide-body">
     <h2 class="big-message">지침 칸 안에서, <span class="orange">딱 이 3줄</span>입니다</h2>
     <div class="uimock">
@@ -1985,9 +1898,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">주황색 3줄만 고치고, 나머지 흰 배경 줄([작업방식]·[금지사항])은 그대로 둡니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="STEP2 답변 비교">
-  <div class="slide-header"><div class="kicker">STEP 2 · 수정 전후 비교</div><div class="slide-no">91</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 수정 전후 비교</div><div class="slide-no">93</div></div>
   <div class="slide-body">
     <h2 class="big-message">3곳 고치면 답변이 <span class="orange">이렇게 바뀝니다</span></h2>
     <div class="grid2">
@@ -1997,9 +1909,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">답이 안 바뀌면 역할 문장이 안 바뀐 겁니다. 역할 문장이 챗봇의 정체성입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="STEP2 실습 미션">
-  <div class="slide-header"><div class="kicker">STEP 2 · 실습 중 — 이 화면 유지</div><div class="slide-no">92</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 실습 중 — 이 화면 유지</div><div class="slide-no">94</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 15분 — <span class="orange">딱 3곳 수정</span></h2>
     <div class="checks">
@@ -2012,7 +1923,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="STEP2 트러블슈팅">
-  <div class="slide-header"><div class="kicker">STEP 2 · 막히면 이 순서로</div><div class="slide-no">93</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 막히면 이 순서로</div><div class="slide-no">95</div></div>
   <div class="slide-body">
     <h2 class="big-message">막혔을 때는 이 순서로</h2>
     <div class="grid3">
@@ -2023,22 +1934,19 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">실습 재료가 없으면 공개 자료(한전기술 보도자료, ALIO 공시)를 쓰세요. 보안 문제 없이 쓸 수 있습니다.</p>
   </div>
 </section>
-
 <section class="slide break" data-title="휴식2">
   <div class="slide-body">
     <h2>스트레칭 한 번 하고 — 10분</h2>
     <p>여기까지 왔으면 이미 챗봇 하나가 작동 중입니다. 잘 하고 계세요.<br>다음 시간: 챗봇에게 내 자료를 줘서 시스템으로 만듭니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="STEP3 목표">
-  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서</div><div class="slide-no">94</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서</div><div class="slide-no">96</div></div>
   <div class="slide-body">
-    <h2 class="big-message">STEP 3 — 폴더정의서 <span class="orange">(15분)</span></h2>
-    <div class="goal">이 단계가 끝나면: 내 챗봇이 참고할 <b>지식파일 계획(폴더정의서 3칸)</b>이 서고, 실제 파일 <b>1개가 업로드</b>되어 있습니다.</div>
+    <h2 class="big-message">STEP 3 — 폴더정의서와 <span class="orange">.md 지식파일</span></h2>
+    <div class="goal">이 단계가 끝나면: 지금까지 쌓은 문제정의·업무 지시서·기준 문장을 하나로 묶어 <b>knowledge.md</b> 파일로 저장하고, GPTs에 업로드합니다.</div>
   </div>
 </section>
-
 <section class="slide q" data-title="Q 폴더정의서" data-note="질문 던지고 10초 침묵 → 2~3명 지명해 답 듣기 → 다음 장으로 리빌 전환 (2분)">
   <div class="slide-body">
     <div class="qmark">생각해보세요</div>
@@ -2046,9 +1954,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p>GPT는 우리 회사 내부 사정을 모릅니다. 알려주는 방법이 있습니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="왜 폴더정의서인가">
-  <div class="slide-header"><div class="kicker">STEP 3 · 왜 필요한가</div><div class="slide-no">95</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 왜 필요한가</div><div class="slide-no">97</div></div>
   <div class="slide-body">
     <h2 class="big-message">지시문만 있는 챗봇은 일반론으로 답합니다.<br><span class="orange">내 자료</span>를 줘야 시스템이 됩니다.</h2>
     <div class="grid2">
@@ -2057,9 +1964,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="RAG vs 학습 도식" data-note="'학습시키는 게 아니라 책상 위에 참고자료를 올려주는 것' 비유. 보안 관점(원본이 모델에 남지 않음, 파일 교체 즉시 반영) 강조(3분)">
-  <div class="slide-header"><div class="kicker">Theory · 왜 자료를 "주기만" 하는가</div><div class="slide-no">96</div></div>
+  <div class="slide-header"><div class="kicker">Theory · 왜 자료를 "주기만" 하는가</div><div class="slide-no">98</div></div>
   <div class="slide-body">
     <h2 class="big-message">학습시키는 게 아니라 <span class="orange">참조시키는 것</span>입니다</h2>
     <table class="tbl">
@@ -2072,51 +1978,47 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">현업 챗봇의 표준이 RAG인 이유 — 싸고, 고치기 쉽고, <span class="orange">근거를 추적</span>할 수 있어서입니다. 폴더정의서는 이 방식의 설계도입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="폴더정의서 3칸">
-  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서 3칸</div><div class="slide-no">97</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서 3칸</div><div class="slide-no">99</div></div>
   <div class="slide-body">
-    <h2 class="big-message">폴더정의서 — <span class="orange">3칸만</span> 채우세요</h2>
+    <h2 class="big-message">폴더정의서 — <span class="orange">무엇을 .md로 저장할지</span> 정합니다</h2>
     <table class="tbl">
       <tr><th>칸</th><th>질문</th><th>예시</th></tr>
-      <tr><td>자주 찾는 자료</td><td>이 업무할 때 매번 열어보는 문서는?</td><td>사내 FAQ, 보고서 서식, 용어집</td></tr>
-      <tr><td>답의 기준</td><td>챗봇이 무엇을 근거로 답해야 하나?</td><td>규정 요약본, 표준 답변 모음</td></tr>
-      <tr><td>공개 가능 여부</td><td>이 자료, 외부 AI에 올려도 되나?</td><td>공개 자료만. 애매하면 일반화해서 재작성</td></tr>
+      <tr><td>업무 맥락</td><td>이 Agent가 어떤 상황에서 쓰이나?</td><td>회의 메모 정리, 기술 이슈 브리프, 보고 초안</td></tr>
+      <tr><td>답의 기준</td><td>어떤 기준과 표현을 따라야 하나?</td><td>결정사항/할 일/이슈 분리, 확인 필요 표시</td></tr>
+      <tr><td>공개 가능 여부</td><td>.md에 넣어도 되는 내용인가?</td><td>공개·가상·일반화 자료만. 내부 원문은 제외</td></tr>
     </table>
-    <p class="lead">이 시트도 재사용 템플릿입니다. 두 번째 챗봇부터는 이 3칸부터 채우고 시작하세요.</p>
+    <p class="lead">폴더정의서는 파일 목록표가 아니라, <b>Agent에게 줄 안전한 지식파일의 목차</b>입니다.</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="폴더정의서 기입 예시">
-  <div class="slide-header"><div class="kicker">STEP 3 · 기입 예시</div><div class="slide-no">98</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 기입 예시</div><div class="slide-no">100</div></div>
   <div class="slide-body">
-    <h2 class="big-message">먼저 채워본 예시 — <span class="orange">사내 문의 응대봇</span></h2>
+    <h2 class="big-message">먼저 채워본 예시 — <span class="orange">회의 정리 Agent</span></h2>
     <table class="tbl">
-      <tr><th>칸</th><th>기입 내용</th><th>파일로 만들면</th></tr>
-      <tr><td>자주 찾는 자료</td><td>총무 FAQ 게시판 상위 10문답</td><td>faq_top10.txt</td></tr>
-      <tr><td>답의 기준</td><td>표준 답변 모음 (기존 답변 복사)</td><td>standard_answers.txt</td></tr>
-      <tr><td>공개 가능 여부</td><td>개인정보·문서번호 지우고 일반화</td><td>업로드 전 최종 확인 ✓</td></tr>
+      <tr><th>칸</th><th>기입 내용</th><th>.md에 들어갈 제목</th></tr>
+      <tr><td>업무 맥락</td><td>발전·에너지 프로젝트 회의 메모를 보고용으로 정리</td><td># 사용 상황</td></tr>
+      <tr><td>답의 기준</td><td>결정사항, 할 일, 이슈·리스크, 확인 필요를 분리</td><td># 작성 기준</td></tr>
+      <tr><td>공개 가능 여부</td><td>실명·문서번호·비공개 프로젝트명 제외</td><td># 입력 금지 정보</td></tr>
     </table>
-    <p class="lead">파일명은 영문이 안전합니다. 오늘은 1개만 — 나머지는 이번 주 안에 추가하면 됩니다.</p>
+    <p class="lead">파일명 예시: <b>meeting_agent_knowledge.md</b>. 한글 문서 원문을 올리는 대신, 오늘 정리한 기준만 안전하게 저장합니다.</p>
   </div>
 </section>
 <section class="slide" data-title="지식파일 실습" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
-  <div class="slide-header"><div class="kicker">STEP 3 · 실습 10분</div><div class="slide-no">99</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 실습 10분</div><div class="slide-no">101</div></div>
   <div class="slide-body">
-    <h2 class="big-message">지식파일 1개, 지금 올려봅니다</h2>
-    <div class="flow">
-      <div class="step"><div class="n">01</div><h4>3칸 채우기</h4><p>메모장에 폴더정의서 작성</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">02</div><h4>txt 만들기</h4><p>자료 하나 골라 내용 복사 → txt 저장 (hwp는 내용만)</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">03</div><h4>업로드</h4><p>GPTs 구성 보기 → 지식</p></div><div class="arrow">→</div>
-      <div class="step"><div class="n">04</div><h4>재테스트</h4><p>같은 질문 다시 — 답이 내 자료 기준으로 바뀌면 성공</p></div>
+    <h2 class="big-message">지금까지 저장한 내용을 <span class="orange">.md 지식파일</span>로 만듭니다</h2>
+    <div class="folder-md-flow">
+      <div class="step"><div class="n">01</div><h4>모으기</h4><p>문제정의 한 문장, 업무 지시서, 금지정보 기준을 한곳에 복사</p></div>
+      <div class="step"><div class="n">02</div><h4>md 구조화</h4><p># 사용 상황<br># 작성 기준<br># 출력 예시<br># 금지 정보</p></div>
+      <div class="step"><div class="n">03</div><h4>저장</h4><p>파일명은 영문으로 저장<br>meeting_agent_knowledge.md</p></div>
+      <div class="step"><div class="n">04</div><h4>업로드·테스트</h4><p>GPTs 지식에 업로드 후 같은 질문으로 답변 기준 확인</p></div>
     </div>
-    <p class="lead">재료가 없으면 공개 자료로: 한전기술 보도자료 하나를 txt로 저장해 "회사 소식 답변봇" 지식으로 써보세요.</p>
+    <p class="lead">자료가 없으면 새 자료를 찾지 않습니다. <b>오늘 만든 문장들을 knowledge.md로 정리</b>하는 것이 우선입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="업로드 화면 미리보기" data-note="지식 칸의 업로드 버튼 위치, 업로드 후 답변이 바뀌는 것을 강조(1분)">
-  <div class="slide-header"><div class="kicker">STEP 3 · 실제로 이렇게 생겼습니다</div><div class="slide-no">100</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 실제로 이렇게 생겼습니다</div><div class="slide-no">102</div></div>
   <div class="slide-body">
     <h2 class="big-message">구성 보기 <span class="orange">지식(Knowledge)</span> 칸입니다</h2>
     <div class="uimock">
@@ -2137,17 +2039,15 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">파일을 올리기 전/후로 같은 질문을 다시 던져보면 차이가 바로 보입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="STEP4 목표">
-  <div class="slide-header"><div class="kicker">STEP 4 · 첫 시스템</div><div class="slide-no">101</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 첫 시스템</div><div class="slide-no">103</div></div>
   <div class="slide-body">
     <h2 class="big-message">STEP 4 — 첫 시스템 <span class="orange">(30분)</span></h2>
     <div class="goal">이 단계가 끝나면: 지시서와 지식파일이 합쳐진 <b>내 첫 업무 시스템</b>이 완성되고, 체크리스트로 <b>스스로 검증</b>까지 마칩니다.</div>
   </div>
 </section>
-
 <section class="slide" data-title="시스템 스펙트럼 도식" data-note="오늘의 위치(2단계)를 짚고, 2일차·이후 로드맵과 연결. '시스템'이라 부르는 이유를 정의(2분)">
-  <div class="slide-header"><div class="kicker">Theory · 왜 "시스템"이라 부르나</div><div class="slide-no">102</div></div>
+  <div class="slide-header"><div class="kicker">Theory · 왜 "시스템"이라 부르나</div><div class="slide-no">104</div></div>
   <div class="slide-body">
     <h2 class="big-message">프롬프트 → 챗봇 → <span class="orange">에이전트</span></h2>
     <div class="flow">
@@ -2158,9 +2058,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">"시스템"의 정의는 <span class="orange">사람이 바뀌어도 결과가 유지되는 구조</span> — 오늘 지시서와 지식파일을 합치는 순간 그 조건이 처음 충족됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="7칸 설계시트">
-  <div class="slide-header"><div class="kicker">STEP 4 · 7칸 설계시트</div><div class="slide-no">103</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 7칸 설계시트</div><div class="slide-no">105</div></div>
   <div class="slide-body">
     <h2 class="big-message">완성 전 마지막 점검 — <span class="orange">7칸 설계시트</span></h2>
     <table class="tbl">
@@ -2175,9 +2074,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </table>
   </div>
 </section>
-
 <section class="slide" data-title="설계시트 → 지시문">
-  <div class="slide-header"><div class="kicker">STEP 4 · 시트를 지시문으로</div><div class="slide-no">104</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 시트를 지시문으로</div><div class="slide-no">106</div></div>
   <div class="slide-body">
     <h2 class="big-message">시트와 지시문이 <span class="orange">서로 맞는지</span> 대조합니다</h2>
     <div class="prompt" id="p4"><button class="copy-btn" data-copy="p4">복사</button>너는 (역할)다.
@@ -2189,11 +2087,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">비어 있는 칸이 보이면 지금 채우세요. 빈칸에서 처음부터 직접 쓰는 건 내일(2일차)의 미션입니다.</p>
   </div>
 </section>
-
-
-
 <section class="slide" data-title="STEP4 실습 미션">
-  <div class="slide-header"><div class="kicker">STEP 4 · 실습 중 — 이 화면 유지</div><div class="slide-no">105</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 실습 중 — 이 화면 유지</div><div class="slide-no">107</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 20분 — <span class="orange">내 첫 시스템 완성</span></h2>
     <div class="checks">
@@ -2206,7 +2101,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="빨리 끝난 분 미션">
-  <div class="slide-header"><div class="kicker">STEP 4 · 빨리 끝난 분</div><div class="slide-no">106</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 빨리 끝난 분</div><div class="slide-no">108</div></div>
   <div class="slide-body">
     <h2 class="big-message">먼저 끝나셨다면 — <span class="orange">보너스 미션</span></h2>
     <div class="grid3">
@@ -2217,7 +2112,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="완성 체크리스트">
-  <div class="slide-header"><div class="kicker">STEP 4 · 완성 기준</div><div class="slide-no">107</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 완성 기준</div><div class="slide-no">109</div></div>
   <div class="slide-body">
     <h2 class="big-message">4개 중 <span class="orange">3개면 합격</span></h2>
     <div class="checks">
@@ -2229,9 +2124,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead"><span class="orange">완벽보다 완성.</span> 다듬는 건 내일부터 해도 됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="완성된 챗봇 미리보기" data-note="완성 후 GPTs 영역에 내 맞춤 GPT가 뜨는 화면과, 실제 채팅 시작 화면을 대조. '이게 오늘 내가 만든 것' 체감시키기(1분)">
-  <div class="slide-header"><div class="kicker">STEP 4 · 완성되면 이렇게 보입니다</div><div class="slide-no">108</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 완성되면 이렇게 보입니다</div><div class="slide-no">110</div></div>
   <div class="slide-body">
     <h2 class="big-message">저장하면, <span class="orange">팀원 눈에는 이렇게</span> 보입니다</h2>
     <div class="uiapp">
@@ -2254,9 +2148,6 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">링크를 받은 팀원은 로그인만 하면 바로 이 화면부터 시작합니다 — 설치도, 설명도 필요 없습니다.</p>
   </div>
 </section>
-
-<!-- ============ 4부 ============ -->
-
 <section class="slide divider" data-title="4부 divider">
   <div class="slide-body" style="text-align:center">
     <div class="num dc4">4부 · 35분</div>
@@ -2264,9 +2155,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead" style="margin:1.2vw auto 0">30초 발표와 내 숫자로 마무리</p>
   </div>
 </section>
-
 <section class="slide" data-title="발표 준비">
-  <div class="slide-header"><div class="kicker">Session 8 · 발표 준비 3분</div><div class="slide-no">109</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 발표 준비 3분</div><div class="slide-no">111</div></div>
   <div class="slide-body">
     <h2 class="big-message">발표 전, 이것만 준비하세요</h2>
     <div class="checks">
@@ -2277,9 +2167,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="30초 발표">
-  <div class="slide-header"><div class="kicker">Session 8 · 30초 발표</div><div class="slide-no">110</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 30초 발표</div><div class="slide-no">112</div></div>
   <div class="slide-body">
     <h2 class="big-message">이 3가지만 발표합니다</h2>
     <div class="grid3">
@@ -2289,10 +2178,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
-
 <section class="slide" data-title="발표 운영">
-  <div class="slide-header"><div class="kicker">Session 8 · 발표 운영</div><div class="slide-no">111</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 발표 운영</div><div class="slide-no">113</div></div>
   <div class="slide-body">
     <h2 class="big-message">발표 순서와 규칙</h2>
     <div class="checks">
@@ -2304,20 +2191,19 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="오늘의 성과">
-  <div class="slide-header"><div class="kicker">Session 8 · 오늘의 성과</div><div class="slide-no">112</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 오늘의 성과</div><div class="slide-no">114</div></div>
   <div class="slide-body">
     <h2 class="big-message">건당 절약 시간 × 주당 반복 횟수 = <span class="orange">매주 돌아오는 내 시간</span></h2>
-    <div class="stats">
-      <div class="stat"><strong>① Δ시간</strong><span>기존 시간 − Agent 활용 시간</span></div>
-      <div class="stat"><strong>② × 횟수</strong><span>그 업무가 한 주에 반복되는 횟수</span></div>
-      <div class="stat"><strong>③ = 회수 시간</strong><span>매주 다시 쓸 수 있게 돌아오는 시간</span></div>
+    <div class="roi-cards">
+      <div class="roi-card"><b>① Δ시간</b><span>기존 시간 − Agent 활용 시간</span></div>
+      <div class="roi-card"><b>② 반복 횟수</b><span>그 업무가 한 주에 반복되는 횟수</span></div>
+      <div class="roi-card"><b>③ 회수 시간</b><span>매주 다시 쓸 수 있게 돌아오는 시간</span></div>
     </div>
     <p class="lead">추정치가 아니라 내 업무 1건을 직접 재서 계산하세요. 그 숫자가 오늘의 Before/After입니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="내일부터 3가지">
-  <div class="slide-header"><div class="kicker">Session 8 · 내일부터</div><div class="slide-no">113</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 내일부터</div><div class="slide-no">115</div></div>
   <div class="slide-body">
     <h2 class="big-message">내일부터 할 일 <span class="orange">세 가지</span></h2>
     <div class="grid3">
@@ -2328,11 +2214,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">오픈채팅방은 교육 후에도 유지됩니다 — 막히면 질문 올려주세요.</p>
   </div>
 </section>
-
-
-
 <section class="slide" data-title="팀 확산" data-note="타임라인 도식 — 3주 흐름을 짚으며 &#39;링크만 던지면 안 씁니다&#39; 강조">
-  <div class="slide-header"><div class="kicker">Session 8 · 팀에서 쓰려면</div><div class="slide-no">114</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 팀에서 쓰려면</div><div class="slide-no">116</div></div>
   <div class="slide-body">
     <h2 class="big-message">챗봇을 <span class="orange">팀의 도구</span>로 만드는 법</h2>
     <div class="tl2">
@@ -2345,9 +2228,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">링크만 던지면 아무도 안 씁니다. 피드백 창구 + 주 1회 10분 업데이트, 이 둘을 3주만 돌리면 정착됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="심화 로드맵" data-note="로드맵 카드 — 상승 배치로 &#39;넓혀간다&#39;는 방향성 시각화">
-  <div class="slide-header"><div class="kicker">Session 8 · 다음 단계</div><div class="slide-no">115</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 다음 단계</div><div class="slide-no">117</div></div>
   <div class="slide-body">
     <h2 class="big-message">오늘 이후, <span class="orange">이 순서로 넓혀가세요</span></h2>
     <div class="roadmap">
@@ -2358,9 +2240,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="FAQ 1">
-  <div class="slide-header"><div class="kicker">FAQ ①</div><div class="slide-no">116</div></div>
+  <div class="slide-header"><div class="kicker">FAQ ①</div><div class="slide-no">118</div></div>
   <div class="slide-body">
     <h2 class="big-message">"챗봇이 <span class="orange">틀린 답</span>을 하면 어떡하죠?"</h2>
     <div class="checks one">
@@ -2370,9 +2251,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="FAQ 2">
-  <div class="slide-header"><div class="kicker">FAQ ②</div><div class="slide-no">117</div></div>
+  <div class="slide-header"><div class="kicker">FAQ ②</div><div class="slide-no">119</div></div>
   <div class="slide-body">
     <h2 class="big-message">"교육 끝나면 <span class="orange">계정</span>은 어떻게 되나요?"</h2>
     <div class="checks one">
@@ -2382,9 +2262,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="FAQ 3">
-  <div class="slide-header"><div class="kicker">FAQ ③</div><div class="slide-no">118</div></div>
+  <div class="slide-header"><div class="kicker">FAQ ③</div><div class="slide-no">120</div></div>
   <div class="slide-body">
     <h2 class="big-message">"우리 부서 업무는 <span class="orange">보안 때문에</span> 못 쓸 것 같은데요?"</h2>
     <div class="checks one">
@@ -2395,7 +2274,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="만족도 조사">
-  <div class="slide-header"><div class="kicker">Session 8 · 만족도 조사</div><div class="slide-no">119</div></div>
+  <div class="slide-header"><div class="kicker">Session 8 · 만족도 조사</div><div class="slide-no">121</div></div>
   <div class="slide-body">
     <h2 class="big-message">1분만 — <span class="orange">만족도 조사</span></h2>
     <div class="grid2">
@@ -2406,7 +2285,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="자유 질문">
-  <div class="slide-header"><div class="kicker">자유 질문 시간 · 10분</div><div class="slide-no">120</div></div>
+  <div class="slide-header"><div class="kicker">자유 질문 시간 · 10분</div><div class="slide-no">122</div></div>
   <div class="slide-body">
     <h2 class="big-message">자유 질문 시간</h2>
     <div class="checks one">
@@ -2416,9 +2295,6 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
-<!-- ============ 부록 ============ -->
-
 <section class="slide divider" data-title="부록 divider">
   <div class="slide-body" style="text-align:center">
     <div class="num dc5">부록</div>
@@ -2426,9 +2302,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead" style="margin:1.2vw auto 0">오늘 쓴 프롬프트 전체 모음 — 오픈채팅방 공지에도 있습니다</p>
   </div>
 </section>
-
 <section class="slide" data-title="치트시트 1">
-  <div class="slide-header"><div class="kicker">부록 · 만능 7요소 틀</div><div class="slide-no">121</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 만능 7요소 틀</div><div class="slide-no">123</div></div>
   <div class="slide-body">
     <h2 class="big-message">업무 지시서 프롬프트 틀</h2>
     <div class="prompt" id="c1"><button class="copy-btn" data-copy="c1">복사</button>[목표] 무엇을 만들어줘
@@ -2441,9 +2316,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">이 7칸만 바꾸면 어떤 업무든 적용됩니다.</p>
   </div>
 </section>
-
 <section class="slide" data-title="치트시트 2">
-  <div class="slide-header"><div class="kicker">부록 · 주간보고 프롬프트</div><div class="slide-no">122</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 주간보고 프롬프트</div><div class="slide-no">124</div></div>
   <div class="slide-body">
     <h2 class="big-message">주간보고 초안 프롬프트</h2>
     <div class="prompt" id="c2"><button class="copy-btn" data-copy="c2">복사</button>[목표] 팀장 보고용 주간 업무보고 초안을 작성해줘.
@@ -2456,9 +2330,8 @@ table.tbl tr:last-child td{border-bottom:none}
 [개선요청] "더 간결하게" / "특이사항 강조해서"</div>
   </div>
 </section>
-
 <section class="slide" data-title="치트시트 3">
-  <div class="slide-header"><div class="kicker">부록 · GPTs 지시문</div><div class="slide-no">123</div></div>
+  <div class="slide-header"><div class="kicker">부록 · GPTs 지시문</div><div class="slide-no">125</div></div>
   <div class="slide-body">
     <h2 class="big-message">맞춤 GPT 지시문 — 사내 문의 응대봇</h2>
     <div class="prompt" id="c3"><button class="copy-btn" data-copy="c3">복사</button>너는 우리 팀의 사내 문의 응대 담당 비서다.
@@ -2469,9 +2342,8 @@ table.tbl tr:last-child td{border-bottom:none}
 [금지사항] 규정을 지어내지 않는다. 모르면 모른다고 답한다. 개인정보는 답변에 포함하지 않는다.</div>
   </div>
 </section>
-
 <section class="slide" data-title="치트시트 4">
-  <div class="slide-header"><div class="kicker">부록 · 변형 &amp; 개선 문구</div><div class="slide-no">124</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 변형 &amp; 개선 문구</div><div class="slide-no">126</div></div>
   <div class="slide-body">
     <h2 class="big-message">부서별 변형 &amp; 개선요청 만능 문구</h2>
     <table class="tbl">
@@ -2483,10 +2355,8 @@ table.tbl tr:last-child td{border-bottom:none}
     <p class="lead">개선요청 만능 문구: "출력형식을 지켜서 다시" · "3문장 이내로" · "더 공식적인 톤으로" · "담당자 확인 필요 부분 표시해줘"</p>
   </div>
 </section>
-
-
 <section class="slide" data-title="치트시트 A 지시문">
-  <div class="slide-header"><div class="kicker">부록 · 예시 A 전문</div><div class="slide-no">125</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 예시 A 전문</div><div class="slide-no">127</div></div>
   <div class="slide-body">
     <h2 class="big-message">기술문서 요약봇 지시문 전문</h2>
     <div class="prompt" id="c5"><button class="copy-btn" data-copy="c5">복사</button>너는 우리 팀의 기술문서 요약 담당 비서다.
@@ -2497,9 +2367,8 @@ table.tbl tr:last-child td{border-bottom:none}
 [금지사항] 원문에 없는 내용을 지어내지 않는다. 수치·일정·기관명은 원문 표현 그대로 쓴다. 불확실한 내용은 "원문 확인 필요"라고 표시한다.</div>
   </div>
 </section>
-
 <section class="slide" data-title="치트시트 B 지시문">
-  <div class="slide-header"><div class="kicker">부록 · 예시 B 전문</div><div class="slide-no">126</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 예시 B 전문</div><div class="slide-no">128</div></div>
   <div class="slide-body">
     <h2 class="big-message">회의록 정리봇 지시문 전문</h2>
     <div class="prompt" id="c6"><button class="copy-btn" data-copy="c6">복사</button>너는 우리 팀의 회의록 정리 비서다.
@@ -2510,9 +2379,8 @@ table.tbl tr:last-child td{border-bottom:none}
 [금지사항] 메모에 없는 결정을 만들지 않는다. 사람 이름은 직책 또는 A/B로 처리한다. 애매한 내용은 "확인 필요"라고 표시한다.</div>
   </div>
 </section>
-
 <section class="slide" data-title="치트시트 D 지시문">
-  <div class="slide-header"><div class="kicker">부록 · 예시 D 전문</div><div class="slide-no">127</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 예시 D 전문</div><div class="slide-no">129</div></div>
   <div class="slide-body">
     <h2 class="big-message">보고서 초안봇 지시문 전문</h2>
     <div class="prompt" id="c7"><button class="copy-btn" data-copy="c7">복사</button>너는 우리 팀의 보고서 작성 보조 비서다.
@@ -2523,9 +2391,8 @@ table.tbl tr:last-child td{border-bottom:none}
 [금지사항] 성과를 과장하지 않는다. 없는 수치나 일정을 만들지 않는다. 대외비·개인정보는 포함하지 않는다.</div>
   </div>
 </section>
-
 <section class="slide" data-title="hwp 변환법">
-  <div class="slide-header"><div class="kicker">부록 · hwp → txt</div><div class="slide-no">128</div></div>
+  <div class="slide-header"><div class="kicker">부록 · hwp → txt</div><div class="slide-no">130</div></div>
   <div class="slide-body">
     <h2 class="big-message">한글파일, <span class="orange">3동작</span>으로 변환</h2>
     <div class="flow">
@@ -2537,7 +2404,7 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 <section class="slide" data-title="클로징">
-  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">129</div></div>
+  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">131</div></div>
   <div class="slide-body">
     <h2 class="big-message">기억할 <span class="orange">세 가지</span></h2>
     <div class="takeaways">
@@ -2547,9 +2414,8 @@ table.tbl tr:last-child td{border-bottom:none}
     </div>
   </div>
 </section>
-
 <section class="slide" data-title="내일 예고">
-  <div class="slide-header"><div class="kicker">See you tomorrow</div><div class="slide-no">130</div></div>
+  <div class="slide-header"><div class="kicker">See you tomorrow</div><div class="slide-no">132</div></div>
   <div class="slide-body">
     <h2 class="big-message">내일은 <span class="orange">더 재밌습니다</span></h2>
     <div class="grid3">
