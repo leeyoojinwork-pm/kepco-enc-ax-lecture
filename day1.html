@@ -125,6 +125,22 @@ table.tbl tr:last-child td{border-bottom:none}
 .mx .q4{background:#f1f3f6;color:var(--muted)}
 .mx .ay{position:absolute;left:-4.4vw;top:44%;transform:rotate(-90deg);font-weight:800;color:var(--muted);font-size:.9vw;letter-spacing:.04em}
 .mx .ax{position:absolute;bottom:-2vw;left:38%;font-weight:800;color:var(--muted);font-size:.9vw;letter-spacing:.04em}
+.matrix-wrap{margin:1.7vw auto 0;width:min(76vw,1240px)}
+.axis-note{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7vw;color:var(--muted);font-size:.82vw;font-weight:800;letter-spacing:.02em}
+.matrix-table{width:100%;border-collapse:separate;border-spacing:.55vw;table-layout:fixed}
+.matrix-table th,.matrix-table td{border-radius:1vw;padding:.9vw 1vw;vertical-align:top;word-break:keep-all}
+.matrix-table th{background:var(--brand-soft);color:var(--brand);font-size:.86vw;font-weight:900;text-align:center}
+.matrix-table .axis-y{width:7.2vw;background:#f3f4f6;color:var(--ink);font-size:.82vw;line-height:1.35}
+.matrix-table .axis-x{background:#fff5ef;color:#a33c10}
+.matrix-table .quadcell{min-height:7.5vw;background:#f7f8fa;border:1px solid var(--line);box-shadow:0 10px 24px rgba(19,24,33,.05)}
+.matrix-table .quadcell strong{display:block;font-size:1.02vw;margin-bottom:.3vw;font-weight:900;color:var(--ink)}
+.matrix-table .quadcell p{font-size:.78vw;line-height:1.45;color:var(--muted);margin:.15vw 0 0}
+.matrix-table .quadcell .tag{display:inline-flex;margin-bottom:.45vw;padding:.2vw .48vw;border-radius:999px;background:#eef1f5;color:#596170;font-size:.68vw;font-weight:900}
+.matrix-table .target{background:linear-gradient(145deg,var(--brand),#e04a0e);color:#fff;border:0}
+.matrix-table .target strong,.matrix-table .target p{color:#fff}
+.matrix-table .target .tag{background:rgba(255,255,255,.18);color:#fff}
+.matrix-table .mid{background:#fff8f4;border-color:#ffd4bd}
+.matrix-table .low{background:#f4f6f8}
 .cyc{position:relative;width:22vw;height:22vw;margin:1.2vw auto 0}
 .cyc svg{position:absolute;inset:0;width:100%;height:100%}
 .cyc .cn{position:absolute;width:7.6vw;height:7.6vw;border-radius:50%;background:var(--panel);border:2px solid var(--brand);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.95vw;box-shadow:var(--shadow);transform:translate(-50%,-50%);padding:.5vw}
@@ -1280,20 +1296,51 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
-<section class="slide" data-title="문제정의 매트릭스" data-note="사분면을 왼쪽 위부터 시계방향으로 짚기(3분). '내 업무 3개를 마음속으로 놓아보세요' 지시 후 다음 장 전환">
+<section class="slide" data-title="문제정의 매트릭스" data-note="X축은 규칙성, Y축은 반복성이라고 먼저 짚기. 오른쪽 위 제1분면이 오늘의 자동화 후보임을 강조(3분). '내 업무 3개를 마음속으로 놓아보세요' 지시 후 다음 장 전환">
   <div class="slide-header"><div class="kicker">STEP 1 · 반복성 × 규칙성</div><div class="slide-no">60</div></div>
   <div class="slide-body">
     <h2 class="big-message">자주 하고, 매번 <span class="orange">방식이 같은 일</span>부터</h2>
-    <div class="mx">
-      <span class="ay">반복성 (자주 한다)</span><span class="ax">규칙성 (방식이 같다)</span>
-      <div class="grid">
-        <div class="quad q1"><strong>★ 오늘 챗봇으로</strong><p>주간보고 · 회의록 · 반복 문의 · 기술문서 요약</p></div>
-        <div class="quad q2"><strong>프롬프트로 그때그때</strong><p>자주 하지만 매번 다른 일</p></div>
-        <div class="quad q3"><strong>치트시트 활용</strong><p>가끔이지만 방식이 같은 일</p></div>
-        <div class="quad q4"><strong>사람이 직접</strong><p>가끔 + 매번 다른 판단 업무</p></div>
-      </div>
+    <div class="matrix-wrap">
+      <div class="axis-note"><span>Y축 · 반복성 ↑ 높음</span><span>X축 · 규칙성 → 높음</span></div>
+      <table class="matrix-table" aria-label="반복성 규칙성 4분면">
+        <tr>
+          <th></th>
+          <th class="axis-x">X 낮음 · 방식이 매번 다름</th>
+          <th class="axis-x">X 높음 · 방식이 비교적 같음</th>
+        </tr>
+        <tr>
+          <th class="axis-y">Y 높음<br>자주 반복</th>
+          <td class="quadcell mid">
+            <span class="tag">제2분면</span>
+            <strong>프롬프트로 그때그때 처리</strong>
+            <p>자주 하지만 상황·판단 기준이 매번 달라 고정 챗봇보다 즉석 질문이 낫습니다.</p>
+            <p>예: 복잡한 협의 대응, 예외 많은 민원 검토</p>
+          </td>
+          <td class="quadcell target">
+            <span class="tag">제1분면 · 오늘의 1순위</span>
+            <strong>맞춤 GPT / Agent로 만들기</strong>
+            <p>자주 반복되고 처리 방식도 비슷합니다. 입력과 출력만 정하면 바로 자동화 후보가 됩니다.</p>
+            <p>예: 회의록 정리, 보고 초안, 기술문서 요약</p>
+          </td>
+        </tr>
+        <tr>
+          <th class="axis-y">Y 낮음<br>가끔 발생</th>
+          <td class="quadcell low">
+            <span class="tag">제3분면</span>
+            <strong>사람이 직접 판단</strong>
+            <p>가끔 생기고 방식도 달라 자동화보다 담당자의 맥락 판단이 중요합니다.</p>
+            <p>예: 전략 의사결정, 민감한 대외 협상</p>
+          </td>
+          <td class="quadcell mid">
+            <span class="tag">제4분면</span>
+            <strong>치트시트·템플릿으로 충분</strong>
+            <p>방식은 같지만 빈도가 낮습니다. 챗봇까지 만들기보다 양식이나 체크리스트가 효율적입니다.</p>
+            <p>예: 분기별 점검표, 연 1회 보고 양식</p>
+          </td>
+        </tr>
+      </table>
     </div>
-    <p class="lead" style="margin-top:2.6vw">고른 뒤 확인 — <span class="orange">입력과 출력</span>이 정해져 있나요? (예: 회의 메모 → 회의록)</p>
+    <p class="lead" style="margin-top:1.4vw">오늘은 오른쪽 위 <span class="orange">제1분면</span>만 고릅니다. 확인 질문: 입력과 출력이 정해져 있나요? (예: 회의 메모 → 회의록)</p>
   </div>
 </section>
 
