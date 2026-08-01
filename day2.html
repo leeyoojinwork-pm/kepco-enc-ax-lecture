@@ -68,10 +68,7 @@ h2.big-message{font-size:2.5vw;line-height:1.32;font-weight:800;letter-spacing:-
 .tl{flex:1;position:relative;padding:0 1vw;text-align:center}
 .tl:not(:last-child):after{content:"";position:absolute;top:1vw;right:-1vw;width:2vw;height:2px;background:var(--line)}
 .tl .dot{width:2vw;height:2vw;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:1vw;display:flex;align-items:center;justify-content:center;margin:0 auto .8vw}
-.tl .dot.c1{background:var(--brand)}
-.tl .dot.c2{background:#2f6fed}
-.tl .dot.c3{background:#1d8a5f}
-.tl .dot.c4{background:#7c5cd6}
+.tl .dot.c1,.tl .dot.c2,.tl .dot.c3,.tl .dot.c4{background:var(--nav)}
 .tl h4{font-size:1.05vw;font-weight:800;margin-bottom:.3vw}
 .tl p{font-size:.85vw;color:var(--muted);line-height:1.4}
 .flow{display:flex;align-items:stretch;gap:.6vw;margin-top:2vw;flex-wrap:wrap}
@@ -176,8 +173,8 @@ table.tbl tr:last-child td{border-bottom:none}
 .uimock-form label{display:block;font-size:.68vw;font-weight:800;color:var(--muted);letter-spacing:.03em;margin-bottom:.35vw;text-transform:uppercase}
 .uimock-form .val{border:1px solid var(--line);border-radius:.5vw;padding:.5vw .7vw;font-size:.82vw;background:var(--soft);color:var(--ink)}
 .uimock-form .val.big{min-height:5.4vw;line-height:1.55;white-space:pre-wrap;font-size:.76vw}
-.uimock-form .chips{display:flex;gap:.4vw;flex-wrap:wrap}
-.uimock-form .chip{border:1px solid var(--line);border-radius:999px;padding:.3vw .8vw;font-size:.7vw;color:var(--muted);background:#fff}
+.chips{display:flex;gap:.4vw;flex-wrap:wrap}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3vw .8vw;font-size:.7vw;color:var(--muted);background:#fff}
 .uimock-cursor{display:inline-block;width:.1vw;height:.85vw;background:var(--brand);margin-left:.15vw;vertical-align:middle;animation:uicblink 1s step-end infinite}
 @keyframes uicblink{50%{opacity:0}}
 .uimock-preview{flex:1;padding:1.1vw 1.3vw;background:#fbfbfc;display:flex;flex-direction:column;gap:.7vw}
@@ -253,7 +250,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="다시 만나서">
-  <div class="slide-header"><div class="kicker">Welcome Back</div><div class="slide-no">01</div></div>
+  <div class="slide-header"><div class="kicker">Welcome Back</div><div class="slide-no">1</div></div>
   <div class="slide-body">
     <h2 class="big-message">다시 만나서 반갑습니다 <span class="orange">:)</span></h2>
     <p class="lead">1일차 이후 실제로 챗봇을 써보셨나요? 잘 됐던 것, 어색했던 것 — 오늘 다 재료로 씁니다. 오늘은 어제보다 훨씬 여유롭게 갑니다.</p>
@@ -261,7 +258,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="아이스브레이커">
-  <div class="slide-header"><div class="kicker">Icebreaker</div><div class="slide-no">02</div></div>
+  <div class="slide-header"><div class="kicker">Icebreaker</div><div class="slide-no">2</div></div>
   <div class="slide-body">
     <h2 class="big-message">시작 전에 — <span class="orange">옆자리랑 3분</span></h2>
     <div class="game">
@@ -280,7 +277,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="복습 퀴즈 1">
-  <div class="slide-header"><div class="kicker">복습 · 퀴즈</div><div class="slide-no">03</div></div>
+  <div class="slide-header"><div class="kicker">복습 · 퀴즈</div><div class="slide-no">3</div></div>
   <div class="slide-body">
     <h2 class="big-message">퀴즈 1 — 업무 지시서 <span class="orange">7요소</span>, 몇 개나 기억나세요?</h2>
     <div class="game"><h4>진행</h4><p>메모장이나 종이에 30초간 적어보세요. 몇 개까지 기억나는지 — 정답은 다음 장.</p></div>
@@ -288,7 +285,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="복습 퀴즈 1 정답" data-note="적은 개수 거수 확인(3개↑ 박수) → 카드 공개 1분 → '역할부터'만 강조하고 넘어가기">
-  <div class="slide-header"><div class="kicker">복습 · 정답</div><div class="slide-no">04</div></div>
+  <div class="slide-header"><div class="kicker">복습 · 정답</div><div class="slide-no">4</div></div>
   <div class="slide-body">
     <h2 class="big-message">정답 — <span class="orange">역할</span>부터 예외처리까지</h2>
     <div class="grid4">
@@ -306,7 +303,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="복습 퀴즈 2">
-  <div class="slide-header"><div class="kicker">복습 · 퀴즈</div><div class="slide-no">05</div></div>
+  <div class="slide-header"><div class="kicker">복습 · 퀴즈</div><div class="slide-no">5</div></div>
   <div class="slide-body">
     <h2 class="big-message">퀴즈 2 — 챗봇 만드는 <span class="orange">4단계</span>, 순서대로?</h2>
     <div class="game"><h4>진행</h4><p>옆 사람과 순서를 말로 맞춰보세요(30초). 정답은 다음 장.</p></div>
@@ -314,7 +311,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="복습 퀴즈 2 정답" data-note="정답 공개 후 '오늘 오후에 이 4단계를 예시 없이 한 번 더' 예고 → 산출물 소개로 전환">
-  <div class="slide-header"><div class="kicker">복습 · 정답</div><div class="slide-no">06</div></div>
+  <div class="slide-header"><div class="kicker">복습 · 정답</div><div class="slide-no">6</div></div>
   <div class="slide-body">
     <h2 class="big-message">정답 — 그리고 오늘 오후, <span class="orange">예시 없이 한 번 더</span></h2>
     <div class="flow">
@@ -328,7 +325,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="1일차 복습">
-  <div class="slide-header"><div class="kicker">Recap</div><div class="slide-no">07</div></div>
+  <div class="slide-header"><div class="kicker">Recap</div><div class="slide-no">7</div></div>
   <div class="slide-body">
     <h2 class="big-message">1일차 3줄 복습</h2>
     <div class="grid3">
@@ -340,7 +337,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="어제 챗봇 생존 점검">
-  <div class="slide-header"><div class="kicker">복습 · 점검 3분</div><div class="slide-no">08</div></div>
+  <div class="slide-header"><div class="kicker">복습 · 점검 3분</div><div class="slide-no">8</div></div>
   <div class="slide-body">
     <h2 class="big-message">시작 전에 — <span class="orange">어제 챗봇 생존 점검</span></h2>
     <div class="checks one">
@@ -353,7 +350,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="오늘의 산출물">
-  <div class="slide-header"><div class="kicker">Today's Outcome</div><div class="slide-no">09</div></div>
+  <div class="slide-header"><div class="kicker">Today's Outcome</div><div class="slide-no">9</div></div>
   <div class="slide-body">
     <h2 class="big-message">오늘 4시간 뒤엔, <span class="orange">챗봇 2개 + 팀 배포 계획</span>이 손에 있습니다.</h2>
     <div class="stats">
@@ -1017,8 +1014,28 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
+<section class="slide" data-title="빈 지침칸 미리보기" data-note="어제와 달리 오늘은 빈 화면에서 시작한다는 것을 강조. 커서만 깜빡이는 빈 텍스트박스를 보여주고, 직접 타이핑해 채워나가는 과정임을 설명(1분)">
+  <div class="slide-header"><div class="kicker">6부 · 오늘은 여기가 비어 있습니다</div><div class="slide-no">52</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">어제는 붙여넣기, <span class="orange">오늘은 빈칸에서</span> 시작</h2>
+    <div class="uimock">
+      <div class="uimock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">GPT 탐색 › 만들기 › 구성(Configure)</span></div>
+      <div class="uimock-body">
+        <div class="uimock-form">
+          <div class="fld"><label>지침 (Instructions)</label><div class="val big" style="color:var(--muted)">여기에 업무 지시서를 입력하세요…<span class="uimock-cursor"></span></div></div>
+        </div>
+        <div class="uimock-preview">
+          <div class="plabel">미리보기 (오른쪽 채팅창)</div>
+          <div class="uimock-msg bot" style="opacity:.5">지침이 비어 있으면 일반적인 답변만 합니다</div>
+        </div>
+      </div>
+    </div>
+    <p class="lead">막막해 보여도 괜찮습니다 — 왼쪽의 빈칸 템플릿 구조(역할→하는 일→작업방식→출력형식→금지사항) 순서대로 채우면 됩니다.</p>
+  </div>
+</section>
+
 <section class="slide" data-title="STEP2 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
-  <div class="slide-header"><div class="kicker">STEP 2 · 실습 25분</div><div class="slide-no">52</div></div>
+  <div class="slide-header"><div class="kicker">STEP 2 · 실습 25분</div><div class="slide-no">53</div></div>
   <div class="slide-body">
     <h2 class="big-message">업무 지시서 완성하고 테스트까지</h2>
     <div class="checks">
@@ -1031,7 +1048,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="자주 하는 실수" data-note="Do &amp; Don&#39;t 도식 — 실수와 고친 버전을 좌우로 대비">
-  <div class="slide-header"><div class="kicker">6부 · 실수 3가지</div><div class="slide-no">53</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 실수 3가지</div><div class="slide-no">54</div></div>
   <div class="slide-body">
     <h2 class="big-message">직접 쓸 때 <span class="orange">자주 하는 실수 3가지</span></h2>
     <div class="dodont">
@@ -1050,7 +1067,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="금지사항 잘 쓰는 법">
-  <div class="slide-header"><div class="kicker">6부 · 금지사항 디테일</div><div class="slide-no">54</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 금지사항 디테일</div><div class="slide-no">55</div></div>
   <div class="slide-body">
     <h2 class="big-message">금지사항, <span class="orange">이 3줄이면 충분합니다</span></h2>
     <div class="prompt">[금지사항]
@@ -1062,7 +1079,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="미션카드 STEP2">
-  <div class="slide-header"><div class="kicker">6부 · 실습 미션 (화면 고정)</div><div class="slide-no">55</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 실습 미션 (화면 고정)</div><div class="slide-no">56</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 미션 — <span class="orange">STEP 2 업무 지시서 (25분)</span></h2>
     <div class="checks one">
@@ -1076,7 +1093,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="STEP3 폴더정의서 리마인드">
-  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서</div><div class="slide-no">56</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 폴더정의서</div><div class="slide-no">57</div></div>
   <div class="slide-body">
     <h2 class="big-message">이번엔 <span class="orange">3칸을 빠르게</span></h2>
     <table class="tbl">
@@ -1090,7 +1107,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="공개 가능 판단 기준">
-  <div class="slide-header"><div class="kicker">6부 · 보안 판단표</div><div class="slide-no">57</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 보안 판단표</div><div class="slide-no">58</div></div>
   <div class="slide-body">
     <h2 class="big-message">이 자료, 넣어도 될까? — <span class="orange">판단 기준표</span></h2>
     <div class="checks">
@@ -1105,7 +1122,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="미션카드 STEP3">
-  <div class="slide-header"><div class="kicker">6부 · 실습 미션 (화면 고정)</div><div class="slide-no">58</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 실습 미션 (화면 고정)</div><div class="slide-no">59</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 미션 — <span class="orange">STEP 3 폴더정의서 (15분)</span></h2>
     <div class="checks one">
@@ -1118,7 +1135,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="STEP3 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
-  <div class="slide-header"><div class="kicker">STEP 3 · 실습 15분</div><div class="slide-no">59</div></div>
+  <div class="slide-header"><div class="kicker">STEP 3 · 실습 15분</div><div class="slide-no">60</div></div>
   <div class="slide-body">
     <h2 class="big-message">지식파일까지 붙여서 완성 직전</h2>
     <div class="checks">
@@ -1130,7 +1147,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="STEP4 완성">
-  <div class="slide-header"><div class="kicker">STEP 4 · 완성</div><div class="slide-no">60</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 완성</div><div class="slide-no">61</div></div>
   <div class="slide-body">
     <h2 class="big-message">대화 시작 버튼까지 달면 <span class="orange">진짜 완성</span></h2>
     <div class="checks">
@@ -1143,7 +1160,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="STEP4 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
-  <div class="slide-header"><div class="kicker">STEP 4 · 실습 25분</div><div class="slide-no">61</div></div>
+  <div class="slide-header"><div class="kicker">STEP 4 · 실습 25분</div><div class="slide-no">62</div></div>
   <div class="slide-body">
     <h2 class="big-message">두 번째 챗봇, 마무리</h2>
     <div class="checks">
@@ -1157,7 +1174,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="두번째 챗봇 완성 체크">
-  <div class="slide-header"><div class="kicker">6부 · 완성 체크리스트</div><div class="slide-no">62</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 완성 체크리스트</div><div class="slide-no">63</div></div>
   <div class="slide-body">
     <h2 class="big-message">두 번째 챗봇 <span class="orange">완성 체크리스트</span></h2>
     <div class="checks one">
@@ -1171,7 +1188,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="미션카드 STEP4">
-  <div class="slide-header"><div class="kicker">6부 · 실습 미션 (화면 고정)</div><div class="slide-no">63</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 실습 미션 (화면 고정)</div><div class="slide-no">64</div></div>
   <div class="slide-body">
     <h2 class="big-message">실습 미션 — <span class="orange">STEP 4 완성·공유 (25분)</span></h2>
     <div class="checks one">
@@ -1185,7 +1202,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="챗봇 배틀">
-  <div class="slide-header"><div class="kicker">6부 · 잠깐 놀이</div><div class="slide-no">64</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 잠깐 놀이</div><div class="slide-no">65</div></div>
   <div class="slide-body">
     <h2 class="big-message">빨리 끝난 분들 — <span class="orange">챗봇 배틀</span></h2>
     <div class="game">
@@ -1196,7 +1213,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="배틀 후 개선">
-  <div class="slide-header"><div class="kicker">6부 · 배틀 후</div><div class="slide-no">65</div></div>
+  <div class="slide-header"><div class="kicker">6부 · 배틀 후</div><div class="slide-no">66</div></div>
   <div class="slide-body">
     <h2 class="big-message">배틀에서 뚫렸다면 — <span class="orange">그 자리에서 고치세요</span></h2>
     <div class="flow">
@@ -1226,7 +1243,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="7부 목표">
-  <div class="slide-header"><div class="kicker">7부 · 배포와 마무리</div><div class="slide-no">66</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 배포와 마무리</div><div class="slide-no">67</div></div>
   <div class="slide-body">
     <h2 class="big-message">7부 — 배포와 마무리 <span class="orange">(55분)</span></h2>
     <div class="goal">이 부가 끝나면: 챗봇 2개를 <b>팀에 배포할 구체적 계획</b>이 서고, <b>2일 최종 발표</b>와 함께 8시간 교육을 마무리합니다.</div>
@@ -1242,7 +1259,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="왜 정착인가">
-  <div class="slide-header"><div class="kicker">7부 · 만드는 것보다 정착</div><div class="slide-no">67</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 만드는 것보다 정착</div><div class="slide-no">68</div></div>
   <div class="slide-body">
     <h2 class="big-message">챗봇의 사망 원인 1위는 성능이 아니라 <span class="orange">잊혀짐</span>입니다</h2>
     <div class="stats">
@@ -1255,7 +1272,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="정착 루프 프레임워크">
-  <div class="slide-header"><div class="kicker">7부 · 정착 루프</div><div class="slide-no">68</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 정착 루프</div><div class="slide-no">69</div></div>
   <div class="slide-body">
     <h2 class="big-message">정착 루프 — <span class="orange">배포 → 개선 → 확산</span></h2>
     <div class="flow">
@@ -1268,7 +1285,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="정착 실패 스토리">
-  <div class="slide-header"><div class="kicker">7부 · 실패 스토리</div><div class="slide-no">69</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 실패 스토리</div><div class="slide-no">70</div></div>
   <div class="slide-body">
     <h2 class="big-message">A팀 이야기 — <span class="orange">링크만 던진 경우</span></h2>
     <div class="flow">
@@ -1281,7 +1298,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="정착 성공 스토리">
-  <div class="slide-header"><div class="kicker">7부 · 성공 스토리</div><div class="slide-no">70</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 성공 스토리</div><div class="slide-no">71</div></div>
   <div class="slide-body">
     <h2 class="big-message">B팀 이야기 — <span class="orange">3종 세트 + 개선 루프</span></h2>
     <div class="flow">
@@ -1294,7 +1311,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="팀 배포 실전">
-  <div class="slide-header"><div class="kicker">7부 · 정착 루프 1단계</div><div class="slide-no">71</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 정착 루프 1단계</div><div class="slide-no">72</div></div>
   <div class="slide-body">
     <h2 class="big-message">링크만 던지면 아무도 안 씁니다. <span class="orange">배포 3종 세트</span></h2>
     <div class="grid3">
@@ -1306,7 +1323,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="배포 공지문 템플릿">
-  <div class="slide-header"><div class="kicker">7부 · 복붙 템플릿</div><div class="slide-no">72</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 복붙 템플릿</div><div class="slide-no">73</div></div>
   <div class="slide-body">
     <h2 class="big-message">배포 공지문 — <span class="orange">이대로 복붙하세요</span></h2>
     <div class="prompt">[챗봇 공유] ○○봇을 만들었습니다.
@@ -1319,8 +1336,25 @@ table.tbl tr:last-child td{border-bottom:none}
   </div>
 </section>
 
+<section class="slide" data-title="공지문 붙여넣기 미리보기" data-note="복붙한 공지문이 실제 오픈채팅방에 올라간 모습과, 팀원 반응까지 보여줌. '이대로 붙여넣기만 하면 끝'을 체감시키기(1분)">
+  <div class="slide-header"><div class="kicker">7부 · 실제로 이렇게 올라갑니다</div><div class="slide-no">74</div></div>
+  <div class="slide-body">
+    <h2 class="big-message">복붙한 공지문이 <span class="orange">채팅방에서는 이렇게</span> 보입니다</h2>
+    <div class="uiapp">
+      <div class="uimock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">오픈채팅방 · 우리팀 AX 실습방</span></div>
+      <div class="uiapp-main" style="min-height:12vw">
+        <div class="uiapp-chat" style="align-items:flex-end">
+          <div class="uimock-msg user" style="align-self:flex-end;max-width:82%;text-align:left">[챗봇 공유] 회의록 정리봇을 만들었습니다.<br>- 하는 일: 회의 메모 붙여넣으면 정리<br>- 링크: (챗봇 링크)<br>- 이렇게 써보세요: "오늘 회의 메모 정리해줘"</div>
+          <div class="uimock-msg bot" style="align-self:flex-start;max-width:60%">오 좋다 바로 써볼게요 👍</div>
+        </div>
+      </div>
+    </div>
+    <p class="lead">공지문을 그대로 붙여넣기만 하면 됩니다 — 팀원의 첫 반응까지가 배포의 완성입니다.</p>
+  </div>
+</section>
+
 <section class="slide" data-title="배포 계획 실습"" data-note="이 화면 고정. 타이머 시작 → 순회하며 막힌 분 지원 → 종료 1분 전 공지 → 완료 기준 확인 후 전환">
-  <div class="slide-header"><div class="kicker">7부 · 실습 10분</div><div class="slide-no">73</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 실습 10분</div><div class="slide-no">75</div></div>
   <div class="slide-body">
     <h2 class="big-message">배포 계획, 3줄로 적어보세요</h2>
     <div class="checks one">
@@ -1333,7 +1367,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="개선 루프" data-note="원을 시계방향으로 한 바퀴. '3주만 돌리면 없으면 불편하다는 말이 나온다' 멘트, 캘린더 등록 권유(3분)">
-  <div class="slide-header"><div class="kicker">7부 · 정착 루프 2단계</div><div class="slide-no">74</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 정착 루프 2단계</div><div class="slide-no">76</div></div>
   <div class="slide-body">
     <h2 class="big-message">배포 후엔 <span class="orange">주 1회, 10분</span>이면 됩니다</h2>
     <div class="cyc">
@@ -1354,7 +1388,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="개선 루프 실전 예시">
-  <div class="slide-header"><div class="kicker">7부 · 개선 실전</div><div class="slide-no">75</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 개선 실전</div><div class="slide-no">77</div></div>
   <div class="slide-body">
     <h2 class="big-message">개선, 실제론 <span class="orange">이 정도로 간단</span>합니다</h2>
     <table class="tbl">
@@ -1369,7 +1403,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="개선 기록표">
-  <div class="slide-header"><div class="kicker">7부 · 기록 습관</div><div class="slide-no">76</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 기록 습관</div><div class="slide-no">78</div></div>
   <div class="slide-body">
     <h2 class="big-message">주 1회 10분, <span class="orange">이 표 한 줄이면 됩니다</span></h2>
     <table class="tbl">
@@ -1383,7 +1417,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="최종 발표 준비">
-  <div class="slide-header"><div class="kicker">7부 · 발표 준비</div><div class="slide-no">77</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 발표 준비</div><div class="slide-no">79</div></div>
   <div class="slide-body">
     <h2 class="big-message">최종 발표 — <span class="orange">이번엔 1분</span></h2>
     <div class="grid3">
@@ -1395,7 +1429,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="발표 운영 안내">
-  <div class="slide-header"><div class="kicker">7부 · 발표 운영</div><div class="slide-no">78</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 발표 운영</div><div class="slide-no">80</div></div>
   <div class="slide-body">
     <h2 class="big-message">발표 운영 — <span class="orange">부담 없이, 빠르게</span></h2>
     <div class="grid3">
@@ -1408,7 +1442,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="최종 발표">
-  <div class="slide-header"><div class="kicker">7부 · 최종 발표</div><div class="slide-no">79</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 최종 발표</div><div class="slide-no">81</div></div>
   <div class="slide-body">
     <h2 class="big-message">1분 발표 — <span class="orange">본부별로 편하게</span></h2>
     <div class="checks one">
@@ -1420,7 +1454,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="8시간 되돌아보기" data-note="Before&After 도식 — 대비를 시각적으로 강조, 참가자 자기 회고 유도">
-  <div class="slide-header"><div class="kicker">7부 · 되돌아보기</div><div class="slide-no">80</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 되돌아보기</div><div class="slide-no">82</div></div>
   <div class="slide-body">
     <h2 class="big-message">8시간 전과 지금, <span class="orange">뭐가 달라졌나요?</span></h2>
     <div class="ba2">
@@ -1432,7 +1466,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="앞으로">
-  <div class="slide-header"><div class="kicker">7부 · 앞으로</div><div class="slide-no">81</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 앞으로</div><div class="slide-no">83</div></div>
   <div class="slide-body">
     <h2 class="big-message">교육 끝나고 <span class="orange">이 순서</span>로 넓혀가세요</h2>
     <div class="flow">
@@ -1445,7 +1479,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="자동화 도구 이름들">
-  <div class="slide-header"><div class="kicker">7부 · 다음 단계 도구</div><div class="slide-no">82</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 다음 단계 도구</div><div class="slide-no">84</div></div>
   <div class="slide-body">
     <h2 class="big-message">더 가고 싶은 분을 위한 <span class="orange">도구 이름 3개</span></h2>
     <div class="grid3">
@@ -1458,7 +1492,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="팀 확산 가이드">
-  <div class="slide-header"><div class="kicker">7부 · 팀 확산</div><div class="slide-no">83</div></div>
+  <div class="slide-header"><div class="kicker">7부 · 팀 확산</div><div class="slide-no">85</div></div>
   <div class="slide-body">
     <h2 class="big-message">동료에게 알려줄 땐 — <span class="orange">이 순서로</span></h2>
     <div class="grid4">
@@ -1472,7 +1506,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="2일차 FAQ 1">
-  <div class="slide-header"><div class="kicker">7부 · FAQ</div><div class="slide-no">84</div></div>
+  <div class="slide-header"><div class="kicker">7부 · FAQ</div><div class="slide-no">86</div></div>
   <div class="slide-body">
     <h2 class="big-message">FAQ — <span class="orange">배포 관련</span></h2>
     <div class="checks one">
@@ -1484,7 +1518,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="2일차 FAQ 2">
-  <div class="slide-header"><div class="kicker">7부 · FAQ</div><div class="slide-no">85</div></div>
+  <div class="slide-header"><div class="kicker">7부 · FAQ</div><div class="slide-no">87</div></div>
   <div class="slide-body">
     <h2 class="big-message">FAQ — <span class="orange">운영 관련</span></h2>
     <div class="checks one">
@@ -1496,7 +1530,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="만족도 조사">
-  <div class="slide-header"><div class="kicker">만족도 조사</div><div class="slide-no">86</div></div>
+  <div class="slide-header"><div class="kicker">만족도 조사</div><div class="slide-no">88</div></div>
   <div class="slide-body">
     <h2 class="big-message">1분만 — <span class="orange">만족도 조사</span></h2>
     <p class="lead">오픈채팅방 공지의 링크로 접속해주세요. "다음에 더 배우고 싶은 것"은 꼭 적어주시면 다음 심화 과정에 반영됩니다.</p>
@@ -1512,7 +1546,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="치트시트 버튼 문구">
-  <div class="slide-header"><div class="kicker">부록 · 버튼 문구 모음</div><div class="slide-no">87</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 버튼 문구 모음</div><div class="slide-no">89</div></div>
   <div class="slide-body">
     <h2 class="big-message">복붙용 <span class="orange">버튼 문구 16선</span></h2>
     <table class="tbl">
@@ -1526,7 +1560,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="치트시트 지식파일 점검">
-  <div class="slide-header"><div class="kicker">부록 · 지식파일 점검</div><div class="slide-no">88</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 지식파일 점검</div><div class="slide-no">90</div></div>
   <div class="slide-body">
     <h2 class="big-message">지식파일 <span class="orange">점검 체크리스트</span></h2>
     <div class="checks one">
@@ -1540,7 +1574,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="치트시트 정착 루프">
-  <div class="slide-header"><div class="kicker">부록 · 정착 루프 카드</div><div class="slide-no">89</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 정착 루프 카드</div><div class="slide-no">91</div></div>
   <div class="slide-body">
     <h2 class="big-message">주 1회 10분 <span class="orange">정착 루틴 카드</span></h2>
     <div class="flow">
@@ -1554,7 +1588,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="치트시트 진단 플로우">
-  <div class="slide-header"><div class="kicker">부록 · 답변 진단</div><div class="slide-no">90</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 답변 진단</div><div class="slide-no">92</div></div>
   <div class="slide-body">
     <h2 class="big-message">답이 이상할 때 <span class="orange">진단 플로우</span></h2>
     <div class="checks one">
@@ -1567,7 +1601,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="치트시트 응대봇 지시문">
-  <div class="slide-header"><div class="kicker">부록 · 예시 지시문 전문</div><div class="slide-no">91</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 예시 지시문 전문</div><div class="slide-no">93</div></div>
   <div class="slide-body">
     <h2 class="big-message">예시 전문 — <span class="orange">규정 문의 응대봇</span></h2>
     <div class="prompt">너는 공공기관 경영관리 부서의 규정 문의 응대 담당자다.
@@ -1581,7 +1615,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="치트시트 발표 템플릿">
-  <div class="slide-header"><div class="kicker">부록 · 발표 문장틀</div><div class="slide-no">92</div></div>
+  <div class="slide-header"><div class="kicker">부록 · 발표 문장틀</div><div class="slide-no">94</div></div>
   <div class="slide-body">
     <h2 class="big-message">1분 발표가 막막하면 — <span class="orange">이 틀에 끼우세요</span></h2>
     <div class="prompt">"제 챗봇은 (1일차: ○○봇)과 (2일차: ○○봇)입니다.
@@ -1592,7 +1626,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="기억할 세 가지 2일차">
-  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">93</div></div>
+  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">95</div></div>
   <div class="slide-body">
     <h2 class="big-message">2일차, 기억할 <span class="orange">세 가지</span></h2>
     <div class="takeaways">
@@ -1604,7 +1638,7 @@ table.tbl tr:last-child td{border-bottom:none}
 </section>
 
 <section class="slide" data-title="클로징">
-  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">94</div></div>
+  <div class="slide-header"><div class="kicker">Closing</div><div class="slide-no">96</div></div>
   <div class="slide-body">
     <h2 class="big-message">8시간, 기억할 <span class="orange">세 가지</span></h2>
     <div class="takeaways">
@@ -1617,7 +1651,7 @@ table.tbl tr:last-child td{border-bottom:none}
 
 </div>
 
-<div class="counter" id="counter">1 / 109</div>
+<div class="counter" id="counter">1 / 111</div>
 <div class="nav-ui">
   <button id="prevBtn">‹</button>
   <button id="nextBtn">›</button>
