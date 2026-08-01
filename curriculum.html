@@ -3,16 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>커리큘럼 — 한국전력기술 AX 리터러시 교육</title>
+<title>타임테이블 — 한국전력기술 AX 리터러시 교육</title>
 <style>
 :root{
-  --ink:#17191f;
-  --muted:#68707d;
-  --light:#8d95a1;
-  --line:#dfe3e8;
-  --soft:#f7f8fa;
-  --brand:#ff5b1a;
-  --brand-soft:#fff3ed;
+  --ink:#172033;
+  --muted:#697386;
+  --line:#d9dee7;
+  --soft:#f6f8fb;
+  --accent:#e95b1f;
   --font:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -23,336 +21,195 @@ body{
   -webkit-font-smoothing:antialiased;
   word-break:keep-all;
 }
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 .page{
-  max-width:1120px;
+  max-width:1040px;
   margin:0 auto;
-  padding:36px 28px 72px;
+  padding:34px 28px 64px;
 }
-.topbar{
+.top{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
-  padding-bottom:22px;
+  padding-bottom:18px;
   border-bottom:1px solid var(--line);
 }
 .back{
   font-size:14px;
   font-weight:800;
   color:var(--muted);
-  text-decoration:none;
 }
-.back:hover{color:var(--brand)}
-.toplinks{
+.links{
   display:flex;
-  gap:10px;
+  gap:8px;
   flex-wrap:wrap;
 }
-.toplinks a{
+.links a{
+  padding:8px 11px;
   border:1px solid var(--line);
-  border-radius:8px;
-  padding:9px 12px;
+  border-radius:6px;
   font-size:13px;
   font-weight:800;
-  text-decoration:none;
   color:var(--muted);
 }
-.toplinks a:hover{
-  border-color:var(--brand);
-  color:var(--brand);
-}
-.hero{
-  padding:52px 0 42px;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;
-  gap:56px;
-  align-items:end;
-}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+.hero{padding:38px 0 28px}
 .eyebrow{
+  margin-bottom:10px;
   font-size:13px;
   font-weight:900;
-  color:var(--brand);
-  margin-bottom:16px;
+  color:var(--accent);
 }
 h1{
-  font-size:44px;
+  font-size:38px;
   line-height:1.18;
-  letter-spacing:-.03em;
-  max-width:720px;
+  letter-spacing:-.035em;
 }
-.lead{
-  margin-top:18px;
+.sub{
+  margin-top:12px;
   color:var(--muted);
-  font-size:17px;
-  line-height:1.72;
-  max-width:680px;
-}
-.meta{
-  border-top:3px solid var(--ink);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-}
-.meta div{
-  padding:18px 0 0;
-  min-height:74px;
-  border-bottom:1px solid var(--line);
-}
-.meta b{
-  display:block;
-  font-size:23px;
-  line-height:1;
-  margin-bottom:7px;
-}
-.meta span{
-  font-size:13px;
-  color:var(--muted);
-  font-weight:700;
-}
-.overview{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  margin-bottom:46px;
-}
-.overview div{
-  padding:20px 22px;
-  border-right:1px solid var(--line);
-}
-.overview div:last-child{border-right:none}
-.overview h3{
-  font-size:14px;
-  margin-bottom:8px;
-}
-.overview p{
-  color:var(--muted);
-  font-size:14px;
+  font-size:16px;
   line-height:1.65;
 }
-.section-title{
+.summary{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin:20px 0 38px;
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--line);
+}
+.summary div{
+  padding:16px 18px;
+  border-right:1px solid var(--line);
+}
+.summary div:last-child{border-right:none}
+.summary b{
+  display:block;
+  margin-bottom:5px;
+  font-size:22px;
+  line-height:1;
+}
+.summary span{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+}
+.day{margin-top:34px}
+.day-head{
   display:flex;
   justify-content:space-between;
-  gap:24px;
   align-items:flex-end;
-  margin:54px 0 18px;
-  padding-bottom:14px;
+  gap:20px;
+  padding-bottom:12px;
   border-bottom:2px solid var(--ink);
 }
-.section-title h2{
+.day-head h2{
   font-size:25px;
-  letter-spacing:-.02em;
-}
-.section-title p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.55;
-  text-align:right;
-}
-.day-card{
-  border:1px solid var(--line);
-  border-radius:10px;
-  overflow:hidden;
-  margin-bottom:26px;
-}
-.day-head{
-  display:grid;
-  grid-template-columns:180px minmax(0,1fr) 180px;
-  gap:20px;
-  align-items:center;
-  background:var(--soft);
-  border-bottom:1px solid var(--line);
-  padding:20px 24px;
-}
-.day-label{
-  font-size:13px;
-  color:var(--brand);
-  font-weight:900;
-}
-.day-head h3{
-  font-size:22px;
-  letter-spacing:-.02em;
+  line-height:1.25;
+  letter-spacing:-.025em;
 }
 .day-head p{
+  margin-top:5px;
   color:var(--muted);
   font-size:14px;
-  line-height:1.55;
+  font-weight:800;
 }
-.day-actions{
+.deck-links{
   display:flex;
-  justify-content:flex-end;
   gap:8px;
+  flex-shrink:0;
 }
-.day-actions a{
+.deck-links a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:72px;
+  min-width:64px;
+  padding:8px 10px;
   border:1px solid var(--line);
-  border-radius:7px;
-  padding:9px 11px;
+  border-radius:6px;
+  color:var(--muted);
   font-size:13px;
   font-weight:900;
-  text-decoration:none;
-  color:var(--muted);
-  background:#fff;
 }
-.day-actions a.primary{
-  border-color:var(--brand);
-  color:var(--brand);
-}
-.day-actions a:hover{
-  background:var(--brand-soft);
-  color:var(--brand);
-}
-.goals{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border-bottom:1px solid var(--line);
-}
-.goal{
-  padding:18px 22px;
-  border-right:1px solid var(--line);
-}
-.goal:last-child{border-right:none}
-.goal b{
-  display:block;
-  color:var(--brand);
-  font-size:13px;
-  margin-bottom:7px;
-}
-.goal span{
-  display:block;
-  color:var(--ink);
-  font-size:14px;
-  line-height:1.55;
-  font-weight:700;
-}
-.schedule{
+.deck-links a:first-child{border-color:var(--accent);color:var(--accent)}
+table{
   width:100%;
   border-collapse:collapse;
+  table-layout:fixed;
 }
-.schedule th{
-  background:#fff;
+th{
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  background:var(--soft);
   color:var(--muted);
   font-size:12px;
   text-align:left;
-  padding:13px 16px;
-  border-bottom:1px solid var(--line);
   font-weight:900;
 }
-.schedule td{
+td{
+  padding:16px 14px;
+  border-bottom:1px solid var(--line);
   vertical-align:top;
-  padding:17px 16px;
-  border-bottom:1px solid var(--line);
-  font-size:14px;
-  line-height:1.62;
-}
-.schedule tr:last-child td{border-bottom:none}
-.time{
-  width:86px;
-  color:var(--brand);
-  font-weight:900;
-  white-space:nowrap;
-}
-.part{
-  width:130px;
-  color:var(--muted);
-  font-weight:900;
-}
-.topic b{
-  display:block;
   font-size:15px;
-  margin-bottom:4px;
+  line-height:1.5;
 }
-.topic span{
-  display:block;
-  color:var(--muted);
-}
-.output{
-  width:210px;
-  color:var(--ink);
-  font-weight:700;
-}
+.time{width:130px;font-weight:900;color:var(--accent);white-space:nowrap}
+.duration{width:88px;font-weight:900;color:var(--ink);white-space:nowrap}
+.topic{width:auto;font-weight:900}
+.output{width:230px;color:var(--muted);font-weight:700}
 .break td{
-  background:var(--soft);
-  color:var(--light);
-  font-weight:800;
-  padding:11px 16px;
-}
-.notes{
-  margin-top:24px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  padding:10px 14px;
+  background:#fafafa;
+  color:#8d95a1;
+  font-size:14px;
+  font-weight:900;
 }
 .note{
-  border-top:2px solid var(--ink);
-  background:var(--soft);
+  margin-top:30px;
   padding:18px 20px;
-}
-.note h3{
-  font-size:15px;
-  margin-bottom:8px;
-}
-.note p{
+  background:var(--soft);
+  border-left:4px solid var(--accent);
   color:var(--muted);
   font-size:14px;
   line-height:1.7;
 }
 footer{
-  margin-top:62px;
+  margin-top:48px;
+  padding-top:18px;
   border-top:1px solid var(--line);
-  padding-top:22px;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
   color:var(--muted);
   font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
 }
-footer a{
-  color:var(--brand);
-  font-weight:900;
-  text-decoration:none;
-}
-footer a:hover{text-decoration:underline}
-@media (max-width:860px){
-  .hero{grid-template-columns:1fr;gap:28px}
-  .meta{max-width:460px}
-  .overview{grid-template-columns:1fr}
-  .overview div{border-right:none;border-bottom:1px solid var(--line)}
-  .overview div:last-child{border-bottom:none}
-  .day-head{grid-template-columns:1fr}
-  .day-actions{justify-content:flex-start}
-  .goals{grid-template-columns:1fr}
-  .goal{border-right:none;border-bottom:1px solid var(--line)}
-  .goal:last-child{border-bottom:none}
-  .schedule thead{display:none}
-  .schedule tr{display:block;border-bottom:1px solid var(--line)}
-  .schedule tr:last-child{border-bottom:none}
-  .schedule td{display:block;border-bottom:none;padding:6px 18px}
-  .schedule td:first-child{padding-top:16px}
-  .schedule td:last-child{padding-bottom:16px}
-  .part,.time,.output{width:auto}
-  .break td{padding:12px 18px}
-  .notes{grid-template-columns:1fr}
-}
-@media (max-width:560px){
-  .page{padding:24px 18px 56px}
-  .topbar{align-items:flex-start;flex-direction:column}
-  h1{font-size:32px}
-  .section-title{display:block}
-  .section-title p{text-align:left;margin-top:8px}
-  .meta{grid-template-columns:1fr 1fr}
+footer a{color:var(--accent);font-weight:900}
+@media(max-width:780px){
+  .page{padding:26px 18px 52px}
+  .top{align-items:flex-start;flex-direction:column}
+  h1{font-size:30px}
+  .summary{grid-template-columns:repeat(2,1fr)}
+  .summary div:nth-child(2){border-right:none}
+  .summary div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .day-head{align-items:flex-start;flex-direction:column}
+  table{table-layout:auto}
+  thead{display:none}
+  tr{display:grid;grid-template-columns:92px 64px 1fr;border-bottom:1px solid var(--line)}
+  td{border-bottom:none;padding:12px 8px}
+  .time,.duration,.topic,.output{width:auto}
+  .output{grid-column:3;color:var(--muted);padding-top:0}
+  .break{display:block}
+  .break td{display:block}
 }
 </style>
 </head>
 <body>
 <main class="page">
-  <nav class="topbar">
-    <a class="back" href="index.html">← 전체 자료로</a>
-    <div class="toplinks">
+  <nav class="top">
+    <a class="back" href="index.html">← 전체 자료</a>
+    <div class="links">
       <a href="day1.html">1일차 덱</a>
       <a href="day2.html">2일차 덱</a>
       <a href="교재_1일차.html">1일차 교재</a>
@@ -361,221 +218,85 @@ footer a:hover{text-decoration:underline}
   </nav>
 
   <header class="hero">
-    <div>
-      <div class="eyebrow">한국전력기술 AX 리터러시 교육</div>
-      <h1>챗봇 구축을 통한 업무 자동화 커리큘럼</h1>
-      <p class="lead">AI 교육의 당위성과 흥미를 먼저 만들고, 처음 고른 반복 업무 하나를 끝까지 가져가 개인 GPT Agent 2개로 완성하는 실습형 과정입니다.</p>
-    </div>
-    <div class="meta" aria-label="교육 요약">
-      <div><b>2일</b><span>8월 5일 · 6일</span></div>
-      <div><b>8h</b><span>각 13:00-17:00</span></div>
-      <div><b>30명</b><span>차수별 교육생</span></div>
-      <div><b>2개</b><span>완성 Agent</span></div>
-    </div>
+    <div class="eyebrow">한국전력기술 AX 리터러시 교육</div>
+    <h1>2일 과정 타임테이블</h1>
+    <p class="sub">각 일자 13:00-17:00, 4시간 기준입니다. 이 페이지는 진행 순서와 소요 시간만 빠르게 확인하기 위한 운영용 시간표입니다.</p>
   </header>
 
-  <section class="overview" aria-label="진행 원칙">
-    <div>
-      <h3>대상</h3>
-      <p>한국전력기술 전 부서 직위자. AI 경험이 다른 참가자가 함께 따라올 수 있도록 초반 70분은 공통 기준을 맞추고, 이후는 실습 중심으로 진행합니다.</p>
-    </div>
-    <div>
-      <h3>실습 방식</h3>
-      <p>예시 보기 → 복붙 → 3곳 수정 → 자유 설계. 보조강사가 기본 팔로업을 맡고, 빠른 참가자는 실제 산출물 고도화까지 진행합니다.</p>
-    </div>
-    <div>
-      <h3>최종 산출물</h3>
-      <p>회의록 정리, 기술문서 요약, 보고 초안 등 전력·엔지니어링 업무에 맞춘 개인 Agent 2개와 팀 공유 절차.</p>
-    </div>
+  <section class="summary" aria-label="교육 요약">
+    <div><b>8/5</b><span>1일차 · 13:00-17:00</span></div>
+    <div><b>8/6</b><span>2일차 · 13:00-17:00</span></div>
+    <div><b>30명</b><span>차수별 교육생</span></div>
+    <div><b>2개</b><span>개인 GPT Agent 산출</span></div>
   </section>
 
-  <section class="section-title">
-    <h2>전체 흐름</h2>
-    <p>오프닝 70분은 AI 당위성과 사용 기준을 잡고, 이후는 처음 고른 반복 업무 하나를 Agent 산출물까지 끝까지 가져갑니다.</p>
-  </section>
-
-  <section class="day-card" aria-labelledby="day1-title">
+  <section class="day" aria-labelledby="day1">
     <div class="day-head">
-      <div class="day-label">DAY 1 · 13:00-17:00</div>
       <div>
-        <h3 id="day1-title">GPT Agent 1개 만들기</h3>
-        <p>AI 기초와 보안 기준을 잡은 뒤, 반복 업무 하나를 골라 첫 맞춤 GPT를 완성합니다.</p>
+        <h2 id="day1">1일차 — 첫 GPT Agent 만들기</h2>
+        <p>AI 기초 → 업무 선정 → 지시문/knowledge.md → Agent 완성</p>
       </div>
-      <div class="day-actions">
-        <a class="primary" href="day1.html">강의덱</a>
+      <div class="deck-links">
+        <a href="day1.html">강의덱</a>
         <a href="교재_1일차.html">교재</a>
       </div>
     </div>
-    <div class="goals">
-      <div class="goal"><b>목표 1</b><span>AI 활용 기준과 금지 정보를 구분한다</span></div>
-      <div class="goal"><b>목표 2</b><span>정해진 예시로 안전하게 첫 결과를 만든다</span></div>
-      <div class="goal"><b>목표 3</b><span>내 반복 업무용 GPT Agent 1개를 완성한다</span></div>
-    </div>
-    <table class="schedule">
+    <table>
       <thead>
-        <tr><th>시간</th><th>구간</th><th>내용</th><th>산출물</th></tr>
+        <tr><th class="time">시간</th><th class="duration">소요</th><th>무엇을 하나요</th><th class="output">결과물</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="time">30분</td>
-          <td class="part">오프닝</td>
-          <td class="topic"><b>왜 지금 AI를 배워야 하는가</b><span>NEXA 2.5, 한국전력기술 AX 흐름, 생성형 AI 변화 속도를 통해 교육의 당위성과 흥미를 만듭니다.</span></td>
-          <td class="output">오늘의 여정 이해</td>
-        </tr>
-        <tr>
-          <td class="time">25분</td>
-          <td class="part">기초</td>
-          <td class="topic"><b>안전한 사용 기준과 화면 익히기</b><span>공개 가능 자료와 금지 정보를 먼저 구분하고, 모델 선택·파일 첨부·새 채팅을 확인합니다.</span></td>
-          <td class="output">사용 기준 메모</td>
-        </tr>
-        <tr>
-          <td class="time">15분</td>
-          <td class="part">첫 체험</td>
-          <td class="topic"><b>정해진 예시로 첫 결과 받아보기</b><span>자유 질문이 아니라 강사가 제공한 가상 회의 메모로 3줄 요약·표 변환·확인 필요 분리를 체험합니다.</span></td>
-          <td class="output">첫 결과물</td>
-        </tr>
-        <tr class="break"><td colspan="4">휴식 · 10분</td></tr>
-        <tr>
-          <td class="time">35분</td>
-          <td class="part">2부</td>
-          <td class="topic"><b>프롬프트는 업무 지시서다</b><span>방금 쓴 예시를 PTCO와 검증 기준으로 해부한 뒤, 내 업무 지시서로 확장합니다.</span></td>
-          <td class="output">보고 초안 프롬프트</td>
-        </tr>
-        <tr>
-          <td class="time">25분</td>
-          <td class="part">STEP 1</td>
-          <td class="topic"><b>문제정의</b><span>반복성×규칙성 매트릭스로 Agent에 맡길 업무를 고르고, 이후 모든 실습에서 같은 업무 후보를 계속 사용합니다.</span></td>
-          <td class="output">업무 문제 한 문장</td>
-        </tr>
-        <tr>
-          <td class="time">25분</td>
-          <td class="part">STEP 2</td>
-          <td class="topic"><b>업무 지시서 작성</b><span>회의록 정리, 기술문서 요약, 보고 초안 중 하나를 골라 지시문을 복붙 후 3곳 수정합니다.</span></td>
-          <td class="output">Agent 지시문</td>
-        </tr>
-        <tr class="break"><td colspan="4">휴식 · 10분</td></tr>
-        <tr>
-          <td class="time">20분</td>
-          <td class="part">STEP 3</td>
-          <td class="topic"><b>폴더정의서와 .md 지식파일</b><span>지금까지 저장한 문제정의·업무 지시서·검증 기준을 knowledge.md로 구조화합니다.</span></td>
-          <td class="output">knowledge.md 1개</td>
-        </tr>
-        <tr>
-          <td class="time">25분</td>
-          <td class="part">STEP 4</td>
-          <td class="topic"><b>첫 Agent 완성</b><span>GPTs 구성 화면에서 이름, 설명, 지시문, knowledge.md, 대화 시작 문구를 묶습니다.</span></td>
-          <td class="output">개인 Agent 1개</td>
-        </tr>
-        <tr>
-          <td class="time">20분</td>
-          <td class="part">공유</td>
-          <td class="topic"><b>30초 발표와 검증</b><span>이름, 맡긴 업무, Before/After, 주의사항을 공유하고 결과물을 점검합니다.</span></td>
-          <td class="output">발표 문장</td>
-        </tr>
+        <tr><td class="time">13:00-13:30</td><td class="duration">30분</td><td class="topic">오프닝: 왜 지금 AI를 배워야 하는가</td><td class="output">오늘의 흐름 이해</td></tr>
+        <tr><td class="time">13:30-13:55</td><td class="duration">25분</td><td class="topic">GPT 기본 화면과 안전한 사용 기준</td><td class="output">입력 가능/금지 정보 구분</td></tr>
+        <tr><td class="time">13:55-14:10</td><td class="duration">15분</td><td class="topic">정해진 예시로 첫 결과 받아보기</td><td class="output">요약·표 변환 결과</td></tr>
+        <tr class="break"><td colspan="4">14:10-14:20 · 휴식 10분</td></tr>
+        <tr><td class="time">14:20-14:55</td><td class="duration">35분</td><td class="topic">프롬프트를 업무 지시서로 바꾸기</td><td class="output">보고 초안 프롬프트</td></tr>
+        <tr><td class="time">14:55-15:20</td><td class="duration">25분</td><td class="topic">내 업무 문제정의</td><td class="output">업무 문제 한 문장</td></tr>
+        <tr><td class="time">15:20-15:45</td><td class="duration">25분</td><td class="topic">Agent 지시문 작성</td><td class="output">개인 Agent 지시문</td></tr>
+        <tr class="break"><td colspan="4">15:45-15:55 · 휴식 10분</td></tr>
+        <tr><td class="time">15:55-16:15</td><td class="duration">20분</td><td class="topic">knowledge.md 만들기</td><td class="output">지식파일 1개</td></tr>
+        <tr><td class="time">16:15-16:40</td><td class="duration">25분</td><td class="topic">첫 GPT Agent 완성</td><td class="output">개인 Agent 1개</td></tr>
+        <tr><td class="time">16:40-17:00</td><td class="duration">20분</td><td class="topic">결과 공유와 30초 발표</td><td class="output">발표 문장</td></tr>
       </tbody>
     </table>
   </section>
 
-  <section class="day-card" aria-labelledby="day2-title">
+  <section class="day" aria-labelledby="day2">
     <div class="day-head">
-      <div class="day-label">DAY 2 · 13:00-17:00</div>
       <div>
-        <h3 id="day2-title">Agent 고도화와 두 번째 제작</h3>
-        <p>1일차 Agent를 더 쓸 만하게 고치고, 다른 업무용 Agent를 하나 더 만든 뒤 팀 공유 흐름까지 정리합니다.</p>
+        <h2 id="day2">2일차 — Agent 고도화와 두 번째 제작</h2>
+        <p>1일차 결과 개선 → 두 번째 Agent 제작 → 검증 → 팀 공유</p>
       </div>
-      <div class="day-actions">
-        <a class="primary" href="day2.html">강의덱</a>
+      <div class="deck-links">
+        <a href="day2.html">강의덱</a>
         <a href="교재_2일차.html">교재</a>
       </div>
     </div>
-    <div class="goals">
-      <div class="goal"><b>목표 1</b><span>지식파일과 시작 문구로 Agent 품질을 높인다</span></div>
-      <div class="goal"><b>목표 2</b><span>다른 업무용 Agent 1개를 추가 제작한다</span></div>
-      <div class="goal"><b>목표 3</b><span>검증 기준과 팀 공유 순서를 정한다</span></div>
-    </div>
-    <table class="schedule">
+    <table>
       <thead>
-        <tr><th>시간</th><th>구간</th><th>내용</th><th>산출물</th></tr>
+        <tr><th class="time">시간</th><th class="duration">소요</th><th>무엇을 하나요</th><th class="output">결과물</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="time">15분</td>
-          <td class="part">복습</td>
-          <td class="topic"><b>어제 만든 Agent 점검</b><span>좋은 답변과 애매한 답변을 나누고 오늘의 개선 기준을 세웁니다.</span></td>
-          <td class="output">개선 포인트</td>
-        </tr>
-        <tr>
-          <td class="time">35분</td>
-          <td class="part">고도화</td>
-          <td class="topic"><b>지식파일·대화 시작 문구</b><span>1일차 knowledge.md를 보강하고, 팀원이 누르기 쉬운 시작 문구를 등록합니다.</span></td>
-          <td class="output">업데이트된 Agent</td>
-        </tr>
-        <tr>
-          <td class="time">20분</td>
-          <td class="part">확장</td>
-          <td class="topic"><b>멀티턴, Work, Actions, MCP</b><span>오늘 실습 범위와 다음 단계 도구를 이름과 역할 중심으로 구분합니다.</span></td>
-          <td class="output">확장 개념 정리</td>
-        </tr>
-        <tr class="break"><td colspan="4">휴식 · 10분</td></tr>
-        <tr>
-          <td class="time">20분</td>
-          <td class="part">STEP 1</td>
-          <td class="topic"><b>두 번째 문제정의</b><span>어제와 다른 업무를 골라 문제정의 한 문장으로 정리합니다.</span></td>
-          <td class="output">두 번째 업무 후보</td>
-        </tr>
-        <tr>
-          <td class="time">25분</td>
-          <td class="part">STEP 2</td>
-          <td class="topic"><b>빈칸에서 지시서 작성</b><span>이번에는 예시 없이 7요소를 직접 채워 두 번째 Agent 지시문을 만듭니다.</span></td>
-          <td class="output">두 번째 지시문</td>
-        </tr>
-        <tr>
-          <td class="time">15분</td>
-          <td class="part">STEP 3</td>
-          <td class="topic"><b>자료 준비</b><span>업무 기준, 출력 양식, 검증 기준 중 가장 필요한 자료 1개를 올립니다.</span></td>
-          <td class="output">지식파일 1개</td>
-        </tr>
-        <tr class="break"><td colspan="4">휴식 · 10분</td></tr>
-        <tr>
-          <td class="time">25분</td>
-          <td class="part">STEP 4</td>
-          <td class="topic"><b>두 번째 Agent 완성</b><span>대화 시작 문구까지 붙이고 정상·누락·충돌·금지 테스트를 돌립니다.</span></td>
-          <td class="output">개인 Agent 2개</td>
-        </tr>
-        <tr>
-          <td class="time">35분</td>
-          <td class="part">검증</td>
-          <td class="topic"><b>AI 결과물 검증 기준</b><span>사실성, 정확성, 보안성, 완전성, 용어·형식, 실행 가능성 기준으로 결과물을 고칩니다.</span></td>
-          <td class="output">검증 체크리스트</td>
-        </tr>
-        <tr>
-          <td class="time">30분</td>
-          <td class="part">정착</td>
-          <td class="topic"><b>팀 공유와 최종 발표</b><span>동료에게 알려줄 순서와 주 1회 개선 루프를 정하고 1분 발표로 마무리합니다.</span></td>
-          <td class="output">팀 배포 계획</td>
-        </tr>
+        <tr><td class="time">13:00-13:15</td><td class="duration">15분</td><td class="topic">1일차 Agent 결과 점검</td><td class="output">개선 포인트</td></tr>
+        <tr><td class="time">13:15-13:50</td><td class="duration">35분</td><td class="topic">지식파일과 시작 문구 고도화</td><td class="output">업데이트된 Agent</td></tr>
+        <tr><td class="time">13:50-14:10</td><td class="duration">20분</td><td class="topic">Work, Actions, MCP 등 확장 개념 이해</td><td class="output">확장 개념 정리</td></tr>
+        <tr class="break"><td colspan="4">14:10-14:20 · 휴식 10분</td></tr>
+        <tr><td class="time">14:20-14:40</td><td class="duration">20분</td><td class="topic">두 번째 업무 문제정의</td><td class="output">두 번째 업무 후보</td></tr>
+        <tr><td class="time">14:40-15:05</td><td class="duration">25분</td><td class="topic">두 번째 Agent 지시문 작성</td><td class="output">두 번째 지시문</td></tr>
+        <tr><td class="time">15:05-15:20</td><td class="duration">15분</td><td class="topic">두 번째 지식파일 준비</td><td class="output">지식파일 1개</td></tr>
+        <tr class="break"><td colspan="4">15:20-15:30 · 휴식 10분</td></tr>
+        <tr><td class="time">15:30-15:55</td><td class="duration">25분</td><td class="topic">두 번째 GPT Agent 완성</td><td class="output">개인 Agent 2개</td></tr>
+        <tr><td class="time">15:55-16:30</td><td class="duration">35분</td><td class="topic">AI 결과물 검증과 수정</td><td class="output">검증 체크리스트</td></tr>
+        <tr><td class="time">16:30-17:00</td><td class="duration">30분</td><td class="topic">팀 공유 방식과 최종 발표</td><td class="output">팀 배포 계획</td></tr>
       </tbody>
     </table>
   </section>
 
-  <section class="notes" aria-label="운영 메모">
-    <div class="note">
-      <h3>운영 메모</h3>
-      <p>외부 노트북과 GPT 유료계정 제공을 전제로 합니다. 계정이 없는 참가자도 초반 공통 기초 구간 안에서 같은 화면에 들어오는 것을 목표로 진행합니다.</p>
-    </div>
-    <div class="note">
-      <h3>보안 메모</h3>
-      <p>실습 데이터는 공개자료, 일반화한 업무 상황, 문서 형식 중심으로 사용합니다. 비공개 기술자료와 개인정보는 입력하지 않습니다.</p>
-    </div>
-    <div class="note">
-      <h3>자료 운영 메모</h3>
-      <p>강의덱은 현장 속도 조절을 위한 보조 장표까지 넉넉히 포함합니다. 필수 흐름은 산출물 제작이고, 회사 사례·역사·도구 비교·검증 예시는 루즈해질 때 맥락을 잡는 설명 자료로 사용합니다.</p>
-    </div>
-  </section>
+  <p class="note">운영 기준: 초반은 AI 경험이 다른 참가자도 같은 출발선에 서도록 진행하고, 이후 실습은 빠르게 따라오는 참가자가 실제 산출물을 완성하는 흐름을 우선합니다.</p>
 
   <footer>
     <span>한국전력기술 AX 리터러시 교육 · 강사 이유진</span>
-    <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문·자료 공유 오픈채팅방 입장 →</a>
+    <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문·자료 공유 오픈채팅방 →</a>
   </footer>
 </main>
 </body>
