@@ -212,6 +212,12 @@ table.tbl tr:last-child td{border-bottom:none}
 .uiapp-tab.hi{background:var(--brand-soft);color:var(--brand);border:1px solid var(--brand)}
 .uiapp-chat{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.5vw}
 .uiapp-inputbar{border:2px solid var(--brand);border-radius:999px;padding:.6vw 1vw;font-size:.78vw;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:.5vw}
+.real-screen{width:48vw;margin:1.2vw auto 0;border:1px solid var(--line);border-radius:1vw;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.real-screen img{display:block;width:100%;height:auto;background:#fff}
+.screen-caption{display:grid;grid-template-columns:repeat(3,1fr);gap:.8vw;margin-top:1vw}
+.screen-caption .step{border:1px solid var(--line);border-radius:.8vw;padding:.85vw 1vw;background:var(--panel)}
+.screen-caption .step b{display:block;font-size:.78vw;color:var(--brand);margin-bottom:.25vw}
+.screen-caption .step span{display:block;font-size:.82vw;font-weight:800;color:var(--ink);line-height:1.45}
 .uishare{border:1px solid var(--line);border-radius:1vw;box-shadow:var(--shadow);margin-top:1.3vw;max-width:36vw;padding:1.3vw 1.5vw;background:var(--panel)}
 .uishare .ttl{font-size:.9vw;font-weight:800;margin-bottom:1vw;color:var(--muted)}
 .uishare .opt{display:flex;align-items:center;gap:.7vw;padding:.7vw .8vw;border-radius:.7vw;margin-bottom:.5vw;border:1px solid var(--line)}
@@ -1452,18 +1458,16 @@ HTML 전체 코드만 주세요. 파일명은 index.html로 저장할 예정입�
 <section class="slide" data-title="Netlify Step 2">
   <div class="slide-header"><div class="kicker">7부 · Netlify Step 2</div><div class="slide-no">78</div></div>
   <div class="slide-body">
-    <h2 class="big-message">STEP 2 — Netlify에 <span class="orange">드래그 앤 드롭</span></h2>
-    <div class="uiapp">
-      <div class="uimock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">app.netlify.com/drop</span></div>
-      <div class="uiapp-main" style="min-height:14vw">
-        <div class="grid3">
-          <div class="card"><div class="badge">1</div><h3>Netlify 접속</h3><p>브라우저에서 Netlify Drop 페이지를 엽니다.</p></div>
-          <div class="card"><div class="badge">2</div><h3>폴더 드롭</h3><p>my-agent-dashboard 폴더를 업로드 영역에 놓습니다.</p></div>
-          <div class="card"><div class="badge">3</div><h3>URL 확인</h3><p>배포가 끝나면 생성된 사이트 주소를 클릭합니다.</p></div>
-        </div>
-      </div>
+    <h2 class="big-message">STEP 2. Netlify Drop 화면에 <span class="orange">폴더를 올립니다</span></h2>
+    <div class="real-screen">
+      <img src="assets/netlify-ui/netlify-drop-screen-2026.png" alt="Netlify Drop 실제 화면. Drag and drop to publish instantly 문구와 Drop here 업로드 영역이 보인다.">
     </div>
-    <p class="lead">계정 로그인이 요구되면 안내에 따라 Google/GitHub로 로그인하고 다시 드롭하면 됩니다.</p>
+    <div class="screen-caption">
+      <div class="step"><b>1</b><span>브라우저에서 app.netlify.com/drop 접속</span></div>
+      <div class="step"><b>2</b><span>my-agent-dashboard 폴더를 Drop here 영역에 놓기</span></div>
+      <div class="step"><b>3</b><span>배포가 끝나면 생성된 공개 URL 확인</span></div>
+    </div>
+    <p class="lead">로그인이 뜨면 Google 또는 GitHub로 로그인한 뒤 같은 화면에서 다시 폴더를 올리면 됩니다.</p>
   </div>
 </section>
 
