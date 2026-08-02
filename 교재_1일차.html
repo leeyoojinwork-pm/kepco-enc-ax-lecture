@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>한국전력기술 AX 리터러시 교육 교재 — 1일차</title>
+<title>한국전력기술 AX 리터러시 교육 — 공통 실습 교재</title>
 <style>
 :root{
   --ink:#17191f; --muted:#626977; --line:#e4e7ec; --soft:#f6f7f9;
@@ -92,7 +92,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 
 <div class="topbar">
   <a class="back" href="index.html">← 전체 자료로</a>
-  <div class="dtitle">한국전력기술 AX 리터러시 교육 교재 — 1일차</div>
+  <div class="dtitle">한국전력기술 AX 리터러시 교육 — 공통 실습 교재</div>
   <select id="pgSelect">
       <option value="0">시작 — 목차</option>
       <option value="1">시작하기 전에 — 오늘 무엇을 만들고, 무엇을 지키는가</option>
@@ -102,8 +102,8 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
       <option value="5">4장. STEP 1 문제정의 — 챗봇에 맡길 업무 고르기</option>
       <option value="6">5장. STEP 2 업무 지시서 — 예시를 내 것으로</option>
       <option value="7">6장. STEP 3 폴더정의서 — knowledge.md 만들기</option>
-      <option value="8">7장. STEP 4 첫 시스템 — 합쳐서 완성하고 공유하기</option>
-      <option value="9">8장. 마무리 — 발표, 그리고 내일부터</option>
+      <option value="8">7장. STEP 4 내 GPT 완성 — 합쳐서 테스트하기</option>
+      <option value="9">8장. 마무리 — 발표와 업무 적용</option>
       <option value="10">부록. 치트시트 모음</option>
   </select>
   <div class="dpage"><span id="pgnum">1</span> / <span id="pgtotal">11</span></div>
@@ -115,7 +115,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   <div class="pgwrap pgwrap-cover">
     <div class="cover cover-embed">
   <div class="cover-inner">
-    <div class="eyebrow">한국전력기술 AX 리터러시 교육 · 교재 1일차</div>
+    <div class="eyebrow">한국전력기술 AX 리터러시 교육 · 공통 4시간 과정</div>
     <h1>GPT 챗봇 구축<br>— 내 반복 업무를 시스템으로</h1>
     <p class="sub">이 교재는 강의 슬라이드의 요약본이 아니라, 교육이 끝난 뒤 책상에서 혼자 다시 따라 할 수 있도록 쓴 안내서입니다. 각 장은 "왜 필요한가 → 개념 → 직접 해보기 → 자주 막히는 곳" 순서로 되어 있습니다.</p>
     <div class="bar"></div>
@@ -131,8 +131,8 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
     <li><a href="#ch4">4장. STEP 1 문제정의 — 챗봇에 맡길 업무 고르기</a></li>
     <li><a href="#ch5">5장. STEP 2 업무 지시서 — 예시를 내 것으로</a></li>
     <li><a href="#ch6">6장. STEP 3 폴더정의서 — knowledge.md 만들기</a></li>
-    <li><a href="#ch7">7장. STEP 4 첫 시스템 — 합쳐서 완성하고 공유하기</a></li>
-    <li><a href="#ch8">8장. 마무리 — 발표, 그리고 내일부터</a></li>
+    <li><a href="#ch7">7장. STEP 4 내 GPT 완성 — 합쳐서 테스트하기</a></li>
+    <li><a href="#ch8">8장. 마무리 — 발표와 업무 적용</a></li>
     <li><a href="#apx">부록. 치트시트 모음</a></li>
   </ol>
     </div>
@@ -286,7 +286,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
   <tr><th>구성 보기의 칸</th><th>우리가 넣을 것</th></tr>
   <tr><td>이름 / 설명</td><td>"주간보고 정리봇"처럼 하는 일이 보이는 이름</td></tr>
   <tr><td>지침</td><td>7요소 업무 지시서 (5장에서 작성)</td></tr>
-  <tr><td>대화 시작</td><td>자주 쓰는 요청 3~4개 (2일차에 깊이 다룸)</td></tr>
+  <tr><td>대화 시작</td><td>자주 쓰는 요청 3~4개를 첫 화면 문구로 등록</td></tr>
   <tr><td>지식</td><td>공개 가능한 참고 자료 (6장에서 선정)</td></tr>
   <tr><td>기능(Capabilities)</td><td>웹 검색·이미지 생성 등 사용할 기능. 오늘은 기본값 그대로 둡니다</td></tr>
 </table>
@@ -309,7 +309,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 <h2 class="part" id="ch4">3부 · 내 업무 챗봇 만들기</h2>
 <h3>4장. STEP 1 문제정의 — 챗봇에 맡길 업무 고르기</h3>
 
-<p class="intro">지금부터 4개 장은 하나의 연속 실습입니다. 문제정의 → 업무 지시서 → 폴더정의서 → 첫 시스템. 이 4단계는 오늘 한 번 쓰고 버리는 순서가 아니라, 앞으로 어떤 업무든 챗봇으로 만들 때 재사용하는 여러분의 표준 절차입니다.</p>
+<p class="intro">지금부터 4개 장은 하나의 연속 실습입니다. 문제정의 → 업무 지시서 → 폴더정의서 → 내 GPT 완성. 이 4단계는 오늘 한 번 쓰고 버리는 순서가 아니라, 앞으로 어떤 업무든 챗봇으로 만들 때 재사용하는 여러분의 표준 절차입니다.</p>
 
 <h4>아무 업무나 고르면 안 되는 이유</h4>
 <p>첫 챗봇 만들기에서 가장 흔한 실패는 기술이 아니라 선택에서 옵니다. 너무 복잡한 업무, 판단이 많이 필요한 업무를 고르면 4시간 안에 완성하지 못하고 "역시 AI는 아직이야"라는 잘못된 결론만 남습니다. 그래서 고르는 기준이 필요합니다.</p>
@@ -341,7 +341,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
     <li>고른 업무로 세 줄을 완성하세요: <b>챗봇 이름</b>("○○봇") / <b>입력</b>(무엇을 넣으면) / <b>출력</b>(무엇이 나오는가). (5분)</li>
     <li>GPT 탐색 → 만들기 → 구성 보기를 열고 이름만 먼저 등록하세요. (5분)</li>
   </ol>
-  <p>업무 선택에 5분 이상 쓰지 마세요. 완벽한 선택보다 빠른 시작이 낫습니다 — 두 번째 챗봇은 내일 또 만듭니다.</p>
+  <p>업무 선택에 5분 이상 쓰지 마세요. 완벽한 선택보다 빠른 시작이 낫습니다. 오늘 한 가지를 끝까지 완성하는 것이 목표입니다.</p>
 </div>
 
 
@@ -435,7 +435,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 <section class="pg" data-idx="8" id="ch7">
   <div class="pgwrap">
 <h2 class="part" id="ch7">3부 · 내 업무 챗봇 만들기</h2>
-<h3>7장. STEP 4 첫 시스템 — 합쳐서 완성하고 공유하기</h3>
+<h3>7장. STEP 4 내 GPT 완성 — 합쳐서 테스트하기</h3>
 
 <p class="intro">지시서(두뇌)와 지식파일(서랍)이 준비됐습니다. 마지막 단계는 이 부품들을 점검하고, 팀원이 쓸 수 있는 상태로 공유하는 것입니다. 공유까지 해야 "혼자 쓰는 프롬프트"가 "팀의 시스템"이 됩니다.</p>
 
@@ -466,11 +466,11 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 <section class="pg" data-idx="9" id="ch8">
   <div class="pgwrap">
 <h2 class="part" id="ch8">4부 · 공유와 클로징</h2>
-<h3>8장. 마무리 — 발표, 그리고 내일부터</h3>
+<h3>8장. 마무리 — 발표와 업무 적용</h3>
 
 <p>30초 발표는 세 문장이면 충분합니다. 챗봇 이름과 하는 일 / 만들며 제일 좋았던 순간 / 내일 누구에게 공유할지. 발표가 부담스러우면 오픈채팅방에 링크와 한 줄 소개로 대체해도 됩니다.</p>
 <p>오늘의 성과를 숫자로 계산해보세요. <b>건당 절약 시간 × 주당 반복 횟수.</b> 회의록 정리에 30분 걸리던 것이 10분이 되고 주 3회 한다면, 매주 1시간이 돌아옵니다. 한국은행이 말한 "주당 평균 1.5시간"이 여러분에게는 구체적인 숫자가 된 것입니다.</p>
-<p>내일(2일차)은 오늘 만든 챗봇을 팀원이 바로 쓸 수 있게 고도화하고 — 지식파일 여러 개, 대화 시작 문구, 멀티턴 — 예시 없이 두 번째 챗봇을 처음부터 만들며, 팀 배포와 정착까지 갑니다. <b>오늘 만든 챗봇을 지우지 말고 그대로 가져오세요. 내일의 재료입니다.</b></p>
+<p>교육이 끝난 뒤에는 오늘 만든 GPT를 실제 업무 한 건에 사용해보세요. 틀린 내용, 빠진 형식, 애매한 표현을 지시문에 반영하면 다음 결과가 좋아집니다. <b>한 번에 완벽하게 만들기보다 실제 사용과 수정으로 안정화하는 것이 중요합니다.</b></p>
 
 
   </div>
@@ -526,7 +526,7 @@ th{background:var(--brand-soft);color:var(--brand);font-weight:800}
 </table>
 
 <div class="footer">
-  한국전력기술 AX 리터러시 교육 · 1일차 교재 — 강사 이유진 · 본 교재의 실습 예시는 모두 공개 정보와 일반화된 업무 상황 기준으로 작성되었습니다.<br>
+  한국전력기술 AX 리터러시 교육 · 공통 실습 교재 — 강사 이유진 · 본 교재의 실습 예시는 모두 공개 정보와 일반화된 업무 상황 기준으로 작성되었습니다.<br>
   <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문·자료 공유 오픈채팅방 입장 →</a>
 </div>
   </div>

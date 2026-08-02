@@ -171,22 +171,22 @@ footer a{color:var(--accent);font-weight:900}
   </nav>
 
   <header class="hero">
-    <h1>2일 과정 타임테이블</h1>
-    <p class="sub">각 일자 13:00-17:00, 4시간 기준입니다. 진행 순서와 소요 시간만 확인할 수 있도록 정리했습니다.</p>
+    <h1>차수별 공통 타임테이블</h1>
+    <p class="sub">8월 5일과 6일 모두 13:00-17:00에 같은 4시간 과정을 진행합니다. 교육 대상자만 차수별로 달라집니다.</p>
   </header>
 
   <section class="summary" aria-label="교육 요약">
-    <div><b>8/5</b><span>1일차 13:00-17:00</span></div>
-    <div><b>8/6</b><span>2일차 13:00-17:00</span></div>
+    <div><b>8/5</b><span>1차수 13:00-17:00</span></div>
+    <div><b>8/6</b><span>2차수 13:00-17:00</span></div>
     <div><b>30명</b><span>차수별 교육생</span></div>
-    <div><b>2개</b><span>개인 Agent 완성</span></div>
+    <div><b>1개</b><span>개인 GPT 완성</span></div>
   </section>
 
   <section class="day" aria-labelledby="day1">
     <div class="day-head">
       <div>
-        <h2 id="day1">1일차 — 첫 GPT Agent 만들기</h2>
-        <p>AI 기초, 업무 선정, 지시문 작성, knowledge.md, Agent 완성</p>
+        <h2 id="day1">공통 4시간 과정</h2>
+        <p>기초 AX 리터러시 1시간, 기본 업무 자동화 1시간, 챗봇 만들기 실습 2시간</p>
       </div>
     </div>
     <table>
@@ -194,49 +194,24 @@ footer a{color:var(--accent);font-weight:900}
         <tr><th class="time">시간</th><th class="duration">소요</th><th>무엇을 하나요</th><th class="output">결과물</th></tr>
       </thead>
       <tbody>
-        <tr><td class="time">13:00-13:30</td><td class="duration">30분</td><td class="topic">오프닝: 왜 지금 AI를 배워야 하는가</td><td class="output">오늘의 흐름 이해</td></tr>
-        <tr><td class="time">13:30-13:55</td><td class="duration">25분</td><td class="topic">GPT 기본 화면과 안전한 사용 기준</td><td class="output">입력 가능/금지 정보 구분</td></tr>
-        <tr><td class="time">13:55-14:10</td><td class="duration">15분</td><td class="topic">정해진 예시로 첫 결과 받아보기</td><td class="output">요약과 표 변환 결과</td></tr>
-        <tr class="break"><td colspan="4">14:10-14:20 휴식 10분</td></tr>
-        <tr><td class="time">14:20-14:55</td><td class="duration">35분</td><td class="topic">프롬프트를 업무 지시서로 바꾸기</td><td class="output">보고 초안 프롬프트</td></tr>
-        <tr><td class="time">14:55-15:20</td><td class="duration">25분</td><td class="topic">내 업무 문제정의</td><td class="output">업무 문제 한 문장</td></tr>
-        <tr><td class="time">15:20-15:45</td><td class="duration">25분</td><td class="topic">Agent 지시문 작성</td><td class="output">개인 Agent 지시문</td></tr>
+        <tr><td class="time">13:00-13:20</td><td class="duration">20분</td><td class="topic">오프닝: 왜 지금 AI를 배워야 하는가</td><td class="output">AX 변화와 교육 목표 이해</td></tr>
+        <tr><td class="time">13:20-13:40</td><td class="duration">20분</td><td class="topic">생성형 AI와 ChatGPT 기본 화면</td><td class="output">계정과 기본 조작 확인</td></tr>
+        <tr><td class="time">13:40-13:50</td><td class="duration">10분</td><td class="topic">안전한 사용과 결과 검증 기준</td><td class="output">입력 가능 정보 구분</td></tr>
+        <tr class="break"><td colspan="4">13:50-14:00 휴식 10분</td></tr>
+        <tr><td class="time">14:00-14:20</td><td class="duration">20분</td><td class="topic">나쁜 프롬프트로 먼저 결과 받아보기</td><td class="output">개선 전 결과</td></tr>
+        <tr><td class="time">14:20-14:45</td><td class="duration">25분</td><td class="topic">업무 지시서 7요소로 프롬프트 개선</td><td class="output">개선된 업무 프롬프트</td></tr>
+        <tr><td class="time">14:45-15:00</td><td class="duration">15분</td><td class="topic">후속 대화와 검증으로 결과 다듬기</td><td class="output">업무 초안 한 건</td></tr>
+        <tr><td class="time">15:00-15:20</td><td class="duration">20분</td><td class="topic">STEP 1. 자동화할 업무 문제정의</td><td class="output">업무 문제 한 문장</td></tr>
+        <tr><td class="time">15:20-15:45</td><td class="duration">25분</td><td class="topic">STEP 2. GPT 업무 지시서 작성</td><td class="output">개인 GPT 지시문</td></tr>
         <tr class="break"><td colspan="4">15:45-15:55 휴식 10분</td></tr>
-        <tr><td class="time">15:55-16:15</td><td class="duration">20분</td><td class="topic">knowledge.md 만들기</td><td class="output">지식파일 1개</td></tr>
-        <tr><td class="time">16:15-16:40</td><td class="duration">25분</td><td class="topic">첫 GPT Agent 완성</td><td class="output">개인 Agent 1개</td></tr>
-        <tr><td class="time">16:40-17:00</td><td class="duration">20분</td><td class="topic">결과 공유와 30초 발표</td><td class="output">발표 문장</td></tr>
+        <tr><td class="time">15:55-16:20</td><td class="duration">25분</td><td class="topic">STEP 3. 폴더정의서와 knowledge.md 만들기</td><td class="output">지식파일 1개</td></tr>
+        <tr><td class="time">16:20-16:50</td><td class="duration">30분</td><td class="topic">STEP 4. GPT 생성, 테스트, 수정</td><td class="output">개인 GPT 1개</td></tr>
+        <tr><td class="time">16:50-17:00</td><td class="duration">10분</td><td class="topic">결과 공유와 마무리</td><td class="output">활용 계획 한 문장</td></tr>
       </tbody>
     </table>
   </section>
 
-  <section class="day" aria-labelledby="day2">
-    <div class="day-head">
-      <div>
-        <h2 id="day2">2일차 — 검수 Agent와 배포</h2>
-        <p>1일차 Agent 개선, 검수 Agent 제작, HTML 대시보드 작성, Netlify 배포</p>
-      </div>
-    </div>
-    <table>
-      <thead>
-        <tr><th class="time">시간</th><th class="duration">소요</th><th>무엇을 하나요</th><th class="output">결과물</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="time">13:00-13:15</td><td class="duration">15분</td><td class="topic">1일차 Agent 결과 점검</td><td class="output">개선 포인트</td></tr>
-        <tr><td class="time">13:15-13:45</td><td class="duration">30분</td><td class="topic">지식파일과 대화 시작 문구 고도화</td><td class="output">업데이트된 1번 Agent</td></tr>
-        <tr><td class="time">13:45-14:10</td><td class="duration">25분</td><td class="topic">AI 결과물 검증 기준과 수치형 검수 방법</td><td class="output">8점 만점 검수표</td></tr>
-        <tr class="break"><td colspan="4">14:10-14:20 휴식 10분</td></tr>
-        <tr><td class="time">14:20-14:40</td><td class="duration">20분</td><td class="topic">왜 검수봇을 따로 만드는가</td><td class="output">역할 분리 이해</td></tr>
-        <tr><td class="time">14:40-15:05</td><td class="duration">25분</td><td class="topic">검수 Agent 지시문 작성</td><td class="output">검수봇 지시문</td></tr>
-        <tr><td class="time">15:05-15:20</td><td class="duration">15분</td><td class="topic">검수 기준과 보고서 형식 정리</td><td class="output">검수용 md 파일</td></tr>
-        <tr class="break"><td colspan="4">15:20-15:30 휴식 10분</td></tr>
-        <tr><td class="time">15:30-15:55</td><td class="duration">25분</td><td class="topic">검수 Agent 완성 및 배틀</td><td class="output">점수표와 보고 요약</td></tr>
-        <tr><td class="time">15:55-16:30</td><td class="duration">35분</td><td class="topic">GPT로 HTML 대시보드 만들기</td><td class="output">index.html</td></tr>
-        <tr><td class="time">16:30-17:00</td><td class="duration">30분</td><td class="topic">Netlify 노코드 배포와 오픈채팅방 공유</td><td class="output">공개 URL</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <p class="note">운영 기준: 초반에는 계정과 사용 경험 차이를 맞추고, 이후에는 실습 속도에 맞춰 보조강사가 팔로업합니다. 빠르게 따라오는 참가자는 결과물 완성까지 진행합니다.</p>
+  <p class="note"><b>차수 운영:</b> 8월 5일 1차수와 8월 6일 2차수에 위 타임테이블을 동일하게 적용합니다. 초반 1시간은 계정이 없거나 처음 사용하는 참가자도 따라올 수 있게 진행합니다. 이후 보조강사가 기본 팔로업을 맡고, 빠르게 따라오는 참가자는 실제 부서 업무에 가까운 GPT 완성까지 진행합니다.</p>
 
   <footer>
     <span>한국전력기술 AX 리터러시 교육  강사 이유진</span>
