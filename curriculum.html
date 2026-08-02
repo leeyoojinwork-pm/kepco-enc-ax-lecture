@@ -28,32 +28,9 @@ a{color:inherit;text-decoration:none}
   padding:34px 28px 64px;
 }
 .top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
   padding-bottom:18px;
   border-bottom:1px solid var(--line);
 }
-.back{
-  font-size:14px;
-  font-weight:800;
-  color:var(--muted);
-}
-.links{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-.links a{
-  padding:8px 11px;
-  border:1px solid var(--line);
-  border-radius:6px;
-  font-size:13px;
-  font-weight:800;
-  color:var(--muted);
-}
-.links a:hover{border-color:var(--accent);color:var(--accent)}
 .hero{padding:38px 0 28px}
 .eyebrow{
   margin-bottom:10px;
@@ -115,24 +92,6 @@ h1{
   font-size:14px;
   font-weight:800;
 }
-.deck-links{
-  display:flex;
-  gap:8px;
-  flex-shrink:0;
-}
-.deck-links a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:64px;
-  padding:8px 10px;
-  border:1px solid var(--line);
-  border-radius:6px;
-  color:var(--muted);
-  font-size:13px;
-  font-weight:900;
-}
-.deck-links a:first-child{border-color:var(--accent);color:var(--accent)}
 table{
   width:100%;
   border-collapse:collapse;
@@ -188,7 +147,6 @@ footer{
 footer a{color:var(--accent);font-weight:900}
 @media(max-width:780px){
   .page{padding:26px 18px 52px}
-  .top{align-items:flex-start;flex-direction:column}
   h1{font-size:30px}
   .summary{grid-template-columns:repeat(2,1fr)}
   .summary div:nth-child(2){border-right:none}
@@ -208,37 +166,26 @@ footer a{color:var(--accent);font-weight:900}
 <body>
 <main class="page">
   <nav class="top">
-    <a class="back" href="index.html">← 전체 자료</a>
-    <div class="links">
-      <a href="day1.html">1일차 덱</a>
-      <a href="day2.html">2일차 덱</a>
-      <a href="교재_1일차.html">1일차 교재</a>
-      <a href="교재_2일차.html">2일차 교재</a>
-    </div>
+    <span class="eyebrow">한국전력기술 AX 리터러시 교육</span>
   </nav>
 
   <header class="hero">
-    <div class="eyebrow">한국전력기술 AX 리터러시 교육</div>
     <h1>2일 과정 타임테이블</h1>
-    <p class="sub">각 일자 13:00-17:00, 4시간 기준입니다. 이 페이지는 진행 순서와 소요 시간만 빠르게 확인하기 위한 운영용 시간표입니다.</p>
+    <p class="sub">각 일자 13:00-17:00, 4시간 기준입니다. 진행 순서와 소요 시간만 확인할 수 있도록 정리했습니다.</p>
   </header>
 
   <section class="summary" aria-label="교육 요약">
-    <div><b>8/5</b><span>1일차 · 13:00-17:00</span></div>
-    <div><b>8/6</b><span>2일차 · 13:00-17:00</span></div>
+    <div><b>8/5</b><span>1일차 13:00-17:00</span></div>
+    <div><b>8/6</b><span>2일차 13:00-17:00</span></div>
     <div><b>30명</b><span>차수별 교육생</span></div>
-    <div><b>2개</b><span>개인 GPT Agent 산출</span></div>
+    <div><b>2개</b><span>개인 Agent 완성</span></div>
   </section>
 
   <section class="day" aria-labelledby="day1">
     <div class="day-head">
       <div>
         <h2 id="day1">1일차 — 첫 GPT Agent 만들기</h2>
-        <p>AI 기초 → 업무 선정 → 지시문/knowledge.md → Agent 완성</p>
-      </div>
-      <div class="deck-links">
-        <a href="day1.html">강의덱</a>
-        <a href="교재_1일차.html">교재</a>
+        <p>AI 기초, 업무 선정, 지시문 작성, knowledge.md, Agent 완성</p>
       </div>
     </div>
     <table>
@@ -248,12 +195,12 @@ footer a{color:var(--accent);font-weight:900}
       <tbody>
         <tr><td class="time">13:00-13:30</td><td class="duration">30분</td><td class="topic">오프닝: 왜 지금 AI를 배워야 하는가</td><td class="output">오늘의 흐름 이해</td></tr>
         <tr><td class="time">13:30-13:55</td><td class="duration">25분</td><td class="topic">GPT 기본 화면과 안전한 사용 기준</td><td class="output">입력 가능/금지 정보 구분</td></tr>
-        <tr><td class="time">13:55-14:10</td><td class="duration">15분</td><td class="topic">정해진 예시로 첫 결과 받아보기</td><td class="output">요약·표 변환 결과</td></tr>
-        <tr class="break"><td colspan="4">14:10-14:20 · 휴식 10분</td></tr>
+        <tr><td class="time">13:55-14:10</td><td class="duration">15분</td><td class="topic">정해진 예시로 첫 결과 받아보기</td><td class="output">요약과 표 변환 결과</td></tr>
+        <tr class="break"><td colspan="4">14:10-14:20 휴식 10분</td></tr>
         <tr><td class="time">14:20-14:55</td><td class="duration">35분</td><td class="topic">프롬프트를 업무 지시서로 바꾸기</td><td class="output">보고 초안 프롬프트</td></tr>
         <tr><td class="time">14:55-15:20</td><td class="duration">25분</td><td class="topic">내 업무 문제정의</td><td class="output">업무 문제 한 문장</td></tr>
         <tr><td class="time">15:20-15:45</td><td class="duration">25분</td><td class="topic">Agent 지시문 작성</td><td class="output">개인 Agent 지시문</td></tr>
-        <tr class="break"><td colspan="4">15:45-15:55 · 휴식 10분</td></tr>
+        <tr class="break"><td colspan="4">15:45-15:55 휴식 10분</td></tr>
         <tr><td class="time">15:55-16:15</td><td class="duration">20분</td><td class="topic">knowledge.md 만들기</td><td class="output">지식파일 1개</td></tr>
         <tr><td class="time">16:15-16:40</td><td class="duration">25분</td><td class="topic">첫 GPT Agent 완성</td><td class="output">개인 Agent 1개</td></tr>
         <tr><td class="time">16:40-17:00</td><td class="duration">20분</td><td class="topic">결과 공유와 30초 발표</td><td class="output">발표 문장</td></tr>
@@ -264,12 +211,8 @@ footer a{color:var(--accent);font-weight:900}
   <section class="day" aria-labelledby="day2">
     <div class="day-head">
       <div>
-        <h2 id="day2">2일차 — 검수 Agent와 HTML 대시보드 배포</h2>
-        <p>1일차 Agent 개선 → 검수·보고 Agent 제작 → Netlify 배포 → 공유</p>
-      </div>
-      <div class="deck-links">
-        <a href="day2.html">강의덱</a>
-        <a href="교재_2일차.html">교재</a>
+        <h2 id="day2">2일차 — 검수 Agent와 배포</h2>
+        <p>1일차 Agent 개선, 검수 Agent 제작, HTML 대시보드 작성, Netlify 배포</p>
       </div>
     </div>
     <table>
@@ -280,23 +223,23 @@ footer a{color:var(--accent);font-weight:900}
         <tr><td class="time">13:00-13:15</td><td class="duration">15분</td><td class="topic">1일차 Agent 결과 점검</td><td class="output">개선 포인트</td></tr>
         <tr><td class="time">13:15-13:45</td><td class="duration">30분</td><td class="topic">지식파일과 대화 시작 문구 고도화</td><td class="output">업데이트된 1번 Agent</td></tr>
         <tr><td class="time">13:45-14:10</td><td class="duration">25분</td><td class="topic">AI 결과물 검증 기준과 수치형 검수 방법</td><td class="output">8점 만점 검수표</td></tr>
-        <tr class="break"><td colspan="4">14:10-14:20 · 휴식 10분</td></tr>
+        <tr class="break"><td colspan="4">14:10-14:20 휴식 10분</td></tr>
         <tr><td class="time">14:20-14:40</td><td class="duration">20분</td><td class="topic">왜 검수봇을 따로 만드는가</td><td class="output">역할 분리 이해</td></tr>
-        <tr><td class="time">14:40-15:05</td><td class="duration">25분</td><td class="topic">검수·보고 Agent 지시문 작성</td><td class="output">검수봇 지시문</td></tr>
-        <tr><td class="time">15:05-15:20</td><td class="duration">15분</td><td class="topic">검수 기준·보고서 형식 지식파일 준비</td><td class="output">검수용 md 파일</td></tr>
-        <tr class="break"><td colspan="4">15:20-15:30 · 휴식 10분</td></tr>
-        <tr><td class="time">15:30-15:55</td><td class="duration">25분</td><td class="topic">검수·보고 Agent 완성 및 배틀</td><td class="output">점수표·보고 요약</td></tr>
+        <tr><td class="time">14:40-15:05</td><td class="duration">25분</td><td class="topic">검수 Agent 지시문 작성</td><td class="output">검수봇 지시문</td></tr>
+        <tr><td class="time">15:05-15:20</td><td class="duration">15분</td><td class="topic">검수 기준과 보고서 형식 정리</td><td class="output">검수용 md 파일</td></tr>
+        <tr class="break"><td colspan="4">15:20-15:30 휴식 10분</td></tr>
+        <tr><td class="time">15:30-15:55</td><td class="duration">25분</td><td class="topic">검수 Agent 완성 및 배틀</td><td class="output">점수표와 보고 요약</td></tr>
         <tr><td class="time">15:55-16:30</td><td class="duration">35분</td><td class="topic">GPT로 HTML 대시보드 만들기</td><td class="output">index.html</td></tr>
         <tr><td class="time">16:30-17:00</td><td class="duration">30분</td><td class="topic">Netlify 노코드 배포와 오픈채팅방 공유</td><td class="output">공개 URL</td></tr>
       </tbody>
     </table>
   </section>
 
-  <p class="note">운영 기준: 초반은 AI 경험이 다른 참가자도 같은 출발선에 서도록 진행하고, 이후 실습은 빠르게 따라오는 참가자가 실제 산출물을 완성하는 흐름을 우선합니다.</p>
+  <p class="note">운영 기준: 초반에는 계정과 사용 경험 차이를 맞추고, 이후에는 실습 속도에 맞춰 보조강사가 팔로업합니다. 빠르게 따라오는 참가자는 결과물 완성까지 진행합니다.</p>
 
   <footer>
-    <span>한국전력기술 AX 리터러시 교육 · 강사 이유진</span>
-    <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문·자료 공유 오픈채팅방 →</a>
+    <span>한국전력기술 AX 리터러시 교육  강사 이유진</span>
+    <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문과 자료 공유 오픈채팅방</a>
   </footer>
 </main>
 </body>
