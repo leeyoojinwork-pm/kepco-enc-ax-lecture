@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>타임테이블 — 한국전력기술 AX 리터러시 교육</title>
+<title>한국전력기술 AX 리터러시 교육 공통 타임테이블</title>
 <style>
 :root{
   --ink:#172033;
@@ -48,29 +48,6 @@ h1{
   color:var(--muted);
   font-size:16px;
   line-height:1.65;
-}
-.summary{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  margin:20px 0 38px;
-  border-top:2px solid var(--ink);
-  border-bottom:1px solid var(--line);
-}
-.summary div{
-  padding:16px 18px;
-  border-right:1px solid var(--line);
-}
-.summary div:last-child{border-right:none}
-.summary b{
-  display:block;
-  margin-bottom:5px;
-  font-size:22px;
-  line-height:1;
-}
-.summary span{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
 }
 .day{margin-top:34px}
 .day-head{
@@ -124,15 +101,6 @@ td{
   font-size:14px;
   font-weight:900;
 }
-.note{
-  margin-top:30px;
-  padding:18px 20px;
-  background:var(--soft);
-  border-left:4px solid var(--accent);
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-}
 footer{
   margin-top:48px;
   padding-top:18px;
@@ -149,9 +117,6 @@ footer a{color:var(--accent);font-weight:900}
 @media(max-width:780px){
   .page{padding:26px 18px 52px}
   h1{font-size:30px}
-  .summary{grid-template-columns:repeat(2,1fr)}
-  .summary div:nth-child(2){border-right:none}
-  .summary div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .day-head{align-items:flex-start;flex-direction:column}
   table{table-layout:auto}
   thead{display:none}
@@ -171,16 +136,9 @@ footer a{color:var(--accent);font-weight:900}
   </nav>
 
   <header class="hero">
-    <h1>차수별 공통 타임테이블</h1>
-    <p class="sub">8월 5일과 6일 모두 13:00-17:00에 같은 4시간 과정을 진행합니다. 교육 대상자만 차수별로 달라집니다.</p>
+    <h1>공통 4시간 타임테이블</h1>
+    <p class="sub">13:00-17:00 동안 진행되는 교육 순서와 소요 시간입니다.</p>
   </header>
-
-  <section class="summary" aria-label="교육 요약">
-    <div><b>8/5</b><span>1차수 13:00-17:00</span></div>
-    <div><b>8/6</b><span>2차수 13:00-17:00</span></div>
-    <div><b>30명</b><span>차수별 교육생</span></div>
-    <div><b>1개</b><span>개인 GPT 완성</span></div>
-  </section>
 
   <section class="day" aria-labelledby="day1">
     <div class="day-head">
@@ -211,10 +169,8 @@ footer a{color:var(--accent);font-weight:900}
     </table>
   </section>
 
-  <p class="note"><b>차수 운영:</b> 8월 5일 1차수와 8월 6일 2차수에 위 타임테이블을 동일하게 적용합니다. 초반 1시간은 계정이 없거나 처음 사용하는 참가자도 따라올 수 있게 진행합니다. 이후 보조강사가 기본 팔로업을 맡고, 빠르게 따라오는 참가자는 실제 부서 업무에 가까운 GPT 완성까지 진행합니다.</p>
-
   <footer>
-    <span>한국전력기술 AX 리터러시 교육  강사 이유진</span>
+    <span>한국전력기술 AX 리터러시 교육  이유진 · 엑스퍼트컨설팅 협력강사</span>
     <div class="footer-links">
       <a href="https://app.notion.com/p/3ae25a8fe2538076b491f9dc517caf8e?pvs=1" target="_blank" rel="noopener">Notion 작업 페이지</a>
       <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문과 자료 공유 오픈채팅방</a>

@@ -30,7 +30,19 @@ body{font-family:var(--font);color:var(--ink);background:var(--soft);-webkit-fon
 .section-label{font-size:13px;font-weight:800;color:var(--brand);letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
 .section{margin-bottom:56px}
 
+.intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.intro-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.intro-panel h2{font-size:22px;letter-spacing:-.025em;margin-bottom:16px}
+.intro-panel ul{list-style:none;display:grid;gap:12px}
+.intro-panel li{position:relative;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.55}
+.intro-panel li::before{content:'✓';position:absolute;left:0;color:var(--brand);font-weight:900}
+.result-list{display:grid;gap:0;border-top:2px solid var(--ink)}
+.result-item{display:grid;grid-template-columns:36px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);align-items:start}
+.result-item b{color:var(--brand);font-size:13px}
+.result-item span{font-weight:800;font-size:15px;line-height:1.45}
+
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid.single{grid-template-columns:1fr}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:10px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .card:hover{transform:translateY(-3px);border-color:var(--brand);box-shadow:0 18px 40px rgba(255,91,26,.14)}
 .card .tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--brand);letter-spacing:.03em}
@@ -48,7 +60,7 @@ footer a{color:var(--brand);font-weight:800;text-decoration:none}
 footer a:hover{text-decoration:underline}
 
 @media (max-width:680px){
-  .grid{grid-template-columns:1fr}
+  .grid,.intro-grid{grid-template-columns:1fr}
   .hero{padding:64px 20px 56px}
 }
 </style>
@@ -57,15 +69,15 @@ footer a:hover{text-decoration:underline}
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">동일 4시간 과정 · 2개 차수 운영</div>
+    <div class="eyebrow">4시간 실습형 AX 리터러시 교육</div>
     <div class="course-title">[한국전력기술]<br/>AX 리터러시 교육</div>
     <h1>GPT 챗봇 구축으로<br/>내 업무를 자동화한다</h1>
-    <p class="sub">8월 5일과 6일에 각각 30명씩 참여합니다. 두 차수 모두 기초 AX 리터러시 1시간, 기본 업무 자동화 1시간, GPT 챗봇 만들기 2시간을 동일하게 진행합니다.</p>
+    <p class="sub">생성형 AI의 기본 활용법을 익히고, 반복 업무를 돕는 나만의 GPT를 직접 만듭니다.</p>
     <div class="bar"></div>
     <div class="meta">
-      <div><b>4시간</b>차수별 동일 과정</div>
-      <div><b>60명</b>30명씩 2개 차수</div>
-      <div><b>강사</b>이유진</div>
+      <div><b>4시간</b>강의와 실습</div>
+      <div><b>준비물</b>실습용 노트북</div>
+      <div><b>강사</b>이유진 · 엑스퍼트컨설팅 협력강사</div>
     </div>
   </div>
 </div>
@@ -73,49 +85,97 @@ footer a:hover{text-decoration:underline}
 <div class="main">
 
   <div class="section">
+    <div class="section-label">오늘의 목표</div>
+    <div class="intro-grid">
+      <section class="intro-panel">
+        <h2>강의 목표</h2>
+        <ul>
+          <li>생성형 AI가 업무에 어떻게 쓰이는지 이해합니다.</li>
+          <li>업무 지시서 7요소로 원하는 결과를 구체적으로 요청합니다.</li>
+          <li>반복 업무 하나를 골라 문제를 한 문장으로 정의합니다.</li>
+          <li>지시문과 지식파일을 넣은 맞춤 GPT를 만들고 직접 시험합니다.</li>
+        </ul>
+      </section>
+      <section class="intro-panel">
+        <h2>오늘 만드는 결과물</h2>
+        <div class="result-list">
+          <div class="result-item"><b>01</b><span>업무 문제 한 문장</span></div>
+          <div class="result-item"><b>02</b><span>업무 지시서 1개</span></div>
+          <div class="result-item"><b>03</b><span>knowledge.md 1개</span></div>
+          <div class="result-item"><b>04</b><span>테스트를 마친 맞춤 GPT 1개</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="section-label">전체 보기</div>
-    <div class="grid">
+    <div class="grid single">
       <a class="card" href="curriculum.html">
         <span class="tag">커리큘럼 전체보기</span>
-        <h3>세션별 진행 순서 &amp; 학습목표</h3>
-        <p>두 차수에 공통으로 적용되는 진행 순서와 소요 시간, 차수별 일정을 한 페이지에서 확인합니다.</p>
+        <h3>세션별 진행 순서와 학습목표</h3>
+        <p>오늘 진행 순서와 소요 시간을 한 페이지에서 확인합니다.</p>
         <span class="go">전체보기 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">공통 강의 덱 — 두 차수 동일</div>
-    <div class="grid">
-      <a class="card day1" href="day1.html">
-        <span class="tag">8월 5일 · 1차수 · 4시간</span>
+    <div class="section-label">공통 강의 덱</div>
+    <div class="grid single">
+      <a class="card" href="lecture.html">
+        <span class="tag">4시간 강의 덱</span>
         <h3>AX 리터러시와 GPT 챗봇 구축</h3>
         <p>AI 교육의 필요성부터 업무 지시서 7요소, 문제정의, knowledge.md, 나만의 GPT 완성까지 진행합니다.</p>
-        <span class="go">공통 덱 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="card day2" href="day2.html">
-        <span class="tag">8월 6일 · 2차수 · 4시간</span>
-        <h3>AX 리터러시와 GPT 챗봇 구축</h3>
-        <p>1차수와 같은 강의 덱입니다. 교육 대상자만 달라지며 동일한 순서와 난이도로 진행합니다.</p>
-        <span class="go">공통 덱 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="go">강의 덱 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">공통 교재 — 두 차수 동일</div>
-    <div class="grid">
-      <a class="card book" href="교재_1일차.html">
-        <span class="tag">8월 5일 · 1차수</span>
+    <div class="section-label">공통 실습 교재</div>
+    <div class="grid single">
+      <a class="card book" href="workbook.html">
+        <span class="tag">실습 안내서</span>
         <h3>공통 실습 안내서</h3>
-        <p>"왜 필요한가 → 개념 → 직접 해보기 → 자주 막히는 곳" 순서의 10개 장. 왼쪽 목차로 원하는 장으로 바로 이동.</p>
+        <p>필요성을 이해하고 개념을 익힌 뒤 직접 실습하는 10개 장으로 구성했습니다. 왼쪽 목차에서 원하는 장으로 바로 이동할 수 있습니다.</p>
         <span class="go">교재 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-      <a class="card book" href="교재_2일차.html">
-        <span class="tag">8월 6일 · 2차수</span>
-        <h3>공통 실습 안내서</h3>
-        <p>1차수와 같은 교재입니다. 업무 지시서 7요소와 챗봇 만들기 4단계를 따라가며 결과물을 완성합니다.</p>
-        <span class="go">교재 열기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+  </div>
+
+  <div class="section" id="downloads">
+    <div class="section-label">실습 자료실</div>
+    <div class="grid">
+      <a class="card" href="downloads/폴더정의서_대화형_작성도우미.md" download>
+        <span class="tag">먼저 받기</span>
+        <h3>폴더정의서 대화형 작성 도우미</h3>
+        <p>ChatGPT가 한 번에 한 질문씩 묻고, 답변을 모아 나만의 knowledge.md를 만들어줍니다.</p>
+        <span class="go">MD 내려받기</span>
+      </a>
+      <a class="card" href="downloads/나만의_업무봇_knowledge_빈양식.md" download>
+        <span class="tag">빈 양식</span>
+        <h3>나만의 업무봇 knowledge.md</h3>
+        <p>사용 목적, 입력 자료, 처리 순서, 출력 형식, 금지 사항을 직접 채우는 양식입니다.</p>
+        <span class="go">MD 내려받기</span>
+      </a>
+      <a class="card" href="downloads/보고서_초안봇_knowledge_예시.md" download>
+        <span class="tag">예시 A</span>
+        <h3>보고서 초안봇</h3>
+        <p>현황, 이슈, 조치 계획을 보고용 초안으로 정리하는 예시입니다.</p>
+        <span class="go">MD 내려받기</span>
+      </a>
+      <a class="card" href="downloads/기술문서_요약봇_knowledge_예시.md" download>
+        <span class="tag">예시 B</span>
+        <h3>기술문서 요약봇</h3>
+        <p>핵심 내용, 수치와 조건, 원문 확인 지점을 뽑는 예시입니다.</p>
+        <span class="go">MD 내려받기</span>
+      </a>
+      <a class="card" href="downloads/회의록_정리봇_knowledge_예시.md" download>
+        <span class="tag">예시 C</span>
+        <h3>회의록 정리봇</h3>
+        <p>결정사항, 할 일, 이슈와 확인 필요 항목을 나누는 예시입니다.</p>
+        <span class="go">MD 내려받기</span>
       </a>
     </div>
   </div>
@@ -123,10 +183,10 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <footer>
-  <span>한국전력기술 AX 리터러시 교육 · 강사 이유진</span>
+  <span>한국전력기술 AX 리터러시 교육 / 이유진 · 엑스퍼트컨설팅 협력강사</span>
   <div class="footer-links">
     <a href="https://app.notion.com/p/3ae25a8fe2538076b491f9dc517caf8e?pvs=1" target="_blank" rel="noopener">Notion 작업 페이지</a>
-    <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문·자료 공유 오픈채팅방 입장 →</a>
+    <a href="https://open.kakao.com/o/gtXb3LGi" target="_blank" rel="noopener">질문과 자료 공유 오픈채팅방</a>
   </div>
 </footer>
 
